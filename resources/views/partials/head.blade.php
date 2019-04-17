@@ -29,6 +29,8 @@
 <link href="{{ url('adminlte/css/AdminLTE.min.css') }}" rel="stylesheet">
 <link href="{{ url('adminlte/css/custom.css') }}" rel="stylesheet">
 <link href="{{ url('adminlte/css/skins/skin-blue.min.css') }}" rel="stylesheet">
+<link href="{{ url('adminlte/css/skins/skin-purple.min.css') }}" rel="stylesheet">
+<link href="{{ url('adminlte/css/skins/skin-purple-light.min.css') }}" rel="stylesheet">
 <link rel="stylesheet"
       href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet"
@@ -41,3 +43,5 @@
 <link href="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.css') }}" rel="stylesheet"/>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+<link href="{{ url('/css/style.css') }}" rel="stylesheet">

@@ -1,4 +1,4 @@
-              <div class="box box-info">
+              <div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Contacts</h3>
     				
@@ -12,7 +12,7 @@
                 <div class="box-body">
                       
                 @foreach($contactscategories as $key=>$contactcategory)
-                  <a href="{{ route('admin.contacts.index') }}" class="btn btn-block btn-{{ $labels[$key] }}">
+                  <a href="#" class="btn btn-block btn-{{ $labels[$key] }}">
                     {{ $contactcategory->name }}
                   </a>
                 @endforeach

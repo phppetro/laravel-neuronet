@@ -33,9 +33,9 @@ class HomeController extends Controller
         $contactscategories = \App\ContactCategory::all();
         
         //Metric Colors
-        $colors = ["rgba(0, 166, 90, 1)","rgba(221, 75, 57, 1)","rgba(243, 156, 18, 1)","rgba(0, 192, 239, 1)","rgba(60, 141, 188, 1)","rgba(245, 105, 84, 1)","rgba(210, 214, 222, 1)","rgba(0, 31, 63, 1)","rgba(57, 204, 204, 1)","rgba(96, 92, 168, 1)","rgba(255, 133, 27, 1)","rgba(17, 17, 17, 1)"];
+        $colors = ["rgba(96, 92, 168, 1)","rgba(225, 14, 107,1)","rgba(29, 227, 228,1)","rgba(96, 92, 168, 0.4)","rgba(60, 141, 188, 1)","rgba(245, 105, 84, 1)","rgba(210, 214, 222, 1)","rgba(0, 31, 63, 1)","rgba(57, 204, 204, 1)","rgba(96, 92, 168, 1)","rgba(255, 133, 27, 1)","rgba(17, 17, 17, 1)"];
 
-        $labels = ["primary","info","success","warning","danger","primary","info","success","warning","danger"];
+        $labels = ["purple","java","razz","purple","java","razz","purple","java","razz"];
 
         //echo $labels[0];
         //exit;

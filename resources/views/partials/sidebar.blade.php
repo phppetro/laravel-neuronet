@@ -4,10 +4,11 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <ul class="sidebar-menu">
-
+        <!--
             <li>
                 <select class="searchable-field form-control"></select>
             </li>
+        -->
 
             <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
                 <a href="{{ url('/') }}">
@@ -15,7 +16,7 @@
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>
             </li>
-
+            
             <li>
                 <a href="{{url('admin/calendar')}}">
                   <i class="fa fa-calendar"></i>
@@ -24,7 +25,7 @@
                   </span>
                 </a>
             </li>
-        
+
             @can('activity_access')
             <li>
                 <a href="{{ route('admin.activities.index') }}">

@@ -1,4 +1,4 @@
-        	<div class="box box-primary">
+        	<div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Deliverables</h3>
     				
@@ -36,7 +36,7 @@
                 </div>
                 <!-- /.box-body -->
                   <div class="box-footer text-center">
-                    <a href="#" class="uppercase">View All Deliverables</a>
+                    <a href="{{ route('admin.deliverables.index') }}" class="uppercase">View All Deliverables</a>
                   </div>
                 <!-- /.box-footer -->
               </div>

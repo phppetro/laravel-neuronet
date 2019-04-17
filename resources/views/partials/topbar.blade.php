@@ -4,10 +4,10 @@
        style="font-size: 16px;">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
-           @lang('global.global_title')</span>
+            Neuro</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">
-           @lang('global.global_title')</span>
+            Neuronet</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -22,6 +22,7 @@
         
 
                 <div class="navbar-custom-menu">
+        <!--
             <ul class="nav navbar-nav">
                 <li class="dropdown languages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -42,6 +43,7 @@
                     </ul>
                 </li>
             </ul>
+        -->
         </div>
     </nav>
 </header>

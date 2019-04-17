@@ -65,8 +65,8 @@
                       @endforeach  
                     ],
                     label: "Project funding",
-                    borderColor: "rgba(243,156,18,1)",
-                    backgroundColor: "rgba(243,156,18,1)",
+                    borderColor: "rgba(96,92,168,1)",
+                    backgroundColor: "rgba(96,92,168,0.75)",
                     "borderWidth":2,
                     borderSkipped: "right",
                     fill: true

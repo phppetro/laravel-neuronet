@@ -18,7 +18,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
-    Route::get('/calendar', 'Admin\SystemCalendarController@index'); 
+    Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar'); 
   
     Route::resource('activities', 'Admin\ActivitiesController');
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);

@@ -1,4 +1,4 @@
-            <div class="box box-info">
+            <div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Schedule <span class="small text-muted">(Sample gantt chart)</span></h3>
     

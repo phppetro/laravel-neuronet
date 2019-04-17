@@ -1,4 +1,4 @@
-               <div class="box box-success">
+               <div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Documents</h3>
     

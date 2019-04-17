@@ -1,4 +1,4 @@
-             <div class="box box-danger">
+             <div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Publications</h3>
     

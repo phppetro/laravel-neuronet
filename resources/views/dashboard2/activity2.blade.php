@@ -1,4 +1,4 @@
-           <div class="box box-success">
+           <div class="box box-purple">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
 
               <h3 class="box-title">Activity</h3>
@@ -14,11 +14,11 @@
               @foreach($activities as $activity)
             
                 <div class="item">
-                  <img src="/thumb/{{ $activity->user->photo }}" alt="user image" class="online">
+                  <img src="/thumb/{{ $activity->user ? $activity->user->photo : '' }}" alt="user image" class="purple">
                   <p class="message">
                     <a href="#" class="name">
                       <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ $activity->updated_at->diffForHumans() }}</small>
-                      <span>{{ $activity->user->name }}</span>
+                      <span>{{ $activity->user ? $activity->user->name : '' }}</span>
                     </a>
                     <span>{{ $activity->body }}</span>
                   </p>

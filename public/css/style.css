@@ -1,0 +1,40 @@
+.box.box-purple{border-top-color:#605ca8}
+.nav-tabs-custom>.nav-tabs>li.active{border-top-color:#605ca8}
+.btn-purple{
+	background-color:#605ca8;
+	border-color:#545299;
+	color: white;
+}
+.btn-purple:hover{
+	background-color:#545299;
+	border-color:#545299;
+	color: white;
+}
+
+.btn-java{
+	background-color:#1de3e4;
+	border-color:#15b7b7;
+	color: white;
+}
+.btn-java:hover{
+	background-color:#15b7b7;
+	border-color:#15b7b7;
+	color: white;
+}
+
+.btn-razz{
+	background-color:#E10E6B;
+	border-color:#c00c5a;
+	color: white;
+}
+.btn-razz:hover{
+	background-color:#c00c5a;
+	border-color:#c00c5a;
+	color: white;
+}
+.chat .item>.purple{
+	border:2px solid #605ca8;
+}
+.chat .item>.java{
+	border:2px solid #1DE3E4;
+}

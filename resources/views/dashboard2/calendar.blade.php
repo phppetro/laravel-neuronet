@@ -1,4 +1,4 @@
-            <div class="box box-info">
+            <div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Calendar</h3>
     
@@ -14,7 +14,7 @@
                 </div>
                 <!-- /.box-body -->
                   <div class="box-footer text-center">
-                    <a href="{{ route('admin.calendars.index') }}" class="uppercase">View Calendar</a>
+                    <a href="{{ url('admin/calendar') }}" class="uppercase">View Bigger Calendar</a>
                   </div>
                 <!-- /.box-footer -->
             </div>
