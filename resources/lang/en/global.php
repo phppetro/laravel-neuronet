@@ -34,6 +34,48 @@ return [
 			'photo' => 'Photo',
 		],
 	],
+
+
+
+		'content-management' => [
+		'title' => 'Content management',
+		'fields' => [
+		],
+	],
+	
+	'content-categories' => [
+		'title' => 'Categories',
+		'fields' => [
+			'title' => 'Category',
+			'slug' => 'Slug',
+		],
+	],
+	
+	'content-tags' => [
+		'title' => 'Tags',
+		'fields' => [
+			'title' => 'Tag',
+			'slug' => 'Slug',
+		],
+	],
+	
+	'content-pages' => [
+		'title' => 'Pages',
+		'fields' => [
+			'title' => 'Title',
+			'category-id' => 'Categories',
+			'tag-id' => 'Tags',
+			'page-text' => 'Text',
+			'excerpt' => 'Excerpt',
+			'featured-image' => 'Featured image',
+		],
+	],
+
+
+
+
+
+
 	
 	'user-actions' => [
 		'title' => 'User actions',
