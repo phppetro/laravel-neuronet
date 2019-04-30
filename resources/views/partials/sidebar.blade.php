@@ -16,7 +16,7 @@
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>
             </li>
-            
+
             <li>
                 <a href="{{url('admin/calendar')}}">
                   <i class="fa fa-calendar"></i>
@@ -33,7 +33,7 @@
                     <span>@lang('global.activity.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('contact_access')
             <li>
                 <a href="{{ route('admin.contacts.index') }}">
@@ -41,7 +41,7 @@
                     <span>@lang('global.contacts.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('contact_category_access')
             <li>
                 <a href="{{ route('admin.contact_categories.index') }}">
@@ -49,7 +49,7 @@
                     <span>@lang('global.contact-categories.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('document_access')
             <li>
                 <a href="{{ route('admin.documents.index') }}">
@@ -57,7 +57,7 @@
                     <span>@lang('global.documents.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('publication_access')
             <li>
                 <a href="{{ route('admin.publications.index') }}">
@@ -65,7 +65,7 @@
                     <span>@lang('global.publications.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('project_access')
             <li>
                 <a href="{{ route('admin.projects.index') }}">
@@ -73,7 +73,7 @@
                     <span>@lang('global.projects.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('deliverable_access')
             <li>
                 <a href="{{ route('admin.deliverables.index') }}">
@@ -81,7 +81,7 @@
                     <span>@lang('global.deliverables.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('calendar_access')
             <li>
                 <a href="{{ route('admin.calendars.index') }}">
@@ -89,7 +89,7 @@
                     <span>@lang('global.calendar.title')</span>
                 </a>
             </li>@endcan
-            
+
             @can('metric_access')
             <li class="treeview">
                 <a href="#">
@@ -107,7 +107,7 @@
                             <span>@lang('global.partners-metrics.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('projects_metric_access')
                     <li>
                         <a href="{{ route('admin.projects_metrics.index') }}">
@@ -115,10 +115,10 @@
                             <span>@lang('global.projects-metrics.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
+
             @can('faq_management_access')
             <li class="treeview">
                 <a href="#">
@@ -136,7 +136,7 @@
                             <span>@lang('global.faq-categories.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('faq_question_access')
                     <li>
                         <a href="{{ route('admin.faq_questions.index') }}">
@@ -144,10 +144,55 @@
                             <span>@lang('global.faq-questions.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
+
+
+
+
+
+          @can('content_management_access')
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-book"></i>
+                    <span>@lang('global.content-management.title')</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    @can('content_category_access')
+                    <li>
+                        <a href="{{ route('admin.content_categories.index') }}">
+                            <i class="fa fa-folder"></i>
+                            <span>@lang('global.content-categories.title')</span>
+                        </a>
+                    </li>@endcan
+
+                    @can('content_tag_access')
+                    <li>
+                        <a href="{{ route('admin.content_tags.index') }}">
+                            <i class="fa fa-tags"></i>
+                            <span>@lang('global.content-tags.title')</span>
+                        </a>
+                    </li>@endcan
+
+                    @can('content_page_access')
+                    <li>
+                        <a href="{{ route('admin.content_pages.index') }}">
+                            <i class="fa fa-file-o"></i>
+                            <span>@lang('global.content-pages.title')</span>
+                        </a>
+                    </li>@endcan
+
+                </ul>
+            </li>@endcan
+
+
+
+
+
             @can('user_management_access')
             <li class="treeview">
                 <a href="#">
@@ -165,7 +210,7 @@
                             <span>@lang('global.permissions.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('role_access')
                     <li>
                         <a href="{{ route('admin.roles.index') }}">
@@ -173,7 +218,7 @@
                             <span>@lang('global.roles.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('user_access')
                     <li>
                         <a href="{{ route('admin.users.index') }}">
@@ -181,7 +226,7 @@
                             <span>@lang('global.users.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                     @can('user_action_access')
                     <li>
                         <a href="{{ route('admin.user_actions.index') }}">
@@ -189,14 +234,14 @@
                             <span>@lang('global.user-actions.title')</span>
                         </a>
                     </li>@endcan
-                    
+
                 </ul>
             </li>@endcan
-            
 
-            
 
-            
+
+
+
 
 
 
@@ -216,4 +261,3 @@
         </ul>
     </section>
 </aside>
-
