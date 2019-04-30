@@ -18,8 +18,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
-    Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar'); 
-  
+    Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar');
+
     Route::resource('activities', 'Admin\ActivitiesController');
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);
     Route::post('activities_restore/{id}', ['uses' => 'Admin\ActivitiesController@restore', 'as' => 'activities.restore']);
@@ -64,6 +64,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('faq_categories_mass_destroy', ['uses' => 'Admin\FaqCategoriesController@massDestroy', 'as' => 'faq_categories.mass_destroy']);
     Route::resource('faq_questions', 'Admin\FaqQuestionsController');
     Route::post('faq_questions_mass_destroy', ['uses' => 'Admin\FaqQuestionsController@massDestroy', 'as' => 'faq_questions.mass_destroy']);
+
+    Route::resource('content_categories', 'Admin\ContentCategoriesController');
+    Route::post('content_categories_mass_destroy', ['uses' => 'Admin\ContentCategoriesController@massDestroy', 'as' => 'content_categories.mass_destroy']);
+    Route::resource('content_tags', 'Admin\ContentTagsController');
+    Route::post('content_tags_mass_destroy', ['uses' => 'Admin\ContentTagsController@massDestroy', 'as' => 'content_tags.mass_destroy']);
+    Route::resource('content_pages', 'Admin\ContentPagesController');
+    Route::post('content_pages_mass_destroy', ['uses' => 'Admin\ContentPagesController@massDestroy', 'as' => 'content_pages.mass_destroy']);
+
     Route::resource('permissions', 'Admin\PermissionsController');
     Route::post('permissions_mass_destroy', ['uses' => 'Admin\PermissionsController@massDestroy', 'as' => 'permissions.mass_destroy']);
     Route::resource('roles', 'Admin\RolesController');
