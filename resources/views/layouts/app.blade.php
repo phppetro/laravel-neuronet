@@ -5,7 +5,7 @@
     @include('partials.head')
 </head>
 
-<body class="hold-transition skin-purple-light sidebar-collapse sidebar-mini">
+<body class="hold-transition skin-black-light sidebar-mini">
 
 <div id="wrapper">
 

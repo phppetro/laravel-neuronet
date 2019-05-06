@@ -28,7 +28,7 @@
       href="{{ url('adminlte/css') }}/select2.min.css"/>
 <link href="{{ url('adminlte/css/AdminLTE.min.css') }}" rel="stylesheet">
 <link href="{{ url('adminlte/css/custom.css') }}" rel="stylesheet">
-<link href="{{ url('adminlte/css/skins/skin-blue.min.css') }}" rel="stylesheet">
+<link href="{{ url('adminlte/css/skins/skin-black-light.min.css') }}" rel="stylesheet">
 <link href="{{ url('adminlte/css/skins/skin-purple.min.css') }}" rel="stylesheet">
 <link href="{{ url('adminlte/css/skins/skin-purple-light.min.css') }}" rel="stylesheet">
 <link rel="stylesheet"
