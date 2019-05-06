@@ -2,17 +2,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.faq-questions.title')</h3>
-    @can('faq_question_create')
-    <p>
-        <a href="{{ route('admin.faq_questions.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-        @include('csvImport.modal', ['model' => 'FaqQuestion'])
-        
-    </p>
-    @endcan
-
-    
+    <h3 class="page-title">@lang('global.faq-questions.title')
+      @can('faq_question_create')
+          <a href="{{ route('admin.faq_questions.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+      @can('faq_questions_csv_import')
+          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+          @include('csvImport.modal', ['model' => 'FaqQuestion'])
+      @endcan
+    </h3>
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -34,7 +32,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($faq_questions) > 0)
                         @foreach ($faq_questions as $faq_question)
@@ -77,7 +75,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('faq_question_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.faq_questions.mass_destroy') }}';

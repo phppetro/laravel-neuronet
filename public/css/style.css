@@ -38,3 +38,19 @@
 .chat .item>.java{
 	border:2px solid #1DE3E4;
 }
+
+.neuronet-logo-mini {
+	width: 25px;
+}
+
+.neuronet-logo-lg {
+	height: 25px;
+}
+
+.page-title {
+		margin-top: 0;
+}
+
+.dt-buttons {
+	display: none;
+}

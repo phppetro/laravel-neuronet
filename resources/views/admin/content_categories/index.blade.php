@@ -2,15 +2,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.content-categories.title')</h3>
-    @can('content_category_create')
-    <p>
-        <a href="{{ route('admin.content_categories.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        
-    </p>
-    @endcan
+    <h3 class="page-title">@lang('global.content-categories.title')
+      @can('content_category_create')
+          <a href="{{ route('admin.content_categories.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+    </h3>
 
-    
+
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -31,7 +29,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($content_categories) > 0)
                         @foreach ($content_categories as $content_category)
@@ -73,7 +71,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('content_category_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.content_categories.mass_destroy') }}';

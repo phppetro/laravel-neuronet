@@ -2,17 +2,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.permissions.title')</h3>
-    @can('permission_create')
-    <p>
-        <a href="{{ route('admin.permissions.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-        @include('csvImport.modal', ['model' => 'Permission'])
-        
-    </p>
-    @endcan
+    <h3 class="page-title">@lang('global.permissions.title')
+      @can('permission_create')
+          <a href="{{ route('admin.permissions.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+      @can('content_csv_import')
+          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+          @include('csvImport.modal', ['model' => 'Permission'])
+      @endcan
+    </h3>
 
-    
+
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -32,7 +32,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($permissions) > 0)
                         @foreach ($permissions as $permission)
@@ -73,7 +73,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('permission_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.permissions.mass_destroy') }}';

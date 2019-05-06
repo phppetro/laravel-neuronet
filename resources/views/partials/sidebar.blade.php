@@ -10,8 +10,8 @@
             </li>
         -->
 
-            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
+            <li class="{{ $request->segment(1) == '' ? 'active' : '' }}">
+                <a href="{{ url('/admin/') }}">
                     <i class="fa fa-wrench"></i>
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>

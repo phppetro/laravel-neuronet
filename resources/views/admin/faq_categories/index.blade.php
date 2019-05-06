@@ -2,17 +2,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.faq-categories.title')</h3>
-    @can('faq_category_create')
-    <p>
-        <a href="{{ route('admin.faq_categories.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-        @include('csvImport.modal', ['model' => 'FaqCategory'])
-        
-    </p>
-    @endcan
-
-    
+    <h3 class="page-title">@lang('global.faq-categories.title')
+      @can('faq_category_create')
+          <a href="{{ route('admin.faq_categories.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+      @can('faq_category_csv_import')
+          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+          @include('csvImport.modal', ['model' => 'FaqCategory'])
+      @endcan
+    </h3>
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -32,7 +30,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($faq_categories) > 0)
                         @foreach ($faq_categories as $faq_category)
@@ -73,7 +71,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('faq_category_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.faq_categories.mass_destroy') }}';

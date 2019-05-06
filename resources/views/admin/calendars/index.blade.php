@@ -2,23 +2,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.calendar.title')</h3>
+    <h3 class="page-title">@lang('global.calendar.title')
     @can('calendar_create')
-    <p>
         <a href="{{ route('admin.calendars.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+    @endcan
+    @can('calendar_csv_import')
         <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
         @include('csvImport.modal', ['model' => 'Calendar'])
-        
-    </p>
     @endcan
+    </h3>
 
-    <p>
-        <ul class="list-inline">
-            <li><a href="{{ route('admin.calendars.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
-            <li><a href="{{ route('admin.calendars.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
-        </ul>
-    </p>
-    
+    @can('calendar_perma_del')
+      <p>
+          <ul class="list-inline">
+              <li><a href="{{ route('admin.calendars.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+              <li><a href="{{ route('admin.calendars.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+          </ul>
+      </p>
+    @endcan
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -47,7 +48,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('calendar_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.calendars.mass_destroy') }}'; @endif
@@ -60,7 +61,7 @@
                 @endif
                 @endcan{data: 'date', name: 'date'},
                 {data: 'title', name: 'title'},
-                
+
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

@@ -2,15 +2,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.content-pages.title')</h3>
-    @can('content_page_create')
-    <p>
-        <a href="{{ route('admin.content_pages.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        
-    </p>
-    @endcan
+    <h3 class="page-title">@lang('global.content-pages.title')
+      @can('content_page_create')
+          <a href="{{ route('admin.content_pages.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+    </h3>
 
-    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -35,7 +32,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($content_pages) > 0)
                         @foreach ($content_pages as $content_page)
@@ -89,7 +86,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('content_page_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.content_pages.mass_destroy') }}';

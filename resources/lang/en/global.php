@@ -1,20 +1,20 @@
 <?php
 
 return [
-	
+
 	'user-management' => [
 		'title' => 'User management',
 		'fields' => [
 		],
 	],
-	
+
 	'permissions' => [
 		'title' => 'Permissions',
 		'fields' => [
 			'title' => 'Title',
 		],
 	],
-	
+
 	'roles' => [
 		'title' => 'Roles',
 		'fields' => [
@@ -22,7 +22,7 @@ return [
 			'permission' => 'Permissions',
 		],
 	],
-	
+
 	'users' => [
 		'title' => 'Users',
 		'fields' => [
@@ -42,7 +42,7 @@ return [
 		'fields' => [
 		],
 	],
-	
+
 	'content-categories' => [
 		'title' => 'Categories',
 		'fields' => [
@@ -50,7 +50,7 @@ return [
 			'slug' => 'Slug',
 		],
 	],
-	
+
 	'content-tags' => [
 		'title' => 'Tags',
 		'fields' => [
@@ -58,7 +58,7 @@ return [
 			'slug' => 'Slug',
 		],
 	],
-	
+
 	'content-pages' => [
 		'title' => 'Pages',
 		'fields' => [
@@ -76,7 +76,7 @@ return [
 
 
 
-	
+
 	'user-actions' => [
 		'title' => 'User actions',
 		'created_at' => 'Time',
@@ -87,20 +87,20 @@ return [
 			'action-id' => 'Action id',
 		],
 	],
-	
+
 	'faq-management' => [
 		'title' => 'FAQ Management',
 		'fields' => [
 		],
 	],
-	
+
 	'faq-categories' => [
 		'title' => 'Categories',
 		'fields' => [
 			'title' => 'Category',
 		],
 	],
-	
+
 	'faq-questions' => [
 		'title' => 'Questions',
 		'fields' => [
@@ -109,7 +109,7 @@ return [
 			'answer-text' => 'Answer',
 		],
 	],
-	
+
 	'activity' => [
 		'title' => 'Activity',
 		'fields' => [
@@ -118,14 +118,14 @@ return [
 			'body' => 'Body',
 		],
 	],
-	
+
 	'contact-categories' => [
 		'title' => 'Contact categories',
 		'fields' => [
 			'name' => 'Name',
 		],
 	],
-	
+
 	'contacts' => [
 		'title' => 'Contacts',
 		'fields' => [
@@ -139,7 +139,7 @@ return [
 			'address' => 'Address',
 		],
 	],
-	
+
 	'documents' => [
 		'title' => 'Documents',
 		'fields' => [
@@ -147,13 +147,13 @@ return [
 			'file' => 'File',
 		],
 	],
-	
+
 	'metrics' => [
 		'title' => 'Metrics',
 		'fields' => [
 		],
 	],
-	
+
 	'partners-metrics' => [
 		'title' => 'Partners metrics',
 		'fields' => [
@@ -161,7 +161,7 @@ return [
 			'number' => 'Number',
 		],
 	],
-	
+
 	'projects-metrics' => [
 		'title' => 'Projects metrics',
 		'fields' => [
@@ -169,7 +169,7 @@ return [
 			'funding' => 'Funding',
 		],
 	],
-	
+
 	'projects' => [
 		'title' => 'Projects',
 		'fields' => [
@@ -180,7 +180,7 @@ return [
 			'image' => 'Image',
 		],
 	],
-	
+
 	'publications' => [
 		'title' => 'Publications',
 		'fields' => [
@@ -193,7 +193,7 @@ return [
 			'project' => 'Project',
 		],
 	],
-	
+
 	'deliverables' => [
 		'title' => 'Deliverables',
 		'fields' => [
@@ -203,9 +203,9 @@ return [
 			'link' => 'Link',
 		],
 	],
-	
+
 	'calendar' => [
-		'title' => 'Calendar',
+		'title' => 'Events',
 		'fields' => [
 			'date' => 'Date',
 			'title' => 'Title',
