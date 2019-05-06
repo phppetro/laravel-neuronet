@@ -162,6 +162,14 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    @can('content_page_access')
+                    <li>
+                        <a href="{{ route('admin.content_pages.index') }}">
+                            <i class="fa fa-file-o"></i>
+                            <span>@lang('global.content-pages.title')</span>
+                        </a>
+                    </li>@endcan
+
                     @can('content_category_access')
                     <li>
                         <a href="{{ route('admin.content_categories.index') }}">
@@ -175,14 +183,6 @@
                         <a href="{{ route('admin.content_tags.index') }}">
                             <i class="fa fa-tags"></i>
                             <span>@lang('global.content-tags.title')</span>
-                        </a>
-                    </li>@endcan
-
-                    @can('content_page_access')
-                    <li>
-                        <a href="{{ route('admin.content_pages.index') }}">
-                            <i class="fa fa-file-o"></i>
-                            <span>@lang('global.content-pages.title')</span>
                         </a>
                     </li>@endcan
 
