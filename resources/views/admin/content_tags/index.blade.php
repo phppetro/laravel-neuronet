@@ -2,15 +2,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.content-tags.title')</h3>
-    @can('content_tag_create')
-    <p>
-        <a href="{{ route('admin.content_tags.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        
-    </p>
-    @endcan
-
-    
+    <h3 class="page-title">@lang('global.content-tags.title')
+      @can('content_tag_create')
+          <a href="{{ route('admin.content_tags.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+    </h3>
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -31,7 +27,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($content_tags) > 0)
                         @foreach ($content_tags as $content_tag)
@@ -73,7 +69,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('content_tag_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.content_tags.mass_destroy') }}';
