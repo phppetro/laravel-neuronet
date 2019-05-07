@@ -1,26 +1,77 @@
-@extends('layouts.app')
+@extends('layouts.front')
 
 @section('content')
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+        </div>
+      </div>
+    </header>
 
-	<div id="root">
+    <section id="services">
+      <div class="container">
+          	<div class="row">
+          		<div class="col-lg-12">
+                @foreach($homes as $home)
+                  <h2 class="pb-4">{{ $home->title }}</h2>
+                  {!! $home->page_text !!}
+                @endforeach
+              </div>
+          	</div>
+      </div>
+    </section>
 
-    	<div class="row">
-    	    <div class="col-md-4">
-        		@include('dashboard2.activity2')
-        		@include('dashboard2.contacts')
-        		@include('dashboard2.documents2')
-            </div>
-    		<div class="col-md-4">
-    			@include('dashboard2.metrics4')
-    			@include('dashboard2.schedule2')
-    			@include('dashboard2.publications2')
-    		</div>
-    		<div class="col-md-4">
-    			@include('dashboard2.calendar')
-    			@include('dashboard2.deliverables3')
-            </div>
-         </div>
-        
+    <section class="bg-light" id="funding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            @foreach($fundings as $funding)
+              {!! $funding->page_text !!}
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <a href="https://europa.eu/european-union/index_en">
+            <img class="img-fluid d-block mx-auto" src="img/eu-logo.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="https://www.imi.europa.eu/">
+            <img class="img-fluid d-block mx-auto" src="img/imi-logo.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="https://www.efpia.eu/">
+            <img class="img-fluid d-block mx-auto" src="img/efpia-logo.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="https://www.parkinsons.org.uk/">
+            <img class="img-fluid d-block mx-auto" src="img/parkinsonsuk-logo.png" alt="">
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            @foreach($helps as $help)
+              <h4 class="section-heading text-uppercase">{{ $help->title }}</h4>
+              {!! $help->page_text !!}
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </section>
 @endsection
