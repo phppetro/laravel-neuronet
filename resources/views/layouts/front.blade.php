@@ -56,7 +56,7 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                           @if(Auth::check())
-                              <a href="{{ url('/admin/home') }}" class="btn btn-default btn-flat"> Admin</a><br>
+                              <a href="{{ url('/admin/') }}" class="btn btn-default btn-flat"> Admin</a><br>
                           @endif
 
                           {!! Form::open(['route' => 'auth.logout', 'id' => 'logout']) !!}
@@ -75,18 +75,7 @@
 
     <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Synapse Managers 2019</span>
-          </div>
-          <div class="col-md-4">
-          </div>
-          <div class="col-md-4">
-            <img src="/img/logo.png" width="200px" alt="Synapse Managers">
-          </div>
-        </div>
-      </div>
+      @include('partials.footer')
     </footer>
 
 

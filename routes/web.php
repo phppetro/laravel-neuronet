@@ -1,5 +1,9 @@
 <?php
-Route::view('/', 'welcome');
+Route::get('/', 'FrontController@home');
+Route::get('disclaimer', 'FrontController@disclaimer');
+Route::get('about-imi', 'FrontController@aboutimi');
+Route::get('legal-notice', 'FrontController@legalnotice');
+Route::get('privacy-policy', 'FrontController@privacypolicy');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
