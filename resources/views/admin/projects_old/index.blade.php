@@ -34,7 +34,7 @@
                         <th>@lang('global.projects.fields.description')</th>
                         <th>@lang('global.projects.fields.date')</th>
                         <th>@lang('global.projects.fields.duration')</th>
-                        <th>@lang('global.projects.fields.logo')</th>
+                        <th>@lang('global.projects.fields.image')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -62,7 +62,7 @@
                 {data: 'description', name: 'description'},
                 {data: 'date', name: 'date'},
                 {data: 'duration', name: 'duration'},
-                {data: 'logo', name: 'logo'},
+                {data: 'image', name: 'image'},
 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

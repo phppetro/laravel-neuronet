@@ -19,8 +19,7 @@ class CreateCombined1554993355ProjectsTable extends Migration
                 $table->text('description')->nullable();
                 $table->date('date')->nullable();
                 $table->integer('duration')->nullable();
-                $table->string('image')->nullable();
-                
+
                 $table->timestamps();
                 $table->softDeletes();
 

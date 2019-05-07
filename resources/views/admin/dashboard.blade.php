@@ -18,6 +18,7 @@
     		<div class="col-md-4">
     			@include('admin.dashboard2.calendar')
     			@include('admin.dashboard2.deliverables3')
+					@include('admin.dashboard2.projects')
             </div>
          </div>
 

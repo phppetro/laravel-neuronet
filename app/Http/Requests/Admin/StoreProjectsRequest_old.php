@@ -3,7 +3,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProjectsRequest extends FormRequest
+class StoreProjectsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,9 @@ class UpdateProjectsRequest extends FormRequest
     public function rules()
     {
         return [
-            
             'name' => 'required',
             'date' => 'nullable|date_format:'.config('app.date_format'),
             'duration' => 'max:2147483647|nullable|numeric',
-            'logo' => 'nullable|mimes:png,jpg,jpeg,gif',
         ];
     }
 }

@@ -2,13 +2,13 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.projects.title')</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['admin.projects.store']]) !!}
+    {!! Form::open(['method' => 'POST', 'route' => ['admin.projects.store'], 'files' => true,]) !!}
 
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -60,17 +60,20 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('image', trans('global.projects.fields.image').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('image', old('image'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('logo', trans('global.projects.fields.logo').'', ['class' => 'control-label']) !!}
+                    {!! Form::file('logo', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}
+                    {!! Form::hidden('logo_max_size', 2) !!}
+                    {!! Form::hidden('logo_max_width', 4096) !!}
+                    {!! Form::hidden('logo_max_height', 4096) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('image'))
+                    @if($errors->has('logo'))
                         <p class="help-block">
-                            {{ $errors->first('image') }}
+                            {{ $errors->first('logo') }}
                         </p>
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -88,13 +91,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

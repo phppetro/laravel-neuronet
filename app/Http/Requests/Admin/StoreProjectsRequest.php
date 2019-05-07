@@ -26,6 +26,7 @@ class StoreProjectsRequest extends FormRequest
             'name' => 'required',
             'date' => 'nullable|date_format:'.config('app.date_format'),
             'duration' => 'max:2147483647|nullable|numeric',
+            'logo' => 'nullable|mimes:png,jpg,jpeg,gif',
         ];
     }
 }

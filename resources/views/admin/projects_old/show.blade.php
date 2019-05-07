@@ -29,21 +29,21 @@
                             <td field-key='duration'>{{ $project->duration }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.projects.fields.logo')</th>
-                            <td field-key='logo'>@if($project->logo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $project->logo) }}"/></a>@endif</td>
+                            <th>@lang('global.projects.fields.image')</th>
+                            <td field-key='image'>{{ $project->image }}</td>
                         </tr>
                     </table>
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-
+    
 <li role="presentation" class="active"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
 <li role="presentation" class=""><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab">Publications</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-
+    
 <div role="tabpanel" class="tab-pane active" id="deliverables">
 <table class="table table-bordered table-striped {{ count($deliverables) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -209,13 +209,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-
+            
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-
+            
         });
     </script>
-
+            
 @stop

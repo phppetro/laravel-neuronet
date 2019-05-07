@@ -35,48 +35,6 @@ return [
 		],
 	],
 
-
-
-		'content-management' => [
-		'title' => 'Content management',
-		'fields' => [
-		],
-	],
-
-	'content-categories' => [
-		'title' => 'Categories',
-		'fields' => [
-			'title' => 'Category',
-			'slug' => 'Slug',
-		],
-	],
-
-	'content-tags' => [
-		'title' => 'Tags',
-		'fields' => [
-			'title' => 'Tag',
-			'slug' => 'Slug',
-		],
-	],
-
-	'content-pages' => [
-		'title' => 'Pages',
-		'fields' => [
-			'title' => 'Title',
-			'category-id' => 'Categories',
-			'tag-id' => 'Tags',
-			'page-text' => 'Text',
-			'excerpt' => 'Excerpt',
-			'featured-image' => 'Featured image',
-		],
-	],
-
-
-
-
-
-
-
 	'user-actions' => [
 		'title' => 'User actions',
 		'created_at' => 'Time',
@@ -178,6 +136,7 @@ return [
 			'date' => 'Date',
 			'duration' => 'Duration',
 			'image' => 'Image',
+			'logo' => 'Logo',
 		],
 	],
 
@@ -205,10 +164,62 @@ return [
 	],
 
 	'calendar' => [
-		'title' => 'Events',
+		'title' => 'Calendar',
 		'fields' => [
 			'date' => 'Date',
 			'title' => 'Title',
+		],
+	],
+
+	'contact-management' => [
+		'title' => 'Contact management',
+		'fields' => [
+		],
+	],
+
+	'contact-companies' => [
+		'title' => 'Companies',
+		'fields' => [
+		],
+	],
+
+	'contacts' => [
+		'title' => 'Contacts',
+		'fields' => [
+		],
+	],
+
+	'content-management' => [
+		'title' => 'Content management',
+		'fields' => [
+		],
+	],
+
+	'content-categories' => [
+		'title' => 'Categories',
+		'fields' => [
+			'title' => 'Category',
+			'slug' => 'Slug',
+		],
+	],
+
+	'content-tags' => [
+		'title' => 'Tags',
+		'fields' => [
+			'title' => 'Tag',
+			'slug' => 'Slug',
+		],
+	],
+
+	'content-pages' => [
+		'title' => 'Pages',
+		'fields' => [
+			'title' => 'Title',
+			'category-id' => 'Categories',
+			'tag-id' => 'Tags',
+			'page-text' => 'Text',
+			'excerpt' => 'Excerpt',
+			'featured-image' => 'Featured image',
 		],
 	],
 	'app_create' => 'Create',
@@ -455,5 +466,5 @@ return [
 	'app_deselect_all' => 'Deselect all',
 	'app_team-management' => 'Teams',
 	'app_team-management-singular' => 'Team',
-	'global_title' => 'Neuronet',
+	'global_title' => 'neuronet',
 ];
