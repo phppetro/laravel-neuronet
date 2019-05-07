@@ -13,24 +13,12 @@
       <div class="container">
           	<div class="row">
           		<div class="col-lg-12">
-                @foreach($homes as $home)
-                  <h2 class="pb-4">{{ $home->title }}</h2>
-                  {!! $home->page_text !!}
+                @foreach($policies as $policy)
+                  <h2 class="pb-4">{{ $policy->title }}</h2>
+                  {!! $policy->page_text !!}
                 @endforeach
               </div>
           	</div>
-      </div>
-    </section>
-
-    <section class="bg-light" id="funding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            @foreach($fundings as $funding)
-              {!! $funding->page_text !!}
-            @endforeach
-          </div>
-        </div>
       </div>
     </section>
 
