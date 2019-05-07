@@ -44,6 +44,6 @@ class DashboardController extends Controller
 
 
 
-        return view('home', compact( 'activities', 'deliverables', 'publications', 'contacts', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels'));
+        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels'));
     }
 }

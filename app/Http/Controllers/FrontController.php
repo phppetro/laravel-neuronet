@@ -12,7 +12,7 @@ class FrontController extends Controller
         $helps = \App\ContentPage::where('id',7)->get();
         $fundings = \App\ContentPage::where('id',6)->get();
 
-        return view('welcome', compact('homes', 'helps', 'fundings'));
+        return view('home', compact('homes', 'helps', 'fundings'));
     }
 
     public function disclaimer()
