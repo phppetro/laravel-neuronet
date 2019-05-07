@@ -45,7 +45,6 @@ class ProjectsController extends Controller
                 'projects.description',
                 'projects.date',
                 'projects.duration',
-                'projects.image',
                 'projects.logo',
             ]);
             $table = Datatables::of($query);
@@ -72,9 +71,6 @@ class ProjectsController extends Controller
             });
             $table->editColumn('duration', function ($row) {
                 return $row->duration ? $row->duration : '';
-            });
-            $table->editColumn('image', function ($row) {
-                return $row->image ? $row->image : '';
             });
             $table->editColumn('logo', function ($row) {
                 if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->logo) .'"/>'; };

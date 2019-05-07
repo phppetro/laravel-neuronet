@@ -20,13 +20,13 @@ class Project extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'date', 'duration', 'image', 'logo'];
+    protected $fillable = ['name', 'description', 'date', 'duration', 'logo'];
     protected $hidden = [];
     public static $searchable = [
         'name',
         'description',
     ];
-    
+
     public static function boot()
     {
         parent::boot();
@@ -72,5 +72,5 @@ class Project extends Model
     {
         $this->attributes['duration'] = $input ? $input : null;
     }
-    
+
 }
