@@ -14,13 +14,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $date
  * @property integer $duration
  * @property string $image
- * @property string $logo
 */
 class Project extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'date', 'duration', 'image', 'logo'];
+    protected $fillable = ['name', 'description', 'date', 'duration', 'image'];
     protected $hidden = [];
     public static $searchable = [
         'name',

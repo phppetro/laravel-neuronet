@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreProjectsRequest;
 use App\Http\Requests\Admin\UpdateProjectsRequest;
+use App\Http\Controllers\Traits\FileUploadTrait;
 use Yajra\DataTables\DataTables;
 
 class ProjectsController extends Controller
 {
+    use FileUploadTrait;
+
     /**
      * Display a listing of Project.
      *
@@ -24,12 +27,12 @@ class ProjectsController extends Controller
         }
 
 
-        
+
         if (request()->ajax()) {
             $query = Project::query();
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('project_delete')) {
             return abort(401);
         }
@@ -43,6 +46,7 @@ class ProjectsController extends Controller
                 'projects.date',
                 'projects.duration',
                 'projects.image',
+                'projects.logo',
             ]);
             $table = Datatables::of($query);
 
@@ -72,8 +76,11 @@ class ProjectsController extends Controller
             $table->editColumn('image', function ($row) {
                 return $row->image ? $row->image : '';
             });
+            $table->editColumn('logo', function ($row) {
+                if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->logo) .'"/>'; };
+            });
 
-            $table->rawColumns(['actions','massDelete']);
+            $table->rawColumns(['actions','massDelete','logo']);
 
             return $table->make(true);
         }
@@ -105,8 +112,10 @@ class ProjectsController extends Controller
         if (! Gate::allows('project_create')) {
             return abort(401);
         }
+        $request = $this->saveFiles($request);
         $project = Project::create($request->all());
 
+        //dd($request->all());
 
 
         return redirect()->route('admin.projects.index');
@@ -141,6 +150,7 @@ class ProjectsController extends Controller
         if (! Gate::allows('project_edit')) {
             return abort(401);
         }
+        $request = $this->saveFiles($request);
         $project = Project::findOrFail($id);
         $project->update($request->all());
 

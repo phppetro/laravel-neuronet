@@ -2,14 +2,13 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.projects.title')</h3>
-
-    {!! Form::model($project, ['method' => 'PUT', 'route' => ['admin.projects.update', $project->id], 'files' => true,]) !!}
+    {!! Form::open(['method' => 'POST', 'route' => ['admin.projects.store']]) !!}
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            @lang('global.app_edit')
+            @lang('global.app_create')
         </div>
-
+        
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -61,27 +60,21 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    @if ($project->logo)
-                        <a href="{{ asset(env('UPLOAD_PATH').'/'.$project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/'.$project->logo) }}"></a>
-                    @endif
-                    {!! Form::label('logo', trans('global.projects.fields.logo').'', ['class' => 'control-label']) !!}
-                    {!! Form::file('logo', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}
-                    {!! Form::hidden('logo_max_size', 2) !!}
-                    {!! Form::hidden('logo_max_width', 4096) !!}
-                    {!! Form::hidden('logo_max_height', 4096) !!}
+                    {!! Form::label('image', trans('global.projects.fields.image').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('image', old('image'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('logo'))
+                    @if($errors->has('image'))
                         <p class="help-block">
-                            {{ $errors->first('logo') }}
+                            {{ $errors->first('image') }}
                         </p>
                     @endif
                 </div>
             </div>
-
+            
         </div>
     </div>
 
-    {!! Form::submit(trans('global.app_update'), ['class' => 'btn btn-danger']) !!}
+    {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
 
@@ -95,13 +88,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-
+            
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-
+            
         });
     </script>
-
+            
 @stop
