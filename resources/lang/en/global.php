@@ -1,227 +1,32 @@
 <?php
 
 return [
-
-	'user-management' => [
-		'title' => 'User management',
-		'fields' => [
-		],
-	],
-
-	'permissions' => [
-		'title' => 'Permissions',
-		'fields' => [
-			'title' => 'Title',
-		],
-	],
-
-	'roles' => [
-		'title' => 'Roles',
-		'fields' => [
-			'title' => 'Title',
-			'permission' => 'Permissions',
-		],
-	],
-
-	'users' => [
-		'title' => 'Users',
-		'fields' => [
-			'name' => 'Name',
-			'email' => 'Email',
-			'password' => 'Password',
-			'role' => 'Role',
-			'remember-token' => 'Remember token',
-			'photo' => 'Photo',
-		],
-	],
-
-	'user-actions' => [
-		'title' => 'User actions',
-		'created_at' => 'Time',
-		'fields' => [
-			'user' => 'User',
-			'action' => 'Action',
-			'action-model' => 'Action model',
-			'action-id' => 'Action id',
-		],
-	],
-
-	'faq-management' => [
-		'title' => 'FAQ Management',
-		'fields' => [
-		],
-	],
-
-	'faq-categories' => [
-		'title' => 'Categories',
-		'fields' => [
-			'title' => 'Category',
-		],
-	],
-
-	'faq-questions' => [
-		'title' => 'Questions',
-		'fields' => [
-			'category' => 'Category',
-			'question-text' => 'Question',
-			'answer-text' => 'Answer',
-		],
-	],
-
-	'activity' => [
-		'title' => 'Activity',
-		'fields' => [
-			'user' => 'User',
-			'date' => 'Date',
-			'body' => 'Body',
-		],
-	],
-
-	'contact-categories' => [
-		'title' => 'Contact categories',
-		'fields' => [
-			'name' => 'Name',
-		],
-	],
-
-	'contacts' => [
-		'title' => 'Contacts',
-		'fields' => [
-			'first-name' => 'First name',
-			'last-name' => 'Last name',
-			'category' => 'Category',
-			'phone1' => 'Phone 1',
-			'phone2' => 'Phone 2',
-			'email' => 'Email',
-			'skype' => 'Skype',
-			'address' => 'Address',
-		],
-	],
-
-	'documents' => [
-		'title' => 'Documents',
-		'fields' => [
-			'name' => 'Name',
-			'file' => 'File',
-		],
-	],
-
-	'metrics' => [
-		'title' => 'Metrics',
-		'fields' => [
-		],
-	],
-
-	'partners-metrics' => [
-		'title' => 'Partners metrics',
-		'fields' => [
-			'name' => 'Name',
-			'number' => 'Number',
-		],
-	],
-
-	'projects-metrics' => [
-		'title' => 'Projects metrics',
-		'fields' => [
-			'name' => 'Name',
-			'funding' => 'Funding',
-		],
-	],
-
-	'projects' => [
-		'title' => 'Projects',
-		'fields' => [
-			'name' => 'Name',
-			'description' => 'Description',
-			'date' => 'Date',
-			'duration' => 'Duration',
-			'image' => 'Image',
-			'logo' => 'Logo',
-		],
-	],
-
-	'publications' => [
-		'title' => 'Publications',
-		'fields' => [
-			'title' => 'Title',
-			'year' => 'Year',
-			'month' => 'Month',
-			'abbr' => 'Abbr',
-			'link' => 'Link',
-			'authors' => 'Authors',
-			'project' => 'Project',
-		],
-	],
-
-	'deliverables' => [
-		'title' => 'Deliverables',
-		'fields' => [
-			'label' => 'Label',
-			'title' => 'Title',
-			'project' => 'Project',
-			'link' => 'Link',
-		],
-	],
-
-	'calendar' => [
-		'title' => 'Calendar',
-		'fields' => [
-			'date' => 'Date',
-			'title' => 'Title',
-		],
-	],
-
-	'contact-management' => [
-		'title' => 'Contact management',
-		'fields' => [
-		],
-	],
-
-	'contact-companies' => [
-		'title' => 'Companies',
-		'fields' => [
-		],
-	],
-
-	'contacts' => [
-		'title' => 'Contacts',
-		'fields' => [
-		],
-	],
-
-	'content-management' => [
-		'title' => 'Content management',
-		'fields' => [
-		],
-	],
-
-	'content-categories' => [
-		'title' => 'Categories',
-		'fields' => [
-			'title' => 'Category',
-			'slug' => 'Slug',
-		],
-	],
-
-	'content-tags' => [
-		'title' => 'Tags',
-		'fields' => [
-			'title' => 'Tag',
-			'slug' => 'Slug',
-		],
-	],
-
-	'content-pages' => [
-		'title' => 'Pages',
-		'fields' => [
-			'title' => 'Title',
-			'category-id' => 'Categories',
-			'tag-id' => 'Tags',
-			'page-text' => 'Text',
-			'excerpt' => 'Excerpt',
-			'featured-image' => 'Featured image',
-		],
-	],
+		'user-management' => [		'title' => 'User management',		'fields' => [		],	],
+		'permissions' => [		'title' => 'Permissions',		'fields' => [			'title' => 'Title',		],	],
+		'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',			'permission' => 'Permissions',		],	],
+		'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',			'photo' => 'Photo',		],	],
+		'user-actions' => [		'title' => 'User actions',		'created_at' => 'Time',		'fields' => [			'user' => 'User',			'action' => 'Action',			'action-model' => 'Action model',			'action-id' => 'Action id',		],	],
+		'faq-management' => [		'title' => 'FAQ Management',		'fields' => [		],	],
+		'faq-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',		],	],
+		'faq-questions' => [		'title' => 'Questions',		'fields' => [			'category' => 'Category',			'question-text' => 'Question',			'answer-text' => 'Answer',		],	],
+		'activity' => [		'title' => 'Activity',		'fields' => [			'user' => 'User',			'date' => 'Date',			'body' => 'Body',		],	],
+		'contact-categories' => [		'title' => 'Contact categories',		'fields' => [			'name' => 'Name',		],	],
+		'contacts' => [		'title' => 'Contacts',		'fields' => [			'first-name' => 'First name',			'last-name' => 'Last name',			'category' => 'Category',			'phone1' => 'Phone 1',			'phone2' => 'Phone 2',			'email' => 'Email',			'skype' => 'Skype',			'address' => 'Address',		],	],
+		'documents' => [		'title' => 'Documents',		'fields' => [			'name' => 'Name',			'file' => 'File',		],	],
+		'metrics' => [		'title' => 'Metrics',		'fields' => [		],	],
+		'partners-metrics' => [		'title' => 'Partners metrics',		'fields' => [			'name' => 'Name',			'number' => 'Number',		],	],
+		'projects-metrics' => [		'title' => 'Projects metrics',		'fields' => [			'name' => 'Name',			'funding' => 'Funding',		],	],
+		'projects' => [		'title' => 'Projects',		'fields' => [			'name' => 'Name',			'description' => 'Description',			'date' => 'Date',			'duration' => 'Duration',			'image' => 'Image',			'logo' => 'Logo',		],	],
+		'publications' => [		'title' => 'Publications',		'fields' => [			'title' => 'Title',			'year' => 'Year',			'month' => 'Month',			'abbr' => 'Abbr',			'link' => 'Link',			'authors' => 'Authors',			'project' => 'Project',		],	],
+		'deliverables' => [		'title' => 'Deliverables',		'fields' => [			'label' => 'Label',			'title' => 'Title',			'project' => 'Project',			'link' => 'Link',		],	],
+		'calendar' => [		'title' => 'Events',		'fields' => [			'date' => 'Date',			'title' => 'Event',			'project' => 'Project',			'location' => 'Location',		],	],
+		'contact-management' => [		'title' => 'Contact management',		'fields' => [		],	],
+		'contact-companies' => [		'title' => 'Companies',		'fields' => [		],	],
+		'contacts' => [		'title' => 'Contacts',		'fields' => [		],	],
+		'content-management' => [		'title' => 'Content management',		'fields' => [		],	],
+		'content-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',			'slug' => 'Slug',		],	],
+		'content-tags' => [		'title' => 'Tags',		'fields' => [			'title' => 'Tag',			'slug' => 'Slug',		],	],
+		'content-pages' => [		'title' => 'Pages',		'fields' => [			'title' => 'Title',			'category-id' => 'Categories',			'tag-id' => 'Tags',			'page-text' => 'Text',			'excerpt' => 'Excerpt',			'featured-image' => 'Featured image',		],	],
 	'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',

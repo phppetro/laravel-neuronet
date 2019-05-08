@@ -33,6 +33,7 @@ class DashboardController extends Controller
         $projectsmetrics = \App\ProjectsMetric::all();
         $contactscategories = \App\ContactCategory::all();
         $projects = \App\Project::all();
+        $events = \App\Calendar::where('date','>=',now())->limit(5)->get();
 
         //Metric Colors
         $colors = ["rgba(96, 92, 168, 1)","rgba(225, 14, 107,1)","rgba(29, 227, 228,1)","rgba(96, 92, 168, 0.4)","rgba(60, 141, 188, 1)","rgba(245, 105, 84, 1)","rgba(210, 214, 222, 1)","rgba(0, 31, 63, 1)","rgba(57, 204, 204, 1)","rgba(96, 92, 168, 1)","rgba(255, 133, 27, 1)","rgba(17, 17, 17, 1)"];
@@ -42,9 +43,6 @@ class DashboardController extends Controller
         //echo $labels[0];
         //exit;
 
-
-
-
-        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects'));
+        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects','events'));
     }
 }

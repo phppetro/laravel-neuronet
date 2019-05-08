@@ -16,7 +16,7 @@
     			@include('admin.dashboard2.publications2')
     		</div>
     		<div class="col-md-4">
-    			@include('admin.dashboard2.calendar')
+    			@include('admin.dashboard2.calendar2')
     			@include('admin.dashboard2.deliverables3')
 					@include('admin.dashboard2.projects')
             </div>
