@@ -20,6 +20,14 @@
                             <th>@lang('global.calendar.fields.title')</th>
                             <td field-key='title'>{{ $calendar->title }}</td>
                         </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.project')</th>
+                            <td field-key='project'>{{ $calendar->project->name ?? '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.location')</th>
+                            <td field-key='location'>{{ $calendar->location }}</td>
+                        </tr>
                     </table>
                 </div>
             </div>

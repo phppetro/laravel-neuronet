@@ -3,13 +3,13 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.calendar.title')
-    @can('calendar_create')
-        <a href="{{ route('admin.calendars.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-    @endcan
-    @can('calendar_csv_import')
-        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-        @include('csvImport.modal', ['model' => 'Calendar'])
-    @endcan
+      @can('calendar_create')
+          <a href="{{ route('admin.calendars.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+      @endcan
+      @can('calendar_csv_import')
+          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+          @include('csvImport.modal', ['model' => 'Calendar'])
+      @endcan
     </h3>
 
     @can('calendar_perma_del')
@@ -36,6 +36,8 @@
 
                         <th>@lang('global.calendar.fields.date')</th>
                         <th>@lang('global.calendar.fields.title')</th>
+                        <th>@lang('global.calendar.fields.project')</th>
+                        <th>@lang('global.calendar.fields.location')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -61,6 +63,8 @@
                 @endif
                 @endcan{data: 'date', name: 'date'},
                 {data: 'title', name: 'title'},
+                {data: 'project.name', name: 'project.name'},
+                {data: 'location', name: 'location'},
 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

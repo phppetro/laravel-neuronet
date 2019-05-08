@@ -35,6 +35,30 @@
                     @endif
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('project_id', trans('global.calendar.fields.project').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('project_id'))
+                        <p class="help-block">
+                            {{ $errors->first('project_id') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('location', trans('global.calendar.fields.location').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('location', old('location'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('location'))
+                        <p class="help-block">
+                            {{ $errors->first('location') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
             
         </div>
     </div>

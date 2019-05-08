@@ -27,6 +27,7 @@ class CalendarsController extends Controller
         
         if (request()->ajax()) {
             $query = Calendar::query();
+            $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
                 
@@ -40,6 +41,8 @@ class CalendarsController extends Controller
                 'calendars.id',
                 'calendars.date',
                 'calendars.title',
+                'calendars.project_id',
+                'calendars.location',
             ]);
             $table = Datatables::of($query);
 
@@ -60,6 +63,12 @@ class CalendarsController extends Controller
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });
+            $table->editColumn('project.name', function ($row) {
+                return $row->project ? $row->project->name : '';
+            });
+            $table->editColumn('location', function ($row) {
+                return $row->location ? $row->location : '';
+            });
 
             $table->rawColumns(['actions','massDelete']);
 
@@ -79,7 +88,10 @@ class CalendarsController extends Controller
         if (! Gate::allows('calendar_create')) {
             return abort(401);
         }
-        return view('admin.calendars.create');
+        
+        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+
+        return view('admin.calendars.create', compact('projects'));
     }
 
     /**
@@ -112,9 +124,12 @@ class CalendarsController extends Controller
         if (! Gate::allows('calendar_edit')) {
             return abort(401);
         }
+        
+        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+
         $calendar = Calendar::findOrFail($id);
 
-        return view('admin.calendars.edit', compact('calendar'));
+        return view('admin.calendars.edit', compact('calendar', 'projects'));
     }
 
     /**

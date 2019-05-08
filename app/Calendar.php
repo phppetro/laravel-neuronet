@@ -11,12 +11,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App
  * @property string $date
  * @property string $title
+ * @property string $project
+ * @property string $location
 */
 class Calendar extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['date', 'title'];
+    protected $fillable = ['date', 'title', 'location', 'project_id'];
     protected $hidden = [];
     public static $searchable = [
         'title',
@@ -57,6 +59,20 @@ class Calendar extends Model
         } else {
             return '';
         }
+    }
+
+    /**
+     * Set to null if empty
+     * @param $input
+     */
+    public function setProjectIdAttribute($input)
+    {
+        $this->attributes['project_id'] = $input ? $input : null;
+    }
+    
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'project_id')->withTrashed();
     }
     
 }
