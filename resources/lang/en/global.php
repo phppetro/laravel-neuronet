@@ -10,22 +10,8 @@ return [
 	'faq-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',		],	],
 	'faq-questions' => [		'title' => 'Questions',		'fields' => [			'category' => 'Category',			'question-text' => 'Question',			'answer-text' => 'Answer',		],	],
 	'activity' => [		'title' => 'Activity',		'fields' => [			'user' => 'User',			'date' => 'Date',			'body' => 'Body',		],	],
-
-	'contacts' => [
-			'title' => 'Contacts',
-			'fields' => [
-				'first-name' => 'First name',
-				'last-name' => 'Last name',
-				'category' => 'Category',
-				'phone1' => 'Phone 1',
-				'phone2' => 'Phone 2',
-				'email' => 'Email',
-				'skype' => 'Skype',
-				'address' => 'Address',
-			],
-		],
-
-	 'contact-categories' => [		'title' => 'Contact categories',		'fields' => [			'name' => 'Name',		],	],
+ 'contacts' => [		'title' => 'Contacts',	 'fields' => [			'first-name' => 'First name',			'last-name' => 'Last name',				'category' => 'Category',				'phone1' => 'Phone 1',				'phone2' => 'Phone 2',				'email' => 'Email',				'skype' => 'Skype',				'address' => 'Address',			],		],
+ 'contact-categories' => [		'title' => 'Contact categories',		'fields' => [			'name' => 'Name',		],	],
 	'contacts' => [		'title' => 'Contacts',		'fields' => [			'first-name' => 'First name',			'last-name' => 'Last name',			'category' => 'Category',			'phone1' => 'Phone 1',			'phone2' => 'Phone 2',			'email' => 'Email',			'skype' => 'Skype',			'address' => 'Address',		],	],
 	'documents' => [		'title' => 'Documents',		'fields' => [			'name' => 'Name',			'file' => 'File',		],	],
 	'metrics' => [		'title' => 'Metrics',		'fields' => [		],	],
@@ -37,7 +23,6 @@ return [
 	'calendar' => [		'title' => 'Events',		'fields' => [			'date' => 'Date',			'title' => 'Event',			'project' => 'Project',			'location' => 'Location',		],	],
 	'contact-management' => [		'title' => 'Contact management',		'fields' => [		],	],
 	'contact-companies' => [		'title' => 'Companies',		'fields' => [		],	],
-	'contacts' => [		'title' => 'Contacts',		'fields' => [		],	],
 	'content-management' => [		'title' => 'Content management',		'fields' => [		],	],
 	'content-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',			'slug' => 'Slug',		],	],
 	'content-tags' => [		'title' => 'Tags',		'fields' => [			'title' => 'Tag',			'slug' => 'Slug',		],	],
