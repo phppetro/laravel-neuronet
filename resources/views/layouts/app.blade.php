@@ -5,12 +5,18 @@
     @include('partials.head')
 </head>
 
-<body class="hold-transition skin-black-light sidebar-mini">
+@can('sidebar_layout')
+  <body class="hold-transition skin-black-light sidebar-mini">
+  <div id="wrapper">
+  @include('partials.topbar')
+  @include('partials.sidebar')
+@endcan
 
-<div id="wrapper">
-
-@include('partials.topbar')
-@include('partials.sidebar')
+@can('topbar_layout')
+  <body class="layout-top-nav skin-black-light">
+  <div id="wrapper">
+  @include('partials.topbar-only')
+@endcan
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
