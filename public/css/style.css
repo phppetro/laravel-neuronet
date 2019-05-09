@@ -54,3 +54,8 @@
 .dt-buttons {
 	display: none;
 }
+
+.dashboard {
+    padding-bottom: 11px !important;
+    padding-top: 19px !important;
+}
