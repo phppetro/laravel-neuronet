@@ -9,7 +9,7 @@
               <!-- Morris chart - Sales -->
               <div class="chart tab-pane active" id="revenue-chart">
 
-                
+
                 <div class="box-body">
                   <div class="row">
                     <div class="col-md-12">
@@ -58,15 +58,15 @@
                     "{{ $projectsmetric->name }}",
                   @endforeach
                 ],
-                datasets: [{ 
+                datasets: [{
                     data: [
                       @foreach ($projectsmetrics as $projectsmetric)
                         "{{ $projectsmetric->funding }}",
-                      @endforeach  
+                      @endforeach
                     ],
                     label: "Project funding",
-                    borderColor: "rgba(96,92,168,1)",
-                    backgroundColor: "rgba(96,92,168,0.75)",
+                    borderColor: "rgba(58,9,97,1)",
+                    backgroundColor: "rgba(58,9,97,0.75)",
                     "borderWidth":2,
                     borderSkipped: "right",
                     fill: true
@@ -88,11 +88,11 @@
             new Chart(document.getElementById("pie-chart"), {
               type: 'doughnut',
               data: {
-                datasets: [{ 
+                datasets: [{
                   data: [
                     @foreach($partnersmetrics as $partnersmetric)
                       "{{ $partnersmetric->number }}",
-                    @endforeach   
+                    @endforeach
                   ],
                   backgroundColor: [
                     @foreach($colors as $color)
@@ -119,13 +119,3 @@
             });
 
           </script>
-
-
-
-
-
-
-
-
-
-

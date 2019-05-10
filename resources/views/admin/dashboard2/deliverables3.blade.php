@@ -1,7 +1,7 @@
-        	<div class="box box-purple">
+        	<div class="box box-aqua">
                 <div class="box-header with-border">
                   <h3 class="box-title">Deliverables</h3>
-    				
+
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
@@ -20,7 +20,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                        
+
                         @foreach($deliverables as $deliverable)
                           <tr>
                             <td><a href="{{ $deliverable->link }}">{{ $deliverable->label }}</a></td>

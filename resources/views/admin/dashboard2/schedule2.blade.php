@@ -1,7 +1,7 @@
-            <div class="box box-purple">
+            <div class="box box-indigo">
                 <div class="box-header with-border">
                   <h3 class="box-title">Schedule <span class="small text-muted">(Sample gantt chart)</span></h3>
-    
+
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>

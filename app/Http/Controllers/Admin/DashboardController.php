@@ -36,9 +36,10 @@ class DashboardController extends Controller
         $events = \App\Calendar::where('date','>=',now())->limit(5)->get();
 
         //Metric Colors
-        $colors = ["rgba(96, 92, 168, 1)","rgba(225, 14, 107,1)","rgba(29, 227, 228,1)","rgba(96, 92, 168, 0.4)","rgba(60, 141, 188, 1)","rgba(245, 105, 84, 1)","rgba(210, 214, 222, 1)","rgba(0, 31, 63, 1)","rgba(57, 204, 204, 1)","rgba(96, 92, 168, 1)","rgba(255, 133, 27, 1)","rgba(17, 17, 17, 1)"];
+        $colors = ["rgba(58,9,97,1)","rgba(155, 109, 235, 1)","rgba(198, 59, 178, 1)","rgba(18, 238, 227, 1)","rgba(229, 14, 106, 1)","rgba(58,9,97,1)","rgba(18, 238, 227, 1)","rgba(198, 59, 178, 1)","rgba(155, 109, 235, 1)","rgba(229, 14, 106, 1)"];
 
-        $labels = ["purple","java","razz","purple","java","razz","purple","java","razz"];
+        $labels = ["indigo","purple","violet","indigo","purple","violet"];
+        $labels_old = ["indigo","purple","violet","pink","aqua","indigo"];
 
         //echo $labels[0];
         //exit;

@@ -1,7 +1,7 @@
              <div class="box box-purple">
                 <div class="box-header with-border">
                   <h3 class="box-title">Publications</h3>
-    
+
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
@@ -10,7 +10,7 @@
                 </div>
                 <!-- /.box-header -->
         			 <div class="box-body">
-                        
+
                 @foreach($publications as $publication)
                   <div class="box-footer">
                     <div class="box-comment">

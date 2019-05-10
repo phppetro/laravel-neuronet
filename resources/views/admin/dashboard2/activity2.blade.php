@@ -1,4 +1,4 @@
-           <div class="box box-purple">
+           <div class="box box-pink">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
 
               <h3 class="box-title">Activity</h3>
@@ -12,7 +12,7 @@
             <div class="box-body chat" id="chat-box" style="overflow: hidden; width: auto; height: 250px;">
 
               @foreach($activities as $activity)
-            
+
                 <div class="item">
                   <img src="/thumb/{{ $activity->user ? $activity->user->photo : '' }}" alt="user image" class="purple">
                   <p class="message">
