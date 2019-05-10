@@ -28,6 +28,7 @@ return [
 	'content-tags' => [		'title' => 'Tags',		'fields' => [			'title' => 'Tag',			'slug' => 'Slug',		],	],
 	'content-pages' => [		'title' => 'Pages',		'fields' => [			'title' => 'Title',			'category-id' => 'Categories',			'tag-id' => 'Tags',			'page-text' => 'Text',			'excerpt' => 'Excerpt',			'featured-image' => 'Featured image',		],	],
  'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
+ 'education' => [ 		'title' => 'Education', 		'fields' => [ 			'name' => 'Name', 		], 	],
   'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',

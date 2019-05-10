@@ -243,6 +243,14 @@
                         </a>
                     </li>@endcan
 
+                    @can('education_access')
+                    <li>
+                        <a href="{{ route('admin.education.index') }}">
+                            <i class="fa fa-gears"></i>
+                            <span>@lang('global.education.title')</span>
+                        </a>
+                    </li>@endcan
+
                 </ul>
             </li>@endcan
 

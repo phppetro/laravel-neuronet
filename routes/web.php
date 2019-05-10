@@ -89,6 +89,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('professional_categories_restore/{id}', ['uses' => 'Admin\ProfessionalCategoriesController@restore', 'as' => 'professional_categories.restore']);
     Route::delete('professional_categories_perma_del/{id}', ['uses' => 'Admin\ProfessionalCategoriesController@perma_del', 'as' => 'professional_categories.perma_del']);
 
+    Route::resource('education', 'Admin\EducationController');
+    Route::post('education_mass_destroy', ['uses' => 'Admin\EducationController@massDestroy', 'as' => 'education.mass_destroy']);
+    Route::post('education_restore/{id}', ['uses' => 'Admin\EducationController@restore', 'as' => 'education.restore']);
+    Route::delete('education_perma_del/{id}', ['uses' => 'Admin\EducationController@perma_del', 'as' => 'education.perma_del']);
+
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');
 
