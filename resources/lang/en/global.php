@@ -29,6 +29,7 @@ return [
 	'content-pages' => [		'title' => 'Pages',		'fields' => [			'title' => 'Title',			'category-id' => 'Categories',			'tag-id' => 'Tags',			'page-text' => 'Text',			'excerpt' => 'Excerpt',			'featured-image' => 'Featured image',		],	],
  'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
  'education' => [ 		'title' => 'Education', 		'fields' => [ 			'name' => 'Name', 		], 	],
+ 'country' => [   'title' => 'Country',   'fields' => [     'shortcode' => 'Shortcode',     'title' => 'Title',   ], ], 
   'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',

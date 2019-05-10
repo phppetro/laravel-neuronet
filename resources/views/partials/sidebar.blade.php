@@ -251,6 +251,14 @@
                         </a>
                     </li>@endcan
 
+                    @can('country_access')
+                    <li>
+                        <a href="{{ route('admin.countries.index') }}">
+                            <i class="fa fa-gears"></i>
+                            <span>@lang('global.country.title')</span>
+                        </a>
+                    </li>@endcan
+
                 </ul>
             </li>@endcan
 
