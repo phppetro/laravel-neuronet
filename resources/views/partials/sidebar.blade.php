@@ -235,6 +235,14 @@
                         </a>
                     </li>@endcan
 
+                    @can('professional_category_access')
+                    <li>
+                        <a href="{{ route('admin.professional_categories.index') }}">
+                            <i class="fa fa-gears"></i>
+                            <span>@lang('global.professional-category.title')</span>
+                        </a>
+                    </li>@endcan
+
                 </ul>
             </li>@endcan
 

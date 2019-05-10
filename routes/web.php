@@ -84,6 +84,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('users_mass_destroy', ['uses' => 'Admin\UsersController@massDestroy', 'as' => 'users.mass_destroy']);
     Route::resource('user_actions', 'Admin\UserActionsController');
 
+    Route::resource('professional_categories', 'Admin\ProfessionalCategoriesController');
+    Route::post('professional_categories_mass_destroy', ['uses' => 'Admin\ProfessionalCategoriesController@massDestroy', 'as' => 'professional_categories.mass_destroy']);
+    Route::post('professional_categories_restore/{id}', ['uses' => 'Admin\ProfessionalCategoriesController@restore', 'as' => 'professional_categories.restore']);
+    Route::delete('professional_categories_perma_del/{id}', ['uses' => 'Admin\ProfessionalCategoriesController@perma_del', 'as' => 'professional_categories.perma_del']);
 
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');

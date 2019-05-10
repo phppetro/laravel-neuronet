@@ -27,7 +27,8 @@ return [
 	'content-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',			'slug' => 'Slug',		],	],
 	'content-tags' => [		'title' => 'Tags',		'fields' => [			'title' => 'Tag',			'slug' => 'Slug',		],	],
 	'content-pages' => [		'title' => 'Pages',		'fields' => [			'title' => 'Title',			'category-id' => 'Categories',			'tag-id' => 'Tags',			'page-text' => 'Text',			'excerpt' => 'Excerpt',			'featured-image' => 'Featured image',		],	],
-	'app_create' => 'Create',
+ 'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
+  'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',
 	'app_restore' => 'Restore',
