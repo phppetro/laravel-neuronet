@@ -145,9 +145,11 @@ class EducationController extends Controller
         if (! Gate::allows('education_view')) {
             return abort(401);
         }
+        $users = \App\User::where('education_id', $id)->get();
+
         $education = Education::findOrFail($id);
 
-        return view('admin.education.show', compact('education'));
+        return view('admin.education.show', compact('education', 'users'));
     }
 
 

@@ -11,15 +11,21 @@ use Hash;
  *
  * @package App
  * @property string $name
+ * @property string $surname
  * @property string $email
  * @property string $password
+ * @property string $project
+ * @property string $professional_category
+ * @property string $education
+ * @property string $institution
  * @property string $remember_token
  * @property string $photo
+ * @property string $country
 */
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $fillable = ['name', 'email', 'password', 'remember_token', 'photo'];
+    protected $fillable = ['name', 'surname', 'email', 'password', 'institution', 'remember_token', 'photo', 'project_id', 'professional_category_id', 'education_id', 'country_id'];
     protected $hidden = ['password', 'remember_token'];
     public static $searchable = [
     ];
@@ -41,10 +47,66 @@ class User extends Authenticatable
             $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
     }
     
+
+    /**
+     * Set to null if empty
+     * @param $input
+     */
+    public function setProjectIdAttribute($input)
+    {
+        $this->attributes['project_id'] = $input ? $input : null;
+    }
+
+    /**
+     * Set to null if empty
+     * @param $input
+     */
+    public function setProfessionalCategoryIdAttribute($input)
+    {
+        $this->attributes['professional_category_id'] = $input ? $input : null;
+    }
+
+    /**
+     * Set to null if empty
+     * @param $input
+     */
+    public function setEducationIdAttribute($input)
+    {
+        $this->attributes['education_id'] = $input ? $input : null;
+    }
+
+    /**
+     * Set to null if empty
+     * @param $input
+     */
+    public function setCountryIdAttribute($input)
+    {
+        $this->attributes['country_id'] = $input ? $input : null;
+    }
     
     public function role()
     {
         return $this->belongsToMany(Role::class, 'role_user');
+    }
+    
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'project_id')->withTrashed();
+    }
+    
+    public function professional_category()
+    {
+        return $this->belongsTo(ProfessionalCategory::class, 'professional_category_id')->withTrashed();
+    }
+    
+    public function education()
+    {
+        return $this->belongsTo(Education::class, 'education_id')->withTrashed();
+    }
+    
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country_id')->withTrashed();
     }
     
     

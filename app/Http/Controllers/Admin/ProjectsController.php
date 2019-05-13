@@ -27,12 +27,12 @@ class ProjectsController extends Controller
         }
 
 
-
+        
         if (request()->ajax()) {
             $query = Project::query();
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-
+                
         if (! Gate::allows('project_delete')) {
             return abort(401);
         }
@@ -45,6 +45,7 @@ class ProjectsController extends Controller
                 'projects.description',
                 'projects.date',
                 'projects.duration',
+                'projects.image',
                 'projects.logo',
             ]);
             $table = Datatables::of($query);
@@ -71,6 +72,9 @@ class ProjectsController extends Controller
             });
             $table->editColumn('duration', function ($row) {
                 return $row->duration ? $row->duration : '';
+            });
+            $table->editColumn('image', function ($row) {
+                return $row->image ? $row->image : '';
             });
             $table->editColumn('logo', function ($row) {
                 if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->logo) .'"/>'; };
@@ -111,7 +115,6 @@ class ProjectsController extends Controller
         $request = $this->saveFiles($request);
         $project = Project::create($request->all());
 
-        //dd($request->all());
 
 
         return redirect()->route('admin.projects.index');
@@ -167,11 +170,11 @@ class ProjectsController extends Controller
         if (! Gate::allows('project_view')) {
             return abort(401);
         }
-        $deliverables = \App\Deliverable::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();
+        $deliverables = \App\Deliverable::where('project_id', $id)->get();$calendars = \App\Calendar::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();
 
         $project = Project::findOrFail($id);
 
-        return view('admin.projects.show', compact('project', 'deliverables', 'publications'));
+        return view('admin.projects.show', compact('project', 'deliverables', 'calendars', 'users', 'publications'));
     }
 
 

@@ -25,6 +25,18 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('surname', trans('global.users.fields.surname').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('surname', old('surname'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('surname'))
+                        <p class="help-block">
+                            {{ $errors->first('surname') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('email', trans('global.users.fields.email').'*', ['class' => 'control-label']) !!}
                     {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
@@ -61,6 +73,66 @@
                     @if($errors->has('role'))
                         <p class="help-block">
                             {{ $errors->first('role') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('project_id', trans('global.users.fields.project').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('project_id'))
+                        <p class="help-block">
+                            {{ $errors->first('project_id') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('professional_category_id', trans('global.users.fields.professional-category').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('professional_category_id', $professional_categories, old('professional_category_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('professional_category_id'))
+                        <p class="help-block">
+                            {{ $errors->first('professional_category_id') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('education_id', trans('global.users.fields.education').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('education_id', $education, old('education_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('education_id'))
+                        <p class="help-block">
+                            {{ $errors->first('education_id') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('institution', trans('global.users.fields.institution').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('institution', old('institution'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('institution'))
+                        <p class="help-block">
+                            {{ $errors->first('institution') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('country_id', trans('global.users.fields.country').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('country_id', $countries, old('country_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('country_id'))
+                        <p class="help-block">
+                            {{ $errors->first('country_id') }}
                         </p>
                     @endif
                 </div>

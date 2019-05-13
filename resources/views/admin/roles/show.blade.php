@@ -40,8 +40,14 @@
     <thead>
         <tr>
             <th>@lang('global.users.fields.name')</th>
+                        <th>@lang('global.users.fields.surname')</th>
                         <th>@lang('global.users.fields.email')</th>
                         <th>@lang('global.users.fields.role')</th>
+                        <th>@lang('global.users.fields.project')</th>
+                        <th>@lang('global.users.fields.professional-category')</th>
+                        <th>@lang('global.users.fields.education')</th>
+                        <th>@lang('global.users.fields.institution')</th>
+                        <th>@lang('global.users.fields.country')</th>
                         <th>@lang('global.users.fields.photo')</th>
                                                 <th>&nbsp;</th>
 
@@ -53,12 +59,18 @@
             @foreach ($users as $user)
                 <tr data-entry-id="{{ $user->id }}">
                     <td field-key='name'>{{ $user->name }}</td>
+                                <td field-key='surname'>{{ $user->surname }}</td>
                                 <td field-key='email'>{{ $user->email }}</td>
                                 <td field-key='role'>
                                     @foreach ($user->role as $singleRole)
                                         <span class="label label-info label-many">{{ $singleRole->title }}</span>
                                     @endforeach
                                 </td>
+                                <td field-key='project'>{{ $user->project->name ?? '' }}</td>
+                                <td field-key='professional_category'>{{ $user->professional_category->name ?? '' }}</td>
+                                <td field-key='education'>{{ $user->education->name ?? '' }}</td>
+                                <td field-key='institution'>{{ $user->institution }}</td>
+                                <td field-key='country'>{{ $user->country->shortcode ?? '' }}</td>
                                 <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
                                                                 <td>
                                     @can('user_view')
@@ -82,7 +94,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="17">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

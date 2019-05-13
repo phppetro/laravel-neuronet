@@ -4,8 +4,25 @@ return [
 	'user-management' => [		'title' => 'User management',		'fields' => [		],	],
 	'permissions' => [		'title' => 'Permissions',		'fields' => [			'title' => 'Title',		],	],
 	'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',			'permission' => 'Permissions',		],	],
-	'users' => [		'title' => 'Users',		'fields' => [			'name' => 'Name',			'email' => 'Email',			'password' => 'Password',			'role' => 'Role',			'remember-token' => 'Remember token',			'photo' => 'Photo',		],	],
-	'user-actions' => [		'title' => 'User actions',		'created_at' => 'Time',		'fields' => [			'user' => 'User',			'action' => 'Action',			'action-model' => 'Action model',			'action-id' => 'Action id',		],	],
+'users' => [
+   'title' => 'Users',
+   'fields' => [
+     'name' => 'Name',
+     'surname' => 'Surname',
+     'email' => 'Email',
+     'password' => 'Password',
+     'role' => 'Role',
+     'project' => 'Project',
+     'professional-category' => 'Professional category',
+     'education' => 'Education',
+     'institution' => 'Institution',
+     'remember-token' => 'Remember token',
+     'photo' => 'Photo',
+     'country' => 'Country',
+   ],
+ ],
+
+'user-actions' => [		'title' => 'User actions',		'created_at' => 'Time',		'fields' => [			'user' => 'User',			'action' => 'Action',			'action-model' => 'Action model',			'action-id' => 'Action id',		],	],
 	'faq-management' => [		'title' => 'FAQ Management',		'fields' => [		],	],
 	'faq-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',		],	],
 	'faq-questions' => [		'title' => 'Questions',		'fields' => [			'category' => 'Category',			'question-text' => 'Question',			'answer-text' => 'Answer',		],	],
@@ -29,7 +46,7 @@ return [
 	'content-pages' => [		'title' => 'Pages',		'fields' => [			'title' => 'Title',			'category-id' => 'Categories',			'tag-id' => 'Tags',			'page-text' => 'Text',			'excerpt' => 'Excerpt',			'featured-image' => 'Featured image',		],	],
  'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
  'education' => [ 		'title' => 'Education', 		'fields' => [ 			'name' => 'Name', 		], 	],
- 'country' => [   'title' => 'Country',   'fields' => [     'shortcode' => 'Shortcode',     'title' => 'Title',   ], ], 
+ 'country' => [   'title' => 'Country',   'fields' => [     'shortcode' => 'Shortcode',     'title' => 'Title',   ], ],
   'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',

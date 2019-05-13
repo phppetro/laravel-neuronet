@@ -17,6 +17,10 @@
                             <td field-key='name'>{{ $user->name }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.users.fields.surname')</th>
+                            <td field-key='surname'>{{ $user->surname }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.users.fields.email')</th>
                             <td field-key='email'>{{ $user->email }}</td>
                         </tr>
@@ -27,6 +31,26 @@
                                     <span class="label label-info label-many">{{ $singleRole->title }}</span>
                                 @endforeach
                             </td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.users.fields.project')</th>
+                            <td field-key='project'>{{ $user->project->name ?? '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.users.fields.professional-category')</th>
+                            <td field-key='professional_category'>{{ $user->professional_category->name ?? '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.users.fields.education')</th>
+                            <td field-key='education'>{{ $user->education->name ?? '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.users.fields.institution')</th>
+                            <td field-key='institution'>{{ $user->institution }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.users.fields.country')</th>
+                            <td field-key='country'>{{ $user->country->shortcode ?? '' }}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.users.fields.photo')</th>

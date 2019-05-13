@@ -2,15 +2,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.roles.title')
+    <h3 class="page-title">@lang('global.roles.title')</h3>
     @can('role_create')
+    <p>
         <a href="{{ route('admin.roles.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-    @endcan
-    @can('role_csv_import')
         <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
         @include('csvImport.modal', ['model' => 'Role'])
+        
+    </p>
     @endcan
-    </h3>
+
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -31,7 +33,7 @@
 
                     </tr>
                 </thead>
-
+                
                 <tbody>
                     @if (count($roles) > 0)
                         @foreach ($roles as $role)
@@ -77,7 +79,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('role_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.roles.mass_destroy') }}';

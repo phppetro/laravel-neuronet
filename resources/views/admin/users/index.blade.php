@@ -2,15 +2,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.users.title')
-      @can('user_create')
-          <a href="{{ route('admin.users.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-      @endcan
-      @can('user_csv_import')
-          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-          @include('csvImport.modal', ['model' => 'User'])
-      @endcan
-    </h3>
+    <h3 class="page-title">@lang('global.users.title')</h3>
+    @can('user_create')
+    <p>
+        <a href="{{ route('admin.users.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'User'])
+        
+    </p>
+    @endcan
+
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -26,14 +28,20 @@
                         @endcan
 
                         <th>@lang('global.users.fields.name')</th>
+                        <th>@lang('global.users.fields.surname')</th>
                         <th>@lang('global.users.fields.email')</th>
                         <th>@lang('global.users.fields.role')</th>
+                        <th>@lang('global.users.fields.project')</th>
+                        <th>@lang('global.users.fields.professional-category')</th>
+                        <th>@lang('global.users.fields.education')</th>
+                        <th>@lang('global.users.fields.institution')</th>
+                        <th>@lang('global.users.fields.country')</th>
                         <th>@lang('global.users.fields.photo')</th>
                                                 <th>&nbsp;</th>
 
                     </tr>
                 </thead>
-
+                
                 <tbody>
                     @if (count($users) > 0)
                         @foreach ($users as $user)
@@ -43,12 +51,18 @@
                                 @endcan
 
                                 <td field-key='name'>{{ $user->name }}</td>
+                                <td field-key='surname'>{{ $user->surname }}</td>
                                 <td field-key='email'>{{ $user->email }}</td>
                                 <td field-key='role'>
                                     @foreach ($user->role as $singleRole)
                                         <span class="label label-info label-many">{{ $singleRole->title }}</span>
                                     @endforeach
                                 </td>
+                                <td field-key='project'>{{ $user->project->name ?? '' }}</td>
+                                <td field-key='professional_category'>{{ $user->professional_category->name ?? '' }}</td>
+                                <td field-key='education'>{{ $user->education->name ?? '' }}</td>
+                                <td field-key='institution'>{{ $user->institution }}</td>
+                                <td field-key='country'>{{ $user->country->shortcode ?? '' }}</td>
                                 <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
                                                                 <td>
                                     @can('user_view')
@@ -72,7 +86,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="11">@lang('global.app_no_entries_in_table')</td>
+                            <td colspan="17">@lang('global.app_no_entries_in_table')</td>
                         </tr>
                     @endif
                 </tbody>
@@ -81,7 +95,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('user_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.users.mass_destroy') }}';

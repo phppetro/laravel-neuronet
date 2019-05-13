@@ -2,24 +2,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.education.title')
-      @can('education_create')
-          <a href="{{ route('admin.education.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-      @endcan
-      @can('education_csv_import')
-          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-          @include('csvImport.modal', ['model' => 'Education'])
-      @endcan
-    </h3>
-
-    @can('education_perma_del')
-      <p>
-          <ul class="list-inline">
-              <li><a href="{{ route('admin.education.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
-              <li><a href="{{ route('admin.education.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
-          </ul>
-      </p>
+    <h3 class="page-title">@lang('global.education.title')</h3>
+    @can('education_create')
+    <p>
+        <a href="{{ route('admin.education.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'Education'])
+        
+    </p>
     @endcan
+
+    <p>
+        <ul class="list-inline">
+            <li><a href="{{ route('admin.education.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+            <li><a href="{{ route('admin.education.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+        </ul>
+    </p>
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -47,7 +46,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('education_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.education.mass_destroy') }}'; @endif
@@ -59,7 +58,7 @@
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
                 @endcan{data: 'name', name: 'name'},
-
+                
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

@@ -29,6 +29,10 @@
                             <td field-key='duration'>{{ $project->duration }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.projects.fields.image')</th>
+                            <td field-key='image'>{{ $project->image }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.projects.fields.logo')</th>
                             <td field-key='logo'>@if($project->logo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $project->logo) }}"/></a>@endif</td>
                         </tr>
@@ -36,14 +40,16 @@
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-
+    
 <li role="presentation" class="active"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
+<li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
+<li role="presentation" class=""><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
 <li role="presentation" class=""><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab">Publications</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-
+    
 <div role="tabpanel" class="tab-pane active" id="deliverables">
 <table class="table table-bordered table-striped {{ count($deliverables) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -109,6 +115,141 @@
         @else
             <tr>
                 <td colspan="9">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
+<div role="tabpanel" class="tab-pane " id="calendar">
+<table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.calendar.fields.date')</th>
+                        <th>@lang('global.calendar.fields.title')</th>
+                        <th>@lang('global.calendar.fields.project')</th>
+                        <th>@lang('global.calendar.fields.location')</th>
+                        @if( request('show_deleted') == 1 )
+                        <th>&nbsp;</th>
+                        @else
+                        <th>&nbsp;</th>
+                        @endif
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($calendars) > 0)
+            @foreach ($calendars as $calendar)
+                <tr data-entry-id="{{ $calendar->id }}">
+                    <td field-key='date'>{{ $calendar->date }}</td>
+                                <td field-key='title'>{{ $calendar->title }}</td>
+                                <td field-key='project'>{{ $calendar->project->name ?? '' }}</td>
+                                <td field-key='location'>{{ $calendar->location }}</td>
+                                @if( request('show_deleted') == 1 )
+                                <td>
+                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.calendars.restore', $calendar->id])) !!}
+                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.calendars.perma_del', $calendar->id])) !!}
+                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                                                </td>
+                                @else
+                                <td>
+                                    @can('calendar_view')
+                                    <a href="{{ route('admin.calendars.show',[$calendar->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('calendar_edit')
+                                    <a href="{{ route('admin.calendars.edit',[$calendar->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('calendar_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.calendars.destroy', $calendar->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+                                @endif
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="9">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
+<div role="tabpanel" class="tab-pane " id="users">
+<table class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.users.fields.name')</th>
+                        <th>@lang('global.users.fields.surname')</th>
+                        <th>@lang('global.users.fields.email')</th>
+                        <th>@lang('global.users.fields.role')</th>
+                        <th>@lang('global.users.fields.project')</th>
+                        <th>@lang('global.users.fields.professional-category')</th>
+                        <th>@lang('global.users.fields.education')</th>
+                        <th>@lang('global.users.fields.institution')</th>
+                        <th>@lang('global.users.fields.country')</th>
+                        <th>@lang('global.users.fields.photo')</th>
+                                                <th>&nbsp;</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($users) > 0)
+            @foreach ($users as $user)
+                <tr data-entry-id="{{ $user->id }}">
+                    <td field-key='name'>{{ $user->name }}</td>
+                                <td field-key='surname'>{{ $user->surname }}</td>
+                                <td field-key='email'>{{ $user->email }}</td>
+                                <td field-key='role'>
+                                    @foreach ($user->role as $singleRole)
+                                        <span class="label label-info label-many">{{ $singleRole->title }}</span>
+                                    @endforeach
+                                </td>
+                                <td field-key='project'>{{ $user->project->name ?? '' }}</td>
+                                <td field-key='professional_category'>{{ $user->professional_category->name ?? '' }}</td>
+                                <td field-key='education'>{{ $user->education->name ?? '' }}</td>
+                                <td field-key='institution'>{{ $user->institution }}</td>
+                                <td field-key='country'>{{ $user->country->shortcode ?? '' }}</td>
+                                <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
+                                                                <td>
+                                    @can('user_view')
+                                    <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('user_edit')
+                                    <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('user_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.users.destroy', $user->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="17">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
@@ -209,13 +350,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-
+            
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-
+            
         });
     </script>
-
+            
 @stop

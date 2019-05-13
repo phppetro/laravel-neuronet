@@ -145,9 +145,11 @@ class ProfessionalCategoriesController extends Controller
         if (! Gate::allows('professional_category_view')) {
             return abort(401);
         }
+        $users = \App\User::where('professional_category_id', $id)->get();
+
         $professional_category = ProfessionalCategory::findOrFail($id);
 
-        return view('admin.professional_categories.show', compact('professional_category'));
+        return view('admin.professional_categories.show', compact('professional_category', 'users'));
     }
 
 
