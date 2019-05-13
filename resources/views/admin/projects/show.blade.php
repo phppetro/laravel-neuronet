@@ -29,10 +29,6 @@
                             <td field-key='duration'>{{ $project->duration }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.projects.fields.image')</th>
-                            <td field-key='image'>{{ $project->image }}</td>
-                        </tr>
-                        <tr>
                             <th>@lang('global.projects.fields.logo')</th>
                             <td field-key='logo'>@if($project->logo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $project->logo) }}"/></a>@endif</td>
                         </tr>

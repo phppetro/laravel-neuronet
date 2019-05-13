@@ -60,18 +60,6 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('image', trans('global.projects.fields.image').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('image', old('image'), ['class' => 'form-control', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('image'))
-                        <p class="help-block">
-                            {{ $errors->first('image') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
                     {!! Form::label('logo', trans('global.projects.fields.logo').'', ['class' => 'control-label']) !!}
                     {!! Form::file('logo', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}
                     {!! Form::hidden('logo_max_size', 2) !!}

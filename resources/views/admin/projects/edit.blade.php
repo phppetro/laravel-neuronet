@@ -61,18 +61,6 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('image', trans('global.projects.fields.image').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('image', old('image'), ['class' => 'form-control', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('image'))
-                        <p class="help-block">
-                            {{ $errors->first('image') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
                     @if ($project->logo)
                         <a href="{{ asset(env('UPLOAD_PATH').'/'.$project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/'.$project->logo) }}"></a>
                     @endif
