@@ -47,7 +47,7 @@ class UsersController extends Controller
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $professional_categories = \App\ProfessionalCategory::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $education = \App\Education::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
-        $countries = \App\Country::get()->pluck('shortcode', 'id')->prepend(trans('global.app_please_select'), '');
+        $countries = \App\Country::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.users.create', compact('roles', 'projects', 'professional_categories', 'education', 'countries'));
     }
@@ -90,7 +90,7 @@ class UsersController extends Controller
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $professional_categories = \App\ProfessionalCategory::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $education = \App\Education::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
-        $countries = \App\Country::get()->pluck('shortcode', 'id')->prepend(trans('global.app_please_select'), '');
+        $countries = \App\Country::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');
 
         $user = User::findOrFail($id);
 
@@ -137,7 +137,7 @@ class UsersController extends Controller
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $professional_categories = \App\ProfessionalCategory::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $education = \App\Education::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
-        $countries = \App\Country::get()->pluck('shortcode', 'id')->prepend(trans('global.app_please_select'), '');$user_actions = \App\UserAction::where('user_id', $id)->get();$activities = \App\Activity::where('user_id', $id)->get();
+        $countries = \App\Country::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');$user_actions = \App\UserAction::where('user_id', $id)->get();$activities = \App\Activity::where('user_id', $id)->get();
 
         $user = User::findOrFail($id);
 

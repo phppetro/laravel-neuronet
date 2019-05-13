@@ -50,7 +50,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.users.fields.country')</th>
-                            <td field-key='country'>{{ $user->country->shortcode ?? '' }}</td>
+                            <td field-key='country'>{{ $user->country->title ?? '' }}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.users.fields.photo')</th>

@@ -66,7 +66,7 @@
                                 <td field-key='professional_category'>{{ $user->professional_category->name ?? '' }}</td>
                                 <td field-key='education'>{{ $user->education->name ?? '' }}</td>
                                 <td field-key='institution'>{{ $user->institution }}</td>
-                                <td field-key='country'>{{ $user->country->shortcode ?? '' }}</td>
+                                <td field-key='country'>{{ $user->country->title ?? '' }}</td>
                                 <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
                                                                 <td>
                                     @can('user_view')
