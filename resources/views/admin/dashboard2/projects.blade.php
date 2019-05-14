@@ -25,6 +25,7 @@
             <a href="#" class="product-title">Partners</a>
              / <a href="#" class="product-title">Work Packages</a>
              / <a href="/admin/deliverables" class="product-title">Deliverables</a>
+             / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>
           </div>
         </li>
         <!-- /.item -->

@@ -43,6 +43,7 @@ class ProjectsController extends Controller
                 'projects.id',
                 'projects.name',
                 'projects.description',
+                'projects.website',
                 'projects.date',
                 'projects.duration',
                 'projects.logo',
@@ -65,6 +66,9 @@ class ProjectsController extends Controller
             });
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : '';
+            });
+            $table->editColumn('website', function ($row) {
+                return $row->website ? $row->website : '';
             });
             $table->editColumn('date', function ($row) {
                 return $row->date ? $row->date : '';

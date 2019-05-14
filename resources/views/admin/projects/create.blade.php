@@ -36,6 +36,18 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('website', trans('global.projects.fields.website').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('website', old('website'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('website'))
+                        <p class="help-block">
+                            {{ $errors->first('website') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('date', trans('global.projects.fields.date').'', ['class' => 'control-label']) !!}
                     {!! Form::text('date', old('date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
                     <p class="help-block"></p>

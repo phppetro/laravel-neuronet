@@ -21,6 +21,10 @@
                             <td field-key='description'>{!! $project->description !!}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.projects.fields.website')</th>
+                            <td field-key='website'>{{ $project->website }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.projects.fields.date')</th>
                             <td field-key='date'>{{ $project->date }}</td>
                         </tr>

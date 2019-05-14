@@ -34,7 +34,20 @@ return [
 	'metrics' => [		'title' => 'Metrics',		'fields' => [		],	],
 	'partners-metrics' => [		'title' => 'Partners metrics',		'fields' => [			'name' => 'Name',			'number' => 'Number',		],	],
 	'projects-metrics' => [		'title' => 'Projects metrics',		'fields' => [			'name' => 'Name',			'funding' => 'Funding',		],	],
-	'projects' => [		'title' => 'Projects',		'fields' => [			'name' => 'Name',			'description' => 'Description',			'date' => 'Date',			'duration' => 'Duration',			'image' => 'Image',			'logo' => 'Logo',		],	],
+
+'projects' => [
+		'title' => 'Projects',
+		'fields' => [
+			'name' => 'Name',
+			'description' => 'Description',
+			'website' => 'Website',
+			'date' => 'Date',
+			'duration' => 'Duration',
+			'logo' => 'Logo',
+		],
+	],
+
+
 	'publications' => [		'title' => 'Publications',		'fields' => [			'title' => 'Title',			'year' => 'Year',			'month' => 'Month',			'abbr' => 'Abbr',			'link' => 'Link',			'authors' => 'Authors',			'project' => 'Project',		],	],
 	'deliverables' => [		'title' => 'Deliverables',		'fields' => [			'label' => 'Label',			'title' => 'Title',			'project' => 'Project',			'link' => 'Link',		],	],
 	'calendar' => [		'title' => 'Events',		'fields' => [			'date' => 'Date',			'title' => 'Event',			'project' => 'Project',			'location' => 'Location',		],	],

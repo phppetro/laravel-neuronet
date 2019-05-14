@@ -33,6 +33,7 @@
 
                         <th>@lang('global.projects.fields.name')</th>
                         <th>@lang('global.projects.fields.description')</th>
+                        <th>@lang('global.projects.fields.website')</th>
                         <th>@lang('global.projects.fields.date')</th>
                         <th>@lang('global.projects.fields.duration')</th>
                         <th>@lang('global.projects.fields.logo')</th>
@@ -61,6 +62,7 @@
                 @endif
                 @endcan{data: 'name', name: 'name'},
                 {data: 'description', name: 'description'},
+                {data: 'website', name: 'website'},
                 {data: 'date', name: 'date'},
                 {data: 'duration', name: 'duration'},
                 {data: 'logo', name: 'logo'},
