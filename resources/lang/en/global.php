@@ -68,6 +68,16 @@ return [
  		],
  	],
 
+  'partners' => [
+		'title' => 'Partners',
+		'fields' => [
+			'name' => 'Name',
+			'projects' => 'Projects',
+			'type-of-institution' => 'Type of institution',
+			'country' => 'Country',
+		],
+	],
+
   'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',

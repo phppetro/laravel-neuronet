@@ -170,11 +170,14 @@ class ProjectsController extends Controller
         if (! Gate::allows('project_view')) {
             return abort(401);
         }
-        $deliverables = \App\Deliverable::where('project_id', $id)->get();$calendars = \App\Calendar::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();
+        $partners = \App\Partner::whereHas('projects',
+                    function ($query) use ($id) {
+                        $query->where('id', $id);
+                    })->get();$deliverables = \App\Deliverable::where('project_id', $id)->get();$calendars = \App\Calendar::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();
 
         $project = Project::findOrFail($id);
 
-        return view('admin.projects.show', compact('project', 'deliverables', 'calendars', 'users', 'publications'));
+        return view('admin.projects.show', compact('project', 'partners', 'deliverables', 'calendars', 'users', 'publications'));
     }
 
 

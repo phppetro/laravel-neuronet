@@ -98,6 +98,14 @@
                 </a>
             </li>@endcan
 
+            @can('partner_access')
+            <li>
+                <a href="{{ route('admin.partners.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span>@lang('global.partners.title')</span>
+                </a>
+            </li>@endcan
+
             @can('metric_access')
             <li class="treeview">
                 <a href="#">

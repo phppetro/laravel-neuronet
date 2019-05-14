@@ -149,11 +149,11 @@ class CountriesController extends Controller
         if (! Gate::allows('country_view')) {
             return abort(401);
         }
-        $users = \App\User::where('country_id', $id)->get();
+        $partners = \App\Partner::where('country_id', $id)->get();$users = \App\User::where('country_id', $id)->get();
 
         $country = Country::findOrFail($id);
 
-        return view('admin.countries.show', compact('country', 'users'));
+        return view('admin.countries.show', compact('country', 'partners', 'users'));
     }
 
 

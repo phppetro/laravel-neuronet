@@ -145,9 +145,11 @@ class TypeOfInstitutionsController extends Controller
         if (! Gate::allows('type_of_institution_view')) {
             return abort(401);
         }
+        $partners = \App\Partner::where('type_of_institution_id', $id)->get();
+
         $type_of_institution = TypeOfInstitution::findOrFail($id);
 
-        return view('admin.type_of_institutions.show', compact('type_of_institution'));
+        return view('admin.type_of_institutions.show', compact('type_of_institution', 'partners'));
     }
 
 
