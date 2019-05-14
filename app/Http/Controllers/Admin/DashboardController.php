@@ -38,7 +38,7 @@ class DashboardController extends Controller
         //Metric Colors
         $colors = ["rgba(58,9,97,1)","rgba(155, 109, 235, 1)","rgba(198, 59, 178, 1)","rgba(18, 238, 227, 1)","rgba(229, 14, 106, 1)","rgba(58,9,97,1)","rgba(18, 238, 227, 1)","rgba(198, 59, 178, 1)","rgba(155, 109, 235, 1)","rgba(229, 14, 106, 1)"];
 
-        $labels = ["indigo","purple","violet","indigo","purple","violet"];
+        $labels = ["indigo","purple","indigo","purple","indigo","purple"];
         $labels_old = ["indigo","purple","violet","pink","aqua","indigo"];
 
         //echo $labels[0];

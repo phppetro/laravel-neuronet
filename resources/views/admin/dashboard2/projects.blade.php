@@ -18,10 +18,13 @@
             <img src="/{{ $project->logo }}" alt="{{ $project->name }}">
           </div>
           <div class="product-info">
-            <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}
+            <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>
             <span class="product-description">
                   {{ $project->description }}
             </span>
+            <a href="#" class="product-title">Partners</a>
+             / <a href="#" class="product-title">Work Packages</a>
+             / <a href="/admin/deliverables" class="product-title">Deliverables</a>
           </div>
         </li>
         <!-- /.item -->
