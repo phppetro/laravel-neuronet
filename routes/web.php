@@ -99,6 +99,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('countries_restore/{id}', ['uses' => 'Admin\CountriesController@restore', 'as' => 'countries.restore']);
     Route::delete('countries_perma_del/{id}', ['uses' => 'Admin\CountriesController@perma_del', 'as' => 'countries.perma_del']);
 
+    Route::resource('type_of_institutions', 'Admin\TypeOfInstitutionsController');
+    Route::post('type_of_institutions_mass_destroy', ['uses' => 'Admin\TypeOfInstitutionsController@massDestroy', 'as' => 'type_of_institutions.mass_destroy']);
+    Route::post('type_of_institutions_restore/{id}', ['uses' => 'Admin\TypeOfInstitutionsController@restore', 'as' => 'type_of_institutions.restore']);
+    Route::delete('type_of_institutions_perma_del/{id}', ['uses' => 'Admin\TypeOfInstitutionsController@perma_del', 'as' => 'type_of_institutions.perma_del']);
+
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');
 

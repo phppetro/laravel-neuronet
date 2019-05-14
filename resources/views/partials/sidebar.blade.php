@@ -90,6 +90,14 @@
                 </a>
             </li>@endcan
 
+            @can('type_of_institution_access')
+            <li>
+                <a href="{{ route('admin.type_of_institutions.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span>@lang('global.type-of-institution.title')</span>
+                </a>
+            </li>@endcan
+
             @can('metric_access')
             <li class="treeview">
                 <a href="#">

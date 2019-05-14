@@ -60,6 +60,14 @@ return [
  'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
  'education' => [ 		'title' => 'Education', 		'fields' => [ 			'name' => 'Name', 		], 	],
  'country' => [   'title' => 'Country',   'fields' => [     'shortcode' => 'Shortcode',     'title' => 'Title',   ], ],
+
+ 'type-of-institution' => [
+ 		'title' => 'Type of institution',
+ 		'fields' => [
+ 			'name' => 'Name',
+ 		],
+ 	],
+
   'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',
