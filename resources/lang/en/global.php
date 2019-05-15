@@ -48,6 +48,8 @@ return [
 	],
 
 
+
+
 	'publications' => [		'title' => 'Publications',		'fields' => [			'title' => 'Title',			'year' => 'Year',			'month' => 'Month',			'abbr' => 'Abbr',			'link' => 'Link',			'authors' => 'Authors',			'project' => 'Project',		],	],
 	'deliverables' => [		'title' => 'Deliverables',		'fields' => [			'label' => 'Label',			'title' => 'Title',			'project' => 'Project',			'link' => 'Link',		],	],
 	'calendar' => [		'title' => 'Events',		'fields' => [			'date' => 'Date',			'title' => 'Event',			'project' => 'Project',			'location' => 'Location',		],	],
@@ -77,6 +79,28 @@ return [
 			'country' => 'Country',
 		],
 	],
+
+  'work-packages' => [
+		'title' => 'Work packages',
+		'fields' => [
+			'name' => 'Name',
+			'description' => 'Description',
+			'project' => 'Project',
+		],
+	],
+
+  'wp' => [
+		'title' => 'WP',
+		'fields' => [
+			'name' => 'Name',
+		],
+	],
+
+  'system-management' => [
+    'title' => 'System Management',
+    'fields' => [
+    ],
+  ],
 
   'app_create' => 'Create',
 	'app_save' => 'Save',

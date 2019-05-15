@@ -109,6 +109,16 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('partners_restore/{id}', ['uses' => 'Admin\PartnersController@restore', 'as' => 'partners.restore']);
     Route::delete('partners_perma_del/{id}', ['uses' => 'Admin\PartnersController@perma_del', 'as' => 'partners.perma_del']);
 
+    Route::resource('work_packages', 'Admin\WorkPackagesController');
+    Route::post('work_packages_mass_destroy', ['uses' => 'Admin\WorkPackagesController@massDestroy', 'as' => 'work_packages.mass_destroy']);
+    Route::post('work_packages_restore/{id}', ['uses' => 'Admin\WorkPackagesController@restore', 'as' => 'work_packages.restore']);
+    Route::delete('work_packages_perma_del/{id}', ['uses' => 'Admin\WorkPackagesController@perma_del', 'as' => 'work_packages.perma_del']);
+
+    Route::resource('wps', 'Admin\WpsController');
+    Route::post('wps_mass_destroy', ['uses' => 'Admin\WpsController@massDestroy', 'as' => 'wps.mass_destroy']);
+    Route::post('wps_restore/{id}', ['uses' => 'Admin\WpsController@restore', 'as' => 'wps.restore']);
+    Route::delete('wps_perma_del/{id}', ['uses' => 'Admin\WpsController@perma_del', 'as' => 'wps.perma_del']);
+
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');
 
