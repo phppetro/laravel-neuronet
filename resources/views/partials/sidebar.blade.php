@@ -12,7 +12,7 @@
           -->
 
             <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/admin') }}">
                     <i class="fa fa-wrench"></i>
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>
@@ -88,6 +88,22 @@
                 <a href="{{ route('admin.calendars.index') }}">
                     <i class="fa fa-gears"></i>
                     <span>@lang('global.calendar.title')</span>
+                </a>
+            </li>@endcan
+
+            @can('partner_access')
+            <li>
+                <a href="{{ route('admin.partners.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span>@lang('global.partners.title')</span>
+                </a>
+            </li>@endcan
+
+            @can('work_package_access')
+            <li>
+                <a href="{{ route('admin.work_packages.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span>@lang('global.work-packages.title')</span>
                 </a>
             </li>@endcan
 
@@ -265,27 +281,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    @can('partner_access')
-                    <li>
-                        <a href="{{ route('admin.partners.index') }}">
-                            <i class="fa fa-gears"></i>
-                            <span>@lang('global.partners.title')</span>
-                        </a>
-                    </li>@endcan
 
                     @can('type_of_institution_access')
                     <li>
                         <a href="{{ route('admin.type_of_institutions.index') }}">
                             <i class="fa fa-gears"></i>
                             <span>@lang('global.type-of-institution.title')</span>
-                        </a>
-                    </li>@endcan
-
-                    @can('work_package_access')
-                    <li>
-                        <a href="{{ route('admin.work_packages.index') }}">
-                            <i class="fa fa-gears"></i>
-                            <span>@lang('global.work-packages.title')</span>
                         </a>
                     </li>@endcan
 
