@@ -23,7 +23,7 @@
                   {{ $project->description }}
             </span>
             <a href="/admin/partners" class="product-title">Partners</a>
-             / <a href="#" class="product-title">Work Packages</a>
+             / <a href="/admin/work_packages" class="product-title">Work Packages</a>
              / <a href="/admin/deliverables" class="product-title">Deliverables</a>
              / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>
           </div>
@@ -35,7 +35,7 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer text-center">
-    <a href="{{ url('admin/projects') }}" class="uppercase">View All Products</a>
+    <a href="{{ url('admin/projects') }}" class="uppercase">View All Projects</a>
   </div>
   <!-- /.box-footer -->
 </div>
