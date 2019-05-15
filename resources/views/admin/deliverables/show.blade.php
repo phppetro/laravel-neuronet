@@ -21,6 +21,10 @@
                             <td field-key='title'>{{ $deliverable->title }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.deliverables.fields.wp')</th>
+                            <td field-key='wp'>{{ $deliverable->wp->description ?? '' }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.deliverables.fields.project')</th>
                             <td field-key='project'>{{ $deliverable->project->name ?? '' }}</td>
                         </tr>

@@ -25,7 +25,6 @@ class StoreDeliverablesRequest extends FormRequest
         return [
             'label' => 'required',
             'title' => 'required',
-            'link' => 'required',
         ];
     }
 }

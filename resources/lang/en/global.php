@@ -47,11 +47,19 @@ return [
 		],
 	],
 
-
-
-
 	'publications' => [		'title' => 'Publications',		'fields' => [			'title' => 'Title',			'year' => 'Year',			'month' => 'Month',			'abbr' => 'Abbr',			'link' => 'Link',			'authors' => 'Authors',			'project' => 'Project',		],	],
-	'deliverables' => [		'title' => 'Deliverables',		'fields' => [			'label' => 'Label',			'title' => 'Title',			'project' => 'Project',			'link' => 'Link',		],	],
+
+'deliverables' => [
+   'title' => 'Deliverables',
+   'fields' => [
+     'label' => 'Label',
+     'title' => 'Title',
+     'wp' => 'WP',
+     'project' => 'Project',
+     'link' => 'Link',
+   ],
+ ],
+
 	'calendar' => [		'title' => 'Events',		'fields' => [			'date' => 'Date',			'title' => 'Event',			'project' => 'Project',			'location' => 'Location',		],	],
 	'contact-management' => [		'title' => 'Contact management',		'fields' => [		],	],
 	'contact-companies' => [		'title' => 'Companies',		'fields' => [		],	],

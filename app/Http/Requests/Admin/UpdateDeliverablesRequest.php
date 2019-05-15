@@ -26,7 +26,6 @@ class UpdateDeliverablesRequest extends FormRequest
             
             'label' => 'required',
             'title' => 'required',
-            'link' => 'required',
         ];
     }
 }

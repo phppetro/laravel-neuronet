@@ -2,24 +2,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.deliverables.title')
-      @can('deliverable_create')
-          <a href="{{ route('admin.deliverables.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-      @endcan
-      @can('deliverable_csv_import')
-          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-          @include('csvImport.modal', ['model' => 'Deliverable'])
-      @endcan
-    </h3>
-
-    @can('deliverable_perma_del')
-      <p>
-          <ul class="list-inline">
-              <li><a href="{{ route('admin.deliverables.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
-              <li><a href="{{ route('admin.deliverables.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
-          </ul>
-      </p>
+    <h3 class="page-title">@lang('global.deliverables.title')</h3>
+    @can('deliverable_create')
+    <p>
+        <a href="{{ route('admin.deliverables.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'Deliverable'])
+        
+    </p>
     @endcan
+
+    <p>
+        <ul class="list-inline">
+            <li><a href="{{ route('admin.deliverables.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+            <li><a href="{{ route('admin.deliverables.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+        </ul>
+    </p>
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -36,6 +35,7 @@
 
                         <th>@lang('global.deliverables.fields.label')</th>
                         <th>@lang('global.deliverables.fields.title')</th>
+                        <th>@lang('global.deliverables.fields.wp')</th>
                         <th>@lang('global.deliverables.fields.project')</th>
                         <th>@lang('global.deliverables.fields.link')</th>
                         @if( request('show_deleted') == 1 )
@@ -50,7 +50,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('deliverable_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.deliverables.mass_destroy') }}'; @endif
@@ -63,9 +63,10 @@
                 @endif
                 @endcan{data: 'label', name: 'label'},
                 {data: 'title', name: 'title'},
+                {data: 'wp.description', name: 'wp.description'},
                 {data: 'project.name', name: 'project.name'},
                 {data: 'link', name: 'link'},
-
+                
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

@@ -163,9 +163,13 @@ class WorkPackagesController extends Controller
         if (! Gate::allows('work_package_view')) {
             return abort(401);
         }
+        
+        $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$deliverables = \App\Deliverable::where('wp_id', $id)->get();
+
         $work_package = WorkPackage::findOrFail($id);
 
-        return view('admin.work_packages.show', compact('work_package'));
+        return view('admin.work_packages.show', compact('work_package', 'deliverables'));
     }
 
 

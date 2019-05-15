@@ -27,6 +27,7 @@ class DeliverablesController extends Controller
         
         if (request()->ajax()) {
             $query = Deliverable::query();
+            $query->with("wp");
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
@@ -41,6 +42,7 @@ class DeliverablesController extends Controller
                 'deliverables.id',
                 'deliverables.label',
                 'deliverables.title',
+                'deliverables.wp_id',
                 'deliverables.project_id',
                 'deliverables.link',
             ]);
@@ -62,6 +64,9 @@ class DeliverablesController extends Controller
             });
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
+            });
+            $table->editColumn('wp.description', function ($row) {
+                return $row->wp ? $row->wp->description : '';
             });
             $table->editColumn('project.name', function ($row) {
                 return $row->project ? $row->project->name : '';
@@ -89,9 +94,10 @@ class DeliverablesController extends Controller
             return abort(401);
         }
         
+        $wps = \App\WorkPackage::get()->pluck('description', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
-        return view('admin.deliverables.create', compact('projects'));
+        return view('admin.deliverables.create', compact('wps', 'projects'));
     }
 
     /**
@@ -125,11 +131,12 @@ class DeliverablesController extends Controller
             return abort(401);
         }
         
+        $wps = \App\WorkPackage::get()->pluck('description', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $deliverable = Deliverable::findOrFail($id);
 
-        return view('admin.deliverables.edit', compact('deliverable', 'projects'));
+        return view('admin.deliverables.edit', compact('deliverable', 'wps', 'projects'));
     }
 
     /**
