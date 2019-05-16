@@ -20,6 +20,8 @@ return [
 			'photo' => 'Photo',
 			'remember-token' => 'Remember token',
 			'approved' => 'Approved',
+			'account-reason' => 'Account reason',
+			'account-reason-registration-form' => 'Please provide reasons for requesting access',
 		],
 	],
 

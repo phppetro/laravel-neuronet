@@ -60,18 +60,22 @@
                             <th>@lang('global.users.fields.approved')</th>
                             <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>
                         </tr>
+                        <tr>
+                            <th>@lang('global.users.fields.account-reason')</th>
+                            <td field-key='account_reason'>{!! $user->account_reason !!}</td>
+                        </tr>
                     </table>
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-
+    
 <li role="presentation" class="active"><a href="#user_actions" aria-controls="user_actions" role="tab" data-toggle="tab">User actions</a></li>
 <li role="presentation" class=""><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-
+    
 <div role="tabpanel" class="tab-pane active" id="user_actions">
 <table class="table table-bordered table-striped {{ count($user_actions) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -81,7 +85,7 @@
                         <th>@lang('global.user-actions.fields.action')</th>
                         <th>@lang('global.user-actions.fields.action-model')</th>
                         <th>@lang('global.user-actions.fields.action-id')</th>
-
+                        
         </tr>
     </thead>
 
@@ -94,7 +98,7 @@
                                 <td field-key='action'>{{ $user_action->action }}</td>
                                 <td field-key='action_model'>{{ $user_action->action_model }}</td>
                                 <td field-key='action_id'>{{ $user_action->action_id }}</td>
-
+                                
                 </tr>
             @endforeach
         @else
@@ -181,3 +185,5 @@
         </div>
     </div>
 @stop
+
+

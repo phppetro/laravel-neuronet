@@ -49,6 +49,8 @@
                         <th>@lang('global.users.fields.institution')</th>
                         <th>@lang('global.users.fields.country')</th>
                         <th>@lang('global.users.fields.photo')</th>
+                        <th>@lang('global.users.fields.approved')</th>
+                        <th>@lang('global.users.fields.account-reason')</th>
                                                 <th>&nbsp;</th>
 
         </tr>
@@ -72,6 +74,8 @@
                                 <td field-key='institution'>{{ $user->institution }}</td>
                                 <td field-key='country'>{{ $user->country->title ?? '' }}</td>
                                 <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
+                                <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>
+                                <td field-key='account_reason'>{!! $user->account_reason !!}</td>
                                                                 <td>
                                     @can('user_view')
                                     <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
@@ -94,7 +98,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="17">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="19">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

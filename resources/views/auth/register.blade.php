@@ -146,6 +146,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                          {!! Form::label('account_reason', trans('global.users.fields.account-reason-registration-form').'', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                            <div class="col-md-6">
+
+                                {!! Form::textarea('account_reason', old('account_reason'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+                                <p class="help-block"></p>
+                                @if($errors->has('account_reason'))
+                                    <p class="help-block">
+                                        {{ $errors->first('account_reason') }}
+                                    </p>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
