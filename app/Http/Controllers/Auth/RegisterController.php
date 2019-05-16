@@ -73,6 +73,7 @@ class RegisterController extends Controller
           'professional_category_id' => $data['professional_category_id'],
           'education_id'             => $data['education_id'],
           'country_id'               => $data['country_id'],
+          'account_reason'           => $data['account_reason'],
         ]);
 
         $user->role()->attach(config('app_service.default_registration_role_id'));

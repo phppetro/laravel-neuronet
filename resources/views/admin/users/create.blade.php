@@ -8,7 +8,7 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-
+        
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -164,7 +164,19 @@
                     @endif
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('account_reason', trans('global.users.fields.account-reason').'', ['class' => 'control-label']) !!}
+                    {!! Form::textarea('account_reason', old('account_reason'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('account_reason'))
+                        <p class="help-block">
+                            {{ $errors->first('account_reason') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            
         </div>
     </div>
 

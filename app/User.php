@@ -22,22 +22,23 @@ use Hash;
  * @property string $photo
  * @property string $remember_token
  * @property tinyInteger $approved
+ * @property text $account_reason
 */
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $fillable = ['name', 'surname', 'email', 'password', 'institution', 'photo', 'remember_token', 'approved', 'project_id', 'professional_category_id', 'education_id', 'country_id'];
+    protected $fillable = ['name', 'surname', 'email', 'password', 'institution', 'photo', 'remember_token', 'approved', 'account_reason', 'project_id', 'professional_category_id', 'education_id', 'country_id'];
     protected $hidden = ['password', 'remember_token'];
     public static $searchable = [
     ];
-
+    
     public static function boot()
     {
         parent::boot();
 
         User::observe(new \App\Observers\UserActionsObserver);
     }
-
+    
     /**
      * Hash password
      * @param $input
@@ -47,7 +48,7 @@ class User extends Authenticatable
         if ($input)
             $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
     }
-
+    
 
     /**
      * Set to null if empty
@@ -84,34 +85,34 @@ class User extends Authenticatable
     {
         $this->attributes['country_id'] = $input ? $input : null;
     }
-
+    
     public function role()
     {
         return $this->belongsToMany(Role::class, 'role_user');
     }
-
+    
     public function project()
     {
         return $this->belongsTo(Project::class, 'project_id')->withTrashed();
     }
-
+    
     public function professional_category()
     {
         return $this->belongsTo(ProfessionalCategory::class, 'professional_category_id')->withTrashed();
     }
-
+    
     public function education()
     {
         return $this->belongsTo(Education::class, 'education_id')->withTrashed();
     }
-
+    
     public function country()
     {
         return $this->belongsTo(Country::class, 'country_id')->withTrashed();
     }
-
-
-
+    
+    
+    
 
     public function sendPasswordResetNotification($token)
     {
