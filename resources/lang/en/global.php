@@ -5,22 +5,23 @@ return [
 	'permissions' => [		'title' => 'Permissions',		'fields' => [			'title' => 'Title',		],	],
 	'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',			'permission' => 'Permissions',		],	],
 'users' => [
-   'title' => 'Users',
-   'fields' => [
-     'name' => 'Name',
-     'surname' => 'Surname',
-     'email' => 'Email',
-     'password' => 'Password',
-     'role' => 'Role',
-     'project' => 'Project',
-     'professional-category' => 'Professional category',
-     'education' => 'Education',
-     'institution' => 'Institution',
-     'remember-token' => 'Remember token',
-     'photo' => 'Photo',
-     'country' => 'Country',
-   ],
- ],
+		'title' => 'Users',
+		'fields' => [
+			'name' => 'Name',
+			'surname' => 'Surname',
+			'email' => 'Email',
+			'password' => 'Password',
+			'role' => 'Role',
+			'project' => 'Project',
+			'professional-category' => 'Professional category',
+			'education' => 'Education',
+			'institution' => 'Institution',
+			'country' => 'Country',
+			'photo' => 'Photo',
+			'remember-token' => 'Remember token',
+			'approved' => 'Approved',
+		],
+	],
 
 'user-actions' => [		'title' => 'User actions',		'created_at' => 'Time',		'fields' => [			'user' => 'User',			'action' => 'Action',			'action-model' => 'Action model',			'action-id' => 'Action id',		],	],
 	'faq-management' => [		'title' => 'FAQ Management',		'fields' => [		],	],
@@ -335,9 +336,10 @@ return [
 	'app_please_select' => 'Please select',
 	'app_register' => 'Register',
 	'app_registration' => 'Registration',
-	'app_not_approved_title' => 'You are not approved',
-	'app_not_approved_p' => 'Your account is still not approved by administrator. Please, be patient and try again later.',
-	'app_there_were_problems_with_input' => 'There were problems with input',
+	'app_not_approved_title' => 'Account not active',
+	'app_not_approved_p' => 'Your account is not active. Please try again later or send us an email <a href="mailto:info@imi-neuronet.org">info@imi-neuronet.org</a>',
+  'app_not_approved_link' => '<a href="/">Go to the home page</a>',
+  'app_there_were_problems_with_input' => 'There were problems with input',
 	'app_whoops' => 'Whoops!',
 	'app_file_contains_header_row' => 'File contains header row?',
 	'app_csvImport' => 'CSV Import',

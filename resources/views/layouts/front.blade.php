@@ -42,12 +42,12 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/"> Home </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/#contact"> Contact </a>
-            </li>
               @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}"> Login </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('register') }}"> Register </a>
                   </li>
               @else
                   <li class="nav-item dropdown">
