@@ -8,11 +8,11 @@
         <a href="{{ route('admin.users.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
         <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
         @include('csvImport.modal', ['model' => 'User'])
-        
+
     </p>
     @endcan
 
-    
+
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -37,11 +37,12 @@
                         <th>@lang('global.users.fields.institution')</th>
                         <th>@lang('global.users.fields.country')</th>
                         <th>@lang('global.users.fields.photo')</th>
+                        <th>@lang('global.users.fields.approved')</th>
                                                 <th>&nbsp;</th>
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     @if (count($users) > 0)
                         @foreach ($users as $user)
@@ -64,6 +65,7 @@
                                 <td field-key='institution'>{{ $user->institution }}</td>
                                 <td field-key='country'>{{ $user->country->title ?? '' }}</td>
                                 <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
+                                <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>
                                                                 <td>
                                     @can('user_view')
                                     <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
@@ -86,7 +88,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="17">@lang('global.app_no_entries_in_table')</td>
+                            <td colspan="18">@lang('global.app_no_entries_in_table')</td>
                         </tr>
                     @endif
                 </tbody>
@@ -95,7 +97,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('user_delete')
             window.route_mass_crud_entries_destroy = '{{ route('admin.users.mass_destroy') }}';

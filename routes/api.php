@@ -20,4 +20,10 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], funct
 
         Route::resource('projects_metrics', 'ProjectsMetricsController', ['except' => ['create', 'edit']]);
 
+        Route::resource('type_of_institutions', 'TypeOfInstitutionsController', ['except' => ['create', 'edit']]);
+
+        Route::resource('work_packages', 'WorkPackagesController', ['except' => ['create', 'edit']]);
+
+        Route::resource('wps', 'WpsController', ['except' => ['create', 'edit']]);
+
 });
