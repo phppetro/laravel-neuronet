@@ -49,6 +49,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
            'name'     => 'required|max:255',
+           'surname'  => 'required|max:255',
            'email'    => 'required|email|max:255|unique:users',
            'password' => 'required|min:6|confirmed',
         ]);
@@ -63,13 +64,28 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
       $user = User::create([
-          'name'     => $data['name'],
-          'email'    => $data['email'],
-          'password' => bcrypt($data['password']),
+          'name'                     => $data['name'],
+          'surname'                  => $data['surname'],
+          'email'                    => $data['email'],
+          'password'                 => bcrypt($data['password']),
+          'institution'              => $data['institution'],
+          'project_id'               => $data['project_id'],
+          'professional_category_id' => $data['professional_category_id'],
+          'education_id'             => $data['education_id'],
+          'country_id'               => $data['country_id'],
         ]);
 
-        $user->role()->attach(config('app_service.default_role_id'));
+        $user->role()->attach(config('app_service.default_registration_role_id'));
 
         return $user;
+    }
+
+    public function showRegistrationForm()
+    {
+        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $professional_categories = \App\ProfessionalCategory::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $education = \App\Education::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $countries = \App\Country::get()->pluck('title', 'id')->prepend(trans('global.app_please_select'), '');// get all countries
+        return view('auth.register', compact('projects', 'professional_categories', 'education', 'countries'));
     }
 }
