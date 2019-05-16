@@ -1,4 +1,8 @@
 <?php
+Route::get('home', function () {
+    return redirect('/');
+});
+
 //Frontend Routes...
 Route::get('/', 'FrontController@home');
 Route::get('disclaimer', 'FrontController@disclaimer');
