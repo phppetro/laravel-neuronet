@@ -2,24 +2,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.contact-categories.title')
+    <h3 class="page-title">@lang('global.contact-categories.title')</h3>
     @can('contact_category_create')
+    <p>
         <a href="{{ route('admin.contact_categories.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-    @endcan
-    @can('contact_category_csv_import')
         <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
         @include('csvImport.modal', ['model' => 'ContactCategory'])
+        
+    </p>
     @endcan
-    </h3>
 
-    @can('contact_category_perma_del')
-      <p>
-          <ul class="list-inline">
-              <li><a href="{{ route('admin.contact_categories.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
-              <li><a href="{{ route('admin.contact_categories.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
-          </ul>
-      </p>
-    @endcan
+    <p>
+        <ul class="list-inline">
+            <li><a href="{{ route('admin.contact_categories.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+            <li><a href="{{ route('admin.contact_categories.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+        </ul>
+    </p>
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -47,7 +46,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('contact_category_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.contact_categories.mass_destroy') }}'; @endif
@@ -59,7 +58,7 @@
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
                 @endcan{data: 'name', name: 'name'},
-
+                
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

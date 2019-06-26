@@ -41,12 +41,12 @@ class ContactsController extends Controller
                 'contacts.id',
                 'contacts.first_name',
                 'contacts.last_name',
-                'contacts.category_id',
-                'contacts.phone1',
-                'contacts.phone2',
                 'contacts.email',
-                'contacts.skype',
-                'contacts.address',
+                'contacts.position',
+                'contacts.institution',
+                'contacts.category_id',
+                'contacts.projects_involved',
+                'contacts.expertise',
             ]);
             $table = Datatables::of($query);
 
@@ -67,23 +67,23 @@ class ContactsController extends Controller
             $table->editColumn('last_name', function ($row) {
                 return $row->last_name ? $row->last_name : '';
             });
-            $table->editColumn('category.name', function ($row) {
-                return $row->category ? $row->category->name : '';
-            });
-            $table->editColumn('phone1', function ($row) {
-                return $row->phone1 ? $row->phone1 : '';
-            });
-            $table->editColumn('phone2', function ($row) {
-                return $row->phone2 ? $row->phone2 : '';
-            });
             $table->editColumn('email', function ($row) {
                 return $row->email ? $row->email : '';
             });
-            $table->editColumn('skype', function ($row) {
-                return $row->skype ? $row->skype : '';
+            $table->editColumn('position', function ($row) {
+                return $row->position ? $row->position : '';
             });
-            $table->editColumn('address', function ($row) {
-                return $row->address ? $row->address : '';
+            $table->editColumn('institution', function ($row) {
+                return $row->institution ? $row->institution : '';
+            });
+            $table->editColumn('category.name', function ($row) {
+                return $row->category ? $row->category->name : '';
+            });
+            $table->editColumn('projects_involved', function ($row) {
+                return $row->projects_involved ? $row->projects_involved : '';
+            });
+            $table->editColumn('expertise', function ($row) {
+                return $row->expertise ? $row->expertise : '';
             });
 
             $table->rawColumns(['actions','massDelete']);

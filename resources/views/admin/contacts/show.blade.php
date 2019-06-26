@@ -21,28 +21,28 @@
                             <td field-key='last_name'>{{ $contact->last_name }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.contacts.fields.category')</th>
-                            <td field-key='category'>{{ $contact->category->name ?? '' }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.contacts.fields.phone1')</th>
-                            <td field-key='phone1'>{{ $contact->phone1 }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.contacts.fields.phone2')</th>
-                            <td field-key='phone2'>{{ $contact->phone2 }}</td>
-                        </tr>
-                        <tr>
                             <th>@lang('global.contacts.fields.email')</th>
                             <td field-key='email'>{{ $contact->email }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.contacts.fields.skype')</th>
-                            <td field-key='skype'>{{ $contact->skype }}</td>
+                            <th>@lang('global.contacts.fields.position')</th>
+                            <td field-key='position'>{{ $contact->position }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.contacts.fields.address')</th>
-                            <td field-key='address'>{{ $contact->address }}</td>
+                            <th>@lang('global.contacts.fields.institution')</th>
+                            <td field-key='institution'>{{ $contact->institution }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.contacts.fields.category')</th>
+                            <td field-key='category'>{{ $contact->category->name ?? '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.contacts.fields.projects-involved')</th>
+                            <td field-key='projects_involved'>{{ $contact->projects_involved }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.contacts.fields.expertise')</th>
+                            <td field-key='expertise'>{!! $contact->expertise !!}</td>
                         </tr>
                     </table>
                 </div>

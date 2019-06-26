@@ -30,9 +30,28 @@ return [
 	'faq-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',		],	],
 	'faq-questions' => [		'title' => 'Questions',		'fields' => [			'category' => 'Category',			'question-text' => 'Question',			'answer-text' => 'Answer',		],	],
 	'activity' => [		'title' => 'Activity',		'fields' => [			'user' => 'User',			'date' => 'Date',			'body' => 'Body',		],	],
- 'contacts' => [		'title' => 'Contacts',	 'fields' => [			'first-name' => 'First name',			'last-name' => 'Last name',				'category' => 'Category',				'phone1' => 'Phone 1',				'phone2' => 'Phone 2',				'email' => 'Email',				'skype' => 'Skype',				'address' => 'Address',			],		],
- 'contact-categories' => [		'title' => 'Contact categories',		'fields' => [			'name' => 'Name',		],	],
-	'contacts' => [		'title' => 'Contacts',		'fields' => [			'first-name' => 'First name',			'last-name' => 'Last name',			'category' => 'Category',			'phone1' => 'Phone 1',			'phone2' => 'Phone 2',			'email' => 'Email',			'skype' => 'Skype',			'address' => 'Address',		],	],
+
+'contact-categories' => [
+		'title' => 'Contact categories',
+		'fields' => [
+			'name' => 'Name',
+		],
+	],
+
+	'contacts' => [
+		'title' => 'Contacts',
+		'fields' => [
+			'first-name' => 'First name',
+			'last-name' => 'Last name',
+			'email' => 'Email',
+			'position' => 'Position',
+			'institution' => 'Institution',
+			'category' => 'Category',
+			'projects-involved' => 'Projects is involved in',
+			'expertise' => 'Areas of Expertise',
+		],
+	],
+
 	'documents' => [		'title' => 'Documents',		'fields' => [			'name' => 'Name',			'file' => 'File',		],	],
 	'metrics' => [		'title' => 'Metrics',		'fields' => [		],	],
 	'partners-metrics' => [		'title' => 'Partners metrics',		'fields' => [			'name' => 'Name',			'number' => 'Number',		],	],

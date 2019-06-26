@@ -33,12 +33,12 @@
         <tr>
             <th>@lang('global.contacts.fields.first-name')</th>
                         <th>@lang('global.contacts.fields.last-name')</th>
-                        <th>@lang('global.contacts.fields.category')</th>
-                        <th>@lang('global.contacts.fields.phone1')</th>
-                        <th>@lang('global.contacts.fields.phone2')</th>
                         <th>@lang('global.contacts.fields.email')</th>
-                        <th>@lang('global.contacts.fields.skype')</th>
-                        <th>@lang('global.contacts.fields.address')</th>
+                        <th>@lang('global.contacts.fields.position')</th>
+                        <th>@lang('global.contacts.fields.institution')</th>
+                        <th>@lang('global.contacts.fields.category')</th>
+                        <th>@lang('global.contacts.fields.projects-involved')</th>
+                        <th>@lang('global.contacts.fields.expertise')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -53,12 +53,12 @@
                 <tr data-entry-id="{{ $contact->id }}">
                     <td field-key='first_name'>{{ $contact->first_name }}</td>
                                 <td field-key='last_name'>{{ $contact->last_name }}</td>
-                                <td field-key='category'>{{ $contact->category->name ?? '' }}</td>
-                                <td field-key='phone1'>{{ $contact->phone1 }}</td>
-                                <td field-key='phone2'>{{ $contact->phone2 }}</td>
                                 <td field-key='email'>{{ $contact->email }}</td>
-                                <td field-key='skype'>{{ $contact->skype }}</td>
-                                <td field-key='address'>{{ $contact->address }}</td>
+                                <td field-key='position'>{{ $contact->position }}</td>
+                                <td field-key='institution'>{{ $contact->institution }}</td>
+                                <td field-key='category'>{{ $contact->category->name ?? '' }}</td>
+                                <td field-key='projects_involved'>{{ $contact->projects_involved }}</td>
+                                <td field-key='expertise'>{!! $contact->expertise !!}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(

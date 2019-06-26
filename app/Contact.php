@@ -10,20 +10,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App
  * @property string $first_name
  * @property string $last_name
- * @property string $category
- * @property string $phone1
- * @property string $phone2
  * @property string $email
- * @property string $skype
- * @property string $address
+ * @property string $position
+ * @property string $institution
+ * @property string $category
+ * @property string $projects_involved
+ * @property text $expertise
 */
 class Contact extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['first_name', 'last_name', 'phone1', 'phone2', 'email', 'skype', 'address', 'category_id'];
+    protected $fillable = ['first_name', 'last_name', 'email', 'position', 'institution', 'projects_involved', 'expertise', 'category_id'];
     protected $hidden = [];
     public static $searchable = [
+        'position',
+        'institution',
+        'projects_involved',
+        'expertise',
     ];
     
     public static function boot()
