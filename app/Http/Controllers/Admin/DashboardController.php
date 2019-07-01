@@ -35,11 +35,20 @@ class DashboardController extends Controller
         $projects = \App\Project::all();
         $events = \App\Calendar::where('date','>=',now())->limit(5)->get();
 
-        //Metric Colors
-        $colors = ["rgba(58,9,97,1)","rgba(155, 109, 235, 1)","rgba(198, 59, 178, 1)","rgba(18, 238, 227, 1)","rgba(229, 14, 106, 1)","rgba(58,9,97,1)","rgba(18, 238, 227, 1)","rgba(198, 59, 178, 1)","rgba(155, 109, 235, 1)","rgba(229, 14, 106, 1)"];
+        //colors
+        //Purple: "rgba(155,109,235,1)"
+        //Pink: "rgba(229,14,106,1)"
+        //Aqua: "rgba(18,238,227,1)"
+        //Violet: "rgba(198,59,178,1)"
+        //Indigo: "rgba(58,9,97,1)"
 
-        $labels = ["indigo","purple","indigo","purple","indigo","purple"];
-        $labels_old = ["indigo","purple","violet","pink","aqua","indigo"];
+        //Metric Colors
+        $colors_original = ["rgba(58,9,97,1)","rgba(155, 109, 235, 1)","rgba(198, 59, 178, 1)","rgba(18, 238, 227, 1)","rgba(229, 14, 106, 1)","rgba(58,9,97,1)","rgba(18, 238, 227, 1)","rgba(198, 59, 178, 1)","rgba(155, 109, 235, 1)","rgba(229, 14, 106, 1)"];
+        $colors = ["rgba(155,109,235,1)","rgba(229,14,106,1)","rgba(18,238,227,1)","rgba(198,59,178,1)","rgba(58,9,97,1)"];
+
+        $labels_second = ["indigo","purple","indigo","purple","indigo","purple"];
+        $labels_all_available_colors = ["indigo","purple","violet","pink","aqua","indigo"];
+        $labels = ["purple","aqua","pink","purple","aqua","pink"];
 
         //echo $labels[0];
         //exit;

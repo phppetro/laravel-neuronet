@@ -1,5 +1,5 @@
             <div class="box box-indigo">
-                <div class="box-header with-border">
+                <div class="box-header with-border ui-sortable-handle">
                   <h3 class="box-title">Schedule</h3>
 
                   <div class="box-tools pull-right">
@@ -29,7 +29,7 @@
               dataTable.addColumn({ type: 'date', id: 'Start' });
               dataTable.addColumn({ type: 'date', id: 'End' });
               dataTable.addRows([
-                [ '1', 'ADAPTED', new Date(2016, 9, 30), new Date(2019, 9, 30) ],
+                [ '1', 'ADAPTED', new Date(2016, 9, 1), new Date(2019, 8, 30) ],
                 [ '2', 'AETIONOMY', new Date(2014, 1, 1), new Date(2018, 12, 31) ],
                 [ '3', 'AMYPAD', new Date(2016, 9, 30), new Date(2021, 9, 30) ],
                 [ '4', 'EMIF-AD', new Date(2013, 1, 1), new Date(2018, 6, 30) ],
@@ -46,7 +46,7 @@
                 [ '15', 'ROADMAP', new Date(2016, 9, 30), new Date(2018, 12, 31) ]]);
 
                 var options = {
-                  title: 'Rate the Day on a Scale of 1 to 10',
+                  //title: 'Rate the Day on a Scale of 1 to 10',
                   height: 614,
                   hAxis: {
                     format: 'yyyy',

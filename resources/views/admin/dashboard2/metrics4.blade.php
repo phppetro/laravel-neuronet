@@ -1,13 +1,13 @@
 <div class="nav-tabs-custom" style="cursor: move;">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right ui-sortable-handle">
-              <li class="active"><a href="#revenue-chart" data-toggle="tab" aria-expanded="true">Projects</a></li>
-              <li class=""><a href="#sales-chart" data-toggle="tab" aria-expanded="false">Partners</a></li>
+              <li class="active"><a href="#revenue-chart" data-toggle="tab" aria-expanded="true">Partners</a></li>
+              <li class=""><a href="#sales-chart" data-toggle="tab" aria-expanded="false">Projects</a></li>
               <li class="pull-left header">Metrics</li>
             </ul>
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
-              <div class="chart tab-pane active" id="revenue-chart">
+              <div class="chart tab-pane" id="sales-chart">
 
 
                 <div class="box-body">
@@ -26,7 +26,7 @@
 
 
               </div>
-              <div class="chart tab-pane" id="sales-chart">
+              <div class="chart tab-pane active" id="revenue-chart">
 
 
                 <div class="box-body">
