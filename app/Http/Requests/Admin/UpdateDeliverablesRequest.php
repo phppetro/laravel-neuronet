@@ -24,8 +24,8 @@ class UpdateDeliverablesRequest extends FormRequest
     {
         return [
             
-            'label' => 'required',
             'title' => 'required',
+            'submission_date' => 'nullable|date_format:'.config('app.date_format'),
         ];
     }
 }

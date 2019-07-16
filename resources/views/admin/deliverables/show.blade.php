@@ -13,24 +13,24 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <tr>
-                            <th>@lang('global.deliverables.fields.label')</th>
-                            <td field-key='label'>{{ $deliverable->label }}</td>
-                        </tr>
-                        <tr>
                             <th>@lang('global.deliverables.fields.title')</th>
                             <td field-key='title'>{{ $deliverable->title }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.deliverables.fields.wp')</th>
-                            <td field-key='wp'>{{ $deliverable->wp->description ?? '' }}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.deliverables.fields.project')</th>
                             <td field-key='project'>{{ $deliverable->project->name ?? '' }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.deliverables.fields.submission-date')</th>
+                            <td field-key='submission_date'>{{ $deliverable->submission_date }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.deliverables.fields.link')</th>
                             <td field-key='link'>{{ $deliverable->link }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.deliverables.fields.keywords')</th>
+                            <td field-key='keywords'>{!! $deliverable->keywords !!}</td>
                         </tr>
                     </table>
                 </div>
@@ -43,4 +43,23 @@
     </div>
 @stop
 
+@section('javascript')
+    @parent
 
+    <script src="{{ url('adminlte/plugins/datetimepicker/moment-with-locales.min.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.js') }}"></script>
+    <script>
+        $(function(){
+            moment.updateLocale('{{ App::getLocale() }}', {
+                week: { dow: 1 } // Monday is the first day of the week
+            });
+            
+            $('.date').datetimepicker({
+                format: "{{ config('app.date_format_moment') }}",
+                locale: "{{ App::getLocale() }}",
+            });
+            
+        });
+    </script>
+            
+@stop

@@ -27,7 +27,6 @@ class DeliverablesController extends Controller
         
         if (request()->ajax()) {
             $query = Deliverable::query();
-            $query->with("wp");
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
@@ -40,11 +39,11 @@ class DeliverablesController extends Controller
             }
             $query->select([
                 'deliverables.id',
-                'deliverables.label',
                 'deliverables.title',
-                'deliverables.wp_id',
                 'deliverables.project_id',
+                'deliverables.submission_date',
                 'deliverables.link',
+                'deliverables.keywords',
             ]);
             $table = Datatables::of($query);
 
@@ -59,20 +58,20 @@ class DeliverablesController extends Controller
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
             });
-            $table->editColumn('label', function ($row) {
-                return $row->label ? $row->label : '';
-            });
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
-            });
-            $table->editColumn('wp.description', function ($row) {
-                return $row->wp ? $row->wp->description : '';
             });
             $table->editColumn('project.name', function ($row) {
                 return $row->project ? $row->project->name : '';
             });
+            $table->editColumn('submission_date', function ($row) {
+                return $row->submission_date ? $row->submission_date : '';
+            });
             $table->editColumn('link', function ($row) {
                 return $row->link ? $row->link : '';
+            });
+            $table->editColumn('keywords', function ($row) {
+                return $row->keywords ? $row->keywords : '';
             });
 
             $table->rawColumns(['actions','massDelete']);
@@ -94,10 +93,9 @@ class DeliverablesController extends Controller
             return abort(401);
         }
         
-        $wps = \App\WorkPackage::get()->pluck('description', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
-        return view('admin.deliverables.create', compact('wps', 'projects'));
+        return view('admin.deliverables.create', compact('projects'));
     }
 
     /**
@@ -131,12 +129,11 @@ class DeliverablesController extends Controller
             return abort(401);
         }
         
-        $wps = \App\WorkPackage::get()->pluck('description', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $deliverable = Deliverable::findOrFail($id);
 
-        return view('admin.deliverables.edit', compact('deliverable', 'wps', 'projects'));
+        return view('admin.deliverables.edit', compact('deliverable', 'projects'));
     }
 
     /**

@@ -33,11 +33,11 @@
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
 
-                        <th>@lang('global.deliverables.fields.label')</th>
                         <th>@lang('global.deliverables.fields.title')</th>
-                        <th>@lang('global.deliverables.fields.wp')</th>
                         <th>@lang('global.deliverables.fields.project')</th>
+                        <th>@lang('global.deliverables.fields.submission-date')</th>
                         <th>@lang('global.deliverables.fields.link')</th>
+                        <th>@lang('global.deliverables.fields.keywords')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -61,11 +61,11 @@
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
-                @endcan{data: 'label', name: 'label'},
-                {data: 'title', name: 'title'},
-                {data: 'wp.description', name: 'wp.description'},
+                @endcan{data: 'title', name: 'title'},
                 {data: 'project.name', name: 'project.name'},
+                {data: 'submission_date', name: 'submission_date'},
                 {data: 'link', name: 'link'},
+                {data: 'keywords', name: 'keywords'},
                 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

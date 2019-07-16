@@ -23,8 +23,8 @@ class StoreDeliverablesRequest extends FormRequest
     public function rules()
     {
         return [
-            'label' => 'required',
             'title' => 'required',
+            'submission_date' => 'nullable|date_format:'.config('app.date_format'),
         ];
     }
 }
