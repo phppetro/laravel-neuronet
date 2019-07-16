@@ -1,7 +1,7 @@
         	<div class="box box-primary">
                 <div class="box-header with-border">
                   <h3 class="box-title">Deliverables</h3>
-    				
+
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
@@ -27,7 +27,7 @@
                             <td>{{ $deliverable->short_title }}</td>
                             <td>{{ $deliverable->project ? $deliverable->project->name : "no project" }}</td>
                             <td><span class=
-                            
+
                                @switch($deliverable->status_id)
                                     @case(1)
                                         "label label-warning">{{ $deliverable->status->label }}
@@ -44,7 +44,7 @@
                                     @default
                                     	"label label-info">no status
                                 @endswitch
-                            
+
                             </span></td>
                           </tr>
                       	@endforeach

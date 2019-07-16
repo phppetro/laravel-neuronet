@@ -14,7 +14,7 @@
                     <table class="table no-margin">
                       <thead>
                       <tr>
-                        <th>ID</th>
+                        <th>Submission Date</th>
                         <th>Title</th>
                         <th>Project</th>
                       </tr>
@@ -23,8 +23,8 @@
 
                         @foreach($deliverables as $deliverable)
                           <tr>
-                            <td><a href="{{ $deliverable->link }}">{{ $deliverable->label }}</a></td>
-                            <td>{{ $deliverable->title }}</td>
+                            <td>{{ $deliverable->submission_date }}</td>
+                            <td><a href="{{ $deliverable->link }}">{{ $deliverable->title }}</a></td>
                             <td>{{ $deliverable->project->name }}</td>
                           </tr>
                         @endforeach
