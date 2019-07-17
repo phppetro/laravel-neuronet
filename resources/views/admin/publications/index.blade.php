@@ -2,24 +2,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.publications.title')
-      @can('publication_create')
-          <a href="{{ route('admin.publications.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-      @endcan
-      @can('publication_csv_import')
-          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-          @include('csvImport.modal', ['model' => 'Publication'])
-      @endcan
-    </h3>
-
-    @can('publication_perma_del')
-      <p>
-          <ul class="list-inline">
-              <li><a href="{{ route('admin.publications.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
-              <li><a href="{{ route('admin.publications.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
-          </ul>
-      </p>
+    <h3 class="page-title">@lang('global.publications.title')</h3>
+    @can('publication_create')
+    <p>
+        <a href="{{ route('admin.publications.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'Publication'])
+        
+    </p>
     @endcan
+
+    <p>
+        <ul class="list-inline">
+            <li><a href="{{ route('admin.publications.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+            <li><a href="{{ route('admin.publications.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+        </ul>
+    </p>
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -35,12 +34,11 @@
                         @endcan
 
                         <th>@lang('global.publications.fields.title')</th>
+                        <th>@lang('global.publications.fields.first-author-last-name')</th>
                         <th>@lang('global.publications.fields.year')</th>
-                        <th>@lang('global.publications.fields.month')</th>
-                        <th>@lang('global.publications.fields.abbr')</th>
-                        <th>@lang('global.publications.fields.link')</th>
-                        <th>@lang('global.publications.fields.authors')</th>
                         <th>@lang('global.publications.fields.project')</th>
+                        <th>@lang('global.publications.fields.link')</th>
+                        <th>@lang('global.publications.fields.keywords')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -53,7 +51,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('publication_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.publications.mass_destroy') }}'; @endif
@@ -65,13 +63,12 @@
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
                 @endcan{data: 'title', name: 'title'},
+                {data: 'first_author_last_name', name: 'first_author_last_name'},
                 {data: 'year', name: 'year'},
-                {data: 'month', name: 'month'},
-                {data: 'abbr', name: 'abbr'},
-                {data: 'link', name: 'link'},
-                {data: 'authors', name: 'authors'},
                 {data: 'project.name', name: 'project.name'},
-
+                {data: 'link', name: 'link'},
+                {data: 'keywords', name: 'keywords'},
+                
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

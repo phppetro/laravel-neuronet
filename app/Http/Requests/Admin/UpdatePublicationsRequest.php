@@ -25,7 +25,6 @@ class UpdatePublicationsRequest extends FormRequest
         return [
             
             'title' => 'required',
-            'month' => 'max:2147483647|nullable|numeric',
             'link' => 'required',
         ];
     }

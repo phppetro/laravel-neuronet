@@ -9,23 +9,22 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App
  * @property string $title
+ * @property string $first_author_last_name
  * @property string $year
- * @property integer $month
- * @property string $abbr
- * @property string $link
- * @property string $authors
  * @property string $project
+ * @property string $link
+ * @property string $keywords
 */
 class Publication extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'year', 'month', 'abbr', 'link', 'authors', 'project_id'];
+    protected $fillable = ['title', 'first_author_last_name', 'year', 'link', 'keywords', 'project_id'];
     protected $hidden = [];
     public static $searchable = [
         'title',
-        'abbr',
-        'authors',
+        'first_author_last_name',
+        'keywords',
     ];
     
     public static function boot()
@@ -33,15 +32,6 @@ class Publication extends Model
         parent::boot();
 
         Publication::observe(new \App\Observers\UserActionsObserver);
-    }
-
-    /**
-     * Set attribute to money format
-     * @param $input
-     */
-    public function setMonthAttribute($input)
-    {
-        $this->attributes['month'] = $input ? $input : null;
     }
 
     /**

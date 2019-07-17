@@ -40,12 +40,11 @@ class PublicationsController extends Controller
             $query->select([
                 'publications.id',
                 'publications.title',
+                'publications.first_author_last_name',
                 'publications.year',
-                'publications.month',
-                'publications.abbr',
-                'publications.link',
-                'publications.authors',
                 'publications.project_id',
+                'publications.link',
+                'publications.keywords',
             ]);
             $table = Datatables::of($query);
 
@@ -63,23 +62,20 @@ class PublicationsController extends Controller
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });
+            $table->editColumn('first_author_last_name', function ($row) {
+                return $row->first_author_last_name ? $row->first_author_last_name : '';
+            });
             $table->editColumn('year', function ($row) {
                 return $row->year ? $row->year : '';
             });
-            $table->editColumn('month', function ($row) {
-                return $row->month ? $row->month : '';
-            });
-            $table->editColumn('abbr', function ($row) {
-                return $row->abbr ? $row->abbr : '';
+            $table->editColumn('project.name', function ($row) {
+                return $row->project ? $row->project->name : '';
             });
             $table->editColumn('link', function ($row) {
                 return $row->link ? $row->link : '';
             });
-            $table->editColumn('authors', function ($row) {
-                return $row->authors ? $row->authors : '';
-            });
-            $table->editColumn('project.name', function ($row) {
-                return $row->project ? $row->project->name : '';
+            $table->editColumn('keywords', function ($row) {
+                return $row->keywords ? $row->keywords : '';
             });
 
             $table->rawColumns(['actions','massDelete']);

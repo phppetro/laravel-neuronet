@@ -173,11 +173,11 @@ class ProjectsController extends Controller
         $partners = \App\Partner::whereHas('projects',
                     function ($query) use ($id) {
                         $query->where('id', $id);
-                    })->get();$deliverables = \App\Deliverable::where('project_id', $id)->get();$tools = \App\Tool::where('project_id', $id)->get();$work_packages = \App\WorkPackage::where('project_id', $id)->get();$calendars = \App\Calendar::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();
+                    })->get();$deliverables = \App\Deliverable::where('project_id', $id)->get();$tools = \App\Tool::where('project_id', $id)->get();$work_packages = \App\WorkPackage::where('project_id', $id)->get();$calendars = \App\Calendar::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();
 
         $project = Project::findOrFail($id);
 
-        return view('admin.projects.show', compact('project', 'partners', 'deliverables', 'tools', 'work_packages', 'calendars', 'users', 'publications'));
+        return view('admin.projects.show', compact('project', 'partners', 'deliverables', 'tools', 'work_packages', 'calendars', 'publications', 'users'));
     }
 
 

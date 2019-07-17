@@ -46,8 +46,8 @@
 <li role="presentation" class=""><a href="#tools" aria-controls="tools" role="tab" data-toggle="tab">Tools</a></li>
 <li role="presentation" class=""><a href="#work_packages" aria-controls="work_packages" role="tab" data-toggle="tab">Work packages</a></li>
 <li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
-<li role="presentation" class=""><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
 <li role="presentation" class=""><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab">Publications</a></li>
+<li role="presentation" class=""><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
 </ul>
 
 <!-- Tab panes -->
@@ -409,6 +409,80 @@
     </tbody>
 </table>
 </div>
+<div role="tabpanel" class="tab-pane " id="publications">
+<table class="table table-bordered table-striped {{ count($publications) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.publications.fields.title')</th>
+                        <th>@lang('global.publications.fields.first-author-last-name')</th>
+                        <th>@lang('global.publications.fields.year')</th>
+                        <th>@lang('global.publications.fields.project')</th>
+                        <th>@lang('global.publications.fields.link')</th>
+                        <th>@lang('global.publications.fields.keywords')</th>
+                        @if( request('show_deleted') == 1 )
+                        <th>&nbsp;</th>
+                        @else
+                        <th>&nbsp;</th>
+                        @endif
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($publications) > 0)
+            @foreach ($publications as $publication)
+                <tr data-entry-id="{{ $publication->id }}">
+                    <td field-key='title'>{{ $publication->title }}</td>
+                                <td field-key='first_author_last_name'>{{ $publication->first_author_last_name }}</td>
+                                <td field-key='year'>{{ $publication->year }}</td>
+                                <td field-key='project'>{{ $publication->project->name ?? '' }}</td>
+                                <td field-key='link'>{{ $publication->link }}</td>
+                                <td field-key='keywords'>{{ $publication->keywords }}</td>
+                                @if( request('show_deleted') == 1 )
+                                <td>
+                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.publications.restore', $publication->id])) !!}
+                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.publications.perma_del', $publication->id])) !!}
+                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                                                </td>
+                                @else
+                                <td>
+                                    @can('publication_view')
+                                    <a href="{{ route('admin.publications.show',[$publication->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('publication_edit')
+                                    <a href="{{ route('admin.publications.edit',[$publication->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('publication_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.publications.destroy', $publication->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+                                @endif
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
 <div role="tabpanel" class="tab-pane " id="users">
 <table class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -473,82 +547,6 @@
         @else
             <tr>
                 <td colspan="19">@lang('global.app_no_entries_in_table')</td>
-            </tr>
-        @endif
-    </tbody>
-</table>
-</div>
-<div role="tabpanel" class="tab-pane " id="publications">
-<table class="table table-bordered table-striped {{ count($publications) > 0 ? 'datatable' : '' }}">
-    <thead>
-        <tr>
-            <th>@lang('global.publications.fields.title')</th>
-                        <th>@lang('global.publications.fields.year')</th>
-                        <th>@lang('global.publications.fields.month')</th>
-                        <th>@lang('global.publications.fields.abbr')</th>
-                        <th>@lang('global.publications.fields.link')</th>
-                        <th>@lang('global.publications.fields.authors')</th>
-                        <th>@lang('global.publications.fields.project')</th>
-                        @if( request('show_deleted') == 1 )
-                        <th>&nbsp;</th>
-                        @else
-                        <th>&nbsp;</th>
-                        @endif
-        </tr>
-    </thead>
-
-    <tbody>
-        @if (count($publications) > 0)
-            @foreach ($publications as $publication)
-                <tr data-entry-id="{{ $publication->id }}">
-                    <td field-key='title'>{{ $publication->title }}</td>
-                                <td field-key='year'>{{ $publication->year }}</td>
-                                <td field-key='month'>{{ $publication->month }}</td>
-                                <td field-key='abbr'>{{ $publication->abbr }}</td>
-                                <td field-key='link'>{{ $publication->link }}</td>
-                                <td field-key='authors'>{{ $publication->authors }}</td>
-                                <td field-key='project'>{{ $publication->project->name ?? '' }}</td>
-                                @if( request('show_deleted') == 1 )
-                                <td>
-                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'POST',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.publications.restore', $publication->id])) !!}
-                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
-                                    {!! Form::close() !!}
-                                                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.publications.perma_del', $publication->id])) !!}
-                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                                                </td>
-                                @else
-                                <td>
-                                    @can('publication_view')
-                                    <a href="{{ route('admin.publications.show',[$publication->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
-                                    @endcan
-                                    @can('publication_edit')
-                                    <a href="{{ route('admin.publications.edit',[$publication->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    @endcan
-                                    @can('publication_delete')
-{!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.publications.destroy', $publication->id])) !!}
-                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                    @endcan
-                                </td>
-                                @endif
-                </tr>
-            @endforeach
-        @else
-            <tr>
-                <td colspan="12">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

@@ -17,28 +17,24 @@
                             <td field-key='title'>{{ $publication->title }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.publications.fields.first-author-last-name')</th>
+                            <td field-key='first_author_last_name'>{{ $publication->first_author_last_name }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.publications.fields.year')</th>
                             <td field-key='year'>{{ $publication->year }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.publications.fields.month')</th>
-                            <td field-key='month'>{{ $publication->month }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.publications.fields.abbr')</th>
-                            <td field-key='abbr'>{{ $publication->abbr }}</td>
+                            <th>@lang('global.publications.fields.project')</th>
+                            <td field-key='project'>{{ $publication->project->name ?? '' }}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.publications.fields.link')</th>
                             <td field-key='link'>{{ $publication->link }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.publications.fields.authors')</th>
-                            <td field-key='authors'>{{ $publication->authors }}</td>
-                        </tr>
-                        <tr>
-                            <th>@lang('global.publications.fields.project')</th>
-                            <td field-key='project'>{{ $publication->project->name ?? '' }}</td>
+                            <th>@lang('global.publications.fields.keywords')</th>
+                            <td field-key='keywords'>{{ $publication->keywords }}</td>
                         </tr>
                     </table>
                 </div>

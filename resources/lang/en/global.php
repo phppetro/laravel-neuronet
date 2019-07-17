@@ -141,16 +141,15 @@ return [
 		],
 	],
 
-	'publications' => [
+'publications' => [
 		'title' => 'Publications',
 		'fields' => [
 			'title' => 'Title',
+			'first-author-last-name' => 'First author last name',
 			'year' => 'Year',
-			'month' => 'Month',
-			'abbr' => 'Abbr',
-			'link' => 'Link',
-			'authors' => 'Authors',
 			'project' => 'Project',
+			'link' => 'Link',
+			'keywords' => 'Keywords',
 		],
 	],
 
