@@ -28,6 +28,7 @@ class ActivitiesController extends Controller
         if (request()->ajax()) {
             $query = Activity::query();
             $query->with("user");
+            $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
                 
@@ -42,6 +43,7 @@ class ActivitiesController extends Controller
                 'activities.user_id',
                 'activities.date',
                 'activities.body',
+                'activities.project_id',
             ]);
             $table = Datatables::of($query);
 
@@ -65,6 +67,9 @@ class ActivitiesController extends Controller
             $table->editColumn('body', function ($row) {
                 return $row->body ? $row->body : '';
             });
+            $table->editColumn('project.name', function ($row) {
+                return $row->project ? $row->project->name : '';
+            });
 
             $table->rawColumns(['actions','massDelete']);
 
@@ -86,8 +91,9 @@ class ActivitiesController extends Controller
         }
         
         $users = \App\User::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
-        return view('admin.activities.create', compact('users'));
+        return view('admin.activities.create', compact('users', 'projects'));
     }
 
     /**
@@ -122,10 +128,11 @@ class ActivitiesController extends Controller
         }
         
         $users = \App\User::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $activity = Activity::findOrFail($id);
 
-        return view('admin.activities.edit', compact('activity', 'users'));
+        return view('admin.activities.edit', compact('activity', 'users', 'projects'));
     }
 
     /**

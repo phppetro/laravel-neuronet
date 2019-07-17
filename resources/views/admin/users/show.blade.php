@@ -116,6 +116,7 @@
             <th>@lang('global.activity.fields.user')</th>
                         <th>@lang('global.activity.fields.date')</th>
                         <th>@lang('global.activity.fields.body')</th>
+                        <th>@lang('global.activity.fields.project')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -131,6 +132,7 @@
                     <td field-key='user'>{{ $activity->user->name ?? '' }}</td>
                                 <td field-key='date'>{{ $activity->date }}</td>
                                 <td field-key='body'>{{ $activity->body }}</td>
+                                <td field-key='project'>{{ $activity->project->name ?? '' }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(
@@ -171,7 +173,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="8">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="9">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

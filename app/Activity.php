@@ -12,12 +12,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $user
  * @property string $date
  * @property string $body
+ * @property string $project
 */
 class Activity extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['date', 'body', 'user_id'];
+    protected $fillable = ['date', 'body', 'user_id', 'project_id'];
     protected $hidden = [];
     public static $searchable = [
         'date',
@@ -69,10 +70,24 @@ class Activity extends Model
             return '';
         }
     }
+
+    /**
+     * Set to null if empty
+     * @param $input
+     */
+    public function setProjectIdAttribute($input)
+    {
+        $this->attributes['project_id'] = $input ? $input : null;
+    }
     
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+    
+    public function project()
+    {
+        return $this->belongsTo(Project::class, 'project_id')->withTrashed();
     }
     
 }

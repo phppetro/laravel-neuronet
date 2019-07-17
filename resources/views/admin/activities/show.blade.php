@@ -24,6 +24,10 @@
                             <th>@lang('global.activity.fields.body')</th>
                             <td field-key='body'>{{ $activity->body }}</td>
                         </tr>
+                        <tr>
+                            <th>@lang('global.activity.fields.project')</th>
+                            <td field-key='project'>{{ $activity->project->name ?? '' }}</td>
+                        </tr>
                     </table>
                 </div>
             </div>

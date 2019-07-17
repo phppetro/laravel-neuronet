@@ -75,6 +75,7 @@ return [
 			'user' => 'User',
 			'date' => 'Date',
 			'body' => 'Body',
+			'project' => 'Project',
 		],
 	],
 
