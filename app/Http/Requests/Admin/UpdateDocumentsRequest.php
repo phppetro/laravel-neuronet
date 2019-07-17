@@ -24,7 +24,7 @@ class UpdateDocumentsRequest extends FormRequest
     {
         return [
             
-            'name' => 'required',
+            'publication_date' => 'nullable|date_format:'.config('app.date_format'),
         ];
     }
 }

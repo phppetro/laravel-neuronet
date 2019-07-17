@@ -12,12 +12,48 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('name', trans('global.documents.fields.name').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    {!! Form::label('title', trans('global.documents.fields.title').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('name'))
+                    @if($errors->has('title'))
                         <p class="help-block">
-                            {{ $errors->first('name') }}
+                            {{ $errors->first('title') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('source', trans('global.documents.fields.source').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('source', old('source'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('source'))
+                        <p class="help-block">
+                            {{ $errors->first('source') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('publication_date', trans('global.documents.fields.publication-date').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('publication_date', old('publication_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('publication_date'))
+                        <p class="help-block">
+                            {{ $errors->first('publication_date') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('keywords', trans('global.documents.fields.keywords').'', ['class' => 'control-label']) !!}
+                    {!! Form::textarea('keywords', old('keywords'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('keywords'))
+                        <p class="help-block">
+                            {{ $errors->first('keywords') }}
                         </p>
                     @endif
                 </div>
@@ -44,3 +80,23 @@
     {!! Form::close() !!}
 @stop
 
+@section('javascript')
+    @parent
+
+    <script src="{{ url('adminlte/plugins/datetimepicker/moment-with-locales.min.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.js') }}"></script>
+    <script>
+        $(function(){
+            moment.updateLocale('{{ App::getLocale() }}', {
+                week: { dow: 1 } // Monday is the first day of the week
+            });
+            
+            $('.date').datetimepicker({
+                format: "{{ config('app.date_format_moment') }}",
+                locale: "{{ App::getLocale() }}",
+            });
+            
+        });
+    </script>
+            
+@stop

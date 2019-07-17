@@ -41,7 +41,10 @@ class DocumentsController extends Controller
             }
             $query->select([
                 'documents.id',
-                'documents.name',
+                'documents.title',
+                'documents.source',
+                'documents.publication_date',
+                'documents.keywords',
                 'documents.file',
             ]);
             $table = Datatables::of($query);
@@ -57,8 +60,17 @@ class DocumentsController extends Controller
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
             });
-            $table->editColumn('name', function ($row) {
-                return $row->name ? $row->name : '';
+            $table->editColumn('title', function ($row) {
+                return $row->title ? $row->title : '';
+            });
+            $table->editColumn('source', function ($row) {
+                return $row->source ? $row->source : '';
+            });
+            $table->editColumn('publication_date', function ($row) {
+                return $row->publication_date ? $row->publication_date : '';
+            });
+            $table->editColumn('keywords', function ($row) {
+                return $row->keywords ? $row->keywords : '';
             });
             $table->editColumn('file', function ($row) {
                 if($row->file) { return '<a href="'.asset(env('UPLOAD_PATH').'/'.$row->file) .'" target="_blank">Download file</a>'; };

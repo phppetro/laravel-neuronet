@@ -23,7 +23,7 @@ class StoreDocumentsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'publication_date' => 'nullable|date_format:'.config('app.date_format'),
             'file' => 'required',
         ];
     }

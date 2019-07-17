@@ -102,7 +102,10 @@ return [
 	'documents' => [
 		'title' => 'Documents',
 		'fields' => [
-			'name' => 'Name',
+			'title' => 'Title',
+			'source' => 'Source',
+			'publication-date' => 'Publication date',
+			'keywords' => 'Keywords',
 			'file' => 'File',
 		],
 	],
