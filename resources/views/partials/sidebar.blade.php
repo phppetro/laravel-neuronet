@@ -107,6 +107,14 @@
                 </a>
             </li>@endcan
 
+            @can('tool_access')
+            <li>
+                <a href="{{ route('admin.tools.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span>@lang('global.tools.title')</span>
+                </a>
+            </li>@endcan
+
             @can('metric_access')
             <li class="treeview">
                 <a href="#">

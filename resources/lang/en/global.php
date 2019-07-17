@@ -1,9 +1,24 @@
 <?php
 
 return [
-	'user-management' => [		'title' => 'User management',		'fields' => [		],	],
-	'permissions' => [		'title' => 'Permissions',		'fields' => [			'title' => 'Title',		],	],
-	'roles' => [		'title' => 'Roles',		'fields' => [			'title' => 'Title',			'permission' => 'Permissions',		],	],
+	'user-management' => [
+		'title' => 'User management',
+		'fields' => [
+		],
+	],
+	'permissions' => [
+		'title' => 'Permissions',
+		'fields' => [
+			'title' => 'Title',
+		],
+	],
+	'roles' => [
+		'title' => 'Roles',
+		'fields' => [
+			'title' => 'Title',
+			'permission' => 'Permissions',
+		],
+	],
 'users' => [
 		'title' => 'Users',
 		'fields' => [
@@ -25,11 +40,43 @@ return [
 		],
 	],
 
-'user-actions' => [		'title' => 'User actions',		'created_at' => 'Time',		'fields' => [			'user' => 'User',			'action' => 'Action',			'action-model' => 'Action model',			'action-id' => 'Action id',		],	],
-	'faq-management' => [		'title' => 'FAQ Management',		'fields' => [		],	],
-	'faq-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',		],	],
-	'faq-questions' => [		'title' => 'Questions',		'fields' => [			'category' => 'Category',			'question-text' => 'Question',			'answer-text' => 'Answer',		],	],
-	'activity' => [		'title' => 'Activity',		'fields' => [			'user' => 'User',			'date' => 'Date',			'body' => 'Body',		],	],
+'user-actions' => [
+		'title' => 'User actions',
+		'created_at' => 'Time',
+		'fields' => [
+			'user' => 'User',
+			'action' => 'Action',
+			'action-model' => 'Action model',
+			'action-id' => 'Action id',
+		],
+	],
+	'faq-management' => [
+		'title' => 'FAQ Management',
+		'fields' => [
+		],
+	],
+	'faq-categories' => [
+		'title' => 'Categories',
+		'fields' => [
+			'title' => 'Category',
+		],
+	],
+	'faq-questions' => [
+		'title' => 'Questions',
+		'fields' => [
+			'category' => 'Category',
+			'question-text' => 'Question',
+			'answer-text' => 'Answer',
+		],
+	],
+	'activity' => [
+		'title' => 'Activity',
+		'fields' => [
+			'user' => 'User',
+			'date' => 'Date',
+			'body' => 'Body',
+		],
+	],
 
 'contact-categories' => [
 		'title' => 'Contact categories',
@@ -52,10 +99,32 @@ return [
 		],
 	],
 
-	'documents' => [		'title' => 'Documents',		'fields' => [			'name' => 'Name',			'file' => 'File',		],	],
-	'metrics' => [		'title' => 'Metrics',		'fields' => [		],	],
-	'partners-metrics' => [		'title' => 'Partners metrics',		'fields' => [			'name' => 'Name',			'number' => 'Number',		],	],
-	'projects-metrics' => [		'title' => 'Projects metrics',		'fields' => [			'name' => 'Name',			'funding' => 'Funding',		],	],
+	'documents' => [
+		'title' => 'Documents',
+		'fields' => [
+			'name' => 'Name',
+			'file' => 'File',
+		],
+	],
+	'metrics' => [
+		'title' => 'Metrics',
+		'fields' => [
+		],
+	],
+	'partners-metrics' => [
+		'title' => 'Partners metrics',
+		'fields' => [
+			'name' => 'Name',
+			'number' => 'Number',
+		],
+	],
+	'projects-metrics' => [
+		'title' => 'Projects metrics',
+		'fields' => [
+			'name' => 'Name',
+			'funding' => 'Funding',
+		],
+	],
 
 'projects' => [
 		'title' => 'Projects',
@@ -69,7 +138,18 @@ return [
 		],
 	],
 
-	'publications' => [		'title' => 'Publications',		'fields' => [			'title' => 'Title',			'year' => 'Year',			'month' => 'Month',			'abbr' => 'Abbr',			'link' => 'Link',			'authors' => 'Authors',			'project' => 'Project',		],	],
+	'publications' => [
+		'title' => 'Publications',
+		'fields' => [
+			'title' => 'Title',
+			'year' => 'Year',
+			'month' => 'Month',
+			'abbr' => 'Abbr',
+			'link' => 'Link',
+			'authors' => 'Authors',
+			'project' => 'Project',
+		],
+	],
 
 'deliverables' => [
 	'title' => 'Deliverables',
@@ -82,13 +162,56 @@ return [
 	],
 ],
 
-	'calendar' => [		'title' => 'Events',		'fields' => [			'date' => 'Date',			'title' => 'Event',			'project' => 'Project',			'location' => 'Location',		],	],
-	'contact-management' => [		'title' => 'Contact management',		'fields' => [		],	],
-	'contact-companies' => [		'title' => 'Companies',		'fields' => [		],	],
-	'content-management' => [		'title' => 'Content management',		'fields' => [		],	],
-	'content-categories' => [		'title' => 'Categories',		'fields' => [			'title' => 'Category',			'slug' => 'Slug',		],	],
-	'content-tags' => [		'title' => 'Tags',		'fields' => [			'title' => 'Tag',			'slug' => 'Slug',		],	],
-	'content-pages' => [		'title' => 'Pages',		'fields' => [			'title' => 'Title',			'category-id' => 'Categories',			'tag-id' => 'Tags',			'page-text' => 'Text',			'excerpt' => 'Excerpt',			'featured-image' => 'Featured image',		],	],
+	'calendar' => [
+		'title' => 'Events',
+		'fields' => [
+			'date' => 'Date',
+			'title' => 'Event',
+			'project' => 'Project',
+			'location' => 'Location',
+		],
+	],
+	'contact-management' => [
+		'title' => 'Contact management',
+		'fields' => [
+		],
+	],
+	'contact-companies' => [
+		'title' => 'Companies',
+		'fields' => [
+		],
+	],
+
+	'content-management' => [
+		'title' => 'Content management',
+		'fields' => [
+		],
+	],
+	'content-categories' => [
+		'title' => 'Categories',
+		'fields' => [
+			'title' => 'Category',
+			'slug' => 'Slug',
+		],
+	],
+	'content-tags' => [
+		'title' => 'Tags',
+		'fields' => [
+			'title' => 'Tag',
+			'slug' => 'Slug',
+		],
+	],
+	'content-pages' => [
+		'title' => 'Pages',
+		'fields' => [
+			'title' => 'Title',
+			'category-id' => 'Categories',
+			'tag-id' => 'Tags',
+			'page-text' => 'Text',
+			'excerpt' => 'Excerpt',
+			'featured-image' => 'Featured image',
+		],
+	],
  'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
  'education' => [ 		'title' => 'Education', 		'fields' => [ 			'name' => 'Name', 		], 	],
  'country' => [   'title' => 'Country',   'fields' => [     'shortcode' => 'Shortcode',     'title' => 'Title',   ], ],
@@ -131,6 +254,17 @@ return [
     'fields' => [
     ],
   ],
+
+  	'tools' => [
+		'title' => 'Tools',
+		'fields' => [
+			'name' => 'Name',
+			'project' => 'Project',
+			'description' => 'Description',
+			'keywords' => 'Keywords',
+			'link' => 'Link',
+		],
+	],
 
   'app_create' => 'Create',
 	'app_save' => 'Save',

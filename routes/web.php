@@ -129,6 +129,11 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('wps_restore/{id}', ['uses' => 'Admin\WpsController@restore', 'as' => 'wps.restore']);
     Route::delete('wps_perma_del/{id}', ['uses' => 'Admin\WpsController@perma_del', 'as' => 'wps.perma_del']);
 
+    Route::resource('tools', 'Admin\ToolsController');
+    Route::post('tools_mass_destroy', ['uses' => 'Admin\ToolsController@massDestroy', 'as' => 'tools.mass_destroy']);
+    Route::post('tools_restore/{id}', ['uses' => 'Admin\ToolsController@restore', 'as' => 'tools.restore']);
+    Route::delete('tools_perma_del/{id}', ['uses' => 'Admin\ToolsController@perma_del', 'as' => 'tools.perma_del']);
+
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');
 
