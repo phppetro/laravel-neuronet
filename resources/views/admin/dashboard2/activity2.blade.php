@@ -19,7 +19,7 @@
                     <a href="#" class="name">
                       <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ $activity->updated_at->diffForHumans() }}</small>
                       <span>
-                        {{ $activity->user ? $activity->user->name . " " . $activity->user->surname . " - " . $activity->user->project['name'] : '' }}
+                        {{ $activity->user ? $activity->user->name . " " . $activity->user->surname . " - " . $activity->project->name : '' }}
                      </span>
                     </a>
                     <span>{{ $activity->body }}</span>
