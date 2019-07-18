@@ -11,7 +11,7 @@
   <!-- /.box-header -->
   <div class="box-body">
     <ul class="products-list product-list-in-box">
-
+      
       @foreach($projects as $project)
         <li class="item">
           <div class="product-img">

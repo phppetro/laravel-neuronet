@@ -30,9 +30,9 @@ class DashboardController extends Controller
         $contacts = \App\Contact::latest()->limit(5)->get();
         $documents = \App\Document::latest()->limit(7)->get();
         $partnersmetrics = \App\PartnersMetric::all();
-        $projectsmetrics = \App\ProjectsMetric::all();
+        $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
         $contactscategories = \App\ContactCategory::all();
-        $projects = \App\Project::all();
+        $projects = \App\Project::all()->sortBy('name');
         $events = \App\Calendar::where('date','>=',now())->limit(5)->get();
 
         //colors
