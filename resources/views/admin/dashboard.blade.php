@@ -13,6 +13,7 @@
     			@include('admin.dashboard2.metrics4')
 					@include('admin.dashboard2.publications2')
 					@include('admin.dashboard2.documents2')
+					@include('admin.dashboard2.tools')
     		</div>
     		<div class="col-md-4">
 					@include('admin.dashboard2.schedule2')

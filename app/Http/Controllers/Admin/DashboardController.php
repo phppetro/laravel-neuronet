@@ -28,6 +28,7 @@ class DashboardController extends Controller
         $deliverables = \App\Deliverable::latest()->limit(7)->get();
         $publications = \App\Publication::latest()->limit(4)->get();
         $contacts = \App\Contact::latest()->limit(5)->get();
+        $tools = \App\Tool::latest()->limit(5)->get();
         $documents = \App\Document::latest()->limit(7)->get();
         $partnersmetrics = \App\PartnersMetric::all();
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
@@ -53,6 +54,6 @@ class DashboardController extends Controller
         //echo $labels[0];
         //exit;
 
-        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects','events'));
+        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects','events'));
     }
 }
