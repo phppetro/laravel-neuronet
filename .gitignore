@@ -4,8 +4,13 @@
 /storage/*.key
 /vendor
 .env
+.gitignore
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+app/Http/Controllers/Auth/RegisterController_modified.php
+resources/views/auth/register_modified.blade.php
+app/User_modified.php

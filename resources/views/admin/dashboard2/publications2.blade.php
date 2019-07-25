@@ -15,7 +15,7 @@
                   <div class="box-footer">
                     <div class="box-comment">
                       <div class="comment-text">
-                            <span class="username text-bold">{{ $publication->authors }}</span> et al., {{ $publication->year }}</span>
+                            <span class="username text-bold">{{ $publication->first_author_last_name }}</span> et al., {{ $publication->year }}</span>
                             <span class="text-bold pull-right">{{ $publication->project->name }}</span><br>
                         <a href="{{ $publication->link }}" target="_blank">{{ $publication->title }}</a>
                       </div>
