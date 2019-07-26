@@ -41,6 +41,8 @@ class ToolsController extends Controller
                 'tools.id',
                 'tools.name',
                 'tools.project_id',
+                'tools.publication_date',
+                'tools.type_of_data_available',
                 'tools.description',
                 'tools.keywords',
                 'tools.link',
@@ -63,6 +65,12 @@ class ToolsController extends Controller
             });
             $table->editColumn('project.name', function ($row) {
                 return $row->project ? $row->project->name : '';
+            });
+            $table->editColumn('publication_date', function ($row) {
+                return $row->publication_date ? $row->publication_date : '';
+            });
+            $table->editColumn('type_of_data_available', function ($row) {
+                return $row->type_of_data_available ? $row->type_of_data_available : '';
             });
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : '';

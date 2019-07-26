@@ -23,6 +23,7 @@ class StoreToolsRequest extends FormRequest
     public function rules()
     {
         return [
+            'publication_date' => 'nullable|date_format:'.config('app.date_format'),
         ];
     }
 }

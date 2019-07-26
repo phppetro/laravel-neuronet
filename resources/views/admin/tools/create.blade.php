@@ -36,6 +36,30 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('publication_date', trans('global.tools.fields.publication-date').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('publication_date', old('publication_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('publication_date'))
+                        <p class="help-block">
+                            {{ $errors->first('publication_date') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('type_of_data_available', trans('global.tools.fields.type-of-data-available').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('type_of_data_available', old('type_of_data_available'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('type_of_data_available'))
+                        <p class="help-block">
+                            {{ $errors->first('type_of_data_available') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('description', trans('global.tools.fields.description').'', ['class' => 'control-label']) !!}
                     {!! Form::text('description', old('description'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -78,3 +102,23 @@
     {!! Form::close() !!}
 @stop
 
+@section('javascript')
+    @parent
+
+    <script src="{{ url('adminlte/plugins/datetimepicker/moment-with-locales.min.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.js') }}"></script>
+    <script>
+        $(function(){
+            moment.updateLocale('{{ App::getLocale() }}', {
+                week: { dow: 1 } // Monday is the first day of the week
+            });
+            
+            $('.date').datetimepicker({
+                format: "{{ config('app.date_format_moment') }}",
+                locale: "{{ App::getLocale() }}",
+            });
+            
+        });
+    </script>
+            
+@stop

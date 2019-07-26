@@ -21,6 +21,14 @@
                             <td field-key='project'>{{ $tool->project->name ?? '' }}</td>
                         </tr>
                         <tr>
+                            <th>@lang('global.tools.fields.publication-date')</th>
+                            <td field-key='publication_date'>{{ $tool->publication_date }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.tools.fields.type-of-data-available')</th>
+                            <td field-key='type_of_data_available'>{{ $tool->type_of_data_available }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.tools.fields.description')</th>
                             <td field-key='description'>{{ $tool->description }}</td>
                         </tr>
@@ -43,4 +51,23 @@
     </div>
 @stop
 
+@section('javascript')
+    @parent
 
+    <script src="{{ url('adminlte/plugins/datetimepicker/moment-with-locales.min.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/datetimepicker/bootstrap-datetimepicker.min.js') }}"></script>
+    <script>
+        $(function(){
+            moment.updateLocale('{{ App::getLocale() }}', {
+                week: { dow: 1 } // Monday is the first day of the week
+            });
+            
+            $('.date').datetimepicker({
+                format: "{{ config('app.date_format_moment') }}",
+                locale: "{{ App::getLocale() }}",
+            });
+            
+        });
+    </script>
+            
+@stop

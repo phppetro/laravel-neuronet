@@ -258,11 +258,13 @@ return [
     ],
   ],
 
-  	'tools' => [
+	'tools' => [
 		'title' => 'Tools',
 		'fields' => [
 			'name' => 'Name',
 			'project' => 'Project',
+			'publication-date' => 'Publication date',
+			'type-of-data-available' => 'Type of data available',
 			'description' => 'Description',
 			'keywords' => 'Keywords',
 			'link' => 'Link',

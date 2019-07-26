@@ -23,7 +23,7 @@
 
                       @foreach($tools as $tool)
                         <tr>
-                          <td>{{ $tool->description }}</td>
+                          <td>{{ $tool->publication_date }}</td>
                           <td><a href="/admin/tools/{{ $tool->id }}">{{ $tool->name }}</a></td>
                           <td>{{ $tool->project->name }}</td>
                         </tr>
