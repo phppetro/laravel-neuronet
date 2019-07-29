@@ -26,28 +26,42 @@
 
               dataTable.addColumn({ type: 'string', id: 'Role' });
               dataTable.addColumn({ type: 'string', id: 'Name' });
+              dataTable.addColumn({ type: 'string', role: 'tooltip', 'p': {'html': true} });
               dataTable.addColumn({ type: 'date', id: 'Start' });
               dataTable.addColumn({ type: 'date', id: 'End' });
               dataTable.addRows([
-                [ '1', 'ADAPTED', new Date(2016, 9, 1), new Date(2019, 8, 30) ],
-                [ '2', 'AETIONOMY', new Date(2014, 1, 1), new Date(2018, 12, 31) ],
-                [ '3', 'AMYPAD', new Date(2016, 9, 30), new Date(2021, 9, 30) ],
-                [ '4', 'EMIF-AD', new Date(2013, 1, 1), new Date(2018, 6, 30) ],
-                [ '5', 'EPAD', new Date(2015, 1, 1), new Date(2019, 12, 31) ],
-                [ '6', 'EQIPD', new Date(2017, 9, 30), new Date(2020, 9, 30) ],
-                [ '7', 'IM2PACT', new Date(2019, 1, 1), new Date(2023, 12, 31) ],
-                [ '8', 'IMPRIND', new Date(2017, 1, 1), new Date(2021, 9, 30) ],
-                [ '9', 'MOPEAD', new Date(2016, 9, 30), new Date(2019, 9, 30) ],
-                [ '10', 'PD-MITOQUANT', new Date(2019, 1, 1), new Date(2021, 12, 31) ],
-                [ '11', 'PHAGO', new Date(2016, 9, 30), new Date(2021, 9, 30) ],
-                [ '12', 'PRISM', new Date(2016, 3, 30), new Date(2019, 12, 31) ],
-                [ '13', 'RADAR-CNS', new Date(2016, 3, 30), new Date(2021, 3, 30) ],
-                [ '14', 'RADAR-AD', new Date(2019, 1, 1), new Date(2022, 6, 30) ],
-                [ '15', 'ROADMAP', new Date(2016, 9, 30), new Date(2018, 12, 31) ]]);
+                @foreach ($projects as $project)
+                  [ '{{ $loop->index+1 }}',
+                    '{{ $project->name }}',
+
+                    `<div class=""
+                      style="width: 170px; height: 110px; left: 348.303px; top: 184.396px; pointer-events: none;">
+                        <ul class="google-visualization-tooltip-item-list" style="">
+                          <li class="google-visualization-tooltip-item" style="">
+                            <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none; font-weight: bold;">{{ $project->name }}</span>
+                          </li>
+                        </ul>
+                      <div class="google-visualization-tooltip-separator" style=""></div>
+                      <ul class="google-visualization-tooltip-action-list" style="">
+                        <li class="google-visualization-tooltip-action" style="">
+                          <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none; font-weight: bold;">Start Date:</span>
+                          <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none;"> {{ $project->start_date }}</span>
+                        </li>
+                        <li class="google-visualization-tooltip-action" style="">
+                          <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none; font-weight: bold;">End date:</span>
+                          <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none;">{{ $project->end_date }}</span>
+                        </li>
+                      </ul>
+                    </div>`,
+
+                    new Date({{ date('Y, m, d', strtotime($project->start_date)) }}),
+                    new Date({{ date('Y, m, d', strtotime($project->end_date)) }}) ],
+                @endforeach
+              ]);
 
                 var options = {
                   //title: 'Rate the Day on a Scale of 1 to 10',
-                  height: 614,
+                  height: 652,
                   hAxis: {
                     format: 'yyyy',
                     title: 'time',
@@ -62,7 +76,7 @@
                   tooltip: {
                     trigger: focus //none
                   },
-                  colors: ['#3a0961', '#9b6deb', '#9b6deb'],
+                  colors: ['#3a0961', '#9b6deb'],
                   backgroundColor: '#fff'
                 };
 
