@@ -48,7 +48,7 @@
                           <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none;"> {{ $project->start_date }}</span>
                         </li>
                         <li class="google-visualization-tooltip-action" style="">
-                          <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none; font-weight: bold;">End date:</span>
+                          <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none; font-weight: bold;">End Date:</span>
                           <span style="font-family: Arial; font-size: 12px; color: rgb(0, 0, 0); opacity: 1; margin: 0px; text-decoration: none;">{{ $project->end_date }}</span>
                         </li>
                       </ul>
