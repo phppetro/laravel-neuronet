@@ -131,16 +131,16 @@ return [
 	],
 
 'projects' => [
-		'title' => 'Projects',
-		'fields' => [
-			'name' => 'Name',
-			'description' => 'Description',
-			'website' => 'Website',
-			'date' => 'Date',
-			'duration' => 'Duration',
-			'logo' => 'Logo',
-		],
+	'title' => 'Projects',
+	'fields' => [
+		'name' => 'Name',
+		'description' => 'Description',
+		'website' => 'Website',
+		'start-date' => 'Start date',
+		'end-date' => 'End date',
+		'logo' => 'Logo',
 	],
+],
 
 'publications' => [
 		'title' => 'Publications',

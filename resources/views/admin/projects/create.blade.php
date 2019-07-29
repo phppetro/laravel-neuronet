@@ -48,24 +48,24 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('date', trans('global.projects.fields.date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('date', old('date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    {!! Form::label('start_date', trans('global.projects.fields.start-date').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('start_date', old('start_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('date'))
+                    @if($errors->has('start_date'))
                         <p class="help-block">
-                            {{ $errors->first('date') }}
+                            {{ $errors->first('start_date') }}
                         </p>
                     @endif
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('duration', trans('global.projects.fields.duration').'', ['class' => 'control-label']) !!}
-                    {!! Form::number('duration', old('duration'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('end_date', trans('global.projects.fields.end-date').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('end_date', old('end_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('duration'))
+                    @if($errors->has('end_date'))
                         <p class="help-block">
-                            {{ $errors->first('duration') }}
+                            {{ $errors->first('end_date') }}
                         </p>
                     @endif
                 </div>

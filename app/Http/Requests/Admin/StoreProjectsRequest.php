@@ -24,8 +24,8 @@ class StoreProjectsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'date' => 'nullable|date_format:'.config('app.date_format'),
-            'duration' => 'max:2147483647|nullable|numeric',
+            'start_date' => 'nullable|date_format:'.config('app.date_format'),
+            'end_date' => 'nullable|date_format:'.config('app.date_format'),
             'logo' => 'nullable|mimes:png,jpg,jpeg,gif',
         ];
     }

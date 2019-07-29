@@ -25,12 +25,12 @@
                             <td field-key='website'>{{ $project->website }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.projects.fields.date')</th>
-                            <td field-key='date'>{{ $project->date }}</td>
+                            <th>@lang('global.projects.fields.start-date')</th>
+                            <td field-key='start_date'>{{ $project->start_date }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.projects.fields.duration')</th>
-                            <td field-key='duration'>{{ $project->duration }}</td>
+                            <th>@lang('global.projects.fields.end-date')</th>
+                            <td field-key='end_date'>{{ $project->end_date }}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.projects.fields.logo')</th>

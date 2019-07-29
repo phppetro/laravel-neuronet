@@ -62,7 +62,7 @@
                   tooltip: {
                     trigger: focus //none
                   },
-                  colors: ['#3a0961', '#9b6deb'],
+                  colors: ['#3a0961', '#9b6deb', '#9b6deb'],
                   backgroundColor: '#fff'
                 };
 

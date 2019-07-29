@@ -34,8 +34,8 @@
                         <th>@lang('global.projects.fields.name')</th>
                         <th>@lang('global.projects.fields.description')</th>
                         <th>@lang('global.projects.fields.website')</th>
-                        <th>@lang('global.projects.fields.date')</th>
-                        <th>@lang('global.projects.fields.duration')</th>
+                        <th>@lang('global.projects.fields.start-date')</th>
+                        <th>@lang('global.projects.fields.end-date')</th>
                         <th>@lang('global.projects.fields.logo')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
@@ -63,8 +63,8 @@
                 @endcan{data: 'name', name: 'name'},
                 {data: 'description', name: 'description'},
                 {data: 'website', name: 'website'},
-                {data: 'date', name: 'date'},
-                {data: 'duration', name: 'duration'},
+                {data: 'start_date', name: 'start_date'},
+                {data: 'end_date', name: 'end_date'},
                 {data: 'logo', name: 'logo'},
                 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}

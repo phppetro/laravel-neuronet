@@ -44,8 +44,8 @@ class ProjectsController extends Controller
                 'projects.name',
                 'projects.description',
                 'projects.website',
-                'projects.date',
-                'projects.duration',
+                'projects.start_date',
+                'projects.end_date',
                 'projects.logo',
             ]);
             $table = Datatables::of($query);
@@ -70,11 +70,11 @@ class ProjectsController extends Controller
             $table->editColumn('website', function ($row) {
                 return $row->website ? $row->website : '';
             });
-            $table->editColumn('date', function ($row) {
-                return $row->date ? $row->date : '';
+            $table->editColumn('start_date', function ($row) {
+                return $row->start_date ? $row->start_date : '';
             });
-            $table->editColumn('duration', function ($row) {
-                return $row->duration ? $row->duration : '';
+            $table->editColumn('end_date', function ($row) {
+                return $row->end_date ? $row->end_date : '';
             });
             $table->editColumn('logo', function ($row) {
                 if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->logo) .'"/>'; };
