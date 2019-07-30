@@ -39,10 +39,11 @@ class CalendarsController extends Controller
             }
             $query->select([
                 'calendars.id',
-                'calendars.date',
                 'calendars.title',
                 'calendars.project_id',
                 'calendars.location',
+                'calendars.start_date_and_time',
+                'calendars.end_date_and_time',
             ]);
             $table = Datatables::of($query);
 
@@ -57,9 +58,6 @@ class CalendarsController extends Controller
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
             });
-            $table->editColumn('date', function ($row) {
-                return $row->date ? $row->date : '';
-            });
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';
             });
@@ -68,6 +66,12 @@ class CalendarsController extends Controller
             });
             $table->editColumn('location', function ($row) {
                 return $row->location ? $row->location : '';
+            });
+            $table->editColumn('start_date_and_time', function ($row) {
+                return $row->start_date_and_time ? $row->start_date_and_time : '';
+            });
+            $table->editColumn('end_date_and_time', function ($row) {
+                return $row->end_date_and_time ? $row->end_date_and_time : '';
             });
 
             $table->rawColumns(['actions','massDelete']);

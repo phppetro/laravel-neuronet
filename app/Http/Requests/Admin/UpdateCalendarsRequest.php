@@ -24,7 +24,8 @@ class UpdateCalendarsRequest extends FormRequest
     {
         return [
             
-            'date' => 'nullable|date_format:'.config('app.date_format').' H:i:s',
+            'start_date_and_time' => 'nullable|date_format:'.config('app.date_format').' H:i:s',
+            'end_date_and_time' => 'nullable|date_format:'.config('app.date_format').' H:i:s',
         ];
     }
 }

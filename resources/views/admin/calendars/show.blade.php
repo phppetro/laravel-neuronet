@@ -13,10 +13,6 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <tr>
-                            <th>@lang('global.calendar.fields.date')</th>
-                            <td field-key='date'>{{ $calendar->date }}</td>
-                        </tr>
-                        <tr>
                             <th>@lang('global.calendar.fields.title')</th>
                             <td field-key='title'>{{ $calendar->title }}</td>
                         </tr>
@@ -27,6 +23,14 @@
                         <tr>
                             <th>@lang('global.calendar.fields.location')</th>
                             <td field-key='location'>{{ $calendar->location }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.start-date-and-time')</th>
+                            <td field-key='start_date_and_time'>{{ $calendar->start_date_and_time }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.end-date-and-time')</th>
+                            <td field-key='end_date_and_time'>{{ $calendar->end_date_and_time }}</td>
                         </tr>
                     </table>
                 </div>

@@ -168,10 +168,11 @@ return [
 	'calendar' => [
 		'title' => 'Events',
 		'fields' => [
-			'date' => 'Date',
 			'title' => 'Event',
 			'project' => 'Project',
 			'location' => 'Location',
+			'start-date-and-time' => 'Start date and time',
+			'end-date-and-time' => 'End date and time',
 		],
 	],
 	'contact-management' => [

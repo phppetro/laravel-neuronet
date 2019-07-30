@@ -12,18 +12,6 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('date', trans('global.calendar.fields.date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('date', old('date'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('date'))
-                        <p class="help-block">
-                            {{ $errors->first('date') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
                     {!! Form::label('title', trans('global.calendar.fields.title').'', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
@@ -54,6 +42,30 @@
                     @if($errors->has('location'))
                         <p class="help-block">
                             {{ $errors->first('location') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('start_date_and_time', trans('global.calendar.fields.start-date-and-time').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('start_date_and_time', old('start_date_and_time'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('start_date_and_time'))
+                        <p class="help-block">
+                            {{ $errors->first('start_date_and_time') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('end_date_and_time', trans('global.calendar.fields.end-date-and-time').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('end_date_and_time', old('end_date_and_time'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('end_date_and_time'))
+                        <p class="help-block">
+                            {{ $errors->first('end_date_and_time') }}
                         </p>
                     @endif
                 </div>

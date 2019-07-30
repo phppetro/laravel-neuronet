@@ -2,24 +2,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.calendar.title')
-      @can('calendar_create')
-          <a href="{{ route('admin.calendars.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-      @endcan
-      @can('calendar_csv_import')
-          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-          @include('csvImport.modal', ['model' => 'Calendar'])
-      @endcan
-    </h3>
-
-    @can('calendar_perma_del')
-      <p>
-          <ul class="list-inline">
-              <li><a href="{{ route('admin.calendars.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
-              <li><a href="{{ route('admin.calendars.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
-          </ul>
-      </p>
+    <h3 class="page-title">@lang('global.calendar.title')</h3>
+    @can('calendar_create')
+    <p>
+        <a href="{{ route('admin.calendars.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+        @include('csvImport.modal', ['model' => 'Calendar'])
+        
+    </p>
     @endcan
+
+    <p>
+        <ul class="list-inline">
+            <li><a href="{{ route('admin.calendars.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
+            <li><a href="{{ route('admin.calendars.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
+        </ul>
+    </p>
+    
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -34,10 +33,11 @@
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
 
-                        <th>@lang('global.calendar.fields.date')</th>
                         <th>@lang('global.calendar.fields.title')</th>
                         <th>@lang('global.calendar.fields.project')</th>
                         <th>@lang('global.calendar.fields.location')</th>
+                        <th>@lang('global.calendar.fields.start-date-and-time')</th>
+                        <th>@lang('global.calendar.fields.end-date-and-time')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -50,7 +50,7 @@
     </div>
 @stop
 
-@section('javascript')
+@section('javascript') 
     <script>
         @can('calendar_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.calendars.mass_destroy') }}'; @endif
@@ -61,11 +61,12 @@
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
-                @endcan{data: 'date', name: 'date'},
-                {data: 'title', name: 'title'},
+                @endcan{data: 'title', name: 'title'},
                 {data: 'project.name', name: 'project.name'},
                 {data: 'location', name: 'location'},
-
+                {data: 'start_date_and_time', name: 'start_date_and_time'},
+                {data: 'end_date_and_time', name: 'end_date_and_time'},
+                
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();
