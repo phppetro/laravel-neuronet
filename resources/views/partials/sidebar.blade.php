@@ -306,6 +306,14 @@
                         </a>
                     </li>@endcan
 
+                    @can('color_access')
+                    <li>
+                        <a href="{{ route('admin.colors.index') }}">
+                            <i class="fa fa-gears"></i>
+                            <span>@lang('global.color.title')</span>
+                        </a>
+                    </li>@endcan
+
                 </ul>
             </li>@endcan
 
