@@ -24,7 +24,7 @@
 
           @foreach($events as $event)
             <tr>
-              <td>{{ $event->date }}</td>
+              <td>{{ $event->start_date }}</td>
               <td><a href="/admin/calendars/{{ $event->id }}">{{ $event->title }}</a></td>
               <td>{{ $event->project->name }}</td>
               <td>{{ $event->location }}</td>
