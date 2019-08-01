@@ -2,3 +2,7 @@
 .label {margin-right:5px;margin-bottom:5px !important;display:inline-block;} #wrapper {
     position: relative;
 }
+
+.fc-title{
+    font-size: 1.3em;
+}
