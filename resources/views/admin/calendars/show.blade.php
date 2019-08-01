@@ -25,12 +25,16 @@
                             <td field-key='location'>{{ $calendar->location }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.calendar.fields.start-date-and-time')</th>
-                            <td field-key='start_date_and_time'>{{ $calendar->start_date_and_time }}</td>
+                            <th>@lang('global.calendar.fields.start-date')</th>
+                            <td field-key='start_date'>{{ $calendar->start_date }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.calendar.fields.end-date-and-time')</th>
-                            <td field-key='end_date_and_time'>{{ $calendar->end_date_and_time }}</td>
+                            <th>@lang('global.calendar.fields.end-date')</th>
+                            <td field-key='end_date'>{{ $calendar->end_date }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.color')</th>
+                            <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
                         </tr>
                     </table>
                 </div>
@@ -54,10 +58,9 @@
                 week: { dow: 1 } // Monday is the first day of the week
             });
             
-            $('.datetime').datetimepicker({
-                format: "{{ config('app.datetime_format_moment') }}",
+            $('.date').datetimepicker({
+                format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
-                sideBySide: true,
             });
             
         });

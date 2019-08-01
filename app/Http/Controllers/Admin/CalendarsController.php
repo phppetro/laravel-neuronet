@@ -28,6 +28,7 @@ class CalendarsController extends Controller
         if (request()->ajax()) {
             $query = Calendar::query();
             $query->with("project");
+            $query->with("color");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
                 
@@ -42,8 +43,9 @@ class CalendarsController extends Controller
                 'calendars.title',
                 'calendars.project_id',
                 'calendars.location',
-                'calendars.start_date_and_time',
-                'calendars.end_date_and_time',
+                'calendars.start_date',
+                'calendars.end_date',
+                'calendars.color_id',
             ]);
             $table = Datatables::of($query);
 
@@ -67,11 +69,14 @@ class CalendarsController extends Controller
             $table->editColumn('location', function ($row) {
                 return $row->location ? $row->location : '';
             });
-            $table->editColumn('start_date_and_time', function ($row) {
-                return $row->start_date_and_time ? $row->start_date_and_time : '';
+            $table->editColumn('start_date', function ($row) {
+                return $row->start_date ? $row->start_date : '';
             });
-            $table->editColumn('end_date_and_time', function ($row) {
-                return $row->end_date_and_time ? $row->end_date_and_time : '';
+            $table->editColumn('end_date', function ($row) {
+                return $row->end_date ? $row->end_date : '';
+            });
+            $table->editColumn('color.color', function ($row) {
+                return $row->color ? $row->color->color : '';
             });
 
             $table->rawColumns(['actions','massDelete']);
@@ -94,8 +99,9 @@ class CalendarsController extends Controller
         }
         
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $colors = \App\Color::get()->pluck('color', 'id')->prepend(trans('global.app_please_select'), '');
 
-        return view('admin.calendars.create', compact('projects'));
+        return view('admin.calendars.create', compact('projects', 'colors'));
     }
 
     /**
@@ -130,10 +136,11 @@ class CalendarsController extends Controller
         }
         
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $colors = \App\Color::get()->pluck('color', 'id')->prepend(trans('global.app_please_select'), '');
 
         $calendar = Calendar::findOrFail($id);
 
-        return view('admin.calendars.edit', compact('calendar', 'projects'));
+        return view('admin.calendars.edit', compact('calendar', 'projects', 'colors'));
     }
 
     /**

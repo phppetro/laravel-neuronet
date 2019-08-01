@@ -36,8 +36,9 @@
                         <th>@lang('global.calendar.fields.title')</th>
                         <th>@lang('global.calendar.fields.project')</th>
                         <th>@lang('global.calendar.fields.location')</th>
-                        <th>@lang('global.calendar.fields.start-date-and-time')</th>
-                        <th>@lang('global.calendar.fields.end-date-and-time')</th>
+                        <th>@lang('global.calendar.fields.start-date')</th>
+                        <th>@lang('global.calendar.fields.end-date')</th>
+                        <th>@lang('global.calendar.fields.color')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -64,8 +65,9 @@
                 @endcan{data: 'title', name: 'title'},
                 {data: 'project.name', name: 'project.name'},
                 {data: 'location', name: 'location'},
-                {data: 'start_date_and_time', name: 'start_date_and_time'},
-                {data: 'end_date_and_time', name: 'end_date_and_time'},
+                {data: 'start_date', name: 'start_date'},
+                {data: 'end_date', name: 'end_date'},
+                {data: 'color.color', name: 'color.color'},
                 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

@@ -134,6 +134,11 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('tools_restore/{id}', ['uses' => 'Admin\ToolsController@restore', 'as' => 'tools.restore']);
     Route::delete('tools_perma_del/{id}', ['uses' => 'Admin\ToolsController@perma_del', 'as' => 'tools.perma_del']);
 
+    Route::resource('colors', 'Admin\ColorsController');
+    Route::post('colors_mass_destroy', ['uses' => 'Admin\ColorsController@massDestroy', 'as' => 'colors.mass_destroy']);
+    Route::post('colors_restore/{id}', ['uses' => 'Admin\ColorsController@restore', 'as' => 'colors.restore']);
+    Route::delete('colors_perma_del/{id}', ['uses' => 'Admin\ColorsController@perma_del', 'as' => 'colors.perma_del']);
+
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');
 

@@ -165,16 +165,17 @@ return [
 	],
 ],
 
-	'calendar' => [
-		'title' => 'Events',
-		'fields' => [
-			'title' => 'Event',
-			'project' => 'Project',
-			'location' => 'Location',
-			'start-date-and-time' => 'Start date and time',
-			'end-date-and-time' => 'End date and time',
-		],
-	],
+'calendar' => [
+'title' => 'Events',
+'fields' => [
+	'title' => 'Event',
+	'project' => 'Project',
+	'location' => 'Location',
+	'start-date' => 'Start date',
+	'end-date' => 'End date',
+	'color' => 'Color',
+],
+],
 	'contact-management' => [
 		'title' => 'Contact management',
 		'fields' => [
@@ -271,6 +272,14 @@ return [
 			'link' => 'Link',
 		],
 	],
+
+	'color' => [
+	'title' => 'Color',
+	'fields' => [
+		'color' => 'Color',
+		'value' => 'Value',
+	],
+],
 
   'app_create' => 'Create',
 	'app_save' => 'Save',

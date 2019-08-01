@@ -49,24 +49,36 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('start_date_and_time', trans('global.calendar.fields.start-date-and-time').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('start_date_and_time', old('start_date_and_time'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
+                    {!! Form::label('start_date', trans('global.calendar.fields.start-date').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('start_date', old('start_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('start_date_and_time'))
+                    @if($errors->has('start_date'))
                         <p class="help-block">
-                            {{ $errors->first('start_date_and_time') }}
+                            {{ $errors->first('start_date') }}
                         </p>
                     @endif
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('end_date_and_time', trans('global.calendar.fields.end-date-and-time').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('end_date_and_time', old('end_date_and_time'), ['class' => 'form-control datetime', 'placeholder' => '']) !!}
+                    {!! Form::label('end_date', trans('global.calendar.fields.end-date').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('end_date', old('end_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('end_date_and_time'))
+                    @if($errors->has('end_date'))
                         <p class="help-block">
-                            {{ $errors->first('end_date_and_time') }}
+                            {{ $errors->first('end_date') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('color_id', trans('global.calendar.fields.color').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('color_id', $colors, old('color_id'), ['class' => 'form-control select2']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('color_id'))
+                        <p class="help-block">
+                            {{ $errors->first('color_id') }}
                         </p>
                     @endif
                 </div>
@@ -90,10 +102,9 @@
                 week: { dow: 1 } // Monday is the first day of the week
             });
             
-            $('.datetime').datetimepicker({
-                format: "{{ config('app.datetime_format_moment') }}",
+            $('.date').datetimepicker({
+                format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
-                sideBySide: true,
             });
             
         });

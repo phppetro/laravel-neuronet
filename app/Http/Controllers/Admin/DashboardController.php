@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -34,7 +35,7 @@ class DashboardController extends Controller
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
         $contactscategories = \App\ContactCategory::all();
         $projects = \App\Project::all()->sortBy('name');
-        $events = \App\Calendar::where('date','>=',now())->limit(5)->get();
+        $events = \App\Calendar::where('start_date','>=',now())->limit(5)->get();
 
         //colors
         //Purple: "rgba(155,109,235,1)"

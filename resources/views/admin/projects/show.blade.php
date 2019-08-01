@@ -207,8 +207,9 @@
             <th>@lang('global.calendar.fields.title')</th>
                         <th>@lang('global.calendar.fields.project')</th>
                         <th>@lang('global.calendar.fields.location')</th>
-                        <th>@lang('global.calendar.fields.start-date-and-time')</th>
-                        <th>@lang('global.calendar.fields.end-date-and-time')</th>
+                        <th>@lang('global.calendar.fields.start-date')</th>
+                        <th>@lang('global.calendar.fields.end-date')</th>
+                        <th>@lang('global.calendar.fields.color')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -224,8 +225,9 @@
                     <td field-key='title'>{{ $calendar->title }}</td>
                                 <td field-key='project'>{{ $calendar->project->name ?? '' }}</td>
                                 <td field-key='location'>{{ $calendar->location }}</td>
-                                <td field-key='start_date_and_time'>{{ $calendar->start_date_and_time }}</td>
-                                <td field-key='end_date_and_time'>{{ $calendar->end_date_and_time }}</td>
+                                <td field-key='start_date'>{{ $calendar->start_date }}</td>
+                                <td field-key='end_date'>{{ $calendar->end_date }}</td>
+                                <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(
@@ -266,7 +268,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="10">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
