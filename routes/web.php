@@ -38,10 +38,14 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);
     Route::post('activities_restore/{id}', ['uses' => 'Admin\ActivitiesController@restore', 'as' => 'activities.restore']);
     Route::delete('activities_perma_del/{id}', ['uses' => 'Admin\ActivitiesController@perma_del', 'as' => 'activities.perma_del']);
+
+    Route::get('/contacts/category/{category}', ['uses' => 'Admin\ContactsController@index', 'as' => 'contacts.category']);
+
     Route::resource('contacts', 'Admin\ContactsController');
     Route::post('contacts_mass_destroy', ['uses' => 'Admin\ContactsController@massDestroy', 'as' => 'contacts.mass_destroy']);
     Route::post('contacts_restore/{id}', ['uses' => 'Admin\ContactsController@restore', 'as' => 'contacts.restore']);
     Route::delete('contacts_perma_del/{id}', ['uses' => 'Admin\ContactsController@perma_del', 'as' => 'contacts.perma_del']);
+
     Route::resource('contact_categories', 'Admin\ContactCategoriesController');
     Route::post('contact_categories_mass_destroy', ['uses' => 'Admin\ContactCategoriesController@massDestroy', 'as' => 'contact_categories.mass_destroy']);
     Route::post('contact_categories_restore/{id}', ['uses' => 'Admin\ContactCategoriesController@restore', 'as' => 'contact_categories.restore']);

@@ -17,26 +17,25 @@ class ContactsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($cat_id=null)
     {
         if (! Gate::allows('contact_access')) {
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = Contact::query();
             $query->with("category");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
-        if (! Gate::allows('contact_delete')) {
-            return abort(401);
-        }
+
+              if (! Gate::allows('contact_delete')) {
+                  return abort(401);
+              }
                 $query->onlyTrashed();
                 $template = 'restoreTemplate';
             }
+
             $query->select([
                 'contacts.id',
                 'contacts.first_name',
@@ -48,6 +47,12 @@ class ContactsController extends Controller
                 'contacts.projects_involved',
                 'contacts.expertise',
             ]);
+
+            $category_id = request('category_id');
+            if( $category_id != null) {
+              $query->where('category_id',$category_id)->get();
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -90,8 +95,9 @@ class ContactsController extends Controller
 
             return $table->make(true);
         }
-
-        return view('admin.contacts.index');
+        $categories = \App\ContactCategory::all();
+        $category_name = \App\ContactCategory::where('id',$cat_id)->value('name');
+        return view('admin.contacts.index', compact('categories', 'category_name'));
     }
 
     /**
@@ -104,7 +110,7 @@ class ContactsController extends Controller
         if (! Gate::allows('contact_create')) {
             return abort(401);
         }
-        
+
         $categories = \App\ContactCategory::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.contacts.create', compact('categories'));
@@ -140,7 +146,7 @@ class ContactsController extends Controller
         if (! Gate::allows('contact_edit')) {
             return abort(401);
         }
-        
+
         $categories = \App\ContactCategory::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $contact = Contact::findOrFail($id);

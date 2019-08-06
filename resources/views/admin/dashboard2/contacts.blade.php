@@ -12,7 +12,7 @@
                 <div class="box-body">
 
                 @foreach($contactscategories as $key=>$contactcategory)
-                  <a href="/admin/contacts" class="btn btn-block btn-{{ $labels[$key] }}">
+                  <a href="/admin/contacts/category/{{ $contactcategory->id }}" class="btn btn-block btn-{{ $labels[$key] }}">
                     {{ $contactcategory->name }}
                   </a>
                 @endforeach
