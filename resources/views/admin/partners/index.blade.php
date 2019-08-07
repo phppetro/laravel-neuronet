@@ -4,9 +4,6 @@
 @section('content')
     <h3 class="page-title">
       @lang('global.partners.title')
-      @if($project_name )
-         associated with the project "{{ $project_name }}"
-      @endif
 
     @can('partner_create')
       <a href="{{ route('admin.partners.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
@@ -38,14 +35,11 @@
                   <li><a href="/admin/partners/project/{{ $project->id }}">{{ $project->name }}</a></li>
                 @endif
               @endforeach
-                <li class="divider"></li>
-                @if($project_name)
-                  <li><a href="/admin/partners">Remove filter</a></li>
-                @else
-                  <li><a href="/admin/partners">No filter applied</a></li>
-                @endif
             </ul>
           </div>
+          @if($project_name)
+              <a class="btn btn-info" href="/admin/partners">Applied filter: "{{ $project_name }}" <u>Click here to remove it</u></a>
+          @endif
         </div>
 
         <div class="panel-body table-responsive">
