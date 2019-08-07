@@ -4,9 +4,7 @@
 @section('content')
     <h3 class="page-title">
       @lang('global.contacts.title')
-      @if($category_name )
-       in the category "{{ $category_name }}"
-      @endif
+
     @can('contact_create')
 
         <a href="{{ route('admin.contacts.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
@@ -15,9 +13,9 @@
           @include('csvImport.modal', ['model' => 'Contact'])
         @endcan
 
-
     @endcan
     </h3>
+
     @can('contact_perma_del')
     <p>
         <ul class="list-inline">
@@ -28,8 +26,6 @@
     @endcan
 
     <div class="panel panel-default">
-
-
 
         <div class="panel-heading">
           <div class="btn-group">
@@ -46,14 +42,11 @@
                   <li><a href="/admin/contacts/category/{{ $category->id }}">{{ $category->name }}</a></li>
                 @endif
               @endforeach
-                <li class="divider"></li>
-                @if($category_name)
-                  <li><a href="/admin/contacts">Remove filter</a></li>
-                @else
-                  <li><a href="/admin/contacts">No filter applied</a></li>
-                @endif
             </ul>
           </div>
+          @if($category_name)
+              <a class="btn btn-info" href="/admin/contacts">Applied filter: "{{ $category_name }}" <u>Click here to remove it</u></a>
+          @endif
         </div>
 
         <div class="panel-body table-responsive">
