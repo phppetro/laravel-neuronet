@@ -4,9 +4,6 @@
 @section('content')
     <h3 class="page-title">
       @lang('global.work-packages.title')
-      @if($project_name )
-         associated with the project "{{ $project_name }}"
-      @endif
 
     @can('work_package_create')
 
@@ -43,14 +40,11 @@
                     <li><a href="/admin/work_packages/project/{{ $project->id }}">{{ $project->name }}</a></li>
                   @endif
                 @endforeach
-                  <li class="divider"></li>
-                  @if($project_name)
-                    <li><a href="/admin/work_packages">Remove filter</a></li>
-                  @else
-                    <li><a href="/admin/work_packages">No filter applied</a></li>
-                  @endif
               </ul>
             </div>
+            @if($project_name)
+                <a class="btn btn-info" href="/admin/work_packages">Applied filter: "{{ $project_name }}" <u>Click here to remove it</u></a>
+            @endif
         </div>
 
         <div class="panel-body table-responsive">
