@@ -138,6 +138,7 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('wps_restore/{id}', ['uses' => 'Admin\WpsController@restore', 'as' => 'wps.restore']);
     Route::delete('wps_perma_del/{id}', ['uses' => 'Admin\WpsController@perma_del', 'as' => 'wps.perma_del']);
 
+    Route::get('/tools/project/{project}', ['uses' => 'Admin\ToolsController@index', 'as' => 'tools.project']);
     Route::resource('tools', 'Admin\ToolsController');
     Route::post('tools_mass_destroy', ['uses' => 'Admin\ToolsController@massDestroy', 'as' => 'tools.mass_destroy']);
     Route::post('tools_restore/{id}', ['uses' => 'Admin\ToolsController@restore', 'as' => 'tools.restore']);

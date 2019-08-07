@@ -17,20 +17,18 @@ class ToolsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($proj_id=null)
     {
         if (! Gate::allows('tool_access')) {
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = Tool::query();
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('tool_delete')) {
             return abort(401);
         }
@@ -47,6 +45,12 @@ class ToolsController extends Controller
                 'tools.keywords',
                 'tools.link',
             ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+              $query->where('project_id', $project_id)->get();
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -87,7 +91,9 @@ class ToolsController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.tools.index');
+        $projects = \App\Project::all()->sortBy('name');
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('admin.tools.index', compact('projects','project_name'));
     }
 
     /**
@@ -100,7 +106,7 @@ class ToolsController extends Controller
         if (! Gate::allows('tool_create')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.tools.create', compact('projects'));
@@ -136,7 +142,7 @@ class ToolsController extends Controller
         if (! Gate::allows('tool_edit')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $tool = Tool::findOrFail($id);
