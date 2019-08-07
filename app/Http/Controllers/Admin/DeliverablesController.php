@@ -17,20 +17,18 @@ class DeliverablesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($proj_id=null)
     {
         if (! Gate::allows('deliverable_access')) {
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = Deliverable::query();
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('deliverable_delete')) {
             return abort(401);
         }
@@ -45,6 +43,12 @@ class DeliverablesController extends Controller
                 'deliverables.link',
                 'deliverables.keywords',
             ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+              $query->where('project_id', $project_id)->get();
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -79,7 +83,9 @@ class DeliverablesController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.deliverables.index');
+        $projects = \App\Project::all()->sortBy('name');
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('admin.deliverables.index', compact('projects','project_name'));
     }
 
     /**
@@ -92,7 +98,7 @@ class DeliverablesController extends Controller
         if (! Gate::allows('deliverable_create')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.deliverables.create', compact('projects'));
@@ -111,8 +117,6 @@ class DeliverablesController extends Controller
         }
         $deliverable = Deliverable::create($request->all());
 
-
-
         return redirect()->route('admin.deliverables.index');
     }
 
@@ -128,7 +132,7 @@ class DeliverablesController extends Controller
         if (! Gate::allows('deliverable_edit')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $deliverable = Deliverable::findOrFail($id);
