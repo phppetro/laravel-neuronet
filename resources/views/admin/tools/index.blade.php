@@ -4,9 +4,6 @@
 @section('content')
     <h3 class="page-title">
       @lang('global.tools.title')
-      @if($project_name )
-         associated with the project "{{ $project_name }}"
-      @endif
 
     @can('tool_create')
 
@@ -30,27 +27,24 @@
     <div class="panel panel-default">
         <div class="panel-heading">
           <div class="btn-group">
-                  <button type="button" class="btn btn-default btn-flat">Filter by project</button>
-                  <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu">
-                    @foreach($projects as $project)
-                      @if($project->name == $project_name)
-                        <li><a href="/admin/tools/project/{{ $project->id }}"><b><u>{{ $project->name }}</u></b></a></li>
-                      @else
-                        <li><a href="/admin/tools/project/{{ $project->id }}">{{ $project->name }}</a></li>
-                      @endif
-                    @endforeach
-                      <li class="divider"></li>
-                      @if($project_name)
-                        <li><a href="/admin/tools">Remove filter</a></li>
-                      @else
-                        <li><a href="/admin/tools">No filter applied</a></li>
-                      @endif
-                  </ul>
-                </div>
+              <button type="button" class="btn btn-default btn-flat">Filter by project</button>
+              <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                @foreach($projects as $project)
+                  @if($project->name == $project_name)
+                    <li><a href="/admin/tools/project/{{ $project->id }}"><b><u>{{ $project->name }}</u></b></a></li>
+                  @else
+                    <li><a href="/admin/tools/project/{{ $project->id }}">{{ $project->name }}</a></li>
+                  @endif
+                @endforeach
+              </ul>
+            </div>
+            @if($project_name)
+                <a class="btn btn-info" href="/admin/tools">Applied filter: "{{ $project_name }}" <u>Click here to remove it</u></a>
+            @endif
         </div>
 
         <div class="panel-body table-responsive">
