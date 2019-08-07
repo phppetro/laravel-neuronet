@@ -29,19 +29,28 @@
 
 
         <div class="panel-heading">
-            Select a category:
-              @if($category_name)
-                <a class="btn btn-xs btn-purple" href="/admin/contacts/">See contacts in all categories</a>
-              @else
-                <a class="btn btn-xs btn-pink" href="/admin/contacts/">See contacts in all categories</a>
-              @endif
-            @foreach($categories as $category)
-              @if($category->name == $category_name)
-                <a class="btn btn-xs btn-pink" href="/admin/contacts/category/{{ $category->id }}">{{ $category->name }}</a>
-              @else
-              <a class="btn btn-xs btn-purple" href="/admin/contacts/category/{{ $category->id }}">{{ $category->name }}</a>
-              @endif
-            @endforeach
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-flat">Filter by contact category</button>
+            <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              @foreach($categories as $category)
+                @if($category->name == $category_name)
+                  <li><a href="/admin/contacts/category/{{ $category->id }}"><b><u>{{ $category->name }}</u></b></a></li>
+                @else
+                  <li><a href="/admin/contacts/category/{{ $category->id }}">{{ $category->name }}</a></li>
+                @endif
+              @endforeach
+                <li class="divider"></li>
+                @if($category_name)
+                  <li><a href="/admin/contacts">Remove filter</a></li>
+                @else
+                  <li><a href="/admin/contacts">No filter applied</a></li>
+                @endif
+            </ul>
+          </div>
         </div>
 
         <div class="panel-body table-responsive">
