@@ -25,19 +25,28 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-          Select a project:
-            @if($project_name)
-              <a class="btn btn-xs btn-purple" href="/admin/partners/">See all partners</a>
-            @else
-              <a class="btn btn-xs btn-pink" href="/admin/partners/">See all partners</a>
-            @endif
-          @foreach($projects as $project)
-            @if($project->name == $project_name)
-              <a class="btn btn-xs btn-pink" href="/admin/partners/project/{{ $project->id }}">{{ $project->name }}</a>
-            @else
-            <a class="btn btn-xs btn-purple" href="/admin/partners/project/{{ $project->id }}">{{ $project->name }}</a>
-            @endif
-          @endforeach
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-flat">Filter by project</button>
+            <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              @foreach($projects as $project)
+                @if($project->name == $project_name)
+                  <li><a href="/admin/partners/project/{{ $project->id }}"><b><u>{{ $project->name }}</u></b></a></li>
+                @else
+                  <li><a href="/admin/partners/project/{{ $project->id }}">{{ $project->name }}</a></li>
+                @endif
+              @endforeach
+                <li class="divider"></li>
+                @if($project_name)
+                  <li><a href="/admin/partners">Remove filter</a></li>
+                @else
+                  <li><a href="/admin/partners">No filter applied</a></li>
+                @endif
+            </ul>
+          </div>
         </div>
 
         <div class="panel-body table-responsive">
