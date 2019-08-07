@@ -4,9 +4,6 @@
 @section('content')
     <h3 class="page-title">
       @lang('global.deliverables.title')
-      @if($project_name )
-         associated with the project "{{ $project_name }}"
-      @endif
     @can('deliverable_create')
         <a href="{{ route('admin.deliverables.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
         @can('deliverable_csv_import')
@@ -41,14 +38,11 @@
                   <li><a href="/admin/deliverables/project/{{ $project->id }}">{{ $project->name }}</a></li>
                 @endif
               @endforeach
-                <li class="divider"></li>
-                @if($project_name)
-                  <li><a href="/admin/deliverables">Remove filter</a></li>
-                @else
-                  <li><a href="/admin/deliverables">No filter applied</a></li>
-                @endif
             </ul>
           </div>
+          @if($project_name)
+              <a class="btn btn-info" href="/admin/deliverables">Applied filter: "{{ $project_name }}" <u>Click here to remove it</u></a>
+          @endif
         </div>
 
         <div class="panel-body table-responsive">
