@@ -2,15 +2,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.type-of-institution.title')</h3>
+    <h3 class="page-title">@lang('global.type-of-institution.title')
     @can('type_of_institution_create')
-    <p>
+
         <a href="{{ route('admin.type_of_institutions.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
         <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
         @include('csvImport.modal', ['model' => 'TypeOfInstitution'])
-        
-    </p>
+
     @endcan
+    </h3>
 
     <p>
         <ul class="list-inline">
@@ -18,7 +18,7 @@
             <li><a href="{{ route('admin.type_of_institutions.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
         </ul>
     </p>
-    
+
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -46,7 +46,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('type_of_institution_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.type_of_institutions.mass_destroy') }}'; @endif
@@ -58,7 +58,7 @@
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
                 @endcan{data: 'name', name: 'name'},
-                
+
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();
