@@ -8,8 +8,6 @@
       @endcan
     </h3>
 
-
-
     <div class="panel panel-default">
         <div class="panel-heading">
             @lang('global.app_list')

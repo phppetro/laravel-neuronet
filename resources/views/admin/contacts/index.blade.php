@@ -6,23 +6,26 @@
       @lang('global.contacts.title')
       @if($category_name )
        in the category "{{ $category_name }}"
-      @endif</h3>
+      @endif
     @can('contact_create')
-    <p>
+
         <a href="{{ route('admin.contacts.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-        @include('csvImport.modal', ['model' => 'Contact'])
+        @can('contact_csv_import')
+          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+          @include('csvImport.modal', ['model' => 'Contact'])
+        @endcan
 
-    </p>
+
     @endcan
-
+    </h3>
+    @can('contact_perma_del')
     <p>
         <ul class="list-inline">
             <li><a href="{{ route('admin.contacts.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
             <li><a href="{{ route('admin.contacts.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
         </ul>
     </p>
-
+    @endcan
 
     <div class="panel panel-default">
 

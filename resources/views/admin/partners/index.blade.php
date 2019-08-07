@@ -7,21 +7,20 @@
       @if($project_name )
          associated with the project "{{ $project_name }}"
       @endif
-    </h3>
-    @can('partner_create')
-    <p>
-        <a href="{{ route('admin.partners.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
 
+    @can('partner_create')
+      <a href="{{ route('admin.partners.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
     </p>
     @endcan
-
+    </h3>
+    @can('partner_perma_del')
     <p>
         <ul class="list-inline">
             <li><a href="{{ route('admin.partners.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
             <li><a href="{{ route('admin.partners.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
         </ul>
     </p>
-
+    @endcan
 
     <div class="panel panel-default">
         <div class="panel-heading">

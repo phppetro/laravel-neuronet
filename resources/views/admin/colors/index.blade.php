@@ -2,21 +2,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.color.title')</h3>
+    <h3 class="page-title">@lang('global.color.title')
     @can('color_create')
-    <p>
-        <a href="{{ route('admin.colors.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        
-    </p>
-    @endcan
 
+        <a href="{{ route('admin.colors.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
+
+    @endcan
+    </h3>
+    @can('color_perma_del')
     <p>
         <ul class="list-inline">
             <li><a href="{{ route('admin.colors.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
             <li><a href="{{ route('admin.colors.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
         </ul>
     </p>
-    
+    @endcan
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -45,7 +45,7 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('color_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.colors.mass_destroy') }}'; @endif
@@ -58,7 +58,7 @@
                 @endif
                 @endcan{data: 'color', name: 'color'},
                 {data: 'value', name: 'value'},
-                
+
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();
