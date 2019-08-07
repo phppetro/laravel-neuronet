@@ -6,19 +6,21 @@
     @can('education_create')
 
         <a href="{{ route('admin.education.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
-        @include('csvImport.modal', ['model' => 'Education'])
+        @can('education_csv_import')
+          <a href="#" class="btn btn-warning" style="margin-left:5px;" data-toggle="modal" data-target="#myModal">@lang('global.app_csvImport')</a>
+          @include('csvImport.modal', ['model' => 'Education'])
+        @endcan
 
     @endcan
     </h3>
-
+    @can('education_perma_del')
     <p>
         <ul class="list-inline">
             <li><a href="{{ route('admin.education.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
             <li><a href="{{ route('admin.education.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
         </ul>
     </p>
-
+    @endcan
 
     <div class="panel panel-default">
         <div class="panel-heading">

@@ -9,14 +9,14 @@
 
     @endcan
     </h3>
-
+    @can('country_perma_del')
     <p>
         <ul class="list-inline">
             <li><a href="{{ route('admin.countries.index') }}" style="{{ request('show_deleted') == 1 ? '' : 'font-weight: 700' }}">@lang('global.app_all')</a></li> |
             <li><a href="{{ route('admin.countries.index') }}?show_deleted=1" style="{{ request('show_deleted') == 1 ? 'font-weight: 700' : '' }}">@lang('global.app_trash')</a></li>
         </ul>
     </p>
-
+    @endcan
 
     <div class="panel panel-default">
         <div class="panel-heading">
