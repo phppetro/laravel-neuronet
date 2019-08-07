@@ -17,21 +17,19 @@ class WorkPackagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($proj_id=null)
     {
         if (! Gate::allows('work_package_access')) {
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = WorkPackage::query();
             $query->with("name");
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('work_package_delete')) {
             return abort(401);
         }
@@ -44,6 +42,12 @@ class WorkPackagesController extends Controller
                 'work_packages.description',
                 'work_packages.project_id',
             ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+              $query->where('project_id', $project_id)->get();
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -72,7 +76,9 @@ class WorkPackagesController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.work_packages.index');
+        $projects = \App\Project::all()->sortBy('name');
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('admin.work_packages.index', compact('project_name', 'projects'));
     }
 
     /**
@@ -85,7 +91,7 @@ class WorkPackagesController extends Controller
         if (! Gate::allows('work_package_create')) {
             return abort(401);
         }
-        
+
         $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
@@ -122,7 +128,7 @@ class WorkPackagesController extends Controller
         if (! Gate::allows('work_package_edit')) {
             return abort(401);
         }
-        
+
         $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
@@ -163,7 +169,7 @@ class WorkPackagesController extends Controller
         if (! Gate::allows('work_package_view')) {
             return abort(401);
         }
-        
+
         $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$deliverables = \App\Deliverable::where('wp_id', $id)->get();
 

@@ -23,7 +23,7 @@
                   {{ $project->description }}
             </span>
             <a href="/admin/partners/project/{{ $project->id }}" class="product-title">Partners</a>
-             / <a href="/admin/work_packages" class="product-title">Work Packages</a>
+             / <a href="/admin/work_packages/project/{{ $project->id }}" class="product-title">Work Packages</a>
              / <a href="/admin/deliverables" class="product-title">Deliverables</a>
              / <a href="/admin/tools" class="product-title">Tools</a>
              / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>

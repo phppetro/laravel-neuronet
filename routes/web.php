@@ -120,12 +120,12 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::delete('type_of_institutions_perma_del/{id}', ['uses' => 'Admin\TypeOfInstitutionsController@perma_del', 'as' => 'type_of_institutions.perma_del']);
 
     Route::get('/partners/project/{project}', ['uses' => 'Admin\PartnersController@index', 'as' => 'partners.project']);
-
     Route::resource('partners', 'Admin\PartnersController');
     Route::post('partners_mass_destroy', ['uses' => 'Admin\PartnersController@massDestroy', 'as' => 'partners.mass_destroy']);
     Route::post('partners_restore/{id}', ['uses' => 'Admin\PartnersController@restore', 'as' => 'partners.restore']);
     Route::delete('partners_perma_del/{id}', ['uses' => 'Admin\PartnersController@perma_del', 'as' => 'partners.perma_del']);
 
+    Route::get('/work_packages/project/{project}', ['uses' => 'Admin\WorkPackagesController@index', 'as' => 'work_packages.project']);
     Route::resource('work_packages', 'Admin\WorkPackagesController');
     Route::post('work_packages_mass_destroy', ['uses' => 'Admin\WorkPackagesController@massDestroy', 'as' => 'work_packages.mass_destroy']);
     Route::post('work_packages_restore/{id}', ['uses' => 'Admin\WorkPackagesController@restore', 'as' => 'work_packages.restore']);
