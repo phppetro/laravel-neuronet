@@ -70,6 +70,7 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('calendars_mass_destroy', ['uses' => 'Admin\CalendarsController@massDestroy', 'as' => 'calendars.mass_destroy']);
     Route::post('calendars_restore/{id}', ['uses' => 'Admin\CalendarsController@restore', 'as' => 'calendars.restore']);
     Route::delete('calendars_perma_del/{id}', ['uses' => 'Admin\CalendarsController@perma_del', 'as' => 'calendars.perma_del']);
+
     Route::resource('partners_metrics', 'Admin\PartnersMetricsController');
     Route::post('partners_metrics_mass_destroy', ['uses' => 'Admin\PartnersMetricsController@massDestroy', 'as' => 'partners_metrics.mass_destroy']);
     Route::post('partners_metrics_restore/{id}', ['uses' => 'Admin\PartnersMetricsController@restore', 'as' => 'partners_metrics.restore']);
@@ -117,6 +118,8 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('type_of_institutions_mass_destroy', ['uses' => 'Admin\TypeOfInstitutionsController@massDestroy', 'as' => 'type_of_institutions.mass_destroy']);
     Route::post('type_of_institutions_restore/{id}', ['uses' => 'Admin\TypeOfInstitutionsController@restore', 'as' => 'type_of_institutions.restore']);
     Route::delete('type_of_institutions_perma_del/{id}', ['uses' => 'Admin\TypeOfInstitutionsController@perma_del', 'as' => 'type_of_institutions.perma_del']);
+
+    Route::get('/partners/project/{project}', ['uses' => 'Admin\PartnersController@index', 'as' => 'partners.project']);
 
     Route::resource('partners', 'Admin\PartnersController');
     Route::post('partners_mass_destroy', ['uses' => 'Admin\PartnersController@massDestroy', 'as' => 'partners.mass_destroy']);

@@ -17,14 +17,12 @@ class PartnersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($proj_id=null)
     {
         if (! Gate::allows('partner_access')) {
             return abort(401);
         }
 
-
-        
         if (request()->ajax()) {
             $query = Partner::query();
             $query->with("projects");
@@ -32,7 +30,7 @@ class PartnersController extends Controller
             $query->with("country");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('partner_delete')) {
             return abort(401);
         }
@@ -45,6 +43,15 @@ class PartnersController extends Controller
                 'partners.type_of_institution_id',
                 'partners.country_id',
             ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+              $projId =[$project_id];
+              $query->whereHas('projects', function($q) use($projId) {
+                  $q->whereIn('id', $projId);
+              })->get();
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -81,7 +88,9 @@ class PartnersController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.partners.index');
+        $projects = \App\Project::all();
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('admin.partners.index', compact('projects','project_name'));
     }
 
     /**
@@ -94,7 +103,7 @@ class PartnersController extends Controller
         if (! Gate::allows('partner_create')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id');
 
         $type_of_institutions = \App\TypeOfInstitution::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
@@ -134,7 +143,7 @@ class PartnersController extends Controller
         if (! Gate::allows('partner_edit')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id');
 
         $type_of_institutions = \App\TypeOfInstitution::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
