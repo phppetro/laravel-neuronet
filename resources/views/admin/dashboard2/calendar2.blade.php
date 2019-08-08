@@ -38,7 +38,8 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer text-center">
-    <a href="{{ url('admin/calendar') }}" class="uppercase">View Calendar</a>
+    <a href="{{ url('admin/calendar') }}" class="uppercase">View Calendar</a> or
+    <a href="{{ url('admin/calendars') }}" class="uppercase">View Event List</a>
   </div>
   <!-- /.box-footer -->
 </div>
