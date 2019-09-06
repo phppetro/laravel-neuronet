@@ -241,7 +241,7 @@ return [
   'work-packages' => [
 		'title' => 'Work packages',
 		'fields' => [
-			'name' => 'Name',
+			'name' => 'WP Number',
 			'description' => 'Description',
 			'project' => 'Project',
 		],
