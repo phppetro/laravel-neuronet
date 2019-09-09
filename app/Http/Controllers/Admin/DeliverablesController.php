@@ -37,6 +37,7 @@ class DeliverablesController extends Controller
             }
             $query->select([
                 'deliverables.id',
+                'deliverables.deliverable_number',
                 'deliverables.title',
                 'deliverables.project_id',
                 'deliverables.submission_date',
@@ -61,6 +62,9 @@ class DeliverablesController extends Controller
                 $routeKey = 'admin.deliverables';
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
+            });
+            $table->editColumn('deliverable_number', function ($row) {
+               return $row->deliverable_number ? $row->deliverable_number : '';
             });
             $table->editColumn('title', function ($row) {
                 return $row->title ? $row->title : '';

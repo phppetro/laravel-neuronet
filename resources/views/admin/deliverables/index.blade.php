@@ -52,7 +52,7 @@
                         @can('deliverable_delete')
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
-
+                        <th>@lang('global.deliverables.fields.deliverable-number')</th>
                         <th>@lang('global.deliverables.fields.title')</th>
                         <th>@lang('global.deliverables.fields.project')</th>
                         <th>@lang('global.deliverables.fields.submission-date')</th>
@@ -90,7 +90,8 @@
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
-                @endcan{data: 'title', name: 'title'},
+                @endcan{data: 'deliverable_number', name: 'deliverable_number'},
+                {data: 'title', name: 'title'},
                 {data: 'project.name', name: 'project.name'},
                 {data: 'submission_date', name: 'submission_date'},
                 {data: 'link', name: 'link'},

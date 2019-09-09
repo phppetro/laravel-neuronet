@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class Deliverable
  *
  * @package App
+ * @property string $deliverable_number
  * @property string $title
  * @property string $project
  * @property string $submission_date
@@ -19,14 +20,15 @@ class Deliverable extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'submission_date', 'link', 'keywords', 'project_id'];
+    protected $fillable = ['deliverable_number', 'title', 'submission_date', 'link', 'keywords', 'project_id'];
     protected $hidden = [];
     public static $searchable = [
+        'deliverable_number',
         'title',
         'submission_date',
         'keywords',
     ];
-    
+
     public static function boot()
     {
         parent::boot();
@@ -72,10 +74,10 @@ class Deliverable extends Model
             return '';
         }
     }
-    
+
     public function project()
     {
         return $this->belongsTo(Project::class, 'project_id')->withTrashed();
     }
-    
+
 }

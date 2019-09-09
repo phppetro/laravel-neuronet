@@ -13,6 +13,10 @@
                 <div class="col-md-6">
                     <table class="table table-bordered table-striped">
                         <tr>
+                            <th>@lang('global.deliverables.fields.deliverable-number')</th>
+                            <td field-key='deliverable_number'>{{ $deliverable->deliverable_number }}</td>
+                        </tr>
+                        <tr>
                             <th>@lang('global.deliverables.fields.title')</th>
                             <td field-key='title'>{{ $deliverable->title }}</td>
                         </tr>

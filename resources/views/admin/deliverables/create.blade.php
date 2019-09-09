@@ -12,6 +12,18 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('deliverable_number', trans('global.deliverables.fields.deliverable-number').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('deliverable_number', old('deliverable_number'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('deliverable_number'))
+                        <p class="help-block">
+                            {{ $errors->first('deliverable_number') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('title', trans('global.deliverables.fields.title').'*', ['class' => 'control-label']) !!}
                     {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
