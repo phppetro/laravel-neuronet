@@ -40,7 +40,7 @@
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-    
+
 <li role="presentation" class="active"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Partners</a></li>
 <li role="presentation" class=""><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
 <li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
@@ -53,7 +53,7 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-    
+
 <div role="tabpanel" class="tab-pane active" id="partners">
 <table class="table table-bordered table-striped {{ count($partners) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -354,7 +354,7 @@
 <table class="table table-bordered table-striped {{ count($work_packages) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
-            <th>@lang('global.work-packages.fields.name')</th>
+            <th>@lang('global.work-packages.fields.wp-number')</th>
                         <th>@lang('global.work-packages.fields.description')</th>
                         <th>@lang('global.work-packages.fields.project')</th>
                         @if( request('show_deleted') == 1 )
@@ -650,13 +650,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

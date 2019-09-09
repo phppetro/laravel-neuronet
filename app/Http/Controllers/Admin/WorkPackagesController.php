@@ -25,7 +25,7 @@ class WorkPackagesController extends Controller
 
         if (request()->ajax()) {
             $query = WorkPackage::query();
-            $query->with("name");
+            $query->with("wp_number");
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
@@ -38,7 +38,7 @@ class WorkPackagesController extends Controller
             }
             $query->select([
                 'work_packages.id',
-                'work_packages.name_id',
+                'work_packages.wp_number_id',
                 'work_packages.description',
                 'work_packages.project_id',
             ]);
@@ -61,8 +61,8 @@ class WorkPackagesController extends Controller
 
                 return view($template, compact('row', 'gateKey', 'routeKey'));
             });
-            $table->editColumn('name.name', function ($row) {
-                return $row->name ? $row->name->name : '';
+            $table->editColumn('wp_number.name', function ($row) {
+                return $row->wp_number ? $row->wp_number->name : '';
             });
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : '';
@@ -92,10 +92,10 @@ class WorkPackagesController extends Controller
             return abort(401);
         }
 
-        $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $wp_numbers = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
-        return view('admin.work_packages.create', compact('names', 'projects'));
+        return view('admin.work_packages.create', compact('wp_numbers', 'projects'));
     }
 
     /**
@@ -129,12 +129,12 @@ class WorkPackagesController extends Controller
             return abort(401);
         }
 
-        $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
+        $wp_numbers = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $work_package = WorkPackage::findOrFail($id);
 
-        return view('admin.work_packages.edit', compact('work_package', 'names', 'projects'));
+        return view('admin.work_packages.edit', compact('work_package', 'wp_numbers', 'projects'));
     }
 
     /**
@@ -171,11 +171,11 @@ class WorkPackagesController extends Controller
         }
 
         $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
-        $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$deliverables = \App\Deliverable::where('wp_id', $id)->get();
+        //$projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$deliverables = \App\Deliverable::where('wp_id', $id)->get();
 
         $work_package = WorkPackage::findOrFail($id);
 
-        return view('admin.work_packages.show', compact('work_package', 'deliverables'));
+        return view('admin.work_packages.show', compact('work_package'));
     }
 
 

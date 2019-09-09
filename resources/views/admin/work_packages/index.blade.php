@@ -55,7 +55,7 @@
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
 
-                        <th>@lang('global.work-packages.fields.name')</th>
+                        <th>@lang('global.work-packages.fields.wp-number')</th>
                         <th>@lang('global.work-packages.fields.description')</th>
                         <th>@lang('global.work-packages.fields.project')</th>
                         @if( request('show_deleted') == 1 )
@@ -90,7 +90,7 @@
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
-                @endcan{data: 'name.name', name: 'name.name'},
+                @endcan{data: 'wp_number.name', name: 'wp_number.name'},
                 {data: 'description', name: 'description'},
                 {data: 'project.name', name: 'project.name'},
 

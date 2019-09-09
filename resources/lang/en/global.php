@@ -155,15 +155,16 @@ return [
 	],
 
 'deliverables' => [
-	'title' => 'Deliverables',
-	'fields' => [
-		'title' => 'Title',
-		'project' => 'Project',
-		'submission-date' => 'Submission date',
-		'link' => 'Link',
-		'keywords' => 'Keywords',
+		'title' => 'Deliverables',
+		'fields' => [
+			'deliverable-number' => 'Deliverable number',
+			'title' => 'Title',
+			'project' => 'Project',
+			'submission-date' => 'Submission date',
+			'link' => 'Link',
+			'keywords' => 'Keywords',
+		],
 	],
-],
 
 'calendar' => [
 'title' => 'Events',
@@ -238,10 +239,10 @@ return [
 		],
 	],
 
-  'work-packages' => [
+	'work-packages' => [
 		'title' => 'Work packages',
 		'fields' => [
-			'name' => 'WP Number',
+			'wp-number' => 'WP number',
 			'description' => 'Description',
 			'project' => 'Project',
 		],

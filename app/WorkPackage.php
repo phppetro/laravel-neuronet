@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class WorkPackage
  *
  * @package App
- * @property string $name
+ * @property string $wp_number
  * @property string $description
  * @property string $project
 */
@@ -16,7 +16,7 @@ class WorkPackage extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['description', 'name_id', 'project_id'];
+    protected $fillable = ['description', 'wp_number_id', 'project_id'];
     protected $hidden = [];
     public static $searchable = [
     ];
@@ -32,9 +32,9 @@ class WorkPackage extends Model
      * Set to null if empty
      * @param $input
      */
-    public function setNameIdAttribute($input)
+    public function setWpNumberIdAttribute($input)
     {
-        $this->attributes['name_id'] = $input ? $input : null;
+        $this->attributes['wp_number_id'] = $input ? $input : null;
     }
 
     /**
@@ -46,9 +46,9 @@ class WorkPackage extends Model
         $this->attributes['project_id'] = $input ? $input : null;
     }
     
-    public function name()
+    public function wp_number()
     {
-        return $this->belongsTo(Wp::class, 'name_id')->withTrashed();
+        return $this->belongsTo(Wp::class, 'wp_number_id')->withTrashed();
     }
     
     public function project()

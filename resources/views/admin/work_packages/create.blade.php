@@ -12,12 +12,12 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('name_id', trans('global.work-packages.fields.name').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('name_id', $names, old('name_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('wp_number_id', trans('global.work-packages.fields.wp-number').'', ['class' => 'control-label']) !!}
+                    {!! Form::select('wp_number_id', $wp_numbers, old('wp_number_id'), ['class' => 'form-control select2']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('name_id'))
+                    @if($errors->has('wp_number_id'))
                         <p class="help-block">
-                            {{ $errors->first('name_id') }}
+                            {{ $errors->first('wp_number_id') }}
                         </p>
                     @endif
                 </div>
