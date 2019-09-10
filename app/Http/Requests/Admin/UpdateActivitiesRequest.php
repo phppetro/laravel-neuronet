@@ -24,7 +24,7 @@ class UpdateActivitiesRequest extends FormRequest
     {
         return [
             
-            'user_id' => 'required|unique:activities,user_id,'.$this->route('activity'),
+            'user_id' => 'required',
             'date' => 'nullable|date_format:'.config('app.date_format'),
         ];
     }

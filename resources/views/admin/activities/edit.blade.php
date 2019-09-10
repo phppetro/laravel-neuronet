@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.activity.title')</h3>
-    
+
     {!! Form::model($activity, ['method' => 'PUT', 'route' => ['admin.activities.update', $activity->id]]) !!}
 
     <div class="panel panel-default">
@@ -13,7 +13,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('user_id', trans('global.activity.fields.user').'*', ['class' => 'control-label']) !!}
+                    {!! Form::label('user_id', trans('global.activity.fields.user').'', ['class' => 'control-label']) !!}
                     {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('user_id'))
@@ -59,7 +59,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -77,13 +77,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

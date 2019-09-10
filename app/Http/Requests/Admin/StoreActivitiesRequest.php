@@ -23,7 +23,7 @@ class StoreActivitiesRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required|unique:activities,user_id',
+            'user_id' => 'required',
             'date' => 'nullable|date_format:'.config('app.date_format'),
         ];
     }
