@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $project
  * @property string $publication_date
  * @property string $type_of_data_available
- * @property string $description
+ * @property text $description
  * @property string $keywords
  * @property string $link
 */

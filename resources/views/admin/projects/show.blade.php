@@ -155,7 +155,7 @@
                                 <td field-key='project'>{{ $tool->project->name ?? '' }}</td>
                                 <td field-key='publication_date'>{{ $tool->publication_date }}</td>
                                 <td field-key='type_of_data_available'>{{ $tool->type_of_data_available }}</td>
-                                <td field-key='description'>{{ $tool->description }}</td>
+                                <td field-key='description'>{!! $tool->description !!}</td>
                                 <td field-key='keywords'>{{ $tool->keywords }}</td>
                                 <td field-key='link'>{{ $tool->link }}</td>
                                 @if( request('show_deleted') == 1 )

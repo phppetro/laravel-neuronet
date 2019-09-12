@@ -13,8 +13,8 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('name', trans('global.tools.fields.name').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('name', trans('global.tools.fields.name').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('name'))
                         <p class="help-block">
@@ -25,8 +25,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('project_id', trans('global.tools.fields.project').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('project_id', trans('global.tools.fields.project').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('project_id'))
                         <p class="help-block">
@@ -37,8 +37,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('publication_date', trans('global.tools.fields.publication-date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('publication_date', old('publication_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    {!! Form::label('publication_date', trans('global.tools.fields.publication-date').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('publication_date', old('publication_date'), ['class' => 'form-control date', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('publication_date'))
                         <p class="help-block">
@@ -49,8 +49,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('type_of_data_available', trans('global.tools.fields.type-of-data-available').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('type_of_data_available', old('type_of_data_available'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('type_of_data_available', trans('global.tools.fields.type-of-data-available').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('type_of_data_available', old('type_of_data_available'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('type_of_data_available'))
                         <p class="help-block">
@@ -61,8 +61,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('description', trans('global.tools.fields.description').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('description', old('description'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('description', trans('global.tools.fields.description').'*', ['class' => 'control-label']) !!}
+                    {!! Form::textarea('description', old('description'), ['class' => 'form-control ', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('description'))
                         <p class="help-block">
@@ -73,8 +73,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('keywords', trans('global.tools.fields.keywords').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('keywords', old('keywords'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('keywords', trans('global.tools.fields.keywords').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('keywords', old('keywords'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('keywords'))
                         <p class="help-block">

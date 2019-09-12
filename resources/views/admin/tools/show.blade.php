@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.tools.fields.description')</th>
-                            <td field-key='description'>{{ $tool->description }}</td>
+                            <td field-key='description'>{!! $tool->description !!}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.tools.fields.keywords')</th>

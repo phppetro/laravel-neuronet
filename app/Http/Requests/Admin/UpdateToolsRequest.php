@@ -24,7 +24,12 @@ class UpdateToolsRequest extends FormRequest
     {
         return [
             
-            'publication_date' => 'nullable|date_format:'.config('app.date_format'),
+            'name' => 'required',
+            'project_id' => 'required',
+            'publication_date' => 'required|date_format:'.config('app.date_format'),
+            'type_of_data_available' => 'required',
+            'description' => 'required',
+            'keywords' => 'required',
         ];
     }
 }

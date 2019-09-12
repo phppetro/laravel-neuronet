@@ -269,7 +269,7 @@ return [
 			'publication-date' => 'Publication date',
 			'type-of-data-available' => 'Type of data available',
 			'description' => 'Description',
-			'keywords' => 'Keywords',
+			'keywords' => 'Keywords (comma separated)',
 			'link' => 'Link',
 		],
 	],
