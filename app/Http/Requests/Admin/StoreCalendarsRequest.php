@@ -23,8 +23,12 @@ class StoreCalendarsRequest extends FormRequest
     public function rules()
     {
         return [
-            'start_date' => 'nullable|date_format:'.config('app.date_format'),
-            'end_date' => 'nullable|date_format:'.config('app.date_format'),
+          'title' => 'required',
+          'location' => 'required',
+          'start_date' => 'required|date_format:'.config('app.date_format'),
+          'end_date' => 'required|date_format:'.config('app.date_format'),
+          'color_id' => 'required',
+          'projects.*' => 'exists:projects,id',
         ];
     }
 }

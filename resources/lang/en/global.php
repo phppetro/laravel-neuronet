@@ -170,7 +170,7 @@ return [
 'title' => 'Events',
 'fields' => [
 	'title' => 'Event',
-	'project' => 'Project',
+	'projects' => 'Projects',
 	'location' => 'Location',
 	'start-date' => 'Start date',
 	'end-date' => 'End date',

@@ -24,19 +24,19 @@
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-    
+
 <li role="presentation" class="active"><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-    
+
 <div role="tabpanel" class="tab-pane active" id="calendar">
 <table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
             <th>@lang('global.calendar.fields.title')</th>
-                        <th>@lang('global.calendar.fields.project')</th>
+                        <th>@lang('global.calendar.fields.projects')</th>
                         <th>@lang('global.calendar.fields.location')</th>
                         <th>@lang('global.calendar.fields.start-date')</th>
                         <th>@lang('global.calendar.fields.end-date')</th>
@@ -54,7 +54,11 @@
             @foreach ($calendars as $calendar)
                 <tr data-entry-id="{{ $calendar->id }}">
                     <td field-key='title'>{{ $calendar->title }}</td>
-                                <td field-key='project'>{{ $calendar->project->name ?? '' }}</td>
+                                <td field-key='projects'>
+                                    @foreach ($calendar->projects as $singleProjects)
+                                        <span class="label label-info label-many">{{ $singleProjects->name }}</span>
+                                    @endforeach
+                                </td>
                                 <td field-key='location'>{{ $calendar->location }}</td>
                                 <td field-key='start_date'>{{ $calendar->start_date }}</td>
                                 <td field-key='end_date'>{{ $calendar->end_date }}</td>
@@ -113,5 +117,3 @@
         </div>
     </div>
 @stop
-
-

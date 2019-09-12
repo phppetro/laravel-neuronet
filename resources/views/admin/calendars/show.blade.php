@@ -17,8 +17,12 @@
                             <td field-key='title'>{{ $calendar->title }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.calendar.fields.project')</th>
-                            <td field-key='project'>{{ $calendar->project->name ?? '' }}</td>
+                            <th>@lang('global.calendar.fields.projects')</th>
+                            <td field-key='projects'>
+                                @foreach ($calendar->projects as $singleProjects)
+                                    <span class="label label-info label-many">{{ $singleProjects->name }}</span>
+                                @endforeach
+                            </td>
                         </tr>
                         <tr>
                             <th>@lang('global.calendar.fields.location')</th>
@@ -57,13 +61,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

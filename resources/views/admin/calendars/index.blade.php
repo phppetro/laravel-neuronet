@@ -34,7 +34,7 @@
                         @endcan
 
                         <th>@lang('global.calendar.fields.title')</th>
-                        <th>@lang('global.calendar.fields.project')</th>
+                        <th>@lang('global.calendar.fields.projects')</th>
                         <th>@lang('global.calendar.fields.location')</th>
                         <th>@lang('global.calendar.fields.start-date')</th>
                         <th>@lang('global.calendar.fields.end-date')</th>
@@ -63,7 +63,7 @@
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
                 @endcan{data: 'title', name: 'title'},
-                {data: 'project.name', name: 'project.name'},
+                {data: 'projects.name', name: 'projects.name'},
                 {data: 'location', name: 'location'},
                 {data: 'start_date', name: 'start_date'},
                 {data: 'end_date', name: 'end_date'},

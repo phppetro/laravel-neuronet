@@ -8,12 +8,12 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('title', trans('global.calendar.fields.title').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('title', trans('global.calendar.fields.title').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('title'))
                         <p class="help-block">
@@ -22,22 +22,30 @@
                     @endif
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('project_id', trans('global.calendar.fields.project').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('projects', trans('global.calendar.fields.projects').'', ['class' => 'control-label']) !!}
+                    <button type="button" class="btn btn-primary btn-xs" id="selectbtn-projects">
+                        {{ trans('global.app_select_all') }}
+                    </button>
+                    <button type="button" class="btn btn-primary btn-xs" id="deselectbtn-projects">
+                        {{ trans('global.app_deselect_all') }}
+                    </button>
+                    {!! Form::select('projects[]', $projects, old('projects'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-projects' ]) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('project_id'))
+                    @if($errors->has('projects'))
                         <p class="help-block">
-                            {{ $errors->first('project_id') }}
+                            {{ $errors->first('projects') }}
                         </p>
                     @endif
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('location', trans('global.calendar.fields.location').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('location', old('location'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('location', trans('global.calendar.fields.location').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('location', old('location'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('location'))
                         <p class="help-block">
@@ -48,8 +56,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('start_date', trans('global.calendar.fields.start-date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('start_date', old('start_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    {!! Form::label('start_date', trans('global.calendar.fields.start-date').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('start_date', old('start_date'), ['class' => 'form-control date', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('start_date'))
                         <p class="help-block">
@@ -60,8 +68,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('end_date', trans('global.calendar.fields.end-date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('end_date', old('end_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    {!! Form::label('end_date', trans('global.calendar.fields.end-date').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('end_date', old('end_date'), ['class' => 'form-control date', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('end_date'))
                         <p class="help-block">
@@ -72,8 +80,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('color_id', trans('global.calendar.fields.color').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('color_id', $colors, old('color_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('color_id', trans('global.calendar.fields.color').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('color_id', $colors, old('color_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('color_id'))
                         <p class="help-block">
@@ -82,7 +90,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -100,13 +108,23 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
+    <script>
+        $("#selectbtn-projects").click(function(){
+            $("#selectall-projects > option").prop("selected","selected");
+            $("#selectall-projects").trigger("change");
+        });
+        $("#deselectbtn-projects").click(function(){
+            $("#selectall-projects > option").prop("selected","");
+            $("#selectall-projects").trigger("change");
+        });
+    </script>
 @stop

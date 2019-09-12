@@ -40,20 +40,20 @@
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-
+    
 <li role="presentation" class="active"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Partners</a></li>
-<li role="presentation" class=""><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
-<li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
 <li role="presentation" class=""><a href="#tools" aria-controls="tools" role="tab" data-toggle="tab">Tools</a></li>
 <li role="presentation" class=""><a href="#work_packages" aria-controls="work_packages" role="tab" data-toggle="tab">Work packages</a></li>
+<li role="presentation" class=""><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
 <li role="presentation" class=""><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
 <li role="presentation" class=""><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab">Publications</a></li>
 <li role="presentation" class=""><a href="#users" aria-controls="users" role="tab" data-toggle="tab">Users</a></li>
+<li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-
+    
 <div role="tabpanel" class="tab-pane active" id="partners">
 <table class="table table-bordered table-striped {{ count($partners) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -123,152 +123,6 @@
         @else
             <tr>
                 <td colspan="9">@lang('global.app_no_entries_in_table')</td>
-            </tr>
-        @endif
-    </tbody>
-</table>
-</div>
-<div role="tabpanel" class="tab-pane " id="deliverables">
-<table class="table table-bordered table-striped {{ count($deliverables) > 0 ? 'datatable' : '' }}">
-    <thead>
-        <tr>
-            <th>@lang('global.deliverables.fields.title')</th>
-                        <th>@lang('global.deliverables.fields.project')</th>
-                        <th>@lang('global.deliverables.fields.submission-date')</th>
-                        <th>@lang('global.deliverables.fields.link')</th>
-                        <th>@lang('global.deliverables.fields.keywords')</th>
-                        @if( request('show_deleted') == 1 )
-                        <th>&nbsp;</th>
-                        @else
-                        <th>&nbsp;</th>
-                        @endif
-        </tr>
-    </thead>
-
-    <tbody>
-        @if (count($deliverables) > 0)
-            @foreach ($deliverables as $deliverable)
-                <tr data-entry-id="{{ $deliverable->id }}">
-                    <td field-key='title'>{{ $deliverable->title }}</td>
-                                <td field-key='project'>{{ $deliverable->project->name ?? '' }}</td>
-                                <td field-key='submission_date'>{{ $deliverable->submission_date }}</td>
-                                <td field-key='link'>{{ $deliverable->link }}</td>
-                                <td field-key='keywords'>{!! $deliverable->keywords !!}</td>
-                                @if( request('show_deleted') == 1 )
-                                <td>
-                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'POST',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.deliverables.restore', $deliverable->id])) !!}
-                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
-                                    {!! Form::close() !!}
-                                                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.deliverables.perma_del', $deliverable->id])) !!}
-                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                                                </td>
-                                @else
-                                <td>
-                                    @can('deliverable_view')
-                                    <a href="{{ route('admin.deliverables.show',[$deliverable->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
-                                    @endcan
-                                    @can('deliverable_edit')
-                                    <a href="{{ route('admin.deliverables.edit',[$deliverable->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    @endcan
-                                    @can('deliverable_delete')
-{!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.deliverables.destroy', $deliverable->id])) !!}
-                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                    @endcan
-                                </td>
-                                @endif
-                </tr>
-            @endforeach
-        @else
-            <tr>
-                <td colspan="10">@lang('global.app_no_entries_in_table')</td>
-            </tr>
-        @endif
-    </tbody>
-</table>
-</div>
-<div role="tabpanel" class="tab-pane " id="calendar">
-<table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">
-    <thead>
-        <tr>
-            <th>@lang('global.calendar.fields.title')</th>
-                        <th>@lang('global.calendar.fields.project')</th>
-                        <th>@lang('global.calendar.fields.location')</th>
-                        <th>@lang('global.calendar.fields.start-date')</th>
-                        <th>@lang('global.calendar.fields.end-date')</th>
-                        <th>@lang('global.calendar.fields.color')</th>
-                        @if( request('show_deleted') == 1 )
-                        <th>&nbsp;</th>
-                        @else
-                        <th>&nbsp;</th>
-                        @endif
-        </tr>
-    </thead>
-
-    <tbody>
-        @if (count($calendars) > 0)
-            @foreach ($calendars as $calendar)
-                <tr data-entry-id="{{ $calendar->id }}">
-                    <td field-key='title'>{{ $calendar->title }}</td>
-                                <td field-key='project'>{{ $calendar->project->name ?? '' }}</td>
-                                <td field-key='location'>{{ $calendar->location }}</td>
-                                <td field-key='start_date'>{{ $calendar->start_date }}</td>
-                                <td field-key='end_date'>{{ $calendar->end_date }}</td>
-                                <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
-                                @if( request('show_deleted') == 1 )
-                                <td>
-                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'POST',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.calendars.restore', $calendar->id])) !!}
-                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
-                                    {!! Form::close() !!}
-                                                                    {!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.calendars.perma_del', $calendar->id])) !!}
-                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                                                </td>
-                                @else
-                                <td>
-                                    @can('calendar_view')
-                                    <a href="{{ route('admin.calendars.show',[$calendar->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
-                                    @endcan
-                                    @can('calendar_edit')
-                                    <a href="{{ route('admin.calendars.edit',[$calendar->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    @endcan
-                                    @can('calendar_delete')
-{!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.calendars.destroy', $calendar->id])) !!}
-                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                    @endcan
-                                </td>
-                                @endif
-                </tr>
-            @endforeach
-        @else
-            <tr>
-                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
@@ -369,7 +223,7 @@
         @if (count($work_packages) > 0)
             @foreach ($work_packages as $work_package)
                 <tr data-entry-id="{{ $work_package->id }}">
-                    <td field-key='name'>{{ $work_package->name->name ?? '' }}</td>
+                    <td field-key='wp_number'>{{ $work_package->wp_number->name ?? '' }}</td>
                                 <td field-key='description'>{{ $work_package->description }}</td>
                                 <td field-key='project'>{{ $work_package->project->name ?? '' }}</td>
                                 @if( request('show_deleted') == 1 )
@@ -413,6 +267,80 @@
         @else
             <tr>
                 <td colspan="8">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
+<div role="tabpanel" class="tab-pane " id="deliverables">
+<table class="table table-bordered table-striped {{ count($deliverables) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.deliverables.fields.deliverable-number')</th>
+                        <th>@lang('global.deliverables.fields.title')</th>
+                        <th>@lang('global.deliverables.fields.project')</th>
+                        <th>@lang('global.deliverables.fields.submission-date')</th>
+                        <th>@lang('global.deliverables.fields.link')</th>
+                        <th>@lang('global.deliverables.fields.keywords')</th>
+                        @if( request('show_deleted') == 1 )
+                        <th>&nbsp;</th>
+                        @else
+                        <th>&nbsp;</th>
+                        @endif
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($deliverables) > 0)
+            @foreach ($deliverables as $deliverable)
+                <tr data-entry-id="{{ $deliverable->id }}">
+                    <td field-key='deliverable_number'>{{ $deliverable->deliverable_number }}</td>
+                                <td field-key='title'>{{ $deliverable->title }}</td>
+                                <td field-key='project'>{{ $deliverable->project->name ?? '' }}</td>
+                                <td field-key='submission_date'>{{ $deliverable->submission_date }}</td>
+                                <td field-key='link'>{{ $deliverable->link }}</td>
+                                <td field-key='keywords'>{!! $deliverable->keywords !!}</td>
+                                @if( request('show_deleted') == 1 )
+                                <td>
+                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.deliverables.restore', $deliverable->id])) !!}
+                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.deliverables.perma_del', $deliverable->id])) !!}
+                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                                                </td>
+                                @else
+                                <td>
+                                    @can('deliverable_view')
+                                    <a href="{{ route('admin.deliverables.show',[$deliverable->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('deliverable_edit')
+                                    <a href="{{ route('admin.deliverables.edit',[$deliverable->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('deliverable_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.deliverables.destroy', $deliverable->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+                                @endif
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
@@ -631,6 +559,84 @@
     </tbody>
 </table>
 </div>
+<div role="tabpanel" class="tab-pane " id="calendar">
+<table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">
+    <thead>
+        <tr>
+            <th>@lang('global.calendar.fields.title')</th>
+                        <th>@lang('global.calendar.fields.location')</th>
+                        <th>@lang('global.calendar.fields.start-date')</th>
+                        <th>@lang('global.calendar.fields.end-date')</th>
+                        <th>@lang('global.calendar.fields.color')</th>
+                        <th>@lang('global.calendar.fields.projects')</th>
+                        @if( request('show_deleted') == 1 )
+                        <th>&nbsp;</th>
+                        @else
+                        <th>&nbsp;</th>
+                        @endif
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (count($calendars) > 0)
+            @foreach ($calendars as $calendar)
+                <tr data-entry-id="{{ $calendar->id }}">
+                    <td field-key='title'>{{ $calendar->title }}</td>
+                                <td field-key='location'>{{ $calendar->location }}</td>
+                                <td field-key='start_date'>{{ $calendar->start_date }}</td>
+                                <td field-key='end_date'>{{ $calendar->end_date }}</td>
+                                <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
+                                <td field-key='projects'>
+                                    @foreach ($calendar->projects as $singleProjects)
+                                        <span class="label label-info label-many">{{ $singleProjects->name }}</span>
+                                    @endforeach
+                                </td>
+                                @if( request('show_deleted') == 1 )
+                                <td>
+                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'POST',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.calendars.restore', $calendar->id])) !!}
+                                    {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
+                                    {!! Form::close() !!}
+                                                                    {!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.calendars.perma_del', $calendar->id])) !!}
+                                    {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                                                </td>
+                                @else
+                                <td>
+                                    @can('calendar_view')
+                                    <a href="{{ route('admin.calendars.show',[$calendar->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                    @endcan
+                                    @can('calendar_edit')
+                                    <a href="{{ route('admin.calendars.edit',[$calendar->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                    @endcan
+                                    @can('calendar_delete')
+{!! Form::open(array(
+                                        'style' => 'display: inline-block;',
+                                        'method' => 'DELETE',
+                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
+                                        'route' => ['admin.calendars.destroy', $calendar->id])) !!}
+                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
+                                    {!! Form::close() !!}
+                                    @endcan
+                                </td>
+                                @endif
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
 </div>
 
             <p>&nbsp;</p>
@@ -650,13 +656,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-
+            
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-
+            
         });
     </script>
-
+            
 @stop

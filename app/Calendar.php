@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App
  * @property string $title
- * @property string $project
  * @property string $location
  * @property string $start_date
  * @property string $end_date
@@ -20,27 +19,19 @@ class Calendar extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'location', 'start_date', 'end_date', 'project_id', 'color_id'];
+    protected $fillable = ['title', 'location', 'start_date', 'end_date', 'color_id'];
     protected $hidden = [];
     public static $searchable = [
         'title',
         'start_date',
+        'location',
     ];
-    
+
     public static function boot()
     {
         parent::boot();
 
         Calendar::observe(new \App\Observers\UserActionsObserver);
-    }
-
-    /**
-     * Set to null if empty
-     * @param $input
-     */
-    public function setProjectIdAttribute($input)
-    {
-        $this->attributes['project_id'] = $input ? $input : null;
     }
 
     /**
@@ -111,15 +102,15 @@ class Calendar extends Model
     {
         $this->attributes['color_id'] = $input ? $input : null;
     }
-    
-    public function project()
+
+    public function projects()
     {
-        return $this->belongsTo(Project::class, 'project_id')->withTrashed();
+        return $this->belongsToMany(Project::class, 'calendar_project')->withTrashed();
     }
-    
+
     public function color()
     {
         return $this->belongsTo(Color::class, 'color_id')->withTrashed();
     }
-    
+
 }
