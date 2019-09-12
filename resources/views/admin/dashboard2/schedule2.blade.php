@@ -70,13 +70,13 @@
                   timeline: {
                     showBarLabels: true,
                     showRowLabels: false,
-                    rowLabelStyle: { fontSize: 11 },
+                    rowLabelStyle: { fontSize:11 },
                     barLabelStyle: { fontSize:11 }
                   },
                   tooltip: {
                     trigger: focus //none
                   },
-                  colors: ['#3a0961', '#9b6deb'],
+                  colors: ['#3a0961', '#e50e6a'],
                   backgroundColor: '#fff'
                 };
 
