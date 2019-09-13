@@ -569,6 +569,7 @@
                         <th>@lang('global.calendar.fields.end-date')</th>
                         <th>@lang('global.calendar.fields.color')</th>
                         <th>@lang('global.calendar.fields.projects')</th>
+                        <th>@lang('global.calendar.fields.link')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -591,6 +592,7 @@
                                         <span class="label label-info label-many">{{ $singleProjects->name }}</span>
                                     @endforeach
                                 </td>
+                                <td field-key='link'>{{ $calendar->link }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(
@@ -631,7 +633,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="12">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>

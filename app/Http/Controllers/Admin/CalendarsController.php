@@ -24,14 +24,14 @@ class CalendarsController extends Controller
         }
 
 
-
+        
         if (request()->ajax()) {
             $query = Calendar::query();
             $query->with("color");
             $query->with("projects");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-
+                
         if (! Gate::allows('calendar_delete')) {
             return abort(401);
         }
@@ -45,6 +45,7 @@ class CalendarsController extends Controller
                 'calendars.start_date',
                 'calendars.end_date',
                 'calendars.color_id',
+                'calendars.link',
             ]);
             $table = Datatables::of($query);
 
@@ -82,6 +83,9 @@ class CalendarsController extends Controller
                 return '<span class="label label-info label-many">' . implode('</span><span class="label label-info label-many"> ',
                         $row->projects->pluck('name')->toArray()) . '</span>';
             });
+            $table->editColumn('link', function ($row) {
+                return $row->link ? $row->link : '';
+            });
 
             $table->rawColumns(['actions','massDelete','projects.name']);
 
@@ -101,9 +105,10 @@ class CalendarsController extends Controller
         if (! Gate::allows('calendar_create')) {
             return abort(401);
         }
-
+        
         $colors = \App\Color::get()->pluck('color', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id');
+
 
         return view('admin.calendars.create', compact('colors', 'projects'));
     }
@@ -139,13 +144,14 @@ class CalendarsController extends Controller
         if (! Gate::allows('calendar_edit')) {
             return abort(401);
         }
-
+        
         $colors = \App\Color::get()->pluck('color', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id');
 
+
         $calendar = Calendar::findOrFail($id);
 
-        return view('admin.calendars.edit', compact('calendar', 'projects', 'colors'));
+        return view('admin.calendars.edit', compact('calendar', 'colors', 'projects'));
     }
 
     /**
@@ -161,6 +167,7 @@ class CalendarsController extends Controller
             return abort(401);
         }
         $calendar = Calendar::findOrFail($id);
+        $calendar->update($request->all());
         $calendar->projects()->sync(array_filter((array)$request->input('projects')));
 
 

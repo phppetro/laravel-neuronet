@@ -39,6 +39,7 @@
                         <th>@lang('global.calendar.fields.start-date')</th>
                         <th>@lang('global.calendar.fields.end-date')</th>
                         <th>@lang('global.calendar.fields.color')</th>
+                        <th>@lang('global.calendar.fields.link')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -68,6 +69,7 @@
                 {data: 'start_date', name: 'start_date'},
                 {data: 'end_date', name: 'end_date'},
                 {data: 'color.color', name: 'color.color'},
+                {data: 'link', name: 'link'},
 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];

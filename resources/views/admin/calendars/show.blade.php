@@ -17,14 +17,6 @@
                             <td field-key='title'>{{ $calendar->title }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.calendar.fields.projects')</th>
-                            <td field-key='projects'>
-                                @foreach ($calendar->projects as $singleProjects)
-                                    <span class="label label-info label-many">{{ $singleProjects->name }}</span>
-                                @endforeach
-                            </td>
-                        </tr>
-                        <tr>
                             <th>@lang('global.calendar.fields.location')</th>
                             <td field-key='location'>{{ $calendar->location }}</td>
                         </tr>
@@ -39,6 +31,18 @@
                         <tr>
                             <th>@lang('global.calendar.fields.color')</th>
                             <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.projects')</th>
+                            <td field-key='projects'>
+                                @foreach ($calendar->projects as $singleProjects)
+                                    <span class="label label-info label-many">{{ $singleProjects->name }}</span>
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>@lang('global.calendar.fields.link')</th>
+                            <td field-key='link'>{{ $calendar->link }}</td>
                         </tr>
                     </table>
                 </div>

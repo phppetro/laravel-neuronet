@@ -22,26 +22,6 @@
                     @endif
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('projects', trans('global.calendar.fields.projects').'', ['class' => 'control-label']) !!}
-                    <button type="button" class="btn btn-primary btn-xs" id="selectbtn-projects">
-                        {{ trans('global.app_select_all') }}
-                    </button>
-                    <button type="button" class="btn btn-primary btn-xs" id="deselectbtn-projects">
-                        {{ trans('global.app_deselect_all') }}
-                    </button>
-                    {!! Form::select('projects[]', $projects, old('projects'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-projects' ]) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('projects'))
-                        <p class="help-block">
-                            {{ $errors->first('projects') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('location', trans('global.calendar.fields.location').'*', ['class' => 'control-label']) !!}
@@ -86,6 +66,36 @@
                     @if($errors->has('color_id'))
                         <p class="help-block">
                             {{ $errors->first('color_id') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('projects', trans('global.calendar.fields.projects').'', ['class' => 'control-label']) !!}
+                    <button type="button" class="btn btn-primary btn-xs" id="selectbtn-projects">
+                        {{ trans('global.app_select_all') }}
+                    </button>
+                    <button type="button" class="btn btn-primary btn-xs" id="deselectbtn-projects">
+                        {{ trans('global.app_deselect_all') }}
+                    </button>
+                    {!! Form::select('projects[]', $projects, old('projects'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'id' => 'selectall-projects' ]) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('projects'))
+                        <p class="help-block">
+                            {{ $errors->first('projects') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('link', trans('global.calendar.fields.link').'', ['class' => 'control-label']) !!}
+                    {!! Form::text('link', old('link'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('link'))
+                        <p class="help-block">
+                            {{ $errors->first('link') }}
                         </p>
                     @endif
                 </div>

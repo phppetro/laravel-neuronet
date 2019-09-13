@@ -167,15 +167,16 @@ return [
 	],
 
 'calendar' => [
-'title' => 'Events',
-'fields' => [
-	'title' => 'Event',
-	'projects' => 'Projects',
-	'location' => 'Location',
-	'start-date' => 'Start date',
-	'end-date' => 'End date',
-	'color' => 'Color',
-],
+	'title' => 'Events',
+	'fields' => [
+		'title' => 'Event',
+		'projects' => 'Projects',
+		'location' => 'Location',
+		'start-date' => 'Start date',
+		'end-date' => 'End date',
+		'color' => 'Color',
+		'link' => 'Link',
+	],
 ],
 	'contact-management' => [
 		'title' => 'Contact management',

@@ -24,23 +24,24 @@
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-
+    
 <li role="presentation" class="active"><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-
+    
 <div role="tabpanel" class="tab-pane active" id="calendar">
 <table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">
     <thead>
         <tr>
             <th>@lang('global.calendar.fields.title')</th>
-                        <th>@lang('global.calendar.fields.projects')</th>
                         <th>@lang('global.calendar.fields.location')</th>
                         <th>@lang('global.calendar.fields.start-date')</th>
                         <th>@lang('global.calendar.fields.end-date')</th>
                         <th>@lang('global.calendar.fields.color')</th>
+                        <th>@lang('global.calendar.fields.projects')</th>
+                        <th>@lang('global.calendar.fields.link')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
@@ -54,15 +55,16 @@
             @foreach ($calendars as $calendar)
                 <tr data-entry-id="{{ $calendar->id }}">
                     <td field-key='title'>{{ $calendar->title }}</td>
+                                <td field-key='location'>{{ $calendar->location }}</td>
+                                <td field-key='start_date'>{{ $calendar->start_date }}</td>
+                                <td field-key='end_date'>{{ $calendar->end_date }}</td>
+                                <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
                                 <td field-key='projects'>
                                     @foreach ($calendar->projects as $singleProjects)
                                         <span class="label label-info label-many">{{ $singleProjects->name }}</span>
                                     @endforeach
                                 </td>
-                                <td field-key='location'>{{ $calendar->location }}</td>
-                                <td field-key='start_date'>{{ $calendar->start_date }}</td>
-                                <td field-key='end_date'>{{ $calendar->end_date }}</td>
-                                <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
+                                <td field-key='link'>{{ $calendar->link }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(
@@ -103,7 +105,7 @@
             @endforeach
         @else
             <tr>
-                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
+                <td colspan="12">@lang('global.app_no_entries_in_table')</td>
             </tr>
         @endif
     </tbody>
@@ -117,3 +119,5 @@
         </div>
     </div>
 @stop
+
+
