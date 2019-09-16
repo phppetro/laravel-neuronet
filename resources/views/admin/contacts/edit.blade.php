@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.contacts.title')</h3>
-
+    
     {!! Form::model($contact, ['method' => 'PUT', 'route' => ['admin.contacts.update', $contact->id]]) !!}
 
     <div class="panel panel-default">
@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('first_name', trans('global.contacts.fields.first-name').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('first_name', old('first_name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '' ]) !!}
+                    {!! Form::text('first_name', old('first_name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('first_name'))
                         <p class="help-block">
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('email', trans('global.contacts.fields.email').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('email'))
                         <p class="help-block">
@@ -107,10 +107,11 @@
                     @endif
                 </div>
             </div>
-
+            
         </div>
     </div>
 
     {!! Form::submit(trans('global.app_update'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
+

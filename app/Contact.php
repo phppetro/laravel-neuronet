@@ -26,7 +26,6 @@ class Contact extends Model
     public static $searchable = [
         'position',
         'institution',
-        'projects_involved',
         'expertise',
     ];
     
