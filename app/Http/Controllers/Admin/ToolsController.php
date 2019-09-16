@@ -83,10 +83,10 @@ class ToolsController extends Controller
                 return $row->keywords ? $row->keywords : '';
             });
             $table->editColumn('link', function ($row) {
-                return $row->link ? $row->link : '';
+                if($row->link) { return '<a href="'. $row->link .'" target="_blank">' . $row->link . '</a>'; };
             });
 
-            $table->rawColumns(['actions','massDelete']);
+            $table->rawColumns(['actions','massDelete','link']);
 
             return $table->make(true);
         }

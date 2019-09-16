@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.tools.fields.link')</th>
-                            <td field-key='link'>{{ $tool->link }}</td>
+                            <td field-key='link'><a target="_blank" href="{{ $tool->link }}">{{ $tool->link }}</a></td>
                         </tr>
                     </table>
                 </div>
@@ -61,13 +61,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop
