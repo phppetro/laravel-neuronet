@@ -95,7 +95,7 @@ return [
 			'position' => 'Position',
 			'institution' => 'Institution',
 			'category' => 'Category',
-			'projects-involved' => 'Projects is involved in',
+			'projects-involved' => 'Project/s',
 			'expertise' => 'Areas of Expertise',
 		],
 	],

@@ -8,12 +8,12 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('first_name', trans('global.contacts.fields.first-name').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('first_name', old('first_name'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('first_name', trans('global.contacts.fields.first-name').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('first_name', old('first_name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('first_name'))
                         <p class="help-block">
@@ -24,8 +24,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('last_name', trans('global.contacts.fields.last-name').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('last_name', old('last_name'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('last_name', trans('global.contacts.fields.last-name').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('last_name', old('last_name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('last_name'))
                         <p class="help-block">
@@ -36,8 +36,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('email', trans('global.contacts.fields.email').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('email', old('email'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('email', trans('global.contacts.fields.email').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('email'))
                         <p class="help-block">
@@ -60,8 +60,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('institution', trans('global.contacts.fields.institution').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('institution', old('institution'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('institution', trans('global.contacts.fields.institution').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('institution', old('institution'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('institution'))
                         <p class="help-block">
@@ -72,8 +72,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('category_id', trans('global.contacts.fields.category').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('category_id', trans('global.contacts.fields.category').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('category_id', $categories, old('category_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('category_id'))
                         <p class="help-block">
@@ -106,11 +106,10 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
     {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 @stop
-
