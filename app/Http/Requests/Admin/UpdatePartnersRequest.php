@@ -24,8 +24,11 @@ class UpdatePartnersRequest extends FormRequest
     {
         return [
             
-            'name' => 'required',
+            'name' => 'required|unique:partners,name,'.$this->route('partner'),
+            'projects' => 'required',
             'projects.*' => 'exists:projects,id',
+            'type_of_institution_id' => 'required',
+            'country_id' => 'required',
         ];
     }
 }

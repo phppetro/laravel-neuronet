@@ -23,8 +23,11 @@ class StorePartnersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:partners,name,'.$this->route('partner'),
+            'projects' => 'required',
             'projects.*' => 'exists:projects,id',
+            'type_of_institution_id' => 'required',
+            'country_id' => 'required',
         ];
     }
 }
