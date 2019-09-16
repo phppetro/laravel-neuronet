@@ -14,7 +14,7 @@
                    <table class="table no-margin">
                      <thead>
                      <tr>
-                       <th>Date</th>
+                       <th>Publication Date</th>
                        <th>Title</th>
                        <th>Source</th>
                      </tr>
