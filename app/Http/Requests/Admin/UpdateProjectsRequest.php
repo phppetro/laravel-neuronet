@@ -23,11 +23,12 @@ class UpdateProjectsRequest extends FormRequest
     public function rules()
     {
         return [
-            
-            'name' => 'required',
-            'start_date' => 'nullable|date_format:'.config('app.date_format'),
-            'end_date' => 'nullable|date_format:'.config('app.date_format'),
-            'logo' => 'nullable|mimes:png,jpg,jpeg,gif',
+          'name' => 'required',
+          'description' => 'required',
+          'website' => 'required',
+          'start_date' => 'required|date_format:'.config('app.date_format'),
+          'end_date' => 'required|date_format:'.config('app.date_format'),
+          'logo' => 'mimes:png,jpg,jpeg,gif|required',
         ];
     }
 }
