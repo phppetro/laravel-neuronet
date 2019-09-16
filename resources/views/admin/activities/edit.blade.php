@@ -13,7 +13,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('user_id', trans('global.activity.fields.user').'', ['class' => 'control-label']) !!}
+                    {!! Form::label('user_id', trans('global.activity.fields.user').'*', ['class' => 'control-label']) !!}
                     {!! Form::select('user_id', $users, old('user_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('user_id'))
@@ -37,8 +37,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('body', trans('global.activity.fields.body').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('body', old('body'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('body', trans('global.activity.fields.body').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('body', old('body'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('body'))
                         <p class="help-block">
@@ -49,8 +49,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('project_id', trans('global.activity.fields.project').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('project_id', trans('global.activity.fields.project').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('project_id'))
                         <p class="help-block">
