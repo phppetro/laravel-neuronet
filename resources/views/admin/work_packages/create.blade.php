@@ -12,8 +12,8 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('wp_number_id', trans('global.work-packages.fields.wp-number').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('wp_number_id', $wp_numbers, old('wp_number_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('wp_number_id', trans('global.work-packages.fields.wp-number').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('wp_number_id', $wp_numbers, old('wp_number_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('wp_number_id'))
                         <p class="help-block">
@@ -24,8 +24,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('description', trans('global.work-packages.fields.description').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('description', old('description'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('description', trans('global.work-packages.fields.description').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('description', old('description'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('description'))
                         <p class="help-block">
@@ -36,8 +36,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('project_id', trans('global.work-packages.fields.project').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('project_id', trans('global.work-packages.fields.project').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('project_id'))
                         <p class="help-block">

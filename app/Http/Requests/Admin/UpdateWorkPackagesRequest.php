@@ -23,7 +23,9 @@ class UpdateWorkPackagesRequest extends FormRequest
     public function rules()
     {
         return [
-            
+          'wp_number_id' => 'required',
+          'description' => 'required',
+          'project_id' => 'required',
         ];
     }
 }
