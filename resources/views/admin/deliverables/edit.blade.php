@@ -13,8 +13,8 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('deliverable_number', trans('global.deliverables.fields.deliverable-number').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('deliverable_number', old('deliverable_number'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('deliverable_number', trans('global.deliverables.fields.deliverable-number').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('deliverable_number', old('deliverable_number'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('deliverable_number'))
                         <p class="help-block">
@@ -37,8 +37,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('project_id', trans('global.deliverables.fields.project').'', ['class' => 'control-label']) !!}
-                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2']) !!}
+                    {!! Form::label('project_id', trans('global.deliverables.fields.project').'*', ['class' => 'control-label']) !!}
+                    {!! Form::select('project_id', $projects, old('project_id'), ['class' => 'form-control select2', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('project_id'))
                         <p class="help-block">
@@ -49,8 +49,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('submission_date', trans('global.deliverables.fields.submission-date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('submission_date', old('submission_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    {!! Form::label('submission_date', trans('global.deliverables.fields.submission-date').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('submission_date', old('submission_date'), ['class' => 'form-control date', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('submission_date'))
                         <p class="help-block">
