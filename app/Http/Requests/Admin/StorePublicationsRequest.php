@@ -23,8 +23,11 @@ class StorePublicationsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'link' => 'required',
+          'title' => 'max:191|required',
+          'first_author_last_name' => 'max:191|required',
+          'year' => 'max:191|required',
+          'project_id' => 'required',
+          'link' => 'max:191|required',
         ];
     }
 }

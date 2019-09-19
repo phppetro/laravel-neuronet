@@ -70,7 +70,6 @@
                 {data: 'project.name', name: 'project.name'},
                 {data: 'link', name: 'link'},
                 {data: 'keywords', name: 'keywords'},
-
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

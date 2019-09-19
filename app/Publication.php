@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $year
  * @property string $project
  * @property string $link
- * @property string $keywords
+ * @property text $keywords
 */
 class Publication extends Model
 {
@@ -24,7 +24,6 @@ class Publication extends Model
     public static $searchable = [
         'title',
         'first_author_last_name',
-        'keywords',
     ];
     
     public static function boot()

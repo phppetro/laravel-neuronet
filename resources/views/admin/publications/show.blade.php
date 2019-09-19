@@ -34,7 +34,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.publications.fields.keywords')</th>
-                            <td field-key='keywords'>{{ $publication->keywords }}</td>
+                            <td field-key='keywords'>{!! $publication->keywords !!}</td>
                         </tr>
                     </table>
                 </div>

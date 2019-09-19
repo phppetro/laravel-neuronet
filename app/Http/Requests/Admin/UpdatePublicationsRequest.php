@@ -24,8 +24,11 @@ class UpdatePublicationsRequest extends FormRequest
     {
         return [
             
-            'title' => 'required',
-            'link' => 'required',
+          'title' => 'max:191|required',
+          'first_author_last_name' => 'max:191|required',
+          'year' => 'max:191|required',
+          'project_id' => 'required',
+          'link' => 'max:191|required',
         ];
     }
 }
