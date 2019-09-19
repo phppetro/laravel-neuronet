@@ -16,7 +16,7 @@
                 <div class="item">
                   <img src="/thumb/{{ $activity->user ? $activity->user->photo : '' }}" alt="user image" class="purple">
                   <p class="message">
-                    <a href="#" class="name">
+                    <a href="/admin/activities/{{ $activity->id }}" class="name">
                       <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ $activity->updated_at->diffForHumans() }}</small>
                       <span>
                         {{ $activity->user ? $activity->user->name . " " . $activity->user->surname . " - " . $activity->project->name : '' }}
