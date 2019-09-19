@@ -174,7 +174,7 @@ return [
 		'location' => 'Location',
 		'start-date' => 'Start date',
 		'end-date' => 'End date',
-		'color' => 'Color',
+		'color' => 'Type of event',
 		'link' => 'Link',
 	],
 ],
