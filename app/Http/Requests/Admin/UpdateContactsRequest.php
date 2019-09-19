@@ -23,11 +23,13 @@ class UpdateContactsRequest extends FormRequest
     public function rules()
     {
         return [
-          'first_name' => 'required',
-          'last_name' => 'required',
-          'email' => 'required|email',
-          'institution' => 'required',
+          'first_name' => 'max:191|required',
+          'last_name' => 'max:191|required',
+          'email' => 'max:191|required|email',
+          'position' => 'max:191',
+          'institution' => 'max:191|required',
           'category_id' => 'required',
+          'projects_involved' => 'max:191',
         ];
     }
 }
