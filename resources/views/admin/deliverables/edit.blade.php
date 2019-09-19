@@ -74,8 +74,8 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('keywords', trans('global.deliverables.fields.keywords').'', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('keywords', old('keywords'), ['class' => 'form-control ', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
+                    {!! Form::textarea('keywords', old('keywords'), ['class' => 'form-control ', 'placeholder' => 'Separate keywords with commas']) !!}
+                    <p class="help-block">Separate keywords with commas</p>
                     @if($errors->has('keywords'))
                         <p class="help-block">
                             {{ $errors->first('keywords') }}

@@ -23,10 +23,11 @@ class UpdateDeliverablesRequest extends FormRequest
     public function rules()
     {
         return [
-          'deliverable_number' => 'required',
-          'title' => 'required',
+          'deliverable_number' => 'max:191|required',
+          'title' => 'min:3|max:191|required',
           'project_id' => 'required',
           'submission_date' => 'required|date_format:'.config('app.date_format'),
+          'link' => 'min:3|max:191',
         ];
     }
 }
