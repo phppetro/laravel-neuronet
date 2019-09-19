@@ -56,7 +56,7 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                           @if(Auth::check())
-                              <a href="{{ url('/admin/') }}" class="btn btn-default btn-flat"> Admin</a><br>
+                              <a href="{{ url('/admin/') }}" class="btn btn-default btn-flat"> Dashboard</a><br>
                           @endif
 
                           {!! Form::open(['route' => 'auth.logout', 'id' => 'logout']) !!}
