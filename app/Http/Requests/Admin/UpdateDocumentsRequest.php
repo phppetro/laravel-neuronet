@@ -23,8 +23,10 @@ class UpdateDocumentsRequest extends FormRequest
     public function rules()
     {
         return [
-            
-            'publication_date' => 'nullable|date_format:'.config('app.date_format'),
+
+          'title' => 'max:191|required',
+          'source' => 'max:191|required',
+          'publication_date' => 'required|date_format:'.config('app.date_format'),
         ];
     }
 }

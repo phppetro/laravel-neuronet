@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.documents.title')</h3>
-    
+
     {!! Form::model($document, ['method' => 'PUT', 'route' => ['admin.documents.update', $document->id], 'files' => true,]) !!}
 
     <div class="panel panel-default">
@@ -13,8 +13,8 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('title', trans('global.documents.fields.title').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('title', trans('global.documents.fields.title').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('title'))
                         <p class="help-block">
@@ -25,8 +25,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('source', trans('global.documents.fields.source').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('source', old('source'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    {!! Form::label('source', trans('global.documents.fields.source').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('source', old('source'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('source'))
                         <p class="help-block">
@@ -37,8 +37,8 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('publication_date', trans('global.documents.fields.publication-date').'', ['class' => 'control-label']) !!}
-                    {!! Form::text('publication_date', old('publication_date'), ['class' => 'form-control date', 'placeholder' => '']) !!}
+                    {!! Form::label('publication_date', trans('global.documents.fields.publication-date').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('publication_date', old('publication_date'), ['class' => 'form-control date', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
                     @if($errors->has('publication_date'))
                         <p class="help-block">
@@ -50,8 +50,8 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('keywords', trans('global.documents.fields.keywords').'', ['class' => 'control-label']) !!}
-                    {!! Form::textarea('keywords', old('keywords'), ['class' => 'form-control ', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
+                    {!! Form::textarea('keywords', old('keywords'), ['class' => 'form-control ', 'placeholder' => 'Separate keywords with commas']) !!}
+                    <p class="help-block">Separate keywords with commas</p>
                     @if($errors->has('keywords'))
                         <p class="help-block">
                             {{ $errors->first('keywords') }}
@@ -61,14 +61,14 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('file', trans('global.documents.fields.file').'*', ['class' => 'control-label']) !!}
+                    {!! Form::label('file', trans('global.documents.fields.file').'', ['class' => 'control-label']) !!}
                     {!! Form::hidden('file', old('file')) !!}
                     @if ($document->file)
                         <a href="{{ asset(env('UPLOAD_PATH').'/' . $document->file) }}" target="_blank">Download file</a>
                     @endif
                     {!! Form::file('file', ['class' => 'form-control']) !!}
                     {!! Form::hidden('file_max_size', 2) !!}
-                    <p class="help-block"></p>
+                    <p class="help-block">Maximum size: 2MB, Allowed file extensions : pdf, jpeg, png, gif</p>
                     @if($errors->has('file'))
                         <p class="help-block">
                             {{ $errors->first('file') }}
@@ -76,7 +76,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -94,13 +94,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop
