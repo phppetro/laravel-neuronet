@@ -8,7 +8,7 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-
+        
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -36,12 +36,12 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
-                    {!! Form::label('body', trans('global.activity.fields.body').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('body', old('body'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    {!! Form::label('message', trans('global.activity.fields.message').'*', ['class' => 'control-label']) !!}
+                    {!! Form::textarea('message', old('message'), ['class' => 'form-control ', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
-                    @if($errors->has('body'))
+                    @if($errors->has('message'))
                         <p class="help-block">
-                            {{ $errors->first('body') }}
+                            {{ $errors->first('message') }}
                         </p>
                     @endif
                 </div>
@@ -58,7 +58,7 @@
                     @endif
                 </div>
             </div>
-
+            
         </div>
     </div>
 
@@ -76,13 +76,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-
+            
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-
+            
         });
     </script>
-
+            
 @stop

@@ -11,18 +11,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App
  * @property string $user
  * @property string $date
- * @property string $body
+ * @property text $message
  * @property string $project
 */
 class Activity extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['date', 'body', 'user_id', 'project_id'];
+    protected $fillable = ['date', 'message', 'user_id', 'project_id'];
     protected $hidden = [];
     public static $searchable = [
         'date',
-        'body',
+        'message',
     ];
     
     public static function boot()

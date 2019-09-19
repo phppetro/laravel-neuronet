@@ -21,8 +21,8 @@
                             <td field-key='date'>{{ $activity->date }}</td>
                         </tr>
                         <tr>
-                            <th>@lang('global.activity.fields.body')</th>
-                            <td field-key='body'>{{ $activity->body }}</td>
+                            <th>@lang('global.activity.fields.message')</th>
+                            <td field-key='message'>{!! $activity->message !!}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.activity.fields.project')</th>

@@ -74,7 +74,7 @@ return [
 		'fields' => [
 			'user' => 'User',
 			'date' => 'Date',
-			'body' => 'Body',
+			'message' => 'Message',
 			'project' => 'Project',
 		],
 	],

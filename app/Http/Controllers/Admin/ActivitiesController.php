@@ -42,7 +42,7 @@ class ActivitiesController extends Controller
                 'activities.id',
                 'activities.user_id',
                 'activities.date',
-                'activities.body',
+                'activities.message',
                 'activities.project_id',
             ]);
             $table = Datatables::of($query);
@@ -64,8 +64,8 @@ class ActivitiesController extends Controller
             $table->editColumn('date', function ($row) {
                 return $row->date ? $row->date : '';
             });
-            $table->editColumn('body', function ($row) {
-                return $row->body ? $row->body : '';
+            $table->editColumn('message', function ($row) {
+                return $row->message ? $row->message : '';
             });
             $table->editColumn('project.name', function ($row) {
                 return $row->project ? $row->project->name : '';

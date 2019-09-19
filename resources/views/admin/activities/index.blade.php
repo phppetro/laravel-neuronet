@@ -37,7 +37,7 @@
 
                         <th>@lang('global.activity.fields.user')</th>
                         <th>@lang('global.activity.fields.date')</th>
-                        <th>@lang('global.activity.fields.body')</th>
+                        <th>@lang('global.activity.fields.message')</th>
                         <th>@lang('global.activity.fields.project')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
@@ -64,7 +64,7 @@
                 @endif
                 @endcan{data: 'user.name', name: 'user.name'},
                 {data: 'date', name: 'date'},
-                {data: 'body', name: 'body'},
+                {data: 'message', name: 'message'},
                 {data: 'project.name', name: 'project.name'},
 
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}

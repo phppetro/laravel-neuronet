@@ -25,7 +25,7 @@ class StoreActivitiesRequest extends FormRequest
         return [
             'user_id' => 'required',
             'date' => 'nullable|date_format:'.config('app.date_format'),
-            'body' => 'required',
+            'message' => 'required',
             'project_id' => 'required',
         ];
     }
