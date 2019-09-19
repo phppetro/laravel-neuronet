@@ -22,7 +22,7 @@
                         {{ $activity->user ? $activity->user->name . " " . $activity->user->surname . " - " . $activity->project->name : '' }}
                      </span>
                     </a>
-                    <span>{{ $activity->message }}</span>
+                    <span>{{ str_limit($activity->message, 120) }}</span>
                   </p>
                 </div>
                 <!-- /.item -->
