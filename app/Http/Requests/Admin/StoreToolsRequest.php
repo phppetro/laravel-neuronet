@@ -23,12 +23,13 @@ class StoreToolsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'project_id' => 'required',
-            'publication_date' => 'required|date_format:'.config('app.date_format'),
-            'type_of_data_available' => 'required',
-            'description' => 'required',
-            'keywords' => 'required',
+          'name' => 'min:3|max:191|required',
+          'project_id' => 'required',
+          'publication_date' => 'required|date_format:'.config('app.date_format'),
+          'type_of_data_available' => 'min:3|max:191|required',
+          'description' => 'required',
+          'keywords' => 'required',
+          'link' => 'min:3|max:191',
         ];
     }
 }

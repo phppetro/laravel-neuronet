@@ -34,7 +34,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.tools.fields.keywords')</th>
-                            <td field-key='keywords'>{{ $tool->keywords }}</td>
+                            <td field-key='keywords'>{!! $tool->keywords !!}</td>
                         </tr>
                         <tr>
                             <th>@lang('global.tools.fields.link')</th>
