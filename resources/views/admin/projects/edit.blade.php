@@ -81,7 +81,7 @@
                     {!! Form::hidden('logo_max_size', 2) !!}
                     {!! Form::hidden('logo_max_width', 4096) !!}
                     {!! Form::hidden('logo_max_height', 4096) !!}
-                    <p class="help-block"></p>
+                    <p class="help-block">Max. size: 2MB, Max. width 4096px, Max. height: 4096px, Allowed file extensions : jpeg, png and gif</p>
                     @if($errors->has('logo'))
                         <p class="help-block">
                             {{ $errors->first('logo') }}

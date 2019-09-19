@@ -352,7 +352,7 @@
         <tr>
             <th>@lang('global.activity.fields.user')</th>
                         <th>@lang('global.activity.fields.date')</th>
-                        <th>@lang('global.activity.fields.body')</th>
+                        <th>@lang('global.activity.fields.message')</th>
                         <th>@lang('global.activity.fields.project')</th>
                         @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
@@ -368,7 +368,7 @@
                 <tr data-entry-id="{{ $activity->id }}">
                     <td field-key='user'>{{ $activity->user->name ?? '' }}</td>
                                 <td field-key='date'>{{ $activity->date }}</td>
-                                <td field-key='body'>{{ $activity->body }}</td>
+                                <td field-key='message'>{!! $activity->message !!}</td>
                                 <td field-key='project'>{{ $activity->project->name ?? '' }}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
@@ -443,7 +443,7 @@
                                 <td field-key='year'>{{ $publication->year }}</td>
                                 <td field-key='project'>{{ $publication->project->name ?? '' }}</td>
                                 <td field-key='link'>{{ $publication->link }}</td>
-                                <td field-key='keywords'>{{ $publication->keywords }}</td>
+                                <td field-key='keywords'>{!! $publication->keywords !!}</td>
                                 @if( request('show_deleted') == 1 )
                                 <td>
                                     {!! Form::open(array(
