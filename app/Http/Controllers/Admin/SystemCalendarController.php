@@ -26,12 +26,14 @@ class SystemCalendarController extends Controller
            }
 
           $projects = "";
-          if($calendar->projects->isNotEmpty()) {
+          if(count($calendar->projects) == 1) {
             foreach ($calendar->projects as $singleProjects) {
               $projects .= $singleProjects->name . " - ";
             }
+          } elseif (count($calendar->projects) > 1) {
+            $projects = "SEVERAL PROJECTS - ";
           } else {
-            $projects = "General - ";
+            $projects = "GENERAL - ";
           }
 
            $eventLabel = $projects . $calendar->title;
