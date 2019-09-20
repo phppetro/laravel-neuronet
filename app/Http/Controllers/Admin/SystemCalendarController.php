@@ -25,7 +25,16 @@ class SystemCalendarController extends Controller
                $end_date = $end->addDay(1)->toDateString();
            }
 
-           $eventLabel = $calendar->title;
+          $projects = "";
+          if($calendar->projects->isNotEmpty()) {
+            foreach ($calendar->projects as $singleProjects) {
+              $projects .= $singleProjects->name . " - ";
+            }
+          } else {
+            $projects = "General - ";
+          }
+
+           $eventLabel = $projects . $calendar->title;
            $color      = $calendar->color->value;
 
            $events[]       = [
