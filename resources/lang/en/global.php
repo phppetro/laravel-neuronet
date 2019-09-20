@@ -528,5 +528,5 @@ return [
 	'app_deselect_all' => 'Deselect all',
 	'app_team-management' => 'Teams',
 	'app_team-management-singular' => 'Team',
-	'global_title' => 'neuronet',
+	'global_title' => 'NEURONET IMI NEURODEGENERATION KNOWLEDGE BASE',
 ];
