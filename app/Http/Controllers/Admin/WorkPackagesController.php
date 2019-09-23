@@ -45,7 +45,9 @@ class WorkPackagesController extends Controller
 
             $project_id = request('project_id');
             if( $project_id != null) {
-              $query->where('project_id', $project_id)->get();
+              $query->where('project_id', $project_id)->orderBy('wp_number_id')->get();
+            } else {
+              $query->orderBy('project_id')->orderBy('wp_number_id');
             }
 
             $table = Datatables::of($query);
