@@ -24,13 +24,13 @@ class PublicationsController extends Controller
         }
 
 
-        
+
         if (request()->ajax()) {
             $query = Publication::query();
             $query->with("project");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('publication_delete')) {
             return abort(401);
         }
@@ -72,13 +72,13 @@ class PublicationsController extends Controller
                 return $row->project ? $row->project->name : '';
             });
             $table->editColumn('link', function ($row) {
-                return $row->link ? $row->link : '';
+                if($row->link) { return '<a href="'. $row->link .'" target="_blank">' . $row->link . '</a>'; };
             });
             $table->editColumn('keywords', function ($row) {
                 return $row->keywords ? $row->keywords : '';
             });
 
-            $table->rawColumns(['actions','massDelete']);
+            $table->rawColumns(['actions','massDelete', 'link']);
 
             return $table->make(true);
         }
@@ -96,7 +96,7 @@ class PublicationsController extends Controller
         if (! Gate::allows('publication_create')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         return view('admin.publications.create', compact('projects'));
@@ -132,7 +132,7 @@ class PublicationsController extends Controller
         if (! Gate::allows('publication_edit')) {
             return abort(401);
         }
-        
+
         $projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
 
         $publication = Publication::findOrFail($id);

@@ -17,7 +17,7 @@
                       <div class="comment-text">
                             <span class="username text-bold">{{ $publication->first_author_last_name }}</span> et al., {{ $publication->year }}</span>
                             <span class="text-bold pull-right">{{ $publication->project->name }}</span><br>
-                        <a href="{{ $publication->link }}" target="_blank">{{ $publication->title }}</a>
+                        <a href="/admin/publications/{{ $publication->id }}">{{ $publication->title }}</a>
                       </div>
                       <!-- /.comment-text -->
                     </div>

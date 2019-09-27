@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.publications.fields.link')</th>
-                            <td field-key='link'>{{ $publication->link }}</td>
+                            <td field-key='link'><a target="_blank" href="{{ $publication->link }}">{{ $publication->link }}</a></td>
                         </tr>
                         <tr>
                             <th>@lang('global.publications.fields.keywords')</th>
@@ -46,5 +46,3 @@
         </div>
     </div>
 @stop
-
-
