@@ -80,7 +80,7 @@ class ProjectsController extends Controller
                 if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->logo) .'"/>'; };
             });
 
-            $table->rawColumns(['actions','massDelete','logo']);
+            $table->rawColumns(['actions','massDelete','logo', 'website']);
 
             return $table->make(true);
         }
