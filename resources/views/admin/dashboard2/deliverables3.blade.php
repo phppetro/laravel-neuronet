@@ -24,7 +24,7 @@
                         @foreach($deliverables as $deliverable)
                           <tr>
                             <td>{{ $deliverable->submission_date }}</td>
-                            <td><a href="/admin/tools/{{ $deliverable->id }}">{{ $deliverable-title }}</a></td>
+                            <td><a href="/admin/deliverables/{{ $deliverable->id }}">{{ $deliverable->title }}</a></td>
                             <td>{{ $deliverable->project->name }}</td>
                           </tr>
                         @endforeach
