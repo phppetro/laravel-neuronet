@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.deliverables.fields.link')</th>
-                            <td field-key='link'>{{ $deliverable->link }}</td>
+                            <td field-key='link'><a target="_blank" href="{{ $deliverable->link }}">{{ $deliverable->link }}</a></td>
                         </tr>
                         <tr>
                             <th>@lang('global.deliverables.fields.keywords')</th>
@@ -57,13 +57,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

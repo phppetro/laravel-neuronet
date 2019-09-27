@@ -78,13 +78,13 @@ class DeliverablesController extends Controller
                 return $row->submission_date ? $row->submission_date : '';
             });
             $table->editColumn('link', function ($row) {
-                return $row->link ? $row->link : '';
+                if($row->link) { return '<a href="'. $row->link .'" target="_blank">' . $row->link . '</a>'; };
             });
             $table->editColumn('keywords', function ($row) {
                 return $row->keywords ? $row->keywords : '';
             });
 
-            $table->rawColumns(['actions','massDelete']);
+            $table->rawColumns(['actions','massDelete','link']);
 
             return $table->make(true);
         }
