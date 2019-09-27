@@ -22,7 +22,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.projects.fields.website')</th>
-                            <td field-key='website'>{{ $project->website }}</td>
+                            <td field-key='website'><a target="_blank" href="{{ $project->website }}">{{ $project->website }}</a></td>
                         </tr>
                         <tr>
                             <th>@lang('global.projects.fields.start-date')</th>

@@ -68,7 +68,7 @@ class ProjectsController extends Controller
                 return $row->description ? $row->description : '';
             });
             $table->editColumn('website', function ($row) {
-                return $row->website ? $row->website : '';
+                if($row->website) { return '<a href="'. $row->website .'" target="_blank">' . $row->website . '</a>'; };
             });
             $table->editColumn('start_date', function ($row) {
                 return $row->start_date ? $row->start_date : '';
