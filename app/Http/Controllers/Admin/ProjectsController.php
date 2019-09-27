@@ -27,12 +27,12 @@ class ProjectsController extends Controller
         }
 
 
-        
+
         if (request()->ajax()) {
             $query = Project::query();
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('project_delete')) {
             return abort(401);
         }
