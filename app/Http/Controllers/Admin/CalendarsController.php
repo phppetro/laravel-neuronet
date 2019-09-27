@@ -24,14 +24,14 @@ class CalendarsController extends Controller
         }
 
 
-        
+
         if (request()->ajax()) {
             $query = Calendar::query();
             $query->with("color");
             $query->with("projects");
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('calendar_delete')) {
             return abort(401);
         }
@@ -84,10 +84,10 @@ class CalendarsController extends Controller
                         $row->projects->pluck('name')->toArray()) . '</span>';
             });
             $table->editColumn('link', function ($row) {
-                return $row->link ? $row->link : '';
+                if($row->link) { return '<a href="'. $row->link .'" target="_blank">' . $row->link . '</a>'; };
             });
 
-            $table->rawColumns(['actions','massDelete','projects.name']);
+            $table->rawColumns(['actions','massDelete','projects.name', 'link']);
 
             return $table->make(true);
         }
@@ -105,7 +105,7 @@ class CalendarsController extends Controller
         if (! Gate::allows('calendar_create')) {
             return abort(401);
         }
-        
+
         $colors = \App\Color::get()->pluck('color', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id');
 
@@ -144,7 +144,7 @@ class CalendarsController extends Controller
         if (! Gate::allows('calendar_edit')) {
             return abort(401);
         }
-        
+
         $colors = \App\Color::get()->pluck('color', 'id')->prepend(trans('global.app_please_select'), '');
         $projects = \App\Project::get()->pluck('name', 'id');
 

@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.calendar.fields.link')</th>
-                            <td field-key='link'>{{ $calendar->link }}</td>
+                            <td field-key='link'><a target="_blank" href="{{ $calendar->link }}">{{ $calendar->link }}</a></td>
                         </tr>
                     </table>
                 </div>
