@@ -68,6 +68,7 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('deliverables_restore/{id}', ['uses' => 'Admin\DeliverablesController@restore', 'as' => 'deliverables.restore']);
     Route::delete('deliverables_perma_del/{id}', ['uses' => 'Admin\DeliverablesController@perma_del', 'as' => 'deliverables.perma_del']);
 
+    Route::get('/calendars/all_events/{all_events}', ['uses' => 'Admin\CalendarsController@index', 'as' => 'calendars.all_events']);
     Route::resource('calendars', 'Admin\CalendarsController');
     Route::post('calendars_mass_destroy', ['uses' => 'Admin\CalendarsController@massDestroy', 'as' => 'calendars.mass_destroy']);
     Route::post('calendars_restore/{id}', ['uses' => 'Admin\CalendarsController@restore', 'as' => 'calendars.restore']);

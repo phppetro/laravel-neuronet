@@ -17,7 +17,7 @@ class CalendarsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($all_eve=null)
     {
         if (! Gate::allows('calendar_access')) {
             return abort(401);
@@ -47,6 +47,14 @@ class CalendarsController extends Controller
                 'calendars.color_id',
                 'calendars.link',
             ]);
+
+            $all_events = request('all_events');
+            if($all_events == 1) {
+              $query->orderBy('start_date')->get();
+            } else {
+              $query->where('end_date','>=',now())->orderBy('start_date');
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -92,7 +100,7 @@ class CalendarsController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.calendars.index');
+        return view('admin.calendars.index', compact('all_eve'));
     }
 
     /**

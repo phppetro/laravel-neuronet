@@ -22,7 +22,13 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            @lang('global.app_list')
+          Showing:
+          @if($all_eve == 1)
+            <a class="btn btn-warning" href="/admin/calendars/">All events <u>Click here to see just current and future events</u></a>
+          @else
+            <a class="btn btn-info" href="/admin/calendars/all_events/1">Current and future events <u>Click here to see all events</u></a>
+          @endif
+
         </div>
 
         <div class="panel-body table-responsive">
@@ -58,7 +64,13 @@
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.calendars.mass_destroy') }}'; @endif
         @endcan
         $(document).ready(function () {
-            window.dtDefaultOptions.ajax = '{!! route('admin.calendars.index') !!}?show_deleted={{ request('show_deleted') }}';
+          var all_events='';
+          var currentURL = $(location).attr('href');
+          if (currentURL.indexOf("all_events") >= 0) {
+            all_events = 1;
+          }
+            window.dtDefaultOptions.ajax = '{!! route('admin.calendars.index') !!}?show_deleted={{ request('show_deleted') }}&all_events=';
+            window.dtDefaultOptions.ajax+=all_events;
             window.dtDefaultOptions.columns = [@can('calendar_delete')
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},

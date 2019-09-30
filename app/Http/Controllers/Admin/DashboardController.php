@@ -35,7 +35,7 @@ class DashboardController extends Controller
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
         $contactscategories = \App\ContactCategory::all();
         $projects = \App\Project::all()->sortBy('name');
-        $events = \App\Calendar::where('start_date','>=',now())->limit(5)->get();
+        $events = \App\Calendar::where('start_date','>=',now())->orderBy('start_date')->limit(5)->get();
 
         //colors
         //Purple: "rgba(155,109,235,1)"
