@@ -126,7 +126,7 @@ return [
 		'title' => 'Projects metrics',
 		'fields' => [
 			'name' => 'Name',
-			'funding' => 'Total funding in &#8364;',
+			'funding' => 'Total funding in M&#8364;',
 		],
 	],
 
