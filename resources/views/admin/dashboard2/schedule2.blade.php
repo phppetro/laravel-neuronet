@@ -30,7 +30,7 @@
               dataTable.addColumn({ type: 'date', id: 'Start' });
               dataTable.addColumn({ type: 'date', id: 'End' });
               dataTable.addRows([
-                @foreach ($projects as $project)
+                @foreach ($scheduleprojects as $project)
                   [ '{{ $loop->index+1 }}',
                     '{{ $project->name }}',
 

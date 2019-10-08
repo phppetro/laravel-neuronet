@@ -35,6 +35,9 @@ class DashboardController extends Controller
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
         $contactscategories = \App\ContactCategory::all();
         $projects = \App\Project::all()->sortBy('name');
+        $scheduleprojects = \App\Project::orderBy('start_date')->get();
+        //dd($scheduleprojects);
+        //exit;
         $events = \App\Calendar::where('start_date','>=',now())->orderBy('start_date')->limit(5)->get();
 
         //colors
@@ -55,6 +58,6 @@ class DashboardController extends Controller
         //echo $labels[0];
         //exit;
 
-        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects','events'));
+        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects','scheduleprojects','events'));
     }
 }
