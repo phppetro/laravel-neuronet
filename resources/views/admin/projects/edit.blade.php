@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.projects.title')</h3>
-    
+
     {!! Form::model($project, ['method' => 'PUT', 'route' => ['admin.projects.update', $project->id], 'files' => true,]) !!}
 
     <div class="panel panel-default">
@@ -31,6 +31,18 @@
                     @if($errors->has('description'))
                         <p class="help-block">
                             {{ $errors->first('description') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {!! Form::label('objectives', trans('global.projects.fields.objectives').'', ['class' => 'control-label']) !!}
+                    {!! Form::textarea('objectives', old('objectives'), ['class' => 'form-control ', 'placeholder' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('objectives'))
+                        <p class="help-block">
+                            {{ $errors->first('objectives') }}
                         </p>
                     @endif
                 </div>
@@ -89,7 +101,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -107,13 +119,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

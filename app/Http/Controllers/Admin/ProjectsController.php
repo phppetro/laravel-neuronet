@@ -33,9 +33,9 @@ class ProjectsController extends Controller
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
 
-        if (! Gate::allows('project_delete')) {
-            return abort(401);
-        }
+                if (! Gate::allows('project_delete')) {
+                    return abort(401);
+                }
                 $query->onlyTrashed();
                 $template = 'restoreTemplate';
             }
@@ -43,6 +43,7 @@ class ProjectsController extends Controller
                 'projects.id',
                 'projects.name',
                 'projects.description',
+                'projects.objectives',
                 'projects.website',
                 'projects.start_date',
                 'projects.end_date',
@@ -66,6 +67,9 @@ class ProjectsController extends Controller
             });
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : '';
+            });
+            $table->editColumn('objectives', function ($row) {
+                return $row->objectives ? $row->objectives : '';
             });
             $table->editColumn('website', function ($row) {
                 if($row->website) { return '<a href="'. $row->website .'" target="_blank">' . $row->website . '</a>'; };
@@ -171,12 +175,12 @@ class ProjectsController extends Controller
             return abort(401);
         }
         $partners = \App\Partner::whereHas('projects',
-                    function ($query) use ($id) {
-                        $query->where('id', $id);
-                    })->get();$tools = \App\Tool::where('project_id', $id)->get();$work_packages = \App\WorkPackage::where('project_id', $id)->get();$deliverables = \App\Deliverable::where('project_id', $id)->get();$activities = \App\Activity::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();$calendars = \App\Calendar::whereHas('projects',
-                    function ($query) use ($id) {
-                        $query->where('id', $id);
-                    })->get();
+            function ($query) use ($id) {
+                $query->where('id', $id);
+            })->get();$tools = \App\Tool::where('project_id', $id)->get();$work_packages = \App\WorkPackage::where('project_id', $id)->get();$deliverables = \App\Deliverable::where('project_id', $id)->get();$activities = \App\Activity::where('project_id', $id)->get();$publications = \App\Publication::where('project_id', $id)->get();$users = \App\User::where('project_id', $id)->get();$calendars = \App\Calendar::whereHas('projects',
+        function ($query) use ($id) {
+            $query->where('id', $id);
+        })->get();
 
         $project = Project::findOrFail($id);
 

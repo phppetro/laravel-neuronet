@@ -31,13 +31,14 @@
                             @if ( request('show_deleted') != 1 )<th style="text-align:center;"><input type="checkbox" id="select-all" /></th>@endif
                         @endcan
 
-                        <th>@lang('global.projects.fields.name')</th>
-                        <th>@lang('global.projects.fields.description')</th>
-                        <th>@lang('global.projects.fields.website')</th>
-                        <th>@lang('global.projects.fields.start-date')</th>
-                        <th>@lang('global.projects.fields.end-date')</th>
-                        <th>@lang('global.projects.fields.logo')</th>
-                        @if( request('show_deleted') == 1 )
+                    <th>@lang('global.projects.fields.name')</th>
+                    <th>@lang('global.projects.fields.description')</th>
+                    <th>@lang('global.projects.fields.objectives')</th>
+                    <th>@lang('global.projects.fields.website')</th>
+                    <th>@lang('global.projects.fields.start-date')</th>
+                    <th>@lang('global.projects.fields.end-date')</th>
+                    <th>@lang('global.projects.fields.logo')</th>
+                    @if( request('show_deleted') == 1 )
                         <th>&nbsp;</th>
                         @else
                         <th>&nbsp;</th>
@@ -62,6 +63,7 @@
                 @endif
                 @endcan{data: 'name', name: 'name'},
                 {data: 'description', name: 'description'},
+                {data: 'objectives', name: 'objectives'},
                 {data: 'website', name: 'website'},
                 {data: 'start_date', name: 'start_date'},
                 {data: 'end_date', name: 'end_date'},

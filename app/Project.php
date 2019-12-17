@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App
  * @property string $name
  * @property text $description
+ * @property text $objectives
  * @property string $website
  * @property string $start_date
  * @property string $end_date
@@ -20,15 +21,16 @@ class Project extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'website', 'start_date', 'end_date', 'logo'];
+    protected $fillable = ['name', 'description', 'objectives', 'website', 'start_date', 'end_date', 'logo'];
     protected $hidden = [];
     public static $searchable = [
         'name',
         'description',
+        'objectives',
         'start_date',
         'end_date',
     ];
-    
+
     public static function boot()
     {
         parent::boot();
@@ -95,5 +97,5 @@ class Project extends Model
             return '';
         }
     }
-    
+
 }

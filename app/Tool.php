@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string $publication_date
  * @property string $type_of_data_available
  * @property text $description
- * @property string $keywords
+ * @property text $keywords
  * @property string $link
 */
 class Tool extends Model
@@ -31,7 +31,7 @@ class Tool extends Model
         'keywords',
         'link',
     ];
-    
+
     public static function boot()
     {
         parent::boot();
@@ -77,10 +77,10 @@ class Tool extends Model
             return '';
         }
     }
-    
+
     public function project()
     {
         return $this->belongsTo(Project::class, 'project_id')->withTrashed();
     }
-    
+
 }

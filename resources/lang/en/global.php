@@ -135,6 +135,7 @@ return [
 	'fields' => [
 		'name' => 'Name',
 		'description' => 'Description',
+        'objectives' => 'Objectives',
 		'website' => 'Website',
 		'start-date' => 'Start date',
 		'end-date' => 'End date',
