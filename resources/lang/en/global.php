@@ -284,6 +284,16 @@ return [
 	],
 ],
 
+    'decision-tool' => [
+        'title' => 'Decision tool',
+        'title2' => 'Decision tool management',
+        'fields' => [
+            'title' => 'Title',
+            'body' => 'Body',
+            'target' => 'Target',
+        ],
+    ],
+
   'app_create' => 'Create',
 	'app_save' => 'Save',
 	'app_edit' => 'Edit',

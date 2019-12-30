@@ -27,6 +27,14 @@
                 </a>
             </li>
 
+            @can('decision_tool_access')
+                <li>
+                    <a href="{{ route('admin.decision_tools.diagram') }}">
+                        <i class="fa fa-gears"></i>
+                        <span>@lang('global.decision-tool.title')</span>
+                    </a>
+                </li>@endcan
+
             @can('activity_access')
             <li>
                 <a href="{{ route('admin.activities.index') }}">
@@ -114,6 +122,14 @@
                     <span>@lang('global.tools.title')</span>
                 </a>
             </li>@endcan
+
+            @can('decision_tool_access')
+                <li>
+                    <a href="{{ route('admin.decision_tools.index') }}">
+                        <i class="fa fa-gears"></i>
+                        <span>@lang('global.decision-tool.title2')</span>
+                    </a>
+                </li>@endcan
 
             @can('metric_access')
             <li class="treeview">
