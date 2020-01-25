@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::get('/', 'Admin\DashboardController@index');
     Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar');
     Route::get('/decision_tool', 'Admin\DecisionToolsController@diagram')->name('decision_tools.diagram');
+    Route::get('/map_of_asset', 'Admin\MapOfAssetsController@diagram')->name('map_of_assets.diagram');
 
     Route::resource('activities', 'Admin\ActivitiesController');
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);

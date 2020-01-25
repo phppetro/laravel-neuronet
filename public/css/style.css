@@ -379,3 +379,60 @@ a:focus {
 .decision-mechanism-1:hover {
 	background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
 }
+
+/* Map of assets */
+
+.asset-image {
+	display: grid;
+	grid-template-columns: repeat(659, 1fr);
+	grid-template-rows: repeat(32, 1fr);
+	background-image: url("/img/map_of_assets6.png");
+	height: 650px;
+	width: 659px;
+	background-repeat:no-repeat;
+	margin: 0 50px 0 50px;
+}
+
+.asset-9-1 {
+	grid-column: 259 / 318;
+	grid-row: 2 / 4 ;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+.asset-9-1:hover {
+	background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+}
+
+.asset-9-2 {
+	grid-column: 244 / 290;
+	grid-row: 4 / 5 ;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+.asset-9-2:hover {
+	background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+}
+
+.asset-9-3 {
+	grid-column: 176 / 225;
+	grid-row: 3 / 5 ;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+.asset-9-3:hover {
+	background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+}
+
+.asset-9-4 {
+	grid-column: 160 / 215;
+	grid-row: 5 / 7 ;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+.asset-9-4:hover {
+	background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+}
