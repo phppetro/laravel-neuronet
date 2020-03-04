@@ -277,20 +277,32 @@ return [
 	],
 
 	'color' => [
-	'title' => 'Color',
-	'fields' => [
-		'color' => 'Color',
-		'value' => 'Value',
-	],
-],
+        'title' => 'Color',
+        'fields' => [
+            'color' => 'Color',
+            'value' => 'Value',
+        ],
+    ],
 
     'decision-tool' => [
         'title' => 'Decision tool',
         'title2' => 'Decision tool management',
+        'title3' => 'Regulatory and HTA engagement – Decision Tool Framework',
         'fields' => [
             'title' => 'Title',
             'body' => 'Body',
             'target' => 'Target',
+        ],
+    ],
+
+    'asset-map' => [
+        'title' => 'Asset map',
+        'title2' => 'Asset map management',
+        'fields' => [
+            'title' => 'Title',
+            'body' => 'Body',
+            'target' => 'Target',
+            'project' => 'Project'
         ],
     ],
 

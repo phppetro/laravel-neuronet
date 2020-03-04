@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::get('/', 'Admin\DashboardController@index');
     Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar');
     Route::get('/decision_tool', 'Admin\DecisionToolsController@diagram')->name('decision_tools.diagram');
-    Route::get('/map_of_asset', 'Admin\MapOfAssetsController@diagram')->name('map_of_assets.diagram');
+    Route::get('/asset_map', 'Admin\AssetMapsController@diagram')->name('asset_maps.diagram');
 
     Route::resource('activities', 'Admin\ActivitiesController');
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);
@@ -156,6 +156,11 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('decision_tools_mass_destroy', ['uses' => 'Admin\DecisionToolsController@massDestroy', 'as' => 'decision_tools.mass_destroy']);
     Route::post('decision_tools_restore/{id}', ['uses' => 'Admin\DecisionToolsController@restore', 'as' => 'decision_tools.restore']);
     Route::delete('decision_tools_perma_del/{id}', ['uses' => 'Admin\DecisionToolsController@perma_del', 'as' => 'decision_tools.perma_del']);
+
+    Route::resource('asset_maps', 'Admin\AssetMapsController');
+    Route::post('asset_maps_mass_destroy', ['uses' => 'Admin\AssetMapsController@massDestroy', 'as' => 'asset_maps.mass_destroy']);
+    Route::post('asset_maps_restore/{id}', ['uses' => 'Admin\AssetMapsController@restore', 'as' => 'asset_maps.restore']);
+    Route::delete('asset_maps_perma_del/{id}', ['uses' => 'Admin\AssetMapsController@perma_del', 'as' => 'asset_maps.perma_del']);
 
     Route::post('csv_parse', 'Admin\CsvImportController@parse')->name('csv_parse');
     Route::post('csv_process', 'Admin\CsvImportController@process')->name('csv_process');

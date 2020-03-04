@@ -10,22 +10,7 @@
                 </div>
                 <!-- /.box-header -->
                <div class="box-body">
-                 <div class="table-responsive">
-                   <table class="table no-margin">
-                     <thead>
-                     <tr>
-                       <th>Publication Date</th>
-                       <th>Tool Name</th>
-                       <th>Project</th>
-                     </tr>
-                     </thead>
-                     <tbody>
-
-                        <a href="/admin/decision_tool"><img class="img-responsive" src="/img/decision_tool2.png" alt="Decision tool"></a>
-
-                      </tbody>
-                    </table>
-                  </div>
+                   <a href="/admin/decision_tool"><img class="img-responsive" src="/img/decision_tool2.png" alt="Decision tool"></a>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer text-center">

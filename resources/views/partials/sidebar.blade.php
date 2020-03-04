@@ -35,6 +35,14 @@
                     </a>
                 </li>@endcan
 
+            @can('asset_map_access')
+            <li>
+                <a href="{{ route('admin.asset_maps.diagram') }}">
+                    <i class="fa fa-gears"></i>
+                    <span>Asset Map</span>
+                </a>
+            </li>@endcan
+
             @can('activity_access')
             <li>
                 <a href="{{ route('admin.activities.index') }}">
@@ -131,8 +139,15 @@
                     </a>
                 </li>@endcan
 
-            @can('metric_access')
-            <li class="treeview">
+            @can('asset_map_access')
+                <li>
+                    <a href="{{ route('admin.asset_maps.index') }}">
+                        <i class="fa fa-gears"></i>
+                        <span>@lang('global.asset-map.title2')</span>
+                    </a>
+                </li>@endcan
+
+            @can('metric_access')<li class="treeview">
                 <a href="#">
                     <i class="fa fa-gears"></i>
                     <span>@lang('global.metrics.title')</span>

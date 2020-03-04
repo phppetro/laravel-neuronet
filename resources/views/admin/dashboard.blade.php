@@ -14,6 +14,7 @@
 			@include('admin.dashboard2.publications2')
 			@include('admin.dashboard2.documents2')
 			@include('admin.dashboard2.tools')
+			@include('admin.dashboard2.asset_map')
 		</div>
 		<div class="col-md-4">
 			@include('admin.dashboard2.schedule2')
