@@ -80,10 +80,17 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('partners_metrics_mass_destroy', ['uses' => 'Admin\PartnersMetricsController@massDestroy', 'as' => 'partners_metrics.mass_destroy']);
     Route::post('partners_metrics_restore/{id}', ['uses' => 'Admin\PartnersMetricsController@restore', 'as' => 'partners_metrics.restore']);
     Route::delete('partners_metrics_perma_del/{id}', ['uses' => 'Admin\PartnersMetricsController@perma_del', 'as' => 'partners_metrics.perma_del']);
+
     Route::resource('projects_metrics', 'Admin\ProjectsMetricsController');
     Route::post('projects_metrics_mass_destroy', ['uses' => 'Admin\ProjectsMetricsController@massDestroy', 'as' => 'projects_metrics.mass_destroy']);
     Route::post('projects_metrics_restore/{id}', ['uses' => 'Admin\ProjectsMetricsController@restore', 'as' => 'projects_metrics.restore']);
     Route::delete('projects_metrics_perma_del/{id}', ['uses' => 'Admin\ProjectsMetricsController@perma_del', 'as' => 'projects_metrics.perma_del']);
+
+    Route::resource('countries_metrics', 'Admin\CountriesMetricsController');
+    Route::post('countries_metrics_mass_destroy', ['uses' => 'Admin\CountriesMetricsController@massDestroy', 'as' => 'countries_metrics.mass_destroy']);
+    Route::post('countries_metrics_restore/{id}', ['uses' => 'Admin\CountriesMetricsController@restore', 'as' => 'countries_metrics.restore']);
+    Route::delete('countries_metrics_perma_del/{id}', ['uses' => 'Admin\CountriesMetricsController@perma_del', 'as' => 'countries_metrics.perma_del']);
+
     Route::resource('faq_categories', 'Admin\FaqCategoriesController');
     Route::post('faq_categories_mass_destroy', ['uses' => 'Admin\FaqCategoriesController@massDestroy', 'as' => 'faq_categories.mass_destroy']);
     Route::resource('faq_questions', 'Admin\FaqQuestionsController');

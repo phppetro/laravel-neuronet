@@ -172,6 +172,14 @@
                         </a>
                     </li>@endcan
 
+                    @can('countries_metric_access')
+                        <li>
+                            <a href="{{ route('admin.countries_metrics.index') }}">
+                                <i class="fa fa-gears"></i>
+                                <span>@lang('global.countries-metrics.title')</span>
+                            </a>
+                        </li>@endcan
+
                 </ul>
             </li>@endcan
 

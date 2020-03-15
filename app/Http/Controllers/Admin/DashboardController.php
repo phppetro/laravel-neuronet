@@ -33,6 +33,7 @@ class DashboardController extends Controller
         $documents = \App\Document::latest()->limit(7)->get();
         $partnersmetrics = \App\PartnersMetric::all();
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
+        $countriesmetrics = \App\CountriesMetric::all()->sortBy('name');
         $contactscategories = \App\ContactCategory::all();
         $projects = \App\Project::all()->sortBy('name');
         $scheduleprojects = \App\Project::orderBy('start_date')->get();
@@ -58,6 +59,6 @@ class DashboardController extends Controller
         //echo $labels[0];
         //exit;
 
-        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','partnersmetrics','projectsmetrics','contactscategories','colors','labels','projects','scheduleprojects','events'));
+        return view('admin.dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','partnersmetrics','projectsmetrics','countriesmetrics','contactscategories','colors','labels','projects','scheduleprojects','events'));
     }
 }

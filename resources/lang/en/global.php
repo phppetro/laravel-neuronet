@@ -129,6 +129,13 @@ return [
 			'funding' => 'Total funding in M&#8364;',
 		],
 	],
+    'countries-metrics' => [
+        'title' => 'Countries metrics',
+        'fields' => [
+            'name' => 'Name',
+            'number' => 'Number',
+        ],
+    ],
 
 'projects' => [
 	'title' => 'Projects',

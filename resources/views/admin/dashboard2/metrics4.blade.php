@@ -1,20 +1,35 @@
 <div class="nav-tabs-custom" style="cursor: move;">
             <!-- Tabs within a box -->
             <ul class="nav nav-tabs pull-right ui-sortable-handle">
-              <li class="active"><a href="#revenue-chart" data-toggle="tab" aria-expanded="true">Partners</a></li>
-              <li class=""><a href="#sales-chart" data-toggle="tab" aria-expanded="false">Funding in M&#8364;</a></li>
+              <li class="active"><a href="#partners-chart" data-toggle="tab" aria-expanded="true">Partners</a></li>
+              <li class=""><a href="#funding-chart" data-toggle="tab" aria-expanded="false">Funding in M&#8364;</a></li>
+              <li class=""><a href="#countries-chart" data-toggle="tab" aria-expanded="true">Number of organizations</a></li>
               <li class="pull-left header">Metrics</li>
             </ul>
             <div class="tab-content no-padding">
-              <!-- Morris chart - Sales -->
-              <div class="chart tab-pane" id="sales-chart">
 
+              <div class="chart tab-pane" id="countries-chart">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="chart-responsive">
+                                    <canvas id="bar-chart-2" width="800" height="305"></canvas>
+                                </div>
+                                <!-- ./chart-responsive -->
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.box-body -->
+                </div>
 
+              <div class="chart tab-pane" id="funding-chart">
                 <div class="box-body">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="chart-responsive">
-                        <canvas id="bar-chart" width="400" height="305"></canvas>
+                        <canvas id="bar-chart" width="800" height="305"></canvas>
                       </div>
                       <!-- ./chart-responsive -->
                     </div>
@@ -23,17 +38,14 @@
                   <!-- /.row -->
                 </div>
                 <!-- /.box-body -->
-
-
               </div>
-              <div class="chart tab-pane active" id="revenue-chart">
 
-
+              <div class="chart tab-pane active" id="partners-chart">
                 <div class="box-body">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="chart-responsive">
-                        <canvas id="pie-chart" width="400" height="305"></canvas>
+                        <canvas id="pie-chart" width="800" height="305"></canvas>
                       </div>
                       <!-- ./chart-responsive -->
                     </div>
@@ -42,29 +54,28 @@
                   <!-- /.row -->
                 </div>
                 <!-- /.box-body -->
-
-
               </div>
+
             </div>
           </div>
 
           <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
           <script>
-            new Chart(document.getElementById("bar-chart"), {
+            new Chart(document.getElementById("bar-chart-2"), {
               type: 'bar',
               data: {
                 labels: [
-                  @foreach ($projectsmetrics as $projectsmetric)
-                    "{{ $projectsmetric->name }}",
+                  @foreach ($countriesmetrics as $countriesmetric)
+                    "{{ $countriesmetric->name }}",
                   @endforeach
                 ],
                 datasets: [{
                     data: [
-                      @foreach ($projectsmetrics as $projectsmetric)
-                        "{{ $projectsmetric->funding }}",
+                      @foreach ($countriesmetrics as $countriesmetric)
+                        "{{ $countriesmetric->number }}",
                       @endforeach
                     ],
-                    label: "Project funding",
+                    label: "Countries",
                     borderColor: "rgba(58,9,97,1)",
                     backgroundColor: "rgba(58,9,97,0.75)",
                     "borderWidth":2,
@@ -84,6 +95,39 @@
               }
             });
 
+            new Chart(document.getElementById("bar-chart"), {
+                type: 'bar',
+                data: {
+                    labels: [
+                        @foreach ($projectsmetrics as $projectsmetric)
+                            "{{ $projectsmetric->name }}",
+                        @endforeach
+                    ],
+                    datasets: [{
+                        data: [
+                            @foreach ($projectsmetrics as $projectsmetric)
+                                "{{ $projectsmetric->funding }}",
+                            @endforeach
+                        ],
+                        label: "Project funding",
+                        borderColor: "rgba(58,9,97,1)",
+                        backgroundColor: "rgba(58,9,97,0.75)",
+                        "borderWidth":2,
+                        borderSkipped: "right",
+                        fill: true
+                    }
+                    ]
+                },
+                options: {
+                    title: {
+                        display: false,
+                        text: ''
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            });
 
             new Chart(document.getElementById("pie-chart"), {
               type: 'doughnut',
