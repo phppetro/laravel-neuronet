@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,12 +57,12 @@
           <entry key="dummy" value="14" />
           <entry key="env" value="12" />
           <entry key="js" value="13" />
-          <entry key="php" value="5651" />
+          <entry key="php" value="5672" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="4299" />
+          <entry key="Blade" value="4320" />
           <entry key="CSS" value="4824" />
           <entry key="JavaScript" value="13" />
           <entry key="PHP" value="1352" />
@@ -80,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="155" column="43" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="43" />
+            <state relative-caret-position="244">
+              <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -115,11 +114,11 @@
       <find>partners_</find>
       <find>partners</find>
       <find>countries_metrics.mass_destroy</find>
-      <find>countries</find>
       <find>Number of organizations</find>
       <find>countries-cha</find>
       <find>allowed</find>
       <find>funding</find>
+      <find>countries</find>
     </findStrings>
     <replaceStrings>
       <replace>asset_map</replace>
@@ -467,12 +466,12 @@
       <workItem from="1583231313294" duration="17552000" />
       <workItem from="1584206032836" duration="13361000" />
       <workItem from="1584431436712" duration="1073000" />
-      <workItem from="1586780998099" duration="4386000" />
+      <workItem from="1586780998099" duration="4872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128866000" />
+    <option name="totallyTimeSpent" value="129352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -815,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="155" column="43" selection-start-line="155" selection-start-column="43" selection-end-line="155" selection-end-column="43" />
+        <state relative-caret-position="244">
+          <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
         </state>
       </provider>
     </entry>

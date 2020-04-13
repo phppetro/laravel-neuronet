@@ -75,7 +75,7 @@
                         "{{ $countriesmetric->number }}",
                       @endforeach
                     ],
-                    label: "Countries",
+                    label: "Count",
                     borderColor: "rgba(58,9,97,1)",
                     backgroundColor: "rgba(58,9,97,0.75)",
                     "borderWidth":2,
@@ -112,7 +112,7 @@
                                 "{{ $projectsmetric->funding }}",
                             @endforeach
                         ],
-                        label: "Projects",
+                        label: "Funding in M€",
                         borderColor: "rgba(58,9,97,1)",
                         backgroundColor: "rgba(58,9,97,0.75)",
                         "borderWidth":2,
