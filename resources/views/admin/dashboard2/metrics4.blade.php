@@ -3,7 +3,7 @@
             <ul class="nav nav-tabs pull-right ui-sortable-handle">
               <li class="active"><a href="#partners-chart" data-toggle="tab" aria-expanded="true">Partners</a></li>
               <li class=""><a href="#funding-chart" data-toggle="tab" aria-expanded="false">Funding in M&#8364;</a></li>
-              <li class=""><a href="#countries-chart" data-toggle="tab" aria-expanded="true">Number of organizations</a></li>
+              <li class=""><a href="#countries-chart" data-toggle="tab" aria-expanded="true">Participating Countries</a></li>
               <li class="pull-left header">Metrics</li>
             </ul>
             <div class="tab-content no-padding">
@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="chart-responsive">
-                                    <canvas id="bar-chart-2" width="800" height="305"></canvas>
+                                    <canvas id="bar-chart-2" width="800" height="400"></canvas>
                                 </div>
                                 <!-- ./chart-responsive -->
                             </div>
@@ -29,7 +29,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="chart-responsive">
-                        <canvas id="bar-chart" width="800" height="305"></canvas>
+                        <canvas id="bar-chart" width="800" height="400"></canvas>
                       </div>
                       <!-- ./chart-responsive -->
                     </div>
@@ -45,7 +45,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="chart-responsive">
-                        <canvas id="pie-chart" width="800" height="305"></canvas>
+                        <canvas id="pie-chart" width="800" height="400"></canvas>
                       </div>
                       <!-- ./chart-responsive -->
                     </div>
@@ -86,11 +86,14 @@
               },
               options: {
                 title: {
-                  display: false,
-                  text: ''
+                  display: true,
+                  text: 'Number of organizations',
+                    position: 'left'
                 },
                 legend: {
-                  display: false
+                  display: false,
+                  text: 'legend',
+                    position: 'bottom'
                 }
               }
             });
@@ -109,7 +112,7 @@
                                 "{{ $projectsmetric->funding }}",
                             @endforeach
                         ],
-                        label: "Project funding",
+                        label: "Projects",
                         borderColor: "rgba(58,9,97,1)",
                         backgroundColor: "rgba(58,9,97,0.75)",
                         "borderWidth":2,
@@ -120,11 +123,14 @@
                 },
                 options: {
                     title: {
-                        display: false,
-                        text: ''
+                        display: true,
+                        text: 'Funding in M€',
+                        position: 'left'
                     },
                     legend: {
-                        display: false
+                        display: false,
+                        text: 'IMI Projects',
+                        position: 'bottom'
                     }
                 }
             });
@@ -154,10 +160,12 @@
               options: {
                 title: {
                   display: false,
-                  text: ''
+                  text: 'Partners by sector',
+                  position: 'top'
                 },
                 legend: {
-                  display: true
+                  display: true,
+                    position: 'right'
                 }
               }
             });
