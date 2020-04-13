@@ -68,7 +68,7 @@
                     @endif
                     {!! Form::file('file', ['class' => 'form-control']) !!}
                     {!! Form::hidden('file_max_size', 2) !!}
-                    <p class="help-block">Maximum size: 2MB, Allowed file extensions : pdf, jpeg, png, gif</p>
+                    <p class="help-block">Maximum size: 2MB, Allowed file extensions : pdf, jpeg, png, gif, doc, docx</p>
                     @if($errors->has('file'))
                         <p class="help-block">
                             {{ $errors->first('file') }}

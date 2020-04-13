@@ -8,7 +8,7 @@
         <div class="panel-heading">
             @lang('global.app_create')
         </div>
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -64,7 +64,7 @@
                     {!! Form::hidden('file', old('file')) !!}
                     {!! Form::file('file', ['class' => 'form-control', 'required' => '']) !!}
                     {!! Form::hidden('file_max_size', 2) !!}
-                    <p class="help-block">Maximum size: 2MB, Allowed file extensions : pdf, jpeg, png, gif</p>
+                    <p class="help-block">Maximum size: 2MB, Allowed file extensions : pdf, jpeg, png, gif, doc, docx</p>
                     @if($errors->has('file'))
                         <p class="help-block">
                             {{ $errors->first('file') }}
@@ -72,7 +72,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -90,13 +90,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

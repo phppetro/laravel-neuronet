@@ -26,7 +26,7 @@ class StoreDocumentsRequest extends FormRequest
           'title' => 'max:191|required',
           'source' => 'max:191|required',
           'publication_date' => 'required|date_format:'.config('app.date_format'),
-          'file' => 'required|mimes:pdf,jpeg,png,gif',
+          'file' => 'required|mimes:pdf,jpeg,png,gif,doc,docx',
         ];
     }
 }
