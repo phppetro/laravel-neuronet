@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/neuronet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/neuronet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/asset_map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/asset_map.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/asset_map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/asset_map.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/embed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/embed.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +178,7 @@
       <workItem from="1586780998099" duration="4872000" />
       <workItem from="1589448155005" duration="1162000" />
       <workItem from="1590310776881" duration="8321000" />
-      <workItem from="1590340267706" duration="9908000" />
+      <workItem from="1590340267706" duration="10925000" />
     </task>
     <servers />
   </component>
@@ -206,9 +203,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1590434702337" />
-    <state x="426" y="207" width="588" height="486" key="find.popup" timestamp="1590322432639">
+    <state x="426" y="68" width="871" height="625" key="find.popup" timestamp="1590440644658">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="426" y="207" width="588" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1590322432639" />
+    <state x="426" y="68" width="871" height="625" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1590440644658" />
   </component>
 </project>

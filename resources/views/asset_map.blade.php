@@ -1,7 +1,7 @@
 @extends('layouts.embed')
 
 @section('content')
-    <h3 class="page-title">Assets Map</h3>
+{{--    <h3 class="page-title">Assets Map</h3>--}}
     {{--<img  src="/img/assets_map6.png" usemap="#image-map">--}}
 
     {{--<map name="image-map">--}}
