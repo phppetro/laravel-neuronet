@@ -7,7 +7,7 @@
         .content-wrapper {
             margin-left: 0px;
             background-color: #fff;
-            border: none;
+            border-left: none !important;
         }
     </style>
 </head>
