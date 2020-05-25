@@ -9,6 +9,7 @@ Route::get('disclaimer', 'FrontController@disclaimer');
 Route::get('about-imi', 'FrontController@aboutimi');
 Route::get('legal-notice', 'FrontController@legalnotice');
 Route::get('privacy-policy', 'FrontController@privacypolicy');
+Route::get('assets-map', 'FrontController@assetsmap');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

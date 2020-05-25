@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AssetMap;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -45,5 +46,11 @@ class FrontController extends Controller
       $helps = \App\ContentPage::where('id',7)->get();
 
       return view('privacy-policy', compact('policies', 'helps'));
+    }
+
+    public function assetsmap()
+    {
+        $asset_maps = AssetMap::all();
+        return view('asset_map', compact('asset_maps'));
     }
 }

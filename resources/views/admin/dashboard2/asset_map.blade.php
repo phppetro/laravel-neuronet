@@ -11,7 +11,7 @@
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">
-            <a href="/admin/asset_map"><img class="img-responsive" src="/img/assets_map9.png" alt="Assets map"></a>
+            <a href="/admin/asset_map"><img class="img-responsive" src="/img/assets_map13.png" alt="Assets map"></a>
         </div>
     </div>
     <!-- /.box-body -->
