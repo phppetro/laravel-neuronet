@@ -527,7 +527,7 @@ return [
 	'app_colvis' => 'Column visibility',
 	'app_pdf' => 'PDF',
 	'app_reset_password' => 'Reset password',
-	'app_reset_password_woops' => '<strong>Whoops!</strong> There were problems with input:',
+	'app_reset_password_woops' => '<strong>Whoops!</strong> There were problems with the input:',
 	'app_email_line1' => 'You are receiving this email because we received a password reset request for your account.',
 	'app_email_line2' => 'If you did not request a password reset, no further action is required.',
 	'app_email_greet' => 'Hello',

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/embed.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/embed.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/global.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/global.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +179,8 @@
       <workItem from="1586780998099" duration="4872000" />
       <workItem from="1589448155005" duration="1162000" />
       <workItem from="1590310776881" duration="8321000" />
-      <workItem from="1590340267706" duration="11089000" />
+      <workItem from="1590340267706" duration="11447000" />
+      <workItem from="1590846385425" duration="3585000" />
     </task>
     <servers />
   </component>
@@ -201,9 +205,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1590434702337" />
-    <state x="426" y="68" width="871" height="625" key="find.popup" timestamp="1590440644658">
+    <state x="426" y="68" width="871" height="664" key="find.popup" timestamp="1590849252564">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="426" y="68" width="871" height="625" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1590440644658" />
+    <state x="426" y="68" width="871" height="664" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1590849252564" />
   </component>
 </project>
