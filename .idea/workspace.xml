@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/global.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/global.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +177,7 @@
       <workItem from="1589448155005" duration="1162000" />
       <workItem from="1590310776881" duration="8321000" />
       <workItem from="1590340267706" duration="11447000" />
-      <workItem from="1590846385425" duration="3585000" />
+      <workItem from="1590846385425" duration="3839000" />
     </task>
     <servers />
   </component>

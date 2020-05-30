@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.front')
 
 @section('content')
     <header class="masthead-auth">
