@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">Regulatory and HTA engagement – Decision Tool Framework</h3>
+    <h3 class="page-title">Regulatory and HTA engagement – Decision Tool</h3>
     <div class="decision-image">
         <div class="decision-top"></div>
         <div class="decision-ema">
