@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="" />
+    <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/decision_tool.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/decision_tool.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/schedule2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/schedule2.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +182,8 @@
       <workItem from="1590846385425" duration="4026000" />
       <workItem from="1591615059837" duration="598000" />
       <workItem from="1592496519538" duration="573000" />
-      <workItem from="1592497294419" duration="386000" />
+      <workItem from="1592497294419" duration="614000" />
+      <workItem from="1592845255237" duration="1458000" />
     </task>
     <servers />
   </component>
@@ -203,6 +208,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1590434702337" />
+    <state x="100" y="100" width="1240" height="700" maximized="true" key="DiffContextDialog" timestamp="1592847039892">
+      <screen x="0" y="23" width="1440" height="828" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" maximized="true" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1592846390222" />
     <state x="426" y="68" width="871" height="664" key="find.popup" timestamp="1590849252564">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
