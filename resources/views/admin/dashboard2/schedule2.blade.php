@@ -74,7 +74,7 @@
                     barLabelStyle: { fontSize:11 }
                   },
                   tooltip: {
-                    trigger: focus //none
+                    // trigger: focus //none
                   },
                   colors: ['#3a0961', '#e50e6a'],
                   backgroundColor: '#fff'
