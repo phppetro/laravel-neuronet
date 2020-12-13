@@ -1,6 +1,6 @@
                <div class="box box-violet">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Documents</h3>
+                  <h3 class="box-title">Template Documents & Guidelines</h3>
 
                   <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -35,7 +35,7 @@
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer text-center">
-                  <a href="{{ route('admin.documents.index') }}" class="uppercase">View All Documents</a>
+                  <a href="{{ route('admin.documents.index') }}" class="uppercase">View All Template Documents & Guidelines</a>
                 </div>
                 <!-- /.box-footer -->
               </div>
