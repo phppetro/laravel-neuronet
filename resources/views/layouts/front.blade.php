@@ -52,6 +52,9 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/"> Home </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/dashboard"> Dashboard </a>
+            </li>
               @guest
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}"> Login </a>

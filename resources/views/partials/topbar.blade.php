@@ -24,9 +24,10 @@
 
               <!-- Messages: style can be found in dropdown.less-->
               <li class="home-menu">
-                <a href="/">
-                  <i class="fa fa-home"></i>
-                </a>
+                <a href="/">Home</a>
+              </li>
+              <li class="home-menu">
+                <a href="/dashboard">Dashboard</a>
               </li>
 
             @include('partials.user-menu')
@@ -55,11 +56,6 @@
         </div>
     </nav>
 </header>
-
-
-    </nav>
-</header>
-
 
 <style>
     .slimScrollDiv {

@@ -10,3 +10,15 @@
 .btn-link {
   color: #c63bb2;
 }
+
+.btn-purple {
+    background-color:rgba(155,109,235,1);
+    border-color:rgba(155,109,235,0.75);
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color:rgba(155,109,235,0.75);
+    border-color:rgba(155,109,235,0.75);
+    color: white;
+}

@@ -2,33 +2,46 @@
     <nav class="navbar navbar-static-top">
 
       <div class="navbar-header">
-        <a href="{{ url('/admin/') }}" class="navbar-brand"><img class="neuronet-logo-lg" src="/img/Neuronet_Logo.png"></a>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <i class="fa fa-bars"></i>
-        </button>
+        <a href="{{ url('/home/') }}" class="navbar-brand"><img class="neuronet-logo-lg" src="/img/Neuronet_Logo.png"></a>
+{{--        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">--}}
+{{--          <i class="fa fa-bars"></i>--}}
+{{--        </button>--}}
       </div>
 
-      <div class="navbar-collapse pull-left collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">
-        <ul class="nav navbar-nav">
-          <li><a class="dashboard" href="/admin/">Dashboard <span class="sr-only">(current)</span></a></li>
-        </ul>
-      </div>
+{{--      <div class="navbar-collapse pull-left collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">--}}
+{{--        <ul class="nav navbar-nav">--}}
+{{--          <li><a class="dashboard" href="/admin/">Dashboard <span class="sr-only">(current)</span></a></li>--}}
+{{--        </ul>--}}
+{{--      </div>--}}
 
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/"> Home </a>
+              </li>
+              @guest
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}"> Login </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('register') }}"> Register </a>
+                  </li>
+              @else
+                  <li class="nav-item">
+                      <a class="nav-link" href="/admin"> Admin </a>
+                  </li>
+              @endguest
 
-            @include('partials.user-menu')
+            @if(Auth::user())
+              @include('partials.user-menu')
+            @endif
 
           </ul>
         </div>
         <!-- /.navbar-custom-menu -->
     </nav>
   </header>
-
-
-    </nav>
-</header>
 
 
 <style>
