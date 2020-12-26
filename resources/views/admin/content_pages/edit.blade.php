@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.content-pages.title')</h3>
-    
+
     {!! Form::model($content_page, ['method' => 'PUT', 'route' => ['admin.content_pages.update', $content_page->id], 'files' => true,]) !!}
 
     <div class="panel panel-default">
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     @if ($content_page->featured_image)
-                        <a href="{{ asset(env('UPLOAD_PATH').'/'.$content_page->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/'.$content_page->featured_image) }}"></a>
+                        <a href="{{ asset(env('UPLOAD_PATH').'/img/'.$content_page->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/'.$content_page->featured_image) }}"></a>
                     @endif
                     {!! Form::label('featured_image', trans('global.content-pages.fields.featured-image').'', ['class' => 'control-label']) !!}
                     {!! Form::file('featured_image', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}
@@ -101,7 +101,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 

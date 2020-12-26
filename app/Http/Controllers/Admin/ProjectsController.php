@@ -81,7 +81,7 @@ class ProjectsController extends Controller
                 return $row->end_date ? $row->end_date : '';
             });
             $table->editColumn('logo', function ($row) {
-                if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/thumb/' . $row->logo) .'"/>'; };
+                if($row->logo) { return '<a href="'. asset(env('UPLOAD_PATH').'/img/' . $row->logo) .'" target="_blank"><img src="'. asset(env('UPLOAD_PATH').'/img/thumb/' . $row->logo) .'"/>'; };
             });
 
             $table->rawColumns(['actions','massDelete','logo', 'website']);

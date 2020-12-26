@@ -54,7 +54,7 @@
                                 </td>
                                 <td field-key='page_text'>{!! $content_page->page_text !!}</td>
                                 <td field-key='excerpt'>{!! $content_page->excerpt !!}</td>
-                                <td field-key='featured_image'>@if($content_page->featured_image)<a href="{{ asset(env('UPLOAD_PATH').'/' . $content_page->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $content_page->featured_image) }}"/></a>@endif</td>
+                                <td field-key='featured_image'>@if($content_page->featured_image)<a href="{{ asset(env('UPLOAD_PATH').'/img/' . $content_page->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/' . $content_page->featured_image) }}"/></a>@endif</td>
                                                                 <td>
                                     @can('content_page_view')
                                     <a href="{{ route('admin.content_pages.show',[$content_page->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>

@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.content-pages.fields.featured-image')</th>
-                            <td field-key='featured_image'>@if($content_page->featured_image)<a href="{{ asset(env('UPLOAD_PATH').'/' . $content_page->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $content_page->featured_image) }}"/></a>@endif</td>
+                            <td field-key='featured_image'>@if($content_page->featured_image)<a href="{{ asset(env('UPLOAD_PATH').'/img/' . $content_page->featured_image) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/' . $content_page->featured_image) }}"/></a>@endif</td>
                         </tr>
                     </table>
                 </div>

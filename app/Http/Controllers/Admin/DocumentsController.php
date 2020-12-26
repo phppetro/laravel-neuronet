@@ -27,12 +27,12 @@ class DocumentsController extends Controller
         }
 
 
-        
+
         if (request()->ajax()) {
             $query = Document::query();
             $template = 'actionsTemplate';
             if(request('show_deleted') == 1) {
-                
+
         if (! Gate::allows('document_delete')) {
             return abort(401);
         }
@@ -73,7 +73,7 @@ class DocumentsController extends Controller
                 return $row->keywords ? $row->keywords : '';
             });
             $table->editColumn('file', function ($row) {
-                if($row->file) { return '<a href="'.asset(env('UPLOAD_PATH').'/'.$row->file) .'" target="_blank">Download file</a>'; };
+                if($row->file) { return '<a href="'.asset(env('UPLOAD_PATH').'/img/'.$row->file) .'" target="_blank">Download file</a>'; };
             });
 
             $table->rawColumns(['actions','massDelete','file']);

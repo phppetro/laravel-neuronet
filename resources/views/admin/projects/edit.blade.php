@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     @if ($project->logo)
-                        <a href="{{ asset(env('UPLOAD_PATH').'/'.$project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/'.$project->logo) }}"></a>
+                        <a href="{{ asset(env('UPLOAD_PATH').'/img/'.$project->logo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/'.$project->logo) }}"></a>
                     @endif
                     {!! Form::label('logo', trans('global.projects.fields.logo').'*', ['class' => 'control-label']) !!}
                     {!! Form::file('logo', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}

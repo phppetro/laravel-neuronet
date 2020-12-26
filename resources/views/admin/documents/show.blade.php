@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.documents.fields.file')</th>
-                            <td field-key='file'>@if($document->file)<a href="{{ asset(env('UPLOAD_PATH').'/' . $document->file) }}" target="_blank">Download file</a>@endif</td>
+                            <td field-key='file'>@if($document->file)<a href="{{ asset(env('UPLOAD_PATH').'/img/' . $document->file) }}" target="_blank">Download file</a>@endif</td>
                         </tr>
                     </table>
                 </div>
@@ -53,13 +53,13 @@
             moment.updateLocale('{{ App::getLocale() }}', {
                 week: { dow: 1 } // Monday is the first day of the week
             });
-            
+
             $('.date').datetimepicker({
                 format: "{{ config('app.date_format_moment') }}",
                 locale: "{{ App::getLocale() }}",
             });
-            
+
         });
     </script>
-            
+
 @stop

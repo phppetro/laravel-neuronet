@@ -15,7 +15,7 @@
       @foreach($projects as $project)
         <li class="item">
           <div class="product-img">
-            <img src="/{{ $project->logo }}" alt="{{ $project->name }}">
+            <img src="/img/{{ $project->logo }}" alt="{{ $project->name }}">
           </div>
           <div class="product-info">
             <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>

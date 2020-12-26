@@ -14,7 +14,7 @@
               @foreach($activities as $activity)
 
                 <div class="item">
-                  <img src="/thumb/{{ $activity->user->photo ? $activity->user->photo : '/place_holder.jpg' }}" alt="user image" class="purple">
+                  <img src="/img/thumb/{{ $activity->user->photo ? $activity->user->photo : '/img/place_holder.jpg' }}" alt="user image" class="purple">
 
                   <p class="message">
                     <a href="/admin/activities/{{ $activity->id }}" class="name">

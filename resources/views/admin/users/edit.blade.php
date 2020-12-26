@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('global.users.title')</h3>
-    
+
     {!! Form::model($user, ['method' => 'PUT', 'route' => ['admin.users.update', $user->id], 'files' => true,]) !!}
 
     <div class="panel panel-default">
@@ -140,7 +140,7 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     @if ($user->photo)
-                        <a href="{{ asset(env('UPLOAD_PATH').'/'.$user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/'.$user->photo) }}"></a>
+                        <a href="{{ asset(env('UPLOAD_PATH').'/img/'.$user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/'.$user->photo) }}"></a>
                     @endif
                     {!! Form::label('photo', trans('global.users.fields.photo').'', ['class' => 'control-label']) !!}
                     {!! Form::file('photo', ['class' => 'form-control', 'style' => 'margin-top: 4px;']) !!}
@@ -180,7 +180,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 

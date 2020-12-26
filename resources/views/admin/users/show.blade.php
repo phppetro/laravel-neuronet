@@ -54,7 +54,7 @@
                         </tr>
                         <tr>
                             <th>@lang('global.users.fields.photo')</th>
-                            <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
+                            <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/img/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/' . $user->photo) }}"/></a>@endif</td>
                         </tr>
                         <tr>
                             <th>@lang('global.users.fields.approved')</th>
@@ -68,14 +68,14 @@
                 </div>
             </div><!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
-    
+
 <li role="presentation" class="active"><a href="#user_actions" aria-controls="user_actions" role="tab" data-toggle="tab">User actions</a></li>
 <li role="presentation" class=""><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-    
+
 <div role="tabpanel" class="tab-pane active" id="user_actions">
 <table class="table table-bordered table-striped {{ count($user_actions) > 0 ? 'datatable' : '' }}">
     <thead>
@@ -85,7 +85,7 @@
                         <th>@lang('global.user-actions.fields.action')</th>
                         <th>@lang('global.user-actions.fields.action-model')</th>
                         <th>@lang('global.user-actions.fields.action-id')</th>
-                        
+
         </tr>
     </thead>
 
@@ -98,7 +98,7 @@
                                 <td field-key='action'>{{ $user_action->action }}</td>
                                 <td field-key='action_model'>{{ $user_action->action_model }}</td>
                                 <td field-key='action_id'>{{ $user_action->action_id }}</td>
-                                
+
                 </tr>
             @endforeach
         @else

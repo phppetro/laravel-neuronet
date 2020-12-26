@@ -64,7 +64,7 @@
                     {!! Form::label('file', trans('global.documents.fields.file').'', ['class' => 'control-label']) !!}
                     {!! Form::hidden('file', old('file')) !!}
                     @if ($document->file)
-                        <a href="{{ asset(env('UPLOAD_PATH').'/' . $document->file) }}" target="_blank">Download file</a>
+                        <a href="{{ asset(env('UPLOAD_PATH').'/img/' . $document->file) }}" target="_blank">Download file</a>
                     @endif
                     {!! Form::file('file', ['class' => 'form-control']) !!}
                     {!! Form::hidden('file_max_size', 2) !!}

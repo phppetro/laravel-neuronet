@@ -59,7 +59,7 @@
                                 </td>
                                 <td field-key='project'>{{ $user->project->name ?? '' }}</td>
                                 <td field-key='institution'>{{ $user->institution }}</td>
-                                <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/thumb/' . $user->photo) }}"/></a>@endif</td>
+                                <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/img/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/' . $user->photo) }}"/></a>@endif</td>
                                 <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>
                                                                 <td>
                                     @can('user_view')
