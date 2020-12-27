@@ -380,7 +380,7 @@ a:focus {
 	background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
 }
 
-/* Assets map */
+/* Asset map */
 
 .modal-img {
 	height: 25px;
@@ -1824,4 +1824,20 @@ a:focus {
     visibility: visible;
 }
 
+.highlight-text {
+    font-size: 130%;
+}
 
+.highlight-img img{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.highlight-text .col-md-3 {
+    min-height: 170px;
+    padding-top: 20px;
+}
+
+.highlight-num {
+    font-size: 170%;
+}
