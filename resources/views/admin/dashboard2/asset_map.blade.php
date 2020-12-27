@@ -1,6 +1,6 @@
 <div class="box box-indigo">
     <div class="box-header with-border">
-        <h3 class="box-title">Assets Map</h3>
+        <h3 class="box-title">Asset Map</h3>
 
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -11,12 +11,12 @@
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">
-            <a href="/admin/asset_map"><img class="img-responsive" src="/img/assets_map13.png" alt="Assets map"></a>
+            <a href="/admin/asset_map"><img class="img-responsive" src="/img/assets_map13.png" alt="Asset map"></a>
         </div>
     </div>
     <!-- /.box-body -->
     <div class="box-footer text-center">
-        <a href="{{ route('admin.asset_maps.diagram') }}" class="uppercase">View The Assets Map</a>
+        <a href="{{ route('admin.asset_maps.diagram') }}" class="uppercase">View The Asset Map</a>
     </div>
     <!-- /.box-footer -->
 </div>
