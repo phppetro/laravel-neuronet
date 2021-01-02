@@ -17,6 +17,7 @@
 		<div class="col-md-4">
             @include('admin.dashboard2.asset_map')
             @include('admin.dashboard2.decision_tool')
+            @include('admin.dashboard2.network')
 		</div>
 		<div class="col-md-4">
 			@include('admin.dashboard2.schedule2')
