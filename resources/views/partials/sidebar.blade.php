@@ -156,6 +156,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    @can('highlights_metric_access')
+                        <li>
+                            <a href="{{ route('admin.highlights_metrics.index') }}">
+                                <i class="fa fa-gears"></i>
+                                <span>@lang('global.highlights-metrics.title')</span>
+                            </a>
+                        </li>@endcan
                     @can('partners_metric_access')
                     <li>
                         <a href="{{ route('admin.partners_metrics.index') }}">

@@ -79,6 +79,11 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::post('calendars_restore/{id}', ['uses' => 'Admin\CalendarsController@restore', 'as' => 'calendars.restore']);
     Route::delete('calendars_perma_del/{id}', ['uses' => 'Admin\CalendarsController@perma_del', 'as' => 'calendars.perma_del']);
 
+    Route::resource('highlights_metrics', 'Admin\HighlightsMetricsController');
+    Route::post('highlights_metrics_mass_destroy', ['uses' => 'Admin\HighlightsMetricsController@massDestroy', 'as' => 'highlights_metrics.mass_destroy']);
+    Route::post('highlights_metrics_restore/{id}', ['uses' => 'Admin\HighlightsMetricsController@restore', 'as' => 'highlights_metrics.restore']);
+    Route::delete('highlights_metrics_perma_del/{id}', ['uses' => 'Admin\HighlightsMetricsController@perma_del', 'as' => 'highlights_metrics.perma_del']);
+
     Route::resource('partners_metrics', 'Admin\PartnersMetricsController');
     Route::post('partners_metrics_mass_destroy', ['uses' => 'Admin\PartnersMetricsController@massDestroy', 'as' => 'partners_metrics.mass_destroy']);
     Route::post('partners_metrics_restore/{id}', ['uses' => 'Admin\PartnersMetricsController@restore', 'as' => 'partners_metrics.restore']);

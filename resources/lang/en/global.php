@@ -115,6 +115,15 @@ return [
 		'fields' => [
 		],
 	],
+    'highlights-metrics' => [
+        'title' => 'Highlights metrics',
+        'fields' => [
+            'image' => 'Image',
+            'name' => 'Name',
+            'number' => 'Number',
+            'order' => 'Order',
+        ],
+    ],
 	'partners-metrics' => [
 		'title' => 'Partners metrics',
 		'fields' => [

@@ -15,6 +15,7 @@ class FrontController extends Controller
         $contacts = \App\Contact::latest()->limit(5)->get();
         $tools = \App\Tool::latest()->limit(5)->get();
         $documents = \App\Document::latest()->limit(7)->get();
+        $highlightsmetrics = \App\HighlightsMetric::all()->sortBy('order');
         $partnersmetrics = \App\PartnersMetric::all();
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
         $countriesmetrics = \App\CountriesMetric::all()->sortBy('name');
@@ -43,7 +44,7 @@ class FrontController extends Controller
         //echo $labels[0];
         //exit;
 
-        return view('public_dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','partnersmetrics','projectsmetrics','countriesmetrics','contactscategories','colors','labels','projects','scheduleprojects','events'));
+        return view('public_dashboard', compact( 'activities', 'deliverables', 'publications', 'contacts', 'tools', 'documents','highlightsmetrics','partnersmetrics','projectsmetrics','countriesmetrics','contactscategories','colors','labels','projects','scheduleprojects','events'));
     }
 
     public function home()
