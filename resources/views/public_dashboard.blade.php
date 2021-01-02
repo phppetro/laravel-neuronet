@@ -8,6 +8,7 @@
       		@include('admin.dashboard2.activity2')
 			@include('admin.dashboard2.projects')
             @include('admin.dashboard2.documents2')
+            @include('admin.dashboard2.key_areas')
             @include('admin.dashboard2.tools')
             @include('admin.dashboard2.calendar2')
       	</div>
