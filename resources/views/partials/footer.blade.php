@@ -17,6 +17,9 @@
         <li class="list-inline-item">
           <a href="/privacy-policy">Privacy Policy</a>
         </li>
+        <li class="list-inline-item">
+          <a href="{{ route('login') }}">Login</a>
+        </li>
       </ul>
     </div>
   </div>

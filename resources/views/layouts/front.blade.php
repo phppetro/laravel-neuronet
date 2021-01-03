@@ -56,12 +56,6 @@
               <a class="nav-link js-scroll-trigger" href="/dashboard"> Dashboard </a>
             </li>
               @guest
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{ route('login') }}"> Login </a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{ route('register') }}"> Register </a>
-                  </li>
               @else
                   <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
