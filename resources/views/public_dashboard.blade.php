@@ -5,7 +5,7 @@
 	<div id="root">
     	<div class="row">
   	    <div class="col-md-4">
-      		@include('admin.dashboard2.activity2')
+      		@include('admin.dashboard2.activity3')
 			@include('admin.dashboard2.projects')
             @include('admin.dashboard2.documents2')
             @include('admin.dashboard2.key_areas')
