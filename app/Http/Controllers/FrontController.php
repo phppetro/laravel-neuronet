@@ -10,11 +10,11 @@ class FrontController extends Controller
     public function publicdashboard ()
     {
         $activities = \App\Activity::latest()->limit(4)->get();
-        $deliverables = \App\Deliverable::latest()->limit(7)->get();
+        $deliverables = \App\Deliverable::latest()->limit(4)->get();
         $publications = \App\Publication::latest()->limit(4)->get();
-        $contacts = \App\Contact::latest()->limit(5)->get();
-        $tools = \App\Tool::latest()->limit(5)->get();
-        $documents = \App\Document::latest()->limit(7)->get();
+        $contacts = \App\Contact::latest()->limit(4)->get();
+        $tools = \App\Tool::latest()->limit(4)->get();
+        $documents = \App\Document::latest()->limit(4)->get();
         $highlightsmetrics = \App\HighlightsMetric::all()->sortBy('order');
         $partnersmetrics = \App\PartnersMetric::all();
         $projectsmetrics = \App\ProjectsMetric::all()->sortBy('name');
@@ -24,7 +24,7 @@ class FrontController extends Controller
         $scheduleprojects = \App\Project::orderBy('start_date')->get();
         //dd($scheduleprojects);
         //exit;
-        $events = \App\Calendar::where('start_date','>=',now())->orderBy('start_date')->limit(5)->get();
+        $events = \App\Calendar::where('start_date','>=',now())->orderBy('start_date')->limit(4)->get();
 
         //colors
         //Purple: "rgba(155,109,235,1)"
