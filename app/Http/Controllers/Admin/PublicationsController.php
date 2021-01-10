@@ -17,7 +17,7 @@ class PublicationsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($proj_id=null)
     {
 //        if (! Gate::allows('publication_access')) {
 //            return abort(401);
@@ -46,6 +46,14 @@ class PublicationsController extends Controller
                 'publications.link',
                 'publications.keywords',
             ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+                $query->where('project_id', $project_id)->orderBy('id')->get();
+            } else {
+                $query->orderBy('project_id')->orderBy('id');
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -83,7 +91,9 @@ class PublicationsController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.publications.index');
+        $projects = \App\Project::all()->sortBy('name');
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('admin.publications.index', compact('projects','project_name'));
     }
 
     /**

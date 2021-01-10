@@ -59,6 +59,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::post('documents_mass_destroy', ['uses' => 'Admin\DocumentsController@massDestroy', 'as' => 'documents.mass_destroy']);
     Route::post('documents_restore/{id}', ['uses' => 'Admin\DocumentsController@restore', 'as' => 'documents.restore']);
     Route::delete('documents_perma_del/{id}', ['uses' => 'Admin\DocumentsController@perma_del', 'as' => 'documents.perma_del']);
+
+    Route::get('/publications/project/{project}', ['uses' => 'Admin\PublicationsController@index', 'as' => 'publications.project']);
     Route::resource('publications', 'Admin\PublicationsController');
     Route::post('publications_mass_destroy', ['uses' => 'Admin\PublicationsController@massDestroy', 'as' => 'publications.mass_destroy']);
     Route::post('publications_restore/{id}', ['uses' => 'Admin\PublicationsController@restore', 'as' => 'publications.restore']);

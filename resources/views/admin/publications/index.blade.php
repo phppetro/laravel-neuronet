@@ -24,7 +24,25 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            @lang('global.app_list')
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-flat">Filter by project</button>
+                <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    @foreach($projects as $project)
+                        @if($project->name == $project_name)
+                            <li><a href="/admin/publications/project/{{ $project->id }}"><b><u>{{ $project->name }}</u></b></a></li>
+                        @else
+                            <li><a href="/admin/publications/project/{{ $project->id }}">{{ $project->name }}</a></li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            @if($project_name)
+                <a class="btn btn-info" href="/admin/publications">Applied filter: "{{ $project_name }}" <u>Click here to remove it</u></a>
+            @endif
         </div>
 
         <div class="panel-body table-responsive">
@@ -59,7 +77,15 @@
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.publications.mass_destroy') }}'; @endif
         @endcan
         $(document).ready(function () {
-            window.dtDefaultOptions.ajax = '{!! route('admin.publications.index') !!}?show_deleted={{ request('show_deleted') }}';
+            var project_id='';
+            var currentURL = $(location).attr('href');
+            if (currentURL.indexOf("project") >= 0) {
+                var array = currentURL.split('/');
+                project_id = array[6];
+            }
+
+            window.dtDefaultOptions.ajax = '{!! route('admin.publications.index') !!}?show_deleted={{ request('show_deleted') }}&project_id=';
+            window.dtDefaultOptions.ajax+=project_id;
             window.dtDefaultOptions.columns = [@can('publication_delete')
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
