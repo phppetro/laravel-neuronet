@@ -1,10 +1,20 @@
 <div class="nav-tabs-custom" style="cursor: move;">
     <!-- Tabs within a box -->
     <ul class="nav nav-tabs pull-right ui-sortable-handle">
-      <li class="active"><a href="#projects" data-toggle="tab" aria-expanded="true">Projects</a></li>
-      <li class=""><a href="#collaborators" data-toggle="tab" aria-expanded="true">Collaborators</a></li>
-      <li class=""><a href="#participants" data-toggle="tab" aria-expanded="false">Participants</a></li>
-      <li class="pull-left header">Networks</li>
+{{--      <li class="active"><a href="#projects" data-toggle="tab" aria-expanded="true">Projects</a></li>--}}
+{{--      <li class=""><a href="#participants" data-toggle="tab" aria-expanded="true">Participants</a></li>--}}
+{{--      <li class=""><a href="#publications" data-toggle="tab" aria-expanded="false">Publications</a></li>--}}
+      <li class="pull-left header">Network Diagrams</li>
+      <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+              Select Diagram <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false" href="#projects">Projects</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false" href="#participants">Participants</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false" href="#publications">Publications</a></li>
+          </ul>
+      </li>
     </ul>
     <div class="tab-content no-padding">
       <div class="chart tab-pane active" id="projects">
@@ -18,7 +28,7 @@
         <!-- /.box-body -->
       </div>
 
-      <div class="chart tab-pane" id="collaborators">
+      <div class="chart tab-pane" id="participants">
         <div class="box-body">
             <div class="table-responsive network-participants-image">
                 <h4>Network diagram of organisations participating in the portfolio</h4>
@@ -29,7 +39,7 @@
         <!-- /.box-body -->
       </div>
 
-      <div class="chart tab-pane" id="participants">
+      <div class="chart tab-pane" id="publications">
         <div class="box-body">
             <div class="table-responsive network-participants-image">
                 <h4>Network diagram of collaborating organisations on publications</h4>
