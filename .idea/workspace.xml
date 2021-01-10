@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
+    <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="Change alignment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/network.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/network.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +167,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="" />
-      <changelist id="" name="Removed side menu and created the topbar-only menu" comment="" />
       <changelist id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
       <created>1576531283459</created>
       <option name="number" value="Default" />
@@ -199,6 +198,7 @@
       <workItem from="1592859071629" duration="1768000" />
       <workItem from="1610196222359" duration="28093000" />
       <workItem from="1610276935449" duration="6923000" />
+      <workItem from="1610285667691" duration="1092000" />
     </task>
     <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
       <created>1610276500909</created>
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610281834722</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Change title and menu in Network Diagram module">
+      <created>1610285769519</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610285769519</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -283,6 +290,7 @@
     <MESSAGE value="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" />
     <MESSAGE value="Make the show button visible in the index file for Projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages." />
     <MESSAGE value="Removed the Key Areas for Projects module from the dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed the Key Areas for Projects module from the dashboard" />
+    <MESSAGE value="Change title and menu in Network Diagram module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change title and menu in Network Diagram module" />
   </component>
 </project>

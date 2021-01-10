@@ -64,7 +64,11 @@
                                 <div class="chart-responsive">
                                     <div class="row text-center highlight-text highlight-img">
                                         @foreach($highlightsmetrics as $highlightsmetric )
-                                            <div class="col-md-3">
+                                            @if($highlightsmetric->id < 5)
+                                                <div class="col-md-3">
+                                            @else
+                                                <div class="col-md-4">
+                                            @endif
                                                 <img src="img/{{ $highlightsmetric->image }}" alt="{{ $highlightsmetric->name }}">
                                                 <div id="highlights-{{ $highlightsmetric->order }}" class="highlight-num">{{ $highlightsmetric->number }}</div>
                                                 <div>{{ $highlightsmetric->name }}</div>
