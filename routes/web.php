@@ -173,6 +173,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::post('decision_tools_restore/{id}', ['uses' => 'Admin\DecisionToolsController@restore', 'as' => 'decision_tools.restore']);
     Route::delete('decision_tools_perma_del/{id}', ['uses' => 'Admin\DecisionToolsController@perma_del', 'as' => 'decision_tools.perma_del']);
 
+    Route::get('/asset_maps/project/{project}', ['uses' => 'Admin\AssetMapsController@index', 'as' => 'asset_maps.project']);
     Route::resource('asset_maps', 'Admin\AssetMapsController');
     Route::post('asset_maps_mass_destroy', ['uses' => 'Admin\AssetMapsController@massDestroy', 'as' => 'asset_maps.mass_destroy']);
     Route::post('asset_maps_restore/{id}', ['uses' => 'Admin\AssetMapsController@restore', 'as' => 'asset_maps.restore']);

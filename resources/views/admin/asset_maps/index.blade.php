@@ -21,7 +21,25 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            @lang('global.app_list')
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-flat">Filter by project</button>
+                <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    @foreach($projects as $project)
+                        @if($project->name == $project_name)
+                            <li><a href="/admin/asset_maps/project/{{ $project->id }}"><b><u>{{ $project->name }}</u></b></a></li>
+                        @else
+                            <li><a href="/admin/asset_maps/project/{{ $project->id }}">{{ $project->name }}</a></li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            @if($project_name)
+                <a class="btn btn-info" href="/admin/asset_maps">Applied filter: "{{ $project_name }}" <u>Click here to remove it</u></a>
+            @endif
         </div>
 
         <div class="panel-body table-responsive">
@@ -48,13 +66,21 @@
     </div>
 @stop
 
-@section('javascript') 
+@section('javascript')
     <script>
         @can('asset_map_delete')
             @if ( request('show_deleted') != 1 ) window.route_mass_crud_entries_destroy = '{{ route('admin.asset_maps.mass_destroy') }}'; @endif
         @endcan
         $(document).ready(function () {
-            window.dtDefaultOptions.ajax = '{!! route('admin.asset_maps.index') !!}?show_deleted={{ request('show_deleted') }}';
+            var project_id='';
+            var currentURL = $(location).attr('href');
+            if (currentURL.indexOf("project") >= 0) {
+                var array = currentURL.split('/');
+                project_id = array[6];
+            }
+
+            window.dtDefaultOptions.ajax = '{!! route('admin.asset_maps.index') !!}?show_deleted={{ request('show_deleted') }}&project_id=';
+            window.dtDefaultOptions.ajax+=project_id;
             window.dtDefaultOptions.columns = [@can('asset_map_delete')
                 @if ( request('show_deleted') != 1 )
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
@@ -63,7 +89,7 @@
                 {data: 'body', name: 'body'},
                 {data: 'target', name: 'target'},
                 {data: 'project.name', name: 'project.name'},
-                
+
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();

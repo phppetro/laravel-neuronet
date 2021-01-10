@@ -17,7 +17,7 @@ class AssetMapsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($proj_id=null)
     {
 //        if (! Gate::allows('asset_map_access')) {
 //            return abort(401);
@@ -44,6 +44,14 @@ class AssetMapsController extends Controller
                 'asset_maps.target',
                 'asset_maps.project_id',
             ]);
+
+            $project_id = request('project_id');
+            if( $project_id != null) {
+                $query->where('project_id', $project_id)->orderBy('id')->get();
+            } else {
+                $query->orderBy('project_id')->orderBy('id');
+            }
+
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -75,7 +83,9 @@ class AssetMapsController extends Controller
             return $table->make(true);
         }
 
-        return view('admin.asset_maps.index');
+        $projects = \App\Project::all()->sortBy('name');
+        $project_name = \App\Project::where('id',$proj_id)->value('name');
+        return view('admin.asset_maps.index', compact('projects','project_name'));
     }
 
     /**
