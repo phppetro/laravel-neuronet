@@ -28,7 +28,7 @@
                       <li><a href="{{ route('admin.projects.index') }}">@lang('global.projects.title')</a></li>
 {{--                  @endcan--}}
 {{--                  @can('asset_map_access')--}}
-                      <li><a href="{{ route('admin.asset_maps.index') }}">@lang('global.asset-map.menu-title')</a></li>
+                      <li><a href="{{ route('admin.asset_maps.index') }}">@lang('global.asset-map.title')</a></li>
 {{--                  @endcan--}}
 {{--                  @can('partner_access')--}}
                       <li><a href="{{ route('admin.partners.index') }}">@lang('global.partners.title')</a></li>

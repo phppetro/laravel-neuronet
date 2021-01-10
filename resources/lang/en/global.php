@@ -324,8 +324,7 @@ return [
     ],
 
     'asset-map' => [
-        'title' => 'Asset map',
-        'menu-title' => 'Assets',
+        'title' => 'Assets',
         'fields' => [
             'title' => 'Title',
             'body' => 'Body',
