@@ -19,9 +19,9 @@ class ToolsController extends Controller
      */
     public function index($proj_id=null)
     {
-        if (! Gate::allows('tool_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('tool_access')) {
+//            return abort(401);
+//        }
 
         if (request()->ajax()) {
             $query = Tool::query();
@@ -179,9 +179,9 @@ class ToolsController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('tool_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('tool_view')) {
+//            return abort(401);
+//        }
         $tool = Tool::findOrFail($id);
 
         return view('admin.tools.show', compact('tool'));

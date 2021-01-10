@@ -24,33 +24,33 @@
           <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">KB details <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                  @can('project_access')
+{{--                  @can('project_access')--}}
                       <li><a href="{{ route('admin.projects.index') }}">@lang('global.projects.title')</a></li>
-                  @endcan
-                  @can('asset_map_access')
+{{--                  @endcan--}}
+{{--                  @can('asset_map_access')--}}
                       <li><a href="{{ route('admin.asset_maps.index') }}">@lang('global.asset-map.menu-title')</a></li>
-                  @endcan
-                  @can('partner_access')
+{{--                  @endcan--}}
+{{--                  @can('partner_access')--}}
                       <li><a href="{{ route('admin.partners.index') }}">@lang('global.partners.title')</a></li>
-                  @endcan
-                  @can('work_package_access')
+{{--                  @endcan--}}
+{{--                  @can('work_package_access')--}}
                       <li><a href="{{ route('admin.work_packages.index') }}">@lang('global.work-packages.title')</a></li>
-                  @endcan
-                  @can('deliverable_access')
+{{--                  @endcan--}}
+{{--                  @can('deliverable_access')--}}
                       <li><a href="{{ route('admin.deliverables.index') }}">@lang('global.deliverables.title')</a></li>
-                  @endcan
-                  @can('publication_access')
+{{--                  @endcan--}}
+{{--                  @can('publication_access')--}}
                     <li><a href="{{ route('admin.publications.index') }}">@lang('global.publications.title')</a></li>
-                  @endcan
-                  @can('document_access')
+{{--                  @endcan--}}
+{{--                  @can('document_access')--}}
                       <li><a href="{{ route('admin.documents.index') }}">@lang('global.documents.title')</a></li>
-                  @endcan
-                  @can('tool_access')
+{{--                  @endcan--}}
+{{--                  @can('tool_access')--}}
                       <li><a href="{{ route('admin.tools.index') }}">@lang('global.tools.title')</a></li>
-                  @endcan
-                  @can('calendar_access')
+{{--                  @endcan--}}
+{{--                  @can('calendar_access')--}}
                       <li><a href="{{ route('admin.calendars.index') }}">@lang('global.calendar.title')</a></li>
-                  @endcan
+{{--                  @endcan--}}
 {{--                      @can('activity_access')--}}
 {{--                        <li><a href="{{ route('admin.activities.index') }}">@lang('global.activity.title')</a></li>--}}
 {{--                      @endcan--}}

@@ -19,9 +19,9 @@ class PublicationsController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('publication_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('publication_access')) {
+//            return abort(401);
+//        }
 
 
 
@@ -169,9 +169,9 @@ class PublicationsController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('publication_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('publication_view')) {
+//            return abort(401);
+//        }
         $publication = Publication::findOrFail($id);
 
         return view('admin.publications.show', compact('publication'));

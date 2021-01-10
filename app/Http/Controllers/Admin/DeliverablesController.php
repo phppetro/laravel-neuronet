@@ -19,9 +19,9 @@ class DeliverablesController extends Controller
      */
     public function index($proj_id=null)
     {
-        if (! Gate::allows('deliverable_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('deliverable_access')) {
+//            return abort(401);
+//        }
 
         if (request()->ajax()) {
             $query = Deliverable::query();
@@ -175,9 +175,9 @@ class DeliverablesController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('deliverable_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('deliverable_view')) {
+//            return abort(401);
+//        }
         $deliverable = Deliverable::findOrFail($id);
 
         return view('admin.deliverables.show', compact('deliverable'));

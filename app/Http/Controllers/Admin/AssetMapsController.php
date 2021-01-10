@@ -19,9 +19,9 @@ class AssetMapsController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('asset_map_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('asset_map_access')) {
+//            return abort(401);
+//        }
 
 
 
@@ -159,9 +159,9 @@ class AssetMapsController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('asset_map_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('asset_map_view')) {
+//            return abort(401);
+//        }
         $asset_map = AssetMap::findOrFail($id);
 
         return view('admin.asset_maps.show', compact('asset_map'));

@@ -19,9 +19,9 @@ class PartnersController extends Controller
      */
     public function index($proj_id=null)
     {
-        if (! Gate::allows('partner_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('partner_access')) {
+//            return abort(401);
+//        }
 
         if (request()->ajax()) {
             $query = Partner::query();
@@ -186,9 +186,9 @@ class PartnersController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('partner_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('partner_view')) {
+//            return abort(401);
+//        }
         $partner = Partner::findOrFail($id);
 
         return view('admin.partners.show', compact('partner'));

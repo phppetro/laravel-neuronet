@@ -22,9 +22,9 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('document_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('document_access')) {
+//            return abort(401);
+//        }
 
 
 
@@ -163,9 +163,9 @@ class DocumentsController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('document_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('document_view')) {
+//            return abort(401);
+//        }
         $document = Document::findOrFail($id);
 
         return view('admin.documents.show', compact('document'));

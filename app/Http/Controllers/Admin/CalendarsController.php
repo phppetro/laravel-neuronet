@@ -19,9 +19,9 @@ class CalendarsController extends Controller
      */
     public function index($all_eve=null)
     {
-        if (! Gate::allows('calendar_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('calendar_access')) {
+//            return abort(401);
+//        }
 
 
 
@@ -192,9 +192,9 @@ class CalendarsController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('calendar_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('calendar_view')) {
+//            return abort(401);
+//        }
         $calendar = Calendar::findOrFail($id);
 
         return view('admin.calendars.show', compact('calendar'));

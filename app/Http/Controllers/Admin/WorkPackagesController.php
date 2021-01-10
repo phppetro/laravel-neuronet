@@ -19,9 +19,9 @@ class WorkPackagesController extends Controller
      */
     public function index($proj_id=null)
     {
-        if (! Gate::allows('work_package_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('work_package_access')) {
+//            return abort(401);
+//        }
 
         if (request()->ajax()) {
             $query = WorkPackage::query();
@@ -168,9 +168,9 @@ class WorkPackagesController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('work_package_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('work_package_view')) {
+//            return abort(401);
+//        }
 
         $names = \App\Wp::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');
         //$projects = \App\Project::get()->pluck('name', 'id')->prepend(trans('global.app_please_select'), '');$deliverables = \App\Deliverable::where('wp_id', $id)->get();

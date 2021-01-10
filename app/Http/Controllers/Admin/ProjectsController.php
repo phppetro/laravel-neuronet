@@ -22,9 +22,9 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('project_access')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('project_access')) {
+//            return abort(401);
+//        }
 
 
 
@@ -171,9 +171,9 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        if (! Gate::allows('project_view')) {
-            return abort(401);
-        }
+//        if (! Gate::allows('project_view')) {
+//            return abort(401);
+//        }
         $partners = \App\Partner::whereHas('projects',
             function ($query) use ($id) {
                 $query->where('id', $id);
