@@ -22,10 +22,12 @@
             <span class="product-description">
                   {{ $project->description }}
             </span>
-            <a href="/admin/partners/project/{{ $project->id }}" class="product-title">Partners</a>
+               <a href="/admin/asset_maps/project/{{ $project->id }}" class="product-title">Assets</a>
+             / <a href="/admin/partners/project/{{ $project->id }}" class="product-title">Partners</a>
+             / <a href="/admin/publications/project/{{ $project->id }}" class="product-title">Publications</a>
              / <a href="/admin/work_packages/project/{{ $project->id }}" class="product-title">Work Packages</a>
              / <a href="/admin/deliverables/project/{{ $project->id }}" class="product-title">Deliverables</a>
-             / <a href="/admin/tools/project/{{ $project->id }}" class="product-title">Tools</a>
+{{--             / <a href="/admin/tools/project/{{ $project->id }}" class="product-title">Tools</a>--}}
              / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>
           </div>
         </li>
