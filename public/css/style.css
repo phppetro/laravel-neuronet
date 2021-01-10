@@ -100,6 +100,10 @@ a:focus {
 	border:2px solid rgba(18,238,227,1);
 }
 
+.neuronet-logo {
+    padding-top: 12px;
+}
+
 .neuronet-logo-mini {
 	width: 25px;
 }

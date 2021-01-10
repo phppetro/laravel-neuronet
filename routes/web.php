@@ -33,7 +33,8 @@ Route::post('register', 'Auth\RegisterController@register')->name('auth.register
 Route::get('/dashboard', 'FrontController@publicdashboard');
 
 //Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
-Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+//Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'Admin\DashboardController@index');
     Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar');
     Route::get('/decision_tool', 'Admin\DecisionToolsController@diagram')->name('decision_tools.diagram');
@@ -183,4 +184,5 @@ Route::group(['middleware' => ['auth', 'approved'], 'prefix' => 'admin', 'as' =>
     Route::get('search', 'MegaSearchController@search')->name('mega-search');
     Route::get('language/{lang}', function ($lang) {
         return redirect()->back()->withCookie(cookie()->forever('language', $lang));
-    })->name('language');});
+    })->name('language');
+});

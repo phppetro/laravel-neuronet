@@ -2,7 +2,7 @@
 
 return [
 	'user-management' => [
-		'title' => 'User management',
+		'title' => 'Users',
 		'fields' => [
 		],
 	],
@@ -57,12 +57,14 @@ return [
 	],
 	'faq-categories' => [
 		'title' => 'Categories',
+        'menu-title' => 'FAQ Categories',
 		'fields' => [
 			'title' => 'Category',
 		],
 	],
 	'faq-questions' => [
 		'title' => 'Questions',
+        'menu-title' => 'FAQ Questions',
 		'fields' => [
 			'category' => 'Category',
 			'question-text' => 'Question',
@@ -213,6 +215,7 @@ return [
 	],
 	'content-categories' => [
 		'title' => 'Categories',
+        'menu-title' => 'CMS Categories',
 		'fields' => [
 			'title' => 'Category',
 			'slug' => 'Slug',
@@ -220,6 +223,7 @@ return [
 	],
 	'content-tags' => [
 		'title' => 'Tags',
+        'menu-title' => 'CMS Tags',
 		'fields' => [
 			'title' => 'Tag',
 			'slug' => 'Slug',
@@ -227,6 +231,7 @@ return [
 	],
 	'content-pages' => [
 		'title' => 'Pages',
+        'menu-title' => 'CMS Pages',
 		'fields' => [
 			'title' => 'Title',
 			'category-id' => 'Categories',
@@ -236,12 +241,19 @@ return [
 			'featured-image' => 'Featured image',
 		],
 	],
- 'professional-category' => [   'title' => 'Professional category',   'fields' => [     'name' => 'Name',   ], ],
+ 'professional-category' => [   'title' => 'Professional categories',   'fields' => [     'name' => 'Name',   ], ],
  'education' => [ 		'title' => 'Education', 		'fields' => [ 			'name' => 'Name', 		], 	],
- 'country' => [   'title' => 'Country',   'fields' => [     'shortcode' => 'Shortcode',     'title' => 'Title',   ], ],
+ 'country' => [
+     'title' => 'Country',
+     'menu-title' => 'Countries',
+     'fields' => [
+         'shortcode' => 'Shortcode',
+         'title' => 'Title',
+         ],
+     ],
 
  'type-of-institution' => [
- 		'title' => 'Type of institution',
+ 		'title' => 'Type of institutions',
  		'fields' => [
  			'name' => 'Name',
  		],
@@ -267,14 +279,14 @@ return [
 	],
 
   'wp' => [
-		'title' => 'WP',
+		'title' => 'WPs',
 		'fields' => [
 			'name' => 'Name',
 		],
 	],
 
   'system-management' => [
-    'title' => 'System Management',
+    'title' => 'Admin',
     'fields' => [
     ],
   ],
@@ -293,7 +305,7 @@ return [
 	],
 
 	'color' => [
-        'title' => 'Color',
+        'title' => 'Colors',
         'fields' => [
             'color' => 'Color',
             'value' => 'Value',
@@ -313,7 +325,7 @@ return [
 
     'asset-map' => [
         'title' => 'Asset map',
-        'title2' => 'Asset map management',
+        'menu-title' => 'Assets',
         'fields' => [
             'title' => 'Title',
             'body' => 'Body',

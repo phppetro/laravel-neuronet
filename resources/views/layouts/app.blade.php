@@ -3,20 +3,29 @@
 
 <head>
     @include('partials.head')
+        <style>
+            .content-wrapper {
+                margin-left: 0;
+            }
+        </style>
 </head>
 
-@can('sidebar_layout')
-  <body class="hold-transition skin-black-light sidebar-mini">
-  <div id="wrapper">
-  @include('partials.topbar')
-  @include('partials.sidebar')
-@endcan
+<body class="layout-top-nav skin-black-light">
+<div id="wrapper">
+@include('partials.topbar-only')
 
-@can('topbar_layout')
-  <body class="layout-top-nav skin-black-light">
-  <div id="wrapper">
-  @include('partials.topbar-only')
-@endcan
+{{--@can('sidebar_layout')--}}
+{{--  <body class="hold-transition skin-black-light sidebar-mini">--}}
+{{--  <div id="wrapper">--}}
+{{--  @include('partials.topbar')--}}
+{{--  @include('partials.sidebar')--}}
+{{--@endcan--}}
+
+{{--@can('topbar_layout')--}}
+{{--  <body class="layout-top-nav skin-black-light">--}}
+{{--  <div id="wrapper">--}}
+{{--  @include('partials.topbar-only')--}}
+{{--@endcan--}}
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

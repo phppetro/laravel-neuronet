@@ -53,7 +53,7 @@
               <a class="nav-link js-scroll-trigger" href="/"> Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/dashboard"> Dashboard </a>
+              <a class="nav-link js-scroll-trigger" href="/admin"> Dashboard </a>
             </li>
               @guest
               @else
@@ -63,7 +63,7 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                           @if(Auth::check())
-                              <a href="{{ url('/admin/') }}" class="btn btn-default btn-flat"> Dashboard</a><br>
+{{--                              <a href="{{ url('/admin/') }}" class="btn btn-default btn-flat"> Dashboard</a><br>--}}
                           @endif
 
                           {!! Form::open(['route' => 'auth.logout', 'id' => 'logout']) !!}
