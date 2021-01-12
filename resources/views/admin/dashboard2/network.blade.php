@@ -33,7 +33,7 @@
             <div class="table-responsive network-participants-image">
                 <h4>Network diagram of organisations participating in the portfolio</h4>
                 <p class="network-diagram hidden">The figure represents the network of unique partner organisations that participate in the 18 projects of the IMI neurodegeneration portfolio (N=239). Each organisation is represented by a single node, where the size of each node reflects how well connected an organisation is with all other organisations in the network. The figure shows that there are a relatively small number of organisations that are the key nodes in the network. The lines connecting the nodes are coloured to represent the number of projects that connect individual organisations. The majority of connections in the network are coloured orange indicating that 2 organisations are connected through participation in a single project. The connections between organisations that participate together in multiple projects are indicated in blue.</p>
-                <img class="img-responsive network-participants-image" src="/img/collaborators.png" alt="Asset map">
+                <img class="img-responsive network-participants-image" src="/img/participants.png" alt="Asset map">
             </div>
         </div>
         <!-- /.box-body -->
@@ -44,7 +44,7 @@
             <div class="table-responsive network-participants-image">
                 <h4>Network diagram of collaborating organisations on publications</h4>
                 <p class="network-diagram hidden">The figure shows the network of collaborating organisations on project publications. Each node in the network represents a single organisation, with the size of the node reflecting the number of other organisations in the network that an organisation has published with. The lines connecting the nodes are coloured to represent the number of publications which connect individual organisations. The majority of connections in the network are coloured orange indicating that 2 organisations have appeared on 1 publication together. The connections between organisations that have co-authored multiple publications together are indicated in blue.</p>
-                <img class="img-responsive" src="/img/participants.png" alt="Asset map">
+                <img class="img-responsive" src="/img/collaborators.png" alt="Asset map">
             </div>
         </div>
         <!-- /.box-body -->
