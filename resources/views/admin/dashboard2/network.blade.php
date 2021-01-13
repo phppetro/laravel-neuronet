@@ -7,12 +7,24 @@
       <li class="pull-left header">Network Diagrams</li>
       <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
-              Select Diagram <span class="caret"></span>
+              <span id="selected-diagram">Projects </span><span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false" href="#projects">Projects</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false" href="#participants">Participants</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false" href="#publications">Publications</a></li>
+              <li role="presentation">
+                  <a onClick="diagramMenu(this);" role="menuitem" tabindex="-1" data-toggle="tab" aria-expanded="false"
+                     href="#projects">Projects
+                  </a>
+              </li>
+              <li role="presentation">
+                  <a onClick="diagramMenu(this);" id="participants-diagram" role="menuitem" tabindex="-1"
+                     data-toggle="tab" aria-expanded="false" href="#participants">Participants
+                  </a>
+              </li>
+              <li role="presentation">
+                  <a onClick="diagramMenu(this);" id="publications-diagram" role="menuitem" tabindex="-1"
+                     data-toggle="tab" aria-expanded="false" href="#publications">Publications
+                  </a>
+              </li>
           </ul>
       </li>
     </ul>
@@ -56,9 +68,15 @@
 @section('javascript')
     <script type="text/javascript">
         $(".network-participants-image").hover(function() {
-            $('.network-diagram').removeClass('hidden');
+            $('.network-diagram').removeClass('hidden')
         }, function() {
-            $('.network-diagram').addClass('hidden');
+            $('.network-diagram').addClass('hidden')
+        });
+
+        $(function () {
+            diagramMenu = function (elm) {
+                $('#selected-diagram')[0].innerHTML = $(elm)[0].innerHTML;
+            }
         });
     </script>
 @stop

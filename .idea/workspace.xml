@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PublicationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PublicationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/global.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/global.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/projects.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/publications/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/publications/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/topbar-only.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/topbar-only.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/network.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/network.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +198,7 @@
       <workItem from="1592859071629" duration="1768000" />
       <workItem from="1610196222359" duration="28093000" />
       <workItem from="1610276935449" duration="6923000" />
-      <workItem from="1610285667691" duration="11266000" />
+      <workItem from="1610285667691" duration="18445000" />
     </task>
     <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
       <created>1610276500909</created>
@@ -275,7 +270,42 @@
       <option name="project" value="LOCAL" />
       <updated>1610300280443</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add a project filter to Publications">
+      <created>1610302682236</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610302682237</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add Assets and Publications links and remove Tools link in Projects module in the dashboard">
+      <created>1610302903319</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610302903319</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changes in menu name and title section of assets">
+      <created>1610302994416</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610302994416</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Change link order in the project module in the dashboard">
+      <created>1610478116419</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610478116419</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Arrange images network diagram module in the dashboard">
+      <created>1610478902622</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610478902622</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -322,6 +352,11 @@
     <MESSAGE value="Change title and menu in Network Diagram module" />
     <MESSAGE value="Change alignment of elements 5, 6 and 7 in the module Highlights Metrics in the dashboard" />
     <MESSAGE value="Add a project filter to Assets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a project filter to Assets" />
+    <MESSAGE value="Add a project filter to Publications" />
+    <MESSAGE value="Add Assets and Publications links and remove Tools link in Projects module in the dashboard" />
+    <MESSAGE value="Changes in menu name and title section of assets" />
+    <MESSAGE value="Change link order in the project module in the dashboard" />
+    <MESSAGE value="Arrange images network diagram module in the dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrange images network diagram module in the dashboard" />
   </component>
 </project>
