@@ -22,7 +22,7 @@
           </li>
 
           <li class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">KB details <span class="caret"></span></a>
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Knowledge Base details <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
 {{--                  @can('project_access')--}}
                       <li><a href="{{ route('admin.projects.index') }}">@lang('global.projects.title')</a></li>
