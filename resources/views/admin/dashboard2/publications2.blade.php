@@ -16,7 +16,7 @@
                     <div class="box-comment">
                       <div class="comment-text">
                             <span class="username text-bold">{{ $publication->first_author_last_name }}</span> et al., {{ $publication->year }}</span>
-                            <span class="text-bold pull-right">{{ $publication->project->name }}</span><br>
+                            <span class="pull-right">{{ $publication->project->name }}</span><br>
                         <a href="/admin/publications/{{ $publication->id }}">{{ $publication->title }}</a>
                       </div>
                       <!-- /.comment-text -->
