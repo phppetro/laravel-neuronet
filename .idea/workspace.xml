@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/projects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/projects/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/asset_maps/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/asset_maps/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/asset_maps/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/asset_maps/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/asset_maps/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/asset_maps/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/content_pages/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/content_pages/create.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers />
   </component>
@@ -201,7 +205,7 @@
       <workItem from="1610285667691" duration="19048000" />
       <workItem from="1610899360653" duration="5264000" />
       <workItem from="1611083263263" duration="1048000" />
-      <workItem from="1611164977025" duration="23000" />
+      <workItem from="1611164977025" duration="6487000" />
     </task>
     <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
       <created>1610276500909</created>
@@ -322,7 +326,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611164584484</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Removed activity tab from the project show view">
+      <created>1611165159482</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1611165159482</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Changed KB details for Knowledge Base details in topbar-only menu">
+      <created>1611167972730</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1611167972730</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -376,6 +394,8 @@
     <MESSAGE value="Arrange images network diagram module in the dashboard" />
     <MESSAGE value="Change Network diagram menu on dashboard so it displays the diagram name in the menu" />
     <MESSAGE value="Removed bold on project name in publications module in the dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed bold on project name in publications module in the dashboard" />
+    <MESSAGE value="Removed activity tab from the project show view" />
+    <MESSAGE value="Changed KB details for Knowledge Base details in topbar-only menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed KB details for Knowledge Base details in topbar-only menu" />
   </component>
 </project>

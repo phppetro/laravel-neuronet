@@ -93,6 +93,22 @@
                 {data: 'actions', name: 'actions', searchable: false, sortable: false}
             ];
             processAjaxTables();
+
+            function removeHtmlTags(eq) {
+                setTimeout(() => {
+                    $('tbody tr').each(function (index, value) {
+                        $('tbody tr:eq(' + index + ') td:eq(' + eq + ')').html($('tbody tr:eq(' + index + ') td:eq(' + eq + ')').text());
+                    });
+                }, 1500);
+            }
+
+            @auth
+                removeHtmlTags(2);
+
+            @endauth
+            @guest
+                removeHtmlTags(1);
+            @endguest
         });
     </script>
 @endsection
