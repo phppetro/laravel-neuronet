@@ -50,10 +50,12 @@ class FrontController extends Controller
     public function home()
     {
         $homes = \App\ContentPage::where('id',1)->get();
+        $teams = \App\ContentPage::find([9, 10]);
         $helps = \App\ContentPage::where('id',7)->get();
         $fundings = \App\ContentPage::where('id',6)->get();
+//        dd($teams);
 
-        return view('home', compact('homes', 'helps', 'fundings'));
+        return view('home', compact('homes', 'teams', 'helps', 'fundings'));
     }
 
     public function disclaimer()

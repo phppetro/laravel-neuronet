@@ -22,7 +22,22 @@
       </div>
     </section>
 
-    <section class="bg-light" id="funding">
+    <section class="bg-light" id="team">
+        <div class="container">
+            <div class="row">
+                @foreach($teams as $team)
+                    <div class="col-sm-6 col-md-6 col-lg-3 team-member-padding">
+                        <img class="img-responsive img-fluid" alt="{!! $team->title !!}" src="/img/{!! $team->featured_image !!}" />
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3 team-member-padding">
+                        {!! $team->page_text !!}
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="funding">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -34,25 +49,25 @@
       </div>
     </section>
 
-    <section class="py-5">
+    <section class="pt-0">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-sm-6">
+        <div class=" col-sm-6 col-md-3 py-4">
           <a href="https://europa.eu/european-union/index_en">
             <img class="img-fluid d-block mx-auto" src="img/eu-logo.png" alt="">
           </a>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-sm-6 col-md-3 py-4">
           <a href="https://www.imi.europa.eu/">
             <img class="img-fluid d-block mx-auto" src="img/imi-logo.png" alt="">
           </a>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-sm-6 col-md-3 py-4">
           <a href="https://www.efpia.eu/">
             <img class="img-fluid d-block mx-auto" src="img/efpia-logo.png" alt="">
           </a>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-sm-6 col-md-3 py-4">
           <a href="https://www.parkinsons.org.uk/">
             <img class="img-fluid d-block mx-auto" src="img/parkinsonsuk-logo.png" alt="">
           </a>
