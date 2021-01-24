@@ -46,12 +46,14 @@
 <ul class="nav nav-tabs" role="tablist">
 
 <li role="presentation" class="active"><a href="#partners" aria-controls="partners" role="tab" data-toggle="tab">Partners</a></li>
-<li role="presentation" class=""><a href="#tools" aria-controls="tools" role="tab" data-toggle="tab">Tools</a></li>
 <li role="presentation" class=""><a href="#work_packages" aria-controls="work_packages" role="tab" data-toggle="tab">Work packages</a></li>
-<li role="presentation" class=""><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
-{{--<li role="presentation" class=""><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>--}}
 <li role="presentation" class=""><a href="#publications" aria-controls="publications" role="tab" data-toggle="tab">Publications</a></li>
-<li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>
+<li role="presentation" class=""><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
+<li role="presentation" class=""><a href="#assets" aria-controls="assets" role="tab" data-toggle="tab">Assets</a></li>
+<li role="presentation" class=""><a href="#website" aria-controls="website" role="tab" data-toggle="tab">Website</a></li>
+{{--<li role="presentation" class=""><a href="#tools" aria-controls="tools" role="tab" data-toggle="tab">Tools</a></li>--}}
+{{--<li role="presentation" class=""><a href="#activity" aria-controls="activity" role="tab" data-toggle="tab">Activity</a></li>--}}
+{{--<li role="presentation" class=""><a href="#calendar" aria-controls="calendar" role="tab" data-toggle="tab">Events</a></li>--}}
 </ul>
 
 <!-- Tab panes -->
@@ -131,82 +133,82 @@
                         </tbody>
                     </table>
                 </div>
-                <div role="tabpanel" class="tab-pane " id="tools">
-                    <table class="table table-bordered table-striped {{ count($tools) > 0 ? 'datatable' : '' }}">
-                        <thead>
-                        <tr>
-                            <th>@lang('global.tools.fields.name')</th>
-                            <th>@lang('global.tools.fields.project')</th>
-                            <th>@lang('global.tools.fields.publication-date')</th>
-                            <th>@lang('global.tools.fields.type-of-data-available')</th>
-                            <th>@lang('global.tools.fields.description')</th>
-                            <th>@lang('global.tools.fields.keywords')</th>
-                            <th>@lang('global.tools.fields.link')</th>
-                            @if( request('show_deleted') == 1 )
-                                <th>&nbsp;</th>
-                            @else
-                                <th>&nbsp;</th>
-                            @endif
-                        </tr>
-                        </thead>
+{{--                <div role="tabpanel" class="tab-pane " id="tools">--}}
+{{--                    <table class="table table-bordered table-striped {{ count($tools) > 0 ? 'datatable' : '' }}">--}}
+{{--                        <thead>--}}
+{{--                        <tr>--}}
+{{--                            <th>@lang('global.tools.fields.name')</th>--}}
+{{--                            <th>@lang('global.tools.fields.project')</th>--}}
+{{--                            <th>@lang('global.tools.fields.publication-date')</th>--}}
+{{--                            <th>@lang('global.tools.fields.type-of-data-available')</th>--}}
+{{--                            <th>@lang('global.tools.fields.description')</th>--}}
+{{--                            <th>@lang('global.tools.fields.keywords')</th>--}}
+{{--                            <th>@lang('global.tools.fields.link')</th>--}}
+{{--                            @if( request('show_deleted') == 1 )--}}
+{{--                                <th>&nbsp;</th>--}}
+{{--                            @else--}}
+{{--                                <th>&nbsp;</th>--}}
+{{--                            @endif--}}
+{{--                        </tr>--}}
+{{--                        </thead>--}}
 
-                        <tbody>
-                        @if (count($tools) > 0)
-                            @foreach ($tools as $tool)
-                                <tr data-entry-id="{{ $tool->id }}">
-                                    <td field-key='name'>{{ $tool->name }}</td>
-                                    <td field-key='project'>{{ $tool->project->name ?? '' }}</td>
-                                    <td field-key='publication_date'>{{ $tool->publication_date }}</td>
-                                    <td field-key='type_of_data_available'>{{ $tool->type_of_data_available }}</td>
-                                    <td field-key='description'>{!! $tool->description !!}</td>
-                                    <td field-key='keywords'>{!! $tool->keywords !!}</td>
-                                    <td field-key='link'>{{ $tool->link }}</td>
-                                    @if( request('show_deleted') == 1 )
-                                        <td>
-                                            {!! Form::open(array(
-                                                'style' => 'display: inline-block;',
-                                                'method' => 'POST',
-                                                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                                'route' => ['admin.tools.restore', $tool->id])) !!}
-                                            {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
-                                            {!! Form::close() !!}
-                                            {!! Form::open(array(
-                'style' => 'display: inline-block;',
-                'method' => 'DELETE',
-                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                'route' => ['admin.tools.perma_del', $tool->id])) !!}
-                                            {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                            {!! Form::close() !!}
-                                        </td>
-                                    @else
-                                        <td>
-                                            @can('tool_view')
-                                                <a href="{{ route('admin.tools.show',[$tool->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
-                                            @endcan
-                                            @can('tool_edit')
-                                                <a href="{{ route('admin.tools.edit',[$tool->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                            @endcan
-                                            @can('tool_delete')
-                                                {!! Form::open(array(
-                                                                                        'style' => 'display: inline-block;',
-                                                                                        'method' => 'DELETE',
-                                                                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                                                                        'route' => ['admin.tools.destroy', $tool->id])) !!}
-                                                {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                                {!! Form::close() !!}
-                                            @endcan
-                                        </td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        @else
-                            <tr>
-                                <td colspan="12">@lang('global.app_no_entries_in_table')</td>
-                            </tr>
-                        @endif
-                        </tbody>
-                    </table>
-                </div>
+{{--                        <tbody>--}}
+{{--                        @if (count($tools) > 0)--}}
+{{--                            @foreach ($tools as $tool)--}}
+{{--                                <tr data-entry-id="{{ $tool->id }}">--}}
+{{--                                    <td field-key='name'>{{ $tool->name }}</td>--}}
+{{--                                    <td field-key='project'>{{ $tool->project->name ?? '' }}</td>--}}
+{{--                                    <td field-key='publication_date'>{{ $tool->publication_date }}</td>--}}
+{{--                                    <td field-key='type_of_data_available'>{{ $tool->type_of_data_available }}</td>--}}
+{{--                                    <td field-key='description'>{!! $tool->description !!}</td>--}}
+{{--                                    <td field-key='keywords'>{!! $tool->keywords !!}</td>--}}
+{{--                                    <td field-key='link'>{{ $tool->link }}</td>--}}
+{{--                                    @if( request('show_deleted') == 1 )--}}
+{{--                                        <td>--}}
+{{--                                            {!! Form::open(array(--}}
+{{--                                                'style' => 'display: inline-block;',--}}
+{{--                                                'method' => 'POST',--}}
+{{--                                                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                                                'route' => ['admin.tools.restore', $tool->id])) !!}--}}
+{{--                                            {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}--}}
+{{--                                            {!! Form::close() !!}--}}
+{{--                                            {!! Form::open(array(--}}
+{{--                'style' => 'display: inline-block;',--}}
+{{--                'method' => 'DELETE',--}}
+{{--                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                'route' => ['admin.tools.perma_del', $tool->id])) !!}--}}
+{{--                                            {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}--}}
+{{--                                            {!! Form::close() !!}--}}
+{{--                                        </td>--}}
+{{--                                    @else--}}
+{{--                                        <td>--}}
+{{--                                            @can('tool_view')--}}
+{{--                                                <a href="{{ route('admin.tools.show',[$tool->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>--}}
+{{--                                            @endcan--}}
+{{--                                            @can('tool_edit')--}}
+{{--                                                <a href="{{ route('admin.tools.edit',[$tool->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>--}}
+{{--                                            @endcan--}}
+{{--                                            @can('tool_delete')--}}
+{{--                                                {!! Form::open(array(--}}
+{{--                                                                                        'style' => 'display: inline-block;',--}}
+{{--                                                                                        'method' => 'DELETE',--}}
+{{--                                                                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                                                                                        'route' => ['admin.tools.destroy', $tool->id])) !!}--}}
+{{--                                                {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}--}}
+{{--                                                {!! Form::close() !!}--}}
+{{--                                            @endcan--}}
+{{--                                        </td>--}}
+{{--                                    @endif--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        @else--}}
+{{--                            <tr>--}}
+{{--                                <td colspan="12">@lang('global.app_no_entries_in_table')</td>--}}
+{{--                            </tr>--}}
+{{--                        @endif--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
                 <div role="tabpanel" class="tab-pane " id="work_packages">
                     <table class="table table-bordered table-striped {{ count($work_packages) > 0 ? 'datatable' : '' }}">
                         <thead>
@@ -493,78 +495,18 @@
                         </tbody>
                     </table>
                 </div>
-                <div role="tabpanel" class="tab-pane " id="users">
-                    <table class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }}">
+
+
+
+
+                <div role="tabpanel" class="tab-pane " id="assets">
+                    <table class="table table-bordered table-striped {{ count($assets) > 0 ? 'datatable' : '' }}">
                         <thead>
                         <tr>
-                            <th>@lang('global.users.fields.name')</th>
-                            <th>@lang('global.users.fields.surname')</th>
-                            <th>@lang('global.users.fields.email')</th>
-                            <th>@lang('global.users.fields.role')</th>
-                            <th>@lang('global.users.fields.project')</th>
-                            <th>@lang('global.users.fields.institution')</th>
-                            <th>@lang('global.users.fields.photo')</th>
-                            <th>@lang('global.users.fields.approved')</th>
-                            <th>&nbsp;</th>
-
-                        </tr>
-                        </thead>
-
-                        <tbody>
-                        @if (count($users) > 0)
-                            @foreach ($users as $user)
-                                <tr data-entry-id="{{ $user->id }}">
-                                    <td field-key='name'>{{ $user->name }}</td>
-                                    <td field-key='surname'>{{ $user->surname }}</td>
-                                    <td field-key='email'>{{ $user->email }}</td>
-                                    <td field-key='role'>
-                                        @foreach ($user->role as $singleRole)
-                                            <span class="label label-info label-many">{{ $singleRole->title }}</span>
-                                        @endforeach
-                                    </td>
-                                    <td field-key='project'>{{ $user->project->name ?? '' }}</td>
-                                    <td field-key='institution'>{{ $user->institution }}</td>
-                                    <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/' . $user->photo) }}"/></a>@endif</td>
-                                    <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>
-                                    <td>
-                                        @can('user_view')
-                                            <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
-                                        @endcan
-                                        @can('user_edit')
-                                            <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                        @endcan
-                                        @can('user_delete')
-                                            {!! Form::open(array(
-                                                                                    'style' => 'display: inline-block;',
-                                                                                    'method' => 'DELETE',
-                                                                                    'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                                                                    'route' => ['admin.users.destroy', $user->id])) !!}
-                                            {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                            {!! Form::close() !!}
-                                        @endcan
-                                    </td>
-
-                                </tr>
-                            @endforeach
-                        @else
-                            <tr>
-                                <td colspan="19">@lang('global.app_no_entries_in_table')</td>
-                            </tr>
-                        @endif
-                        </tbody>
-                    </table>
-                </div>
-                <div role="tabpanel" class="tab-pane " id="calendar">
-                    <table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">
-                        <thead>
-                        <tr>
-                            <th>@lang('global.calendar.fields.title')</th>
-                            <th>@lang('global.calendar.fields.location')</th>
-                            <th>@lang('global.calendar.fields.start-date')</th>
-                            <th>@lang('global.calendar.fields.end-date')</th>
-                            <th>@lang('global.calendar.fields.color')</th>
-                            <th>@lang('global.calendar.fields.projects')</th>
-                            <th>@lang('global.calendar.fields.link')</th>
+                            <th>@lang('global.asset-map.fields.title')</th>
+                            <th>@lang('global.asset-map.fields.body')</th>
+                            <th>@lang('global.asset-map.fields.target')</th>
+                            <th>@lang('global.asset-map.fields.project')</th>
                             @if( request('show_deleted') == 1 )
                                 <th>&nbsp;</th>
                             @else
@@ -574,51 +516,44 @@
                         </thead>
 
                         <tbody>
-                        @if (count($calendars) > 0)
-                            @foreach ($calendars as $calendar)
-                                <tr data-entry-id="{{ $calendar->id }}">
-                                    <td field-key='title'>{{ $calendar->title }}</td>
-                                    <td field-key='location'>{{ $calendar->location }}</td>
-                                    <td field-key='start_date'>{{ $calendar->start_date }}</td>
-                                    <td field-key='end_date'>{{ $calendar->end_date }}</td>
-                                    <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>
-                                    <td field-key='projects'>
-                                        @foreach ($calendar->projects as $singleProjects)
-                                            <span class="label label-info label-many">{{ $singleProjects->name }}</span>
-                                        @endforeach
-                                    </td>
-                                    <td field-key='link'>{{ $calendar->link }}</td>
+                        @if (count($assets) > 0)
+                            @foreach ($assets as $asset)
+                                <tr data-entry-id="{{ $asset->id }}">
+                                    <td field-key='title'>{{ $asset->title }}</td>
+                                    <td field-key='body'>{{ $asset->body }}</td>
+                                    <td field-key='target'>{{ $asset->target }}</td>
+                                    <td field-key='project'>{{ $asset->project->name ?? '' }}</td>
                                     @if( request('show_deleted') == 1 )
                                         <td>
                                             {!! Form::open(array(
                                                 'style' => 'display: inline-block;',
                                                 'method' => 'POST',
                                                 'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                                'route' => ['admin.calendars.restore', $calendar->id])) !!}
+                                                'route' => ['admin.asset_maps.restore', $publication->id])) !!}
                                             {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}
                                             {!! Form::close() !!}
                                             {!! Form::open(array(
                 'style' => 'display: inline-block;',
                 'method' => 'DELETE',
                 'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                'route' => ['admin.calendars.perma_del', $calendar->id])) !!}
+                'route' => ['admin.asset_maps.perma_del', $publication->id])) !!}
                                             {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     @else
                                         <td>
-                                            @can('calendar_view')
-                                                <a href="{{ route('admin.calendars.show',[$calendar->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+                                            @can('asset_map_view')
+                                                <a href="{{ route('admin.asset_maps.show',[$asset->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
                                             @endcan
-                                            @can('calendar_edit')
-                                                <a href="{{ route('admin.calendars.edit',[$calendar->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
+                                            @can('asset_map_edit')
+                                                <a href="{{ route('admin.asset_maps.edit',[$asset->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
                                             @endcan
-                                            @can('calendar_delete')
+                                            @can('asset_map_delete')
                                                 {!! Form::open(array(
                                                                                         'style' => 'display: inline-block;',
                                                                                         'method' => 'DELETE',
                                                                                         'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                                                                        'route' => ['admin.calendars.destroy', $calendar->id])) !!}
+                                                                                        'route' => ['admin.asset_maps.destroy', $publication->id])) !!}
                                                 {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                                 {!! Form::close() !!}
                                             @endcan
@@ -628,12 +563,181 @@
                             @endforeach
                         @else
                             <tr>
-                                <td colspan="12">@lang('global.app_no_entries_in_table')</td>
+                                <td colspan="11">@lang('global.app_no_entries_in_table')</td>
                             </tr>
                         @endif
                         </tbody>
                     </table>
                 </div>
+
+
+
+
+
+                <div role="tabpanel" class="tab-pane " id="website">
+                    <div class="panel-body table-responsive">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-striped">
+                                    <tr>
+{{--                                        <th>@lang('global.projects.fields.website')</th>--}}
+                                        <td colspan="8" field-key='website'><strong>@lang('global.projects.fields.website'):</strong> <a target="_blank" href="{{ $project->website }}">{{ $project->website }}</a></td>
+                                    </tr>
+
+
+{{--                                    <tr>--}}
+{{--                                        <td colspan="8">@lang('global.app_no_entries_in_table')</td>--}}
+{{--                                    </tr>--}}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+{{--                <div role="tabpanel" class="tab-pane " id="users">--}}
+{{--                    <table class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }}">--}}
+{{--                        <thead>--}}
+{{--                        <tr>--}}
+{{--                            <th>@lang('global.users.fields.name')</th>--}}
+{{--                            <th>@lang('global.users.fields.surname')</th>--}}
+{{--                            <th>@lang('global.users.fields.email')</th>--}}
+{{--                            <th>@lang('global.users.fields.role')</th>--}}
+{{--                            <th>@lang('global.users.fields.project')</th>--}}
+{{--                            <th>@lang('global.users.fields.institution')</th>--}}
+{{--                            <th>@lang('global.users.fields.photo')</th>--}}
+{{--                            <th>@lang('global.users.fields.approved')</th>--}}
+{{--                            <th>&nbsp;</th>--}}
+
+{{--                        </tr>--}}
+{{--                        </thead>--}}
+
+{{--                        <tbody>--}}
+{{--                        @if (count($users) > 0)--}}
+{{--                            @foreach ($users as $user)--}}
+{{--                                <tr data-entry-id="{{ $user->id }}">--}}
+{{--                                    <td field-key='name'>{{ $user->name }}</td>--}}
+{{--                                    <td field-key='surname'>{{ $user->surname }}</td>--}}
+{{--                                    <td field-key='email'>{{ $user->email }}</td>--}}
+{{--                                    <td field-key='role'>--}}
+{{--                                        @foreach ($user->role as $singleRole)--}}
+{{--                                            <span class="label label-info label-many">{{ $singleRole->title }}</span>--}}
+{{--                                        @endforeach--}}
+{{--                                    </td>--}}
+{{--                                    <td field-key='project'>{{ $user->project->name ?? '' }}</td>--}}
+{{--                                    <td field-key='institution'>{{ $user->institution }}</td>--}}
+{{--                                    <td field-key='photo'>@if($user->photo)<a href="{{ asset(env('UPLOAD_PATH').'/' . $user->photo) }}" target="_blank"><img src="{{ asset(env('UPLOAD_PATH').'/img/thumb/' . $user->photo) }}"/></a>@endif</td>--}}
+{{--                                    <td field-key='approved'>{{ Form::checkbox("approved", 1, $user->approved == 1 ? true : false, ["disabled"]) }}</td>--}}
+{{--                                    <td>--}}
+{{--                                        @can('user_view')--}}
+{{--                                            <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>--}}
+{{--                                        @endcan--}}
+{{--                                        @can('user_edit')--}}
+{{--                                            <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>--}}
+{{--                                        @endcan--}}
+{{--                                        @can('user_delete')--}}
+{{--                                            {!! Form::open(array(--}}
+{{--                                                                                    'style' => 'display: inline-block;',--}}
+{{--                                                                                    'method' => 'DELETE',--}}
+{{--                                                                                    'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                                                                                    'route' => ['admin.users.destroy', $user->id])) !!}--}}
+{{--                                            {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}--}}
+{{--                                            {!! Form::close() !!}--}}
+{{--                                        @endcan--}}
+{{--                                    </td>--}}
+
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        @else--}}
+{{--                            <tr>--}}
+{{--                                <td colspan="19">@lang('global.app_no_entries_in_table')</td>--}}
+{{--                            </tr>--}}
+{{--                        @endif--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
+{{--                <div role="tabpanel" class="tab-pane " id="calendar">--}}
+{{--                    <table class="table table-bordered table-striped {{ count($calendars) > 0 ? 'datatable' : '' }}">--}}
+{{--                        <thead>--}}
+{{--                        <tr>--}}
+{{--                            <th>@lang('global.calendar.fields.title')</th>--}}
+{{--                            <th>@lang('global.calendar.fields.location')</th>--}}
+{{--                            <th>@lang('global.calendar.fields.start-date')</th>--}}
+{{--                            <th>@lang('global.calendar.fields.end-date')</th>--}}
+{{--                            <th>@lang('global.calendar.fields.color')</th>--}}
+{{--                            <th>@lang('global.calendar.fields.projects')</th>--}}
+{{--                            <th>@lang('global.calendar.fields.link')</th>--}}
+{{--                            @if( request('show_deleted') == 1 )--}}
+{{--                                <th>&nbsp;</th>--}}
+{{--                            @else--}}
+{{--                                <th>&nbsp;</th>--}}
+{{--                            @endif--}}
+{{--                        </tr>--}}
+{{--                        </thead>--}}
+
+{{--                        <tbody>--}}
+{{--                        @if (count($calendars) > 0)--}}
+{{--                            @foreach ($calendars as $calendar)--}}
+{{--                                <tr data-entry-id="{{ $calendar->id }}">--}}
+{{--                                    <td field-key='title'>{{ $calendar->title }}</td>--}}
+{{--                                    <td field-key='location'>{{ $calendar->location }}</td>--}}
+{{--                                    <td field-key='start_date'>{{ $calendar->start_date }}</td>--}}
+{{--                                    <td field-key='end_date'>{{ $calendar->end_date }}</td>--}}
+{{--                                    <td field-key='color'>{{ $calendar->color->color ?? '' }}</td>--}}
+{{--                                    <td field-key='projects'>--}}
+{{--                                        @foreach ($calendar->projects as $singleProjects)--}}
+{{--                                            <span class="label label-info label-many">{{ $singleProjects->name }}</span>--}}
+{{--                                        @endforeach--}}
+{{--                                    </td>--}}
+{{--                                    <td field-key='link'>{{ $calendar->link }}</td>--}}
+{{--                                    @if( request('show_deleted') == 1 )--}}
+{{--                                        <td>--}}
+{{--                                            {!! Form::open(array(--}}
+{{--                                                'style' => 'display: inline-block;',--}}
+{{--                                                'method' => 'POST',--}}
+{{--                                                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                                                'route' => ['admin.calendars.restore', $calendar->id])) !!}--}}
+{{--                                            {!! Form::submit(trans('global.app_restore'), array('class' => 'btn btn-xs btn-success')) !!}--}}
+{{--                                            {!! Form::close() !!}--}}
+{{--                                            {!! Form::open(array(--}}
+{{--                'style' => 'display: inline-block;',--}}
+{{--                'method' => 'DELETE',--}}
+{{--                'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                'route' => ['admin.calendars.perma_del', $calendar->id])) !!}--}}
+{{--                                            {!! Form::submit(trans('global.app_permadel'), array('class' => 'btn btn-xs btn-danger')) !!}--}}
+{{--                                            {!! Form::close() !!}--}}
+{{--                                        </td>--}}
+{{--                                    @else--}}
+{{--                                        <td>--}}
+{{--                                            @can('calendar_view')--}}
+{{--                                                <a href="{{ route('admin.calendars.show',[$calendar->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>--}}
+{{--                                            @endcan--}}
+{{--                                            @can('calendar_edit')--}}
+{{--                                                <a href="{{ route('admin.calendars.edit',[$calendar->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>--}}
+{{--                                            @endcan--}}
+{{--                                            @can('calendar_delete')--}}
+{{--                                                {!! Form::open(array(--}}
+{{--                                                                                        'style' => 'display: inline-block;',--}}
+{{--                                                                                        'method' => 'DELETE',--}}
+{{--                                                                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",--}}
+{{--                                                                                        'route' => ['admin.calendars.destroy', $calendar->id])) !!}--}}
+{{--                                                {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}--}}
+{{--                                                {!! Form::close() !!}--}}
+{{--                                            @endcan--}}
+{{--                                        </td>--}}
+{{--                                    @endif--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                        @else--}}
+{{--                            <tr>--}}
+{{--                                <td colspan="12">@lang('global.app_no_entries_in_table')</td>--}}
+{{--                            </tr>--}}
+{{--                        @endif--}}
+{{--                        </tbody>--}}
+{{--                    </table>--}}
+{{--                </div>--}}
             </div>
 
             <p>&nbsp;</p>
