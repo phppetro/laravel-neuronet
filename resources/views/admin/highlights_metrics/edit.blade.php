@@ -26,7 +26,12 @@
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('number', trans('global.highlights-metrics.fields.number').'*', ['class' => 'control-label']) !!}
-                    {!! Form::number('number', old('number'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    @if($highlights_metric->id == 1 || $highlights_metric->id == 3 || $highlights_metric->id == 4 || $highlights_metric->id == 6)
+                        {!! Form::number('number', old('number'), ['class' => 'form-control', 'placeholder' => '', 'readonly' => '']) !!}
+                        <p class="help-block">Read only field, the system update it automatically.</p>
+                    @else
+                        {!! Form::number('number', old('number'), ['class' => 'form-control', 'placeholder' => '']) !!}
+                    @endif
                     <p class="help-block"></p>
                     @if($errors->has('number'))
                         <p class="help-block">

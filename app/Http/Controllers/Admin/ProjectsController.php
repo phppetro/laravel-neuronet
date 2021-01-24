@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\HighlightsMetric;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -119,7 +120,7 @@ class ProjectsController extends Controller
         $request = $this->saveFiles($request);
         $project = Project::create($request->all());
 
-
+        $this->updateProjectsHighlights();
 
         return redirect()->route('admin.projects.index');
     }
@@ -157,7 +158,7 @@ class ProjectsController extends Controller
         $project = Project::findOrFail($id);
         $project->update($request->all());
 
-
+        $this->updateProjectsHighlights();
 
         return redirect()->route('admin.projects.index');
     }
@@ -202,6 +203,8 @@ class ProjectsController extends Controller
         $project = Project::findOrFail($id);
         $project->delete();
 
+        $this->updateProjectsHighlights();
+
         return redirect()->route('admin.projects.index');
     }
 
@@ -222,6 +225,7 @@ class ProjectsController extends Controller
                 $entry->delete();
             }
         }
+        $this->updateProjectsHighlights();
     }
 
 
@@ -238,6 +242,8 @@ class ProjectsController extends Controller
         }
         $project = Project::onlyTrashed()->findOrFail($id);
         $project->restore();
+
+        $this->updateProjectsHighlights();
 
         return redirect()->route('admin.projects.index');
     }
@@ -256,6 +262,15 @@ class ProjectsController extends Controller
         $project = Project::onlyTrashed()->findOrFail($id);
         $project->forceDelete();
 
+        $this->updateProjectsHighlights();
+
         return redirect()->route('admin.projects.index');
+    }
+
+    public function updateProjectsHighlights()
+    {
+        $project_count = Project::all()->count() -1; // -1 because we don't want to count Neuronet in the total number.
+        $highlight_metric = HighlightsMetric::findOrFail(1);
+        $highlight_metric->update(['number'=>$project_count]);
     }
 }

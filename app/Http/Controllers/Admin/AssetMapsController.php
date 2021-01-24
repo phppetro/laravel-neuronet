@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\AssetMap;
+use App\HighlightsMetric;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
@@ -116,7 +117,7 @@ class AssetMapsController extends Controller
         }
         $asset_map = AssetMap::create($request->all());
 
-
+    $this->updateAssetHighlights();
 
         return redirect()->route('admin.asset_maps.index');
     }
@@ -155,7 +156,7 @@ class AssetMapsController extends Controller
         $asset_map = AssetMap::findOrFail($id);
         $asset_map->update($request->all());
 
-
+        $this->updateAssetHighlights();
 
         return redirect()->route('admin.asset_maps.index');
     }
@@ -192,6 +193,8 @@ class AssetMapsController extends Controller
         $asset_map = AssetMap::findOrFail($id);
         $asset_map->delete();
 
+        $this->updateAssetHighlights();
+
         return redirect()->route('admin.asset_maps.index');
     }
 
@@ -212,6 +215,7 @@ class AssetMapsController extends Controller
                 $entry->delete();
             }
         }
+        $this->updateAssetHighlights();
     }
 
 
@@ -228,6 +232,8 @@ class AssetMapsController extends Controller
         }
         $asset_map = AssetMap::onlyTrashed()->findOrFail($id);
         $asset_map->restore();
+
+        $this->updateAssetHighlights();
 
         return redirect()->route('admin.asset_maps.index');
     }
@@ -246,6 +252,8 @@ class AssetMapsController extends Controller
         $asset_map = AssetMap::onlyTrashed()->findOrFail($id);
         $asset_map->forceDelete();
 
+        $this->updateAssetHighlights();
+
         return redirect()->route('admin.asset_maps.index');
     }
 
@@ -254,5 +262,12 @@ class AssetMapsController extends Controller
 //        return view('admin.asset_map');
         $asset_maps = AssetMap::all();
         return view('admin.asset_map', compact('asset_maps'));
+    }
+
+    public function updateAssetHighlights()
+    {
+        $asset_count = AssetMap::all()->count();
+        $highlight_metric = HighlightsMetric::findOrFail(4);
+        $highlight_metric->update(['number'=>$asset_count]);
     }
 }

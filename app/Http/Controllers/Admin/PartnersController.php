@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\HighlightsMetric;
 use App\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -128,7 +129,7 @@ class PartnersController extends Controller
         $partner = Partner::create($request->all());
         $partner->projects()->sync(array_filter((array)$request->input('projects')));
 
-
+        $this->updatePartnerHighlights();
 
         return redirect()->route('admin.partners.index');
     }
@@ -172,7 +173,7 @@ class PartnersController extends Controller
         $partner->update($request->all());
         $partner->projects()->sync(array_filter((array)$request->input('projects')));
 
-
+        $this->updatePartnerHighlights();
 
         return redirect()->route('admin.partners.index');
     }
@@ -209,6 +210,8 @@ class PartnersController extends Controller
         $partner = Partner::findOrFail($id);
         $partner->delete();
 
+        $this->updatePartnerHighlights();
+
         return redirect()->route('admin.partners.index');
     }
 
@@ -229,6 +232,7 @@ class PartnersController extends Controller
                 $entry->delete();
             }
         }
+        $this->updatePartnerHighlights();
     }
 
 
@@ -245,6 +249,8 @@ class PartnersController extends Controller
         }
         $partner = Partner::onlyTrashed()->findOrFail($id);
         $partner->restore();
+
+        $this->updatePartnerHighlights();
 
         return redirect()->route('admin.partners.index');
     }
@@ -263,6 +269,15 @@ class PartnersController extends Controller
         $partner = Partner::onlyTrashed()->findOrFail($id);
         $partner->forceDelete();
 
+        $this->updatePartnerHighlights();
+
         return redirect()->route('admin.partners.index');
+    }
+
+    public function updatePartnerHighlights()
+    {
+        $partner_count = Partner::all()->count();
+        $highlight_metric = HighlightsMetric::findOrFail(6);
+        $highlight_metric->update(['number'=>$partner_count]);
     }
 }

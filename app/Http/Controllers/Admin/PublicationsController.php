@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\HighlightsMetric;
 use App\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -125,7 +126,7 @@ class PublicationsController extends Controller
         }
         $publication = Publication::create($request->all());
 
-
+        $this->updatePublicationHighlights();
 
         return redirect()->route('admin.publications.index');
     }
@@ -165,7 +166,7 @@ class PublicationsController extends Controller
         $publication = Publication::findOrFail($id);
         $publication->update($request->all());
 
-
+        $this->updatePublicationHighlights();
 
         return redirect()->route('admin.publications.index');
     }
@@ -222,6 +223,7 @@ class PublicationsController extends Controller
                 $entry->delete();
             }
         }
+        $this->updatePublicationHighlights();
     }
 
 
@@ -238,6 +240,8 @@ class PublicationsController extends Controller
         }
         $publication = Publication::onlyTrashed()->findOrFail($id);
         $publication->restore();
+
+        $this->updatePublicationHighlights();
 
         return redirect()->route('admin.publications.index');
     }
@@ -256,6 +260,15 @@ class PublicationsController extends Controller
         $publication = Publication::onlyTrashed()->findOrFail($id);
         $publication->forceDelete();
 
+        $this->updatePublicationHighlights();
+
         return redirect()->route('admin.publications.index');
+    }
+
+    public function updatePublicationHighlights()
+    {
+        $publication_count = Publication::all()->count();
+        $highlight_metric = HighlightsMetric::findOrFail(3);
+        $highlight_metric->update(['number'=>$publication_count]);
     }
 }
