@@ -1828,22 +1828,36 @@ a:focus {
     visibility: visible;
 }
 
-.highlight-text {
-    font-size: 130%;
+.highlight-text-big {
+    font-size: 140%;
 }
 
-.highlight-img img{
-    max-width: 50px;
-    max-height: 50px;
-}
-
-.highlight-text .col-md-3 {
-    min-height: 170px;
-    padding-top: 20px;
+.highlight-text-small {
+    font-size: 120%;
 }
 
 .highlight-num {
-    font-size: 170%;
+    font-size: 160%;
+}
+
+.highlight-img-med {
+    padding-top: 15%;
+}
+
+.highlight-num-med {
+    padding-top: 12%;
+}
+
+.highlight-name-med {
+    padding-bottom: 8%;
+}
+
+.highlight-img-small {
+    padding-top: 6%;
+}
+
+.highlight-name-small {
+    padding-bottom: 8%;
 }
 
 .network-diagram {

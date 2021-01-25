@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AssetMapsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AssetMapsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PartnersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PartnersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PublicationsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PublicationsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/highlights_metrics/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/highlights_metrics/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,15 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
@@ -206,7 +211,8 @@
       <workItem from="1610285667691" duration="19048000" />
       <workItem from="1610899360653" duration="5264000" />
       <workItem from="1611083263263" duration="1048000" />
-      <workItem from="1611164977025" duration="33283000" />
+      <workItem from="1611164977025" duration="34725000" />
+      <workItem from="1611601406747" duration="8556000" />
     </task>
     <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
       <created>1610276500909</created>
@@ -362,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611490894512</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Automatically save projects, publications, assets and organisation count in Highlight metrics">
+      <created>1611528442746</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1611528442746</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -421,6 +434,7 @@
     <MESSAGE value="Fixed html tags issue in asset map" />
     <MESSAGE value="Added team section to the homepage" />
     <MESSAGE value="Added Assets, removed events and tools and rearranged menu items in the projects show section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Assets, removed events and tools and rearranged menu items in the projects show section" />
+    <MESSAGE value="Automatically save projects, publications, assets and organisation count in Highlight metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Automatically save projects, publications, assets and organisation count in Highlight metrics" />
   </component>
 </project>
