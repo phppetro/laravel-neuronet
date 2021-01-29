@@ -4,7 +4,8 @@
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/metrics4.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/asset_map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/asset_map.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/asset_map.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/asset_map.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +213,9 @@
       <workItem from="1610899360653" duration="5264000" />
       <workItem from="1611083263263" duration="1048000" />
       <workItem from="1611164977025" duration="34725000" />
-      <workItem from="1611601406747" duration="8556000" />
+      <workItem from="1611601406747" duration="9531000" />
+      <workItem from="1611746712932" duration="3000" />
+      <workItem from="1611853758978" duration="25365000" />
     </task>
     <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
       <created>1610276500909</created>
@@ -375,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611528442746</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Changed layout to metrics in dashboard">
+      <created>1611616532285</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1611616532285</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
@@ -435,6 +445,7 @@
     <MESSAGE value="Added team section to the homepage" />
     <MESSAGE value="Added Assets, removed events and tools and rearranged menu items in the projects show section" />
     <MESSAGE value="Automatically save projects, publications, assets and organisation count in Highlight metrics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Automatically save projects, publications, assets and organisation count in Highlight metrics" />
+    <MESSAGE value="Changed layout to metrics in dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed layout to metrics in dashboard" />
   </component>
 </project>

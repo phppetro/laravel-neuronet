@@ -395,7 +395,7 @@ a:focus {
 	display: grid;
 	grid-template-columns: repeat(659, 1fr);
 	grid-template-rows: repeat(32, 1fr);
-	background-image: url("/img/assets_map13.png");
+	background-image: url("/img/assets_map14.png");
 	width: 759px;
 	height: 654px;
 	background-repeat:no-repeat;
@@ -404,8 +404,8 @@ a:focus {
 }
 
 .cohort-clinical-amypad-1 {
-    grid-column: 400 / 437;
-    grid-row: 10 / 11;
+    grid-column: 403 / 439;
+    grid-row: 11 / 12;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -424,7 +424,7 @@ a:focus {
 
 
 .cohort-clinical-amypad-2 {
-    grid-column: 383 / 417;
+    grid-column: 384 / 419;
     grid-row: 12 / 13;
     border: 1px solid transparent;
     cursor: pointer;
@@ -444,8 +444,8 @@ a:focus {
 
 
 .cohort-clinical-epad-3 {
-    grid-column: 398 / 440;
-    grid-row: 13 / 14;
+    grid-column: 362 / 403;
+    grid-row: 11 / 12;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -463,7 +463,7 @@ a:focus {
 
 
 .cohort-clinical-emif-4 {
-    grid-column: 423 / 450;
+    grid-column: 420 / 450;
     grid-row: 12 / 13;
     border: 1px solid transparent;
     cursor: pointer;
@@ -482,7 +482,7 @@ a:focus {
 
 
 .cohort-clinical-emif-5 {
-    grid-column: 439 / 465;
+    grid-column: 430 / 460;
     grid-row: 14 / 15;
     border: 1px solid transparent;
     cursor: pointer;
@@ -501,27 +501,8 @@ a:focus {
 
 
 .cohort-clinical-emif-6 {
-    grid-column: 445 / 470;
-    grid-row: 15 / 17;
-    border: 1px solid red;
-    cursor: pointer;
-}
-.cohort-clinical-emif-6 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.cohort-clinical-emif-6:hover .asset-title {
-    visibility: visible;
-}
-
-
-.cohort-clinical-emif-6 {
-    grid-column: 445 / 470;
-    grid-row: 15 / 17;
+    grid-column: 398 / 425;
+    grid-row: 13 / 15;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -539,7 +520,7 @@ a:focus {
 
 
 .cohort-clinical-aetionomy-7 {
-    grid-column: 409 / 445;
+    grid-column: 410 / 450;
     grid-row: 15 / 16;
     border: 1px solid transparent;
     cursor: pointer;
@@ -556,14 +537,13 @@ a:focus {
     visibility: visible;
 }
 
-
-.cohort-rwe-emif-8 {
-    grid-column: 365 / 395;
-    grid-row: 14 / 16;
+.cohort-clinical-radar-cns-9 {
+    grid-column: 337 / 390;
+    grid-row: 8 / 9;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.cohort-rwe-emif-8 .asset-title {
+.cohort-clinical-radar-cns-9 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -571,18 +551,17 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.cohort-rwe-emif-8:hover .asset-title {
+.cohort-clinical-radar-cns-9:hover .asset-title {
     visibility: visible;
 }
 
-
-.dataset-non-clinical-im2pact-1 {
-    grid-column: 326 / 367;
-    grid-row: 4 / 6;
+.cohort-clinical-radar-cns-10 {
+    grid-column: 330 / 384;
+    grid-row: 9 / 10;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-non-clinical-im2pact-1 .asset-title {
+.cohort-clinical-radar-cns-10 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -590,18 +569,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-non-clinical-im2pact-1:hover .asset-title {
+.cohort-clinical-radar-cns-10:hover .asset-title {
     visibility: visible;
 }
 
 
-.dataset-non-clinical-eqipd-2 {
-    grid-column: 208 / 246;
-    grid-row: 4 / 6;
+.cohort-clinical-radar-cns-11 {
+    grid-column: 370 / 424;
+    grid-row: 10 / 11;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-non-clinical-eqipd-2 .asset-title {
+.cohort-clinical-radar-cns-11 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -609,18 +588,36 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-non-clinical-eqipd-2:hover .asset-title {
+.cohort-clinical-radar-cns-11:hover .asset-title {
+    visibility: visible;
+}
+
+.cohort-non-clinical-ebisc2-12 {
+    grid-column: 450 / 485;
+    grid-row: 9 / 11;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.cohort-non-clinical-ebisc2-12 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.cohort-non-clinical-ebisc2-12:hover .asset-title {
     visibility: visible;
 }
 
 
-.dataset-non-clinical-adapted-3 {
-    grid-column: 264 / 310;
+.dataset-non-clinical-adapted-1 {
+    grid-column: 216 / 260;
     grid-row: 5 / 6;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-non-clinical-adapted-3 .asset-title {
+.dataset-non-clinical-adapted-1 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -628,13 +625,51 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-non-clinical-adapted-3:hover .asset-title {
+.dataset-non-clinical-adapted-1:hover .asset-title {
+    visibility: visible;
+}
+
+
+.dataset-non-clinical-equip-2 {
+    grid-column: 206 / 247;
+    grid-row: 4 / 5;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.dataset-non-clinical-equip-2 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.dataset-non-clinical-equip-2:hover .asset-title {
+    visibility: visible;
+}
+
+
+.dataset-non-clinical-im2pact-3 {
+    grid-column: 300 / 340;
+    grid-row: 4 / 5;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.dataset-non-clinical-im2pact-3 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.dataset-non-clinical-im2pact-3:hover .asset-title {
     visibility: visible;
 }
 
 
 .dataset-non-clinical-imprind-4 {
-    grid-column: 264 / 310;
+    grid-column: 252 / 287;
     grid-row: 3 / 5;
     border: 1px solid transparent;
     cursor: pointer;
@@ -652,13 +687,13 @@ a:focus {
 }
 
 
-.dataset-clinical-adapted-5 {
-    grid-column: 310 / 352;
-    grid-row: 7 / 8;
+.dataset-non-clinical-ebisc2-5 {
+    grid-column: 265 / 295;
+    grid-row: 5 / 6;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-clinical-adapted-5 .asset-title {
+.dataset-non-clinical-ebisc2-5 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -666,18 +701,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-clinical-adapted-5:hover .asset-title {
+.dataset-non-clinical-ebisc2-5:hover .asset-title {
     visibility: visible;
 }
 
 
-.dataset-clinical-phago-6 {
-    grid-column: 223 / 260;
-    grid-row: 7 / 8;
+.dataset-non-clinical-ebisc2-6 {
+    grid-column: 308 / 340;
+    grid-row: 5 / 6;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-clinical-phago-6 .asset-title {
+.dataset-non-clinical-ebisc2-6 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -685,18 +720,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-clinical-phago-6:hover .asset-title {
+.dataset-non-clinical-ebisc2-6:hover .asset-title {
     visibility: visible;
 }
 
 
-.dataset-clinical-epad-7 {
-    grid-column: 295 / 336;
+.dataset-clinical-adapted-7 {
+    grid-column: 280 / 320;
     grid-row: 8 / 9;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-clinical-epad-7 .asset-title {
+.dataset-clinical-adapted-7 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -704,19 +739,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-clinical-epad-7:hover .asset-title {
+.dataset-clinical-adapted-7:hover .asset-title {
     visibility: visible;
 }
 
 
-
-.dataset-clinical-amypad-8 {
-    grid-column: 240 / 275;
+.dataset-clinical-aetionomy-8 {
+    grid-column: 277 / 320;
     grid-row: 9 / 11;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-clinical-amypad-8 .asset-title {
+.dataset-clinical-aetionomy-8 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -724,37 +758,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-clinical-amypad-8:hover .asset-title {
+.dataset-clinical-aetionomy-8:hover .asset-title {
     visibility: visible;
 }
 
 
-.dataset-clinical-emif-9 {
-    grid-column: 272 / 301;
-    grid-row: 6 / 8;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.dataset-clinical-emif-9 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.dataset-clinical-emif-9:hover .asset-title {
-    visibility: visible;
-}
-
-
-.dataset-clinical-aetionomy-10 {
-    grid-column: 281 / 322;
+.dataset-clinical-amypad-9 {
+    grid-column: 238 / 272;
     grid-row: 9 / 11;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-clinical-aetionomy-10 .asset-title {
+.dataset-clinical-amypad-9 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -762,18 +777,75 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-clinical-aetionomy-10:hover .asset-title {
+.dataset-clinical-amypad-9:hover .asset-title {
     visibility: visible;
 }
 
 
-.dataset-clinical-radar-ad-11 {
-    grid-column: 232 / 278;
+.dataset-clinical-emif-10 {
+    grid-column: 263 / 293;
+    grid-row: 7 / 8;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.dataset-clinical-emif-10 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.dataset-clinical-emif-10:hover .asset-title {
+    visibility: visible;
+}
+
+
+.dataset-clinical-epad-11 {
+    grid-column: 220 / 261;
+    grid-row: 7 / 8;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.dataset-clinical-epad-11 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.dataset-clinical-epad-11:hover .asset-title {
+    visibility: visible;
+}
+
+
+.dataset-clinical-phago-12 {
+    grid-column: 296 / 332;
+    grid-row: 7 / 8;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.dataset-clinical-phago-12 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.dataset-clinical-phago-12:hover .asset-title {
+    visibility: visible;
+}
+
+
+.dataset-clinical-radar-ad-13 {
+    grid-column: 229 / 269;
     grid-row: 8 / 9;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.dataset-clinical-radar-ad-11 .asset-title {
+.dataset-clinical-radar-ad-13 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -781,18 +853,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.dataset-clinical-radar-ad-11:hover .asset-title {
+.dataset-clinical-radar-ad-13:hover .asset-title {
     visibility: visible;
 }
 
 
-.biological-samples-clinical-aetionomy-1 {
-    grid-column: 158 / 200;
-    grid-row: 11 / 12;
+.biological-samples-clinical-adapted-1 {
+    grid-column: 136 / 174;
+    grid-row: 10 / 12;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.biological-samples-clinical-aetionomy-1 .asset-title {
+.biological-samples-clinical-adapted-1 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -800,18 +872,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.biological-samples-clinical-aetionomy-1:hover .asset-title {
+.biological-samples-clinical-adapted-1:hover .asset-title {
     visibility: visible;
 }
 
 
-.biological-samples-clinical-adapted-2 {
-    grid-column: 122 / 160;
-    grid-row: 11 / 13;
+.biological-samples-clinical-aetionomy-2 {
+    grid-column: 126 / 170;
+    grid-row: 12 / 13;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.biological-samples-clinical-adapted-2 .asset-title {
+.biological-samples-clinical-aetionomy-2 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -819,18 +891,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.biological-samples-clinical-adapted-2:hover .asset-title {
+.biological-samples-clinical-aetionomy-2:hover .asset-title {
     visibility: visible;
 }
 
 
-.biological-samples-clinical-phago-3 {
-    grid-column: 152 / 190;
-    grid-row: 10 / 11;
+.biological-samples-clinical-emif-3 {
+    grid-column: 190 / 220;
+    grid-row: 8 / 9;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.biological-samples-clinical-phago-3 .asset-title {
+.biological-samples-clinical-emif-3 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -838,18 +910,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.biological-samples-clinical-phago-3:hover .asset-title {
+.biological-samples-clinical-emif-3:hover .asset-title {
     visibility: visible;
 }
 
 
-.biological-samples-clinical-epad-4 {
-    grid-column: 148 / 188;
-    grid-row: 12 / 14;
+.biological-samples-clinical-emif-4 {
+    grid-column: 162 / 193;
+    grid-row: 9 / 10;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.biological-samples-clinical-epad-4 .asset-title {
+.biological-samples-clinical-emif-4 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -857,14 +929,14 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.biological-samples-clinical-epad-4:hover .asset-title {
+.biological-samples-clinical-emif-4:hover .asset-title {
     visibility: visible;
 }
 
 
 .biological-samples-clinical-emif-5 {
-    grid-column: 175 / 202;
-    grid-row: 8 / 10;
+    grid-column: 200 / 230;
+    grid-row: 9 / 10;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -881,33 +953,13 @@ a:focus {
 }
 
 
-
-.biological-samples-clinical-emif-6 {
-    grid-column: 204 / 230;
-    grid-row: 9 / 10;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.biological-samples-clinical-emif-6 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.biological-samples-clinical-emif-6:hover .asset-title {
-    visibility: visible;
-}
-
-
-.biological-samples-clinical-emif-7 {
-    grid-column: 207 / 232;
+.biological-samples-clinical-epad-6 {
+    grid-column: 180 / 220;
     grid-row: 10 / 12;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.biological-samples-clinical-emif-7 .asset-title {
+.biological-samples-clinical-epad-6 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -915,18 +967,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.biological-samples-clinical-emif-7:hover .asset-title {
+.biological-samples-clinical-epad-6:hover .asset-title {
     visibility: visible;
 }
 
 
-.platform-non-clinical-eqipd-1 {
-    grid-column: 54 / 95;
-    grid-row: 12 / 14;
+.biological-samples-clinical-phago-7 {
+    grid-column: 139 / 175;
+    grid-row: 13 / 14;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-non-clinical-eqipd-1 .asset-title {
+.biological-samples-clinical-phago-7 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -934,18 +986,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-non-clinical-eqipd-1:hover .asset-title {
+.biological-samples-clinical-phago-7:hover .asset-title {
     visibility: visible;
 }
 
 
-.platform-non-clinical-aetionomy-2 {
-    grid-column: 45 / 88;
-    grid-row: 16 / 18;
+.platform-clinical-emif-1 {
+    grid-column: 104 / 132;
+    grid-row: 13 / 15;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-non-clinical-aetionomy-2 .asset-title {
+.platform-clinical-emif-1 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -953,37 +1005,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-non-clinical-aetionomy-2:hover .asset-title {
+.platform-clinical-emif-1:hover .asset-title {
     visibility: visible;
 }
 
 
-.platform-non-clinical-aetionomy-3 {
-    grid-column: 45 / 88;
-    grid-row: 15 / 16;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.platform-non-clinical-aetionomy-3 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.platform-non-clinical-aetionomy-3:hover .asset-title {
-    visibility: visible;
-}
-
-
-.platform-non-clinical-phago-4 {
-    grid-column: 53 / 90;
+.platform-clinical-emif-2 {
+    grid-column: 132 / 160;
     grid-row: 14 / 15;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-non-clinical-phago-4 .asset-title {
+.platform-clinical-emif-2 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -991,14 +1024,52 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-non-clinical-phago-4:hover .asset-title {
+.platform-clinical-emif-2:hover .asset-title {
+    visibility: visible;
+}
+
+
+.platform-clinical-epad-3 {
+    grid-column: 124 / 167;
+    grid-row: 16 / 17;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.platform-clinical-epad-3 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.platform-clinical-epad-3:hover .asset-title {
+    visibility: visible;
+}
+
+
+.platform-clinical-epad-4 {
+    grid-column: 115 / 158;
+    grid-row: 17 / 18;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.platform-clinical-epad-4 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.platform-clinical-epad-4:hover .asset-title {
     visibility: visible;
 }
 
 
 .platform-clinical-epad-5 {
-    grid-column: 105 / 147;
-    grid-row: 14 / 15;
+    grid-column: 104 / 145;
+    grid-row: 18 / 19;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1015,13 +1086,13 @@ a:focus {
 }
 
 
-.platform-clinical-epad-6 {
-    grid-column: 100 / 142;
+.platform-clinical-radar-cns-6 {
+    grid-column: 104 / 153;
     grid-row: 15 / 16;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-clinical-epad-6 .asset-title {
+.platform-clinical-radar-cns-6 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1029,18 +1100,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-clinical-epad-6:hover .asset-title {
+.platform-clinical-radar-cns-6:hover .asset-title {
     visibility: visible;
 }
 
 
-.platform-clinical-epad-7 {
-    grid-column: 100 / 142;
-    grid-row: 16 / 18;
+.platform-non-clinical-aetionomy-7 {
+    grid-column: 40 / 85;
+    grid-row: 17 / 18;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-clinical-epad-7 .asset-title {
+.platform-non-clinical-aetionomy-7 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1048,18 +1119,76 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-clinical-epad-7:hover .asset-title {
+.platform-non-clinical-aetionomy-7:hover .asset-title {
     visibility: visible;
 }
 
 
-.platform-clinical-emif-8 {
-    grid-column: 146 / 172;
+.platform-non-clinical-aetionomy-8 {
+    grid-column: 44 / 87;
+    grid-row: 18 / 20;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.platform-non-clinical-aetionomy-8 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.platform-non-clinical-aetionomy-8:hover .asset-title {
+    visibility: visible;
+}
+
+
+.platform-non-clinical-ebisc2-9 {
+    grid-column: 57 / 87;
+    grid-row: 12 / 14;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.platform-non-clinical-ebisc2-9 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.platform-non-clinical-ebisc2-9:hover .asset-title {
+    visibility: visible;
+}
+
+
+
+.platform-non-clinical-ebisc2-10 {
+    grid-column: 83 / 111;
+    grid-row: 16 / 17;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.platform-non-clinical-ebisc2-10 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.platform-non-clinical-ebisc2-10:hover .asset-title {
+    visibility: visible;
+}
+
+
+.platform-non-clinical-ebisc2-11 {
+    grid-column: 46 / 78;
     grid-row: 14 / 16;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-clinical-emif-8 .asset-title {
+.platform-non-clinical-ebisc2-11 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1067,37 +1196,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-clinical-emif-8:hover .asset-title {
+.platform-non-clinical-ebisc2-11:hover .asset-title {
     visibility: visible;
 }
 
 
-.tools-non-clinical-eqipd-1 {
-    grid-column: 88 / 127;
-    grid-row: 23 / 25;
-    border: 1px solid red;
-    cursor: pointer;
-}
-.tools-non-clinical-eqipd-1 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.tools-non-clinical-eqipd-1:hover .asset-title {
-    visibility: visible;
-}
-
-
-.tools-non-clinical-eqipd-1 {
-    grid-column: 88 / 127;
-    grid-row: 23 / 25;
+.platform-non-clinical-phago-12 {
+    grid-column: 40 / 78;
+    grid-row: 16 / 17;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.tools-non-clinical-eqipd-1 .asset-title {
+.platform-non-clinical-phago-12 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1105,18 +1215,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.tools-non-clinical-eqipd-1:hover .asset-title {
+.platform-non-clinical-phago-12:hover .asset-title {
     visibility: visible;
 }
 
 
-.tools-non-clinical-phago-2 {
-    grid-column: 134 / 170;
-    grid-row: 26 / 28;
+.disease-model-non-clinical-adapted-1 {
+    grid-column: 465 / 508;
+    grid-row: 22 / 23;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.tools-non-clinical-phago-2 .asset-title {
+.disease-model-non-clinical-adapted-1 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1124,18 +1234,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.tools-non-clinical-phago-2:hover .asset-title {
+.disease-model-non-clinical-adapted-1:hover .asset-title {
     visibility: visible;
 }
 
 
-.tools-non-clinical-imprind-3 {
-    grid-column: 64 / 96;
-    grid-row: 20 / 22;
+.disease-model-non-clinical-aetionomy-2 {
+    grid-column: 484 / 528;
+    grid-row: 19 / 20;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.tools-non-clinical-imprind-3 .asset-title {
+.disease-model-non-clinical-aetionomy-2 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1143,14 +1253,147 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.tools-non-clinical-imprind-3:hover .asset-title {
+.disease-model-non-clinical-aetionomy-2:hover .asset-title {
+    visibility: visible;
+}
+
+
+.disease-model-non-clinical-ebisc2-3 {
+    grid-column: 465 / 498;
+    grid-row: 23 / 24;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.disease-model-non-clinical-ebisc2-3 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.disease-model-non-clinical-ebisc2-3:hover .asset-title {
+    visibility: visible;
+}
+
+
+.disease-model-non-clinical-im2pact-4 {
+    grid-column: 445 / 488;
+    grid-row: 24 / 25;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.disease-model-non-clinical-im2pact-4 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.disease-model-non-clinical-im2pact-4:hover .asset-title {
+    visibility: visible;
+}
+
+
+.disease-model-non-clinical-imprind-5 {
+    grid-column: 475 / 518;
+    grid-row: 20 / 21;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.disease-model-non-clinical-imprind-5 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.disease-model-non-clinical-imprind-5:hover .asset-title {
+    visibility: visible;
+}
+
+
+.taxonomies-non-clinical-eqipd-1 {
+    grid-column: 485 / 528;
+    grid-row: 17 / 18;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.taxonomies-non-clinical-eqipd-1 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.taxonomies-non-clinical-eqipd-1:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-clinical-aetionomy-1 {
+    grid-column: 189 / 228;
+    grid-row: 23 / 24;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-clinical-aetionomy-1 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-clinical-aetionomy-1:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-clinical-emif-2 {
+    grid-column: 200 / 228;
+    grid-row: 25 / 26;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-clinical-emif-2 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-clinical-emif-2:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-clinical-emif-3 {
+    grid-column: 230 / 260;
+    grid-row: 25 / 27;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-clinical-emif-3 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-clinical-emif-3:hover .asset-title {
     visibility: visible;
 }
 
 
 .tools-clinical-epad-4 {
-    grid-column: 102 / 145;
-    grid-row: 18 / 19;
+    grid-column: 220 / 257;
+    grid-row: 23 / 25;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1168,8 +1411,8 @@ a:focus {
 
 
 .tools-clinical-epad-5 {
-    grid-column: 110 / 153;
-    grid-row: 19 / 20;
+    grid-column: 166 / 208;
+    grid-row: 24 / 25;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1185,9 +1428,10 @@ a:focus {
     visibility: visible;
 }
 
+
 .tools-clinical-epad-6 {
-    grid-column: 114 / 157;
-    grid-row: 20 / 22;
+    grid-column: 146 / 190;
+    grid-row: 23 / 24;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1205,8 +1449,8 @@ a:focus {
 
 
 .tools-clinical-epad-7 {
-    grid-column: 128 / 170;
-    grid-row: 22 / 23;
+    grid-column: 126 / 170;
+    grid-row: 21 / 23;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1224,8 +1468,8 @@ a:focus {
 
 
 .tools-clinical-epad-8 {
-    grid-column: 140 / 185;
-    grid-row: 23 / 24;
+    grid-column: 138 / 180;
+    grid-row: 20 / 21;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1243,8 +1487,8 @@ a:focus {
 
 
 .tools-clinical-epad-9 {
-    grid-column: 154 / 196;
-    grid-row: 24 / 25;
+    grid-column: 110 / 150;
+    grid-row: 19 / 20;
     border: 1px solid transparent;
     cursor: pointer;
 }
@@ -1261,13 +1505,13 @@ a:focus {
 }
 
 
-.tools-clinical-emif-10 {
-    grid-column: 173 / 195;
+.tools-clinical-mopead-10 {
+    grid-column: 175 / 200;
     grid-row: 21 / 23;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.tools-clinical-emif-10 .asset-title {
+.tools-clinical-mopead-10 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1275,37 +1519,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.tools-clinical-emif-10:hover .asset-title {
+.tools-clinical-mopead-10:hover .asset-title {
     visibility: visible;
 }
 
 
-.tools-clinical-aetionomy-11 {
-    grid-column: 173 / 216;
-    grid-row: 25 / 26;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.tools-clinical-aetionomy-11 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.tools-clinical-aetionomy-11:hover .asset-title {
-    visibility: visible;
-}
-
-
-.tools-clinical-mopead-12 {
-    grid-column: 200 / 230;
+.tools-non-clinical-eqipd-11 {
+    grid-column: 80 / 119;
     grid-row: 23 / 24;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.tools-clinical-mopead-12 .asset-title {
+.tools-non-clinical-eqipd-11 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1313,18 +1538,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.tools-clinical-mopead-12:hover .asset-title {
+.tools-non-clinical-eqipd-11:hover .asset-title {
     visibility: visible;
 }
 
 
-.tools-rwe-roadmap-13 {
-    grid-column: 182 / 218;
-    grid-row: 18 / 20;
+.tools-non-clinical-eqipd-12 {
+    grid-column: 109 / 146;
+    grid-row: 24 / 26;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.tools-rwe-roadmap-13 .asset-title {
+.tools-non-clinical-eqipd-12 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1332,303 +1557,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.tools-rwe-roadmap-13:hover .asset-title {
+.tools-non-clinical-eqipd-12:hover .asset-title {
     visibility: visible;
 }
 
 
-.tools-rwe-radar-ad-14 {
-    grid-column: 200 / 245;
-    grid-row: 20 / 22;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.tools-rwe-radar-ad-14 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.tools-rwe-radar-ad-14:hover .asset-title {
-    visibility: visible;
-}
-
-
-.tools-regulators-roadmap-15 {
-    grid-column: 232 / 270;
-    grid-row: 18 / 19;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.tools-regulators-roadmap-15 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.tools-regulators-roadmap-15:hover .asset-title {
-    visibility: visible;
-}
-
-
-.stakeholder-engagement-modelsclinical-epad-1 {
-    grid-column: 246 / 289;
-    grid-row: 24 / 25;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.stakeholder-engagement-modelsclinical-epad-1 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.stakeholder-engagement-modelsclinical-epad-1:hover .asset-title {
-    visibility: visible;
-}
-
-
-.stakeholder-engagement-modelsclinical-radar-ad-2 {
-    grid-column: 220 / 265;
-    grid-row: 25 / 26;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.stakeholder-engagement-modelsclinical-radar-ad-2 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.stakeholder-engagement-modelsclinical-radar-ad-2:hover .asset-title {
-    visibility: visible;
-}
-
-
-.stakeholder-engagement-modelsclinical-mopead-3 {
-    grid-column: 258 / 288;
-    grid-row: 26 / 28;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.stakeholder-engagement-modelsclinical-mopead-3 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.stakeholder-engagement-modelsclinical-mopead-3:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-im2pact-1 {
-    grid-column: 306 / 346;
-    grid-row: 29 / 31;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-im2pact-1 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-im2pact-1:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-eqipd-2 {
-    grid-column: 405 / 443;
-    grid-row: 25 / 27;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-eqipd-2 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-eqipd-2:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-eqipd-3 {
-    grid-column: 399 / 438;
-    grid-row: 27 / 29;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-eqipd-3 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-eqipd-3:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-phago-4 {
-    grid-column: 351 / 388;
-    grid-row: 28 / 30;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-phago-4 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-phago-4:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-adapted-5 {
-    grid-column: 300 / 343;
-    grid-row: 28 / 29;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-adapted-5 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-adapted-5:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-aetionomy-6 {
-    grid-column: 350 / 393;
-    grid-row: 27 / 28;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-aetionomy-6 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-aetionomy-6:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-non-clinical-imprind-7 {
-    grid-column: 443 / 478;
-    grid-row: 25 / 27;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-non-clinical-imprind-7 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-non-clinical-imprind-7:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-clinical-mopead-8 {
-    grid-column: 443 / 478;
-    grid-row: 25 / 27;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-clinical-mopead-8 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-clinical-mopead-8:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-clinical-mopead-8 {
-    grid-column: 358 / 388;
-    grid-row: 22 / 24;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-clinical-mopead-8 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-clinical-mopead-8:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-clinical-epad-9 {
-    grid-column: 352 / 394;
-    grid-row: 25 / 26;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-clinical-epad-9 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-clinical-epad-9:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-clinical-amypad-10 {
-    grid-column: 307 / 344;
+.tools-non-clinical-eqipd-13 {
+    grid-column: 119 / 160;
     grid-row: 26 / 27;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.knowledge-clinical-amypad-10 .asset-title {
+.tools-non-clinical-eqipd-13 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1636,18 +1576,17 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.knowledge-clinical-amypad-10:hover .asset-title {
+.tools-non-clinical-eqipd-13:hover .asset-title {
     visibility: visible;
 }
 
-
-.knowledge-clinical-emif-11 {
-    grid-column: 399 / 426;
-    grid-row: 23 / 24;
+.tools-non-clinical-imprind-14 {
+    grid-column: 65 / 110;
+    grid-row: 20 / 21;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.knowledge-clinical-emif-11 .asset-title {
+.tools-non-clinical-imprind-14 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1655,37 +1594,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.knowledge-clinical-emif-11:hover .asset-title {
+.tools-non-clinical-imprind-14:hover .asset-title {
     visibility: visible;
 }
 
 
-.knowledge-clinical-radar-ad-12 {
-    grid-column: 315 / 360;
-    grid-row: 24 / 25;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.knowledge-clinical-radar-ad-12 .asset-title {
-    visibility: hidden;
-    background-color: white;
-    border: 1px solid #e5e5e5;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-}
-.knowledge-clinical-radar-ad-12:hover .asset-title {
-    visibility: visible;
-}
-
-
-.knowledge-rwe-roadmap-13 {
-    grid-column: 312 / 348;
+.tools-non-clinical-phago-15 {
+    grid-column: 65 / 110;
     grid-row: 21 / 23;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.knowledge-rwe-roadmap-13 .asset-title {
+.tools-non-clinical-phago-15 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1693,18 +1613,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.knowledge-rwe-roadmap-13:hover .asset-title {
+.tools-non-clinical-phago-15:hover .asset-title {
     visibility: visible;
 }
 
 
-.disease-model-non-clinical-im2pact-1 {
-    grid-column: 463 / 504;
-    grid-row: 23 / 24;
+.tools-non-clinical-ebisc2-16 {
+    grid-column: 161 / 190;
+    grid-row: 26 / 28;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.disease-model-non-clinical-im2pact-1 .asset-title {
+.tools-non-clinical-ebisc2-16 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1712,18 +1632,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.disease-model-non-clinical-im2pact-1:hover .asset-title {
+.tools-non-clinical-ebisc2-16:hover .asset-title {
     visibility: visible;
 }
 
 
-.disease-model-non-clinical-adapted-2 {
-    grid-column: 468 / 510;
-    grid-row: 22 / 23;
+.tools-non-clinical-ebisc2-17 {
+    grid-column: 172 / 202;
+    grid-row: 28 / 29;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.disease-model-non-clinical-adapted-2 .asset-title {
+.tools-non-clinical-ebisc2-17 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1731,18 +1651,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.disease-model-non-clinical-adapted-2:hover .asset-title {
+.tools-non-clinical-ebisc2-17:hover .asset-title {
     visibility: visible;
 }
 
 
-.disease-model-non-clinical-imprind-3 {
-    grid-column: 482 / 516;
-    grid-row: 21 / 22;
+.tools-non-clinical-ebisc2-18 {
+    grid-column: 204 / 232;
+    grid-row: 27 / 29;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.disease-model-non-clinical-imprind-3 .asset-title {
+.tools-non-clinical-ebisc2-18 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1750,18 +1670,75 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.disease-model-non-clinical-imprind-3:hover .asset-title {
+.tools-non-clinical-ebisc2-18:hover .asset-title {
     visibility: visible;
 }
 
 
-.disease-model-clinical-amypad-4 {
-    grid-column: 480 / 523;
+.tools-non-clinical-ebisc2-19 {
+    grid-column: 210 / 240;
+    grid-row: 29 / 30;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-non-clinical-ebisc2-19 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-non-clinical-ebisc2-19:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-regulators-roadmap-20 {
+    grid-column: 230 / 267;
+    grid-row: 18 / 20;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-regulators-roadmap-20 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-regulators-roadmap-20:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-rwe-roadmap-21 {
+    grid-column: 225 / 260;
+    grid-row: 21 / 23;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.tools-rwe-roadmap-21 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tools-rwe-roadmap-21:hover .asset-title {
+    visibility: visible;
+}
+
+
+.tools-rwe-roadmap-22 {
+    grid-column: 189 / 224;
     grid-row: 19 / 21;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.disease-model-clinical-amypad-4 .asset-title {
+.tools-rwe-roadmap-22 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1769,18 +1746,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.disease-model-clinical-amypad-4:hover .asset-title {
+.tools-rwe-roadmap-22:hover .asset-title {
     visibility: visible;
 }
 
 
-.disease-model-non-clinical-aetionomy-5 {
-    grid-column: 413 / 449;
-    grid-row: 19 / 21;
+.sem-clinical-epad-1 {
+    grid-column: 272 / 314;
+    grid-row: 26 / 27;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.disease-model-non-clinical-aetionomy-5 .asset-title {
+.sem-clinical-epad-1 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1788,17 +1765,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.disease-model-non-clinical-aetionomy-5:hover .asset-title {
+.sem-clinical-epad-1:hover .asset-title {
     visibility: visible;
 }
 
-.disease-model-non-clinical-eqipd-1 {
-    grid-column: 488 / 526;
-    grid-row: 17 / 19;
+
+.sem-clinical-mopead-2 {
+    grid-column: 328 / 361;
+    grid-row: 25 / 27;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.disease-model-non-clinical-eqipd-1 .asset-title {
+.sem-clinical-mopead-2 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1806,17 +1784,18 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.disease-model-non-clinical-eqipd-1:hover .asset-title {
+.sem-clinical-mopead-2:hover .asset-title {
     visibility: visible;
 }
 
-.platform-clinical-epad-1 {
-    grid-column: 351 / 392;
-    grid-row: 9 / 11;
+
+.sem-clinical-radar-ad-3 {
+    grid-column: 278 / 320;
+    grid-row: 25 / 26;
     border: 1px solid transparent;
     cursor: pointer;
 }
-.platform-clinical-epad-1 .asset-title {
+.sem-clinical-radar-ad-3 .asset-title {
     visibility: hidden;
     background-color: white;
     border: 1px solid #e5e5e5;
@@ -1824,9 +1803,86 @@ a:focus {
     position: absolute;
     z-index: 1;
 }
-.platform-clinical-epad-1:hover .asset-title {
+.sem-clinical-radar-ad-3:hover .asset-title {
     visibility: visible;
 }
+
+
+.sem-clinical-radar-cns-4 {
+    grid-column: 300 / 352;
+    grid-row: 23 / 25;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.sem-clinical-radar-cns-4 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.sem-clinical-radar-cns-4:hover .asset-title {
+    visibility: visible;
+}
+
+
+.training-clinical-epad-1 {
+    grid-column: 374 / 414;
+    grid-row: 23 / 25;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.training-clinical-epad-1 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.training-clinical-epad-1:hover .asset-title {
+    visibility: visible;
+}
+
+
+.training-non-clinical-ebisc2-2 {
+    grid-column: 400 / 432;
+    grid-row: 26 / 28;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.training-non-clinical-ebisc2-2 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.training-non-clinical-ebisc2-2:hover .asset-title {
+    visibility: visible;
+}
+
+
+.training-non-clinical-eqipd-3 {
+    grid-column: 411 / 452;
+    grid-row: 25 / 26;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.training-non-clinical-eqipd-3 .asset-title {
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+.training-non-clinical-eqipd-3:hover .asset-title {
+    visibility: visible;
+}
+
 
 .highlight-text-big {
     font-size: 140%;

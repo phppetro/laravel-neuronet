@@ -21,7 +21,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel"><img class="modal-img" src="/{{ $asset_map->project->logo }}">{{ $asset_map->title }}</h4>
+                        <h4 class="modal-title" id="myModalLabel"><img class="modal-img" src="/img/{{ $asset_map->project->logo }}">{{ $asset_map->title }}</h4>
                     </div>
                     <div class="modal-body">
                         {!! $asset_map->body !!}
