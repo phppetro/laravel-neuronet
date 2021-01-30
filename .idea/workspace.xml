@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard2/projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard2/projects.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -390,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612023057269</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Hide EBiSC from projects index and the project module in the dashboard and reduce the number of projects by 1 more in hightlight metrics">
+      <created>1612027437830</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1612027437831</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -464,6 +470,7 @@
     <MESSAGE value="Automatically save projects, publications, assets and organisation count in Highlight metrics" />
     <MESSAGE value="Changed layout to metrics in dashboard" />
     <MESSAGE value="Changed metrics layout in dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed metrics layout in dashboard" />
+    <MESSAGE value="Hide EBiSC from projects index and the project module in the dashboard and reduce the number of projects by 1 more in hightlight metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hide EBiSC from projects index and the project module in the dashboard and reduce the number of projects by 1 more in hightlight metrics" />
   </component>
 </project>

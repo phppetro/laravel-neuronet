@@ -1923,3 +1923,8 @@ a:focus {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.box-header .box-title,
+.nav-tabs-custom>.nav-tabs>li.header {
+    font-size: 25px;
+}
