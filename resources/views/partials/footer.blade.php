@@ -23,4 +23,13 @@
       </ul>
     </div>
   </div>
+  <div class="row pt-4">
+    <div class="col-md-12">
+        <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+                Developed by <a class="font-italic" href="https://synapse-managers.com/" target="_blank">SYNAPSE Research Management Partners S.L</a>
+            </li>
+        </ul>
+    </div>
+  </div>
 </div>
