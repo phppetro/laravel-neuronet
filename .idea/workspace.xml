@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -410,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612030769474</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Change font size of small text in metrics dashboard">
+      <created>1612034245575</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1612034245575</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -461,7 +467,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <confirmRemoveEmptyChangelist value="2" />
-    <MESSAGE value="Create CRUD in admin to manage the Highlight Metrics module" />
     <MESSAGE value="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" />
     <MESSAGE value="Make the show button visible in the index file for Projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages." />
     <MESSAGE value="Removed the Key Areas for Projects module from the dashboard" />
@@ -486,6 +491,7 @@
     <MESSAGE value="Hide EBiSC from projects index and the project module in the dashboard and reduce the number of projects by 1 more in hightlight metrics" />
     <MESSAGE value="Make module titles bigger in the dashboard" />
     <MESSAGE value="Put schedule module in dashboard in two columns" />
-    <option name="LAST_COMMIT_MESSAGE" value="Put schedule module in dashboard in two columns" />
+    <MESSAGE value="Change font size of small text in metrics dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change font size of small text in metrics dashboard" />
   </component>
 </project>
