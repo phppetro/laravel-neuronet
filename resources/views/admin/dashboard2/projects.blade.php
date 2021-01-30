@@ -13,25 +13,27 @@
     <ul class="products-list product-list-in-box">
 
       @foreach($projects as $project)
-        <li class="item">
-          <div class="product-img">
-            <img src="/img/{{ $project->logo }}" alt="{{ $project->name }}">
-          </div>
-          <div class="product-info">
-            <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>
-            <span class="product-description">
-                  {{ $project->description }}
-            </span>
-              <a href="/admin/partners/project/{{ $project->id }}" class="product-title">Partners</a>
-             / <a href="/admin/work_packages/project/{{ $project->id }}" class="product-title">Work Packages</a>
-             / <a href="/admin/publications/project/{{ $project->id }}" class="product-title">Publications</a>
-             / <a href="/admin/deliverables/project/{{ $project->id }}" class="product-title">Deliverables</a>
-             / <a href="/admin/asset_maps/project/{{ $project->id }}" class="product-title">Assets</a>
-{{--             / <a href="/admin/tools/project/{{ $project->id }}" class="product-title">Tools</a>--}}
-             / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>
-          </div>
-        </li>
-        <!-- /.item -->
+          @if($project->id != 24)
+            <li class="item">
+              <div class="product-img">
+                <img src="/img/{{ $project->logo }}" alt="{{ $project->name }}">
+              </div>
+              <div class="product-info">
+                <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>
+                <span class="product-description">
+                      {{ $project->description }}
+                </span>
+                  <a href="/admin/partners/project/{{ $project->id }}" class="product-title">Partners</a>
+                 / <a href="/admin/work_packages/project/{{ $project->id }}" class="product-title">Work Packages</a>
+                 / <a href="/admin/publications/project/{{ $project->id }}" class="product-title">Publications</a>
+                 / <a href="/admin/deliverables/project/{{ $project->id }}" class="product-title">Deliverables</a>
+                 / <a href="/admin/asset_maps/project/{{ $project->id }}" class="product-title">Assets</a>
+    {{--             / <a href="/admin/tools/project/{{ $project->id }}" class="product-title">Tools</a>--}}
+                 / <a href="{{ $project->website }}" target="_blank" class="product-title">Website</a>
+              </div>
+            </li>
+            <!-- /.item -->
+          @endif
       @endforeach
 
     </ul>

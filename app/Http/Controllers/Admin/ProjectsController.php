@@ -49,7 +49,7 @@ class ProjectsController extends Controller
                 'projects.start_date',
                 'projects.end_date',
                 'projects.logo',
-            ]);
+            ])->Where('id', '!=', '24')->get();
             $table = Datatables::of($query);
 
             $table->setRowAttr([
@@ -269,7 +269,7 @@ class ProjectsController extends Controller
 
     public function updateProjectsHighlights()
     {
-        $project_count = Project::all()->count() -1; // -1 because we don't want to count Neuronet in the total number.
+        $project_count = Project::all()->count() -2; // -1 because we don't want to count Neuronet in the total number.
         $highlight_metric = HighlightsMetric::findOrFail(1);
         $highlight_metric->update(['number'=>$project_count]);
     }
