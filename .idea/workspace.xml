@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -396,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612027437831</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Make module titles bigger in the dashboard">
+      <created>1612028145223</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1612028145223</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -471,6 +478,7 @@
     <MESSAGE value="Changed layout to metrics in dashboard" />
     <MESSAGE value="Changed metrics layout in dashboard" />
     <MESSAGE value="Hide EBiSC from projects index and the project module in the dashboard and reduce the number of projects by 1 more in hightlight metrics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hide EBiSC from projects index and the project module in the dashboard and reduce the number of projects by 1 more in hightlight metrics" />
+    <MESSAGE value="Make module titles bigger in the dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make module titles bigger in the dashboard" />
   </component>
 </project>
