@@ -45,7 +45,7 @@ class HighlightsMetricsController extends Controller
                 'highlights_metrics.name',
                 'highlights_metrics.number',
                 'highlights_metrics.order',
-            ]);
+            ])->orderBy('order');
             $table = Datatables::of($query);
 
             $table->setRowAttr([

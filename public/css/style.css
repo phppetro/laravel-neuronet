@@ -1883,37 +1883,24 @@ a:focus {
     visibility: visible;
 }
 
-
-.highlight-text-big {
-    font-size: 140%;
-}
-
-.highlight-text-small {
-    font-size: 120%;
+.highlight-img {
+    padding-top: 2%;
 }
 
 .highlight-num {
     font-size: 160%;
 }
 
-.highlight-img-med {
-    padding-top: 15%;
+.highlight-name {
+    padding-bottom: 7%;
 }
 
-.highlight-num-med {
-    padding-top: 12%;
+.highlight-num-big {
+    font-size: 240%;
 }
 
-.highlight-name-med {
-    padding-bottom: 8%;
-}
-
-.highlight-img-small {
-    padding-top: 6%;
-}
-
-.highlight-name-small {
-    padding-bottom: 8%;
+.highlight-name-big {
+    font-size: 170%;
 }
 
 .network-diagram {

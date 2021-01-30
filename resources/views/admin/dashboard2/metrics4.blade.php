@@ -59,58 +59,26 @@
 
                 <div class="chart tab-pane active" id="highlights">
                     <div class="box-body">
-                        <div class="row highlight-padding">
-                            <div class="col-md-3 highlight-text-big" style="padding-top:3%;">
-                                <div class="chart-responsive text-center">
-                                    <img src="img/{{ $highlightsmetrics[0]->image }}" alt="{{ $highlightsmetrics[0]->name }}">
-                                    <div id="highlights-{{ $highlightsmetrics[0]->order }}" class="highlight-num">{{ $highlightsmetrics[0]->number }}</div>
-                                    <div>{{ $highlightsmetrics[0]->name }}</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 highlight-text-big">
-                                <div class="chart-responsive">
-                                    <div class="row text-center" style="padding-top:9%;">
-                                        <div class="col-md-6">
-                                            <img src="img/{{ $highlightsmetrics[1]->image }}" alt="{{ $highlightsmetrics[1]->name }}">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div id="highlights-{{ $highlightsmetrics[1]->order }}" class="highlight-num highlight-num-med">{{ $highlightsmetrics[1]->number }}</div>
-                                            <div>{{ $highlightsmetrics[1]->name }}</div>
+                        <div class="row highlight-padding text-center">
+                            @foreach($highlightsmetrics as $highlightsmetric)
+                                @if($highlightsmetric->order == 1)
+                                    <div class="col-md-3">
+                                        <div class="chart-responsive">
+                                            <img class="highlight-img" src="img/{{ $highlightsmetric->image }}" alt="{{ $highlightsmetric->name }}">
+                                            <div class="highlight-num-big" id="highlights-{{ $highlightsmetric->order }}">{{ $highlightsmetric->number }}</div>
+                                            <div class="highlight-name-big">{{ $highlightsmetric->name }}</div>
                                         </div>
                                     </div>
-                                    <div class="row text-center" style="padding-top:24%;">
-                                        <div class="col-md-6">
-                                            <img class="highlight-img-med" src="img/{{ $highlightsmetrics[5]->image }}" alt="{{ $highlightsmetrics[5]->name }}">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div style="padding-top:45%;" id="highlights-{{ $highlightsmetrics[5]->order }}" class="highlight-num">{{ $highlightsmetrics[5]->number }}</div>
-                                            <div>{{ $highlightsmetrics[5]->name }}</div>
+                                @else
+                                    <div class="col-xs-4 col-md-3">
+                                        <div class="chart-responsive">
+                                            <img class="highlight-img" src="img/{{ $highlightsmetric->image }}" alt="{{ $highlightsmetric->name }}">
+                                            <div class="highlight-num" id="highlights-{{ $highlightsmetric->order }}">{{ $highlightsmetric->number }}</div>
+                                            <div class="highlight-name">{{ $highlightsmetric->name }}</div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 highlight-text-small">
-                                <div class="chart-responsive text-center">
-                                    <img class="highlight-img-small" src="img/{{ $highlightsmetrics[6]->image }}" alt="{{ $highlightsmetrics[6]->name }}">
-                                    <div id="highlights-{{ $highlightsmetrics[6]->order }}" class="highlight-num">{{ $highlightsmetrics[6]->number }}</div>
-                                    <div class="highlight-name-small">{{ $highlightsmetrics[6]->name }}</div>
-
-                                    <img class="highlight-img-small" src="img/{{ $highlightsmetrics[4]->image }}" alt="{{ $highlightsmetrics[4]->name }}">
-                                    <div id="highlights-{{ $highlightsmetrics[4]->order }}" class="highlight-num">{{ $highlightsmetrics[4]->number }}</div>
-                                    <div class="highlight-name-small">{{ $highlightsmetrics[4]->name }}</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 highlight-text-small">
-                                <div class="chart-responsive text-center">
-                                    <img class="highlight-img-small" src="img/{{ $highlightsmetrics[2]->image }}" alt="{{ $highlightsmetrics[2]->name }}">
-                                    <div id="highlights-{{ $highlightsmetrics[2]->order }}" class="highlight-num">{{ $highlightsmetrics[2]->number }}</div>
-                                    <div class="highlight-name-small">{{ $highlightsmetrics[2]->name }}</div>
-
-                                    <img class="highlight-img-small" src="img/{{ $highlightsmetrics[3]->image }}" alt="{{ $highlightsmetrics[3]->name }}">
-                                    <div id="highlights-{{ $highlightsmetrics[3]->order }}" class="highlight-num">{{ $highlightsmetrics[3]->number }}</div>
-                                    <div class="highlight-name-small">{{ $highlightsmetrics[3]->name }}</div>
-                                </div>
-                            </div>
+                                @endif
+                            @endforeach
                         </div>
                             <!-- /.col -->
                         </div>
