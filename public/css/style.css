@@ -1888,10 +1888,11 @@ a:focus {
 }
 
 .highlight-num {
-    font-size: 160%;
+    font-size: 170%;
 }
 
 .highlight-name {
+    font-size: 110%;
     padding-bottom: 7%;
 }
 
