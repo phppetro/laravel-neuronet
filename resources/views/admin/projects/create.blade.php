@@ -24,6 +24,18 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 form-group">
+                    {!! Form::label('long_name', trans('global.projects.fields.long_name').'*', ['class' => 'control-label']) !!}
+                    {!! Form::text('long_name', old('long_name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
+                    <p class="help-block"></p>
+                    @if($errors->has('long_name'))
+                        <p class="help-block">
+                            {{ $errors->first('long_name') }}
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 form-group">
                     {!! Form::label('description', trans('global.projects.fields.description').'*', ['class' => 'control-label']) !!}
                     {!! Form::textarea('description', old('description'), ['class' => 'form-control ', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>

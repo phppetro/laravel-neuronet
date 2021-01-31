@@ -152,6 +152,7 @@ return [
 	'title' => 'Projects',
 	'fields' => [
 		'name' => 'Name',
+        'long_name' => 'Long Name',
 		'description' => 'Description',
         'objectives' => 'Objectives',
 		'website' => 'Website',

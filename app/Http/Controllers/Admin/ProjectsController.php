@@ -43,6 +43,7 @@ class ProjectsController extends Controller
             $query->select([
                 'projects.id',
                 'projects.name',
+                'projects.long_name',
                 'projects.description',
                 'projects.objectives',
                 'projects.website',
@@ -65,6 +66,9 @@ class ProjectsController extends Controller
             });
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : '';
+            });
+            $table->editColumn('long_name', function ($row) {
+                return $row->long_name ? $row->long_name : '';
             });
             $table->editColumn('description', function ($row) {
                 return $row->description ? $row->description : '';

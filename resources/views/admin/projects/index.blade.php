@@ -32,6 +32,7 @@
                         @endcan
 
                     <th>@lang('global.projects.fields.name')</th>
+                    <th>@lang('global.projects.fields.long_name')</th>
                     <th>@lang('global.projects.fields.description')</th>
                     <th>@lang('global.projects.fields.objectives')</th>
                     <th>@lang('global.projects.fields.website')</th>
@@ -62,6 +63,7 @@
                     {data: 'massDelete', name: 'id', searchable: false, sortable: false},
                 @endif
                 @endcan{data: 'name', name: 'name'},
+                {data: 'long_name', name: 'long_name'},
                 {data: 'description', name: 'description'},
                 {data: 'objectives', name: 'objectives'},
                 {data: 'website', name: 'website'},

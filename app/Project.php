@@ -21,10 +21,11 @@ class Project extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'objectives', 'website', 'start_date', 'end_date', 'logo'];
+    protected $fillable = ['name','long_name', 'description', 'objectives', 'website', 'start_date', 'end_date', 'logo'];
     protected $hidden = [];
     public static $searchable = [
         'name',
+        'long_name',
         'description',
         'objectives',
         'start_date',
