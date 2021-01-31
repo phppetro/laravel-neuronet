@@ -328,8 +328,8 @@ return [
         'title' => 'Assets',
         'fields' => [
             'title' => 'Title',
-            'body' => 'Body',
-            'target' => 'Target',
+            'body' => 'Description',
+            'target' => 'Type',
             'project' => 'Project'
         ],
     ],
