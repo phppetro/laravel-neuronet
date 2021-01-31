@@ -39,6 +39,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/calendar', 'Admin\SystemCalendarController@index')->name('admin.calendar');
     Route::get('/decision_tool', 'Admin\DecisionToolsController@diagram')->name('decision_tools.diagram');
     Route::get('/asset_map', 'Admin\AssetMapsController@diagram')->name('asset_maps.diagram');
+    Route::get('/network_diagrams/projects', 'Admin\NetworkDiagramsController@projects')->name('network_diagrams.projects');
+    Route::get('/network_diagrams/participants', 'Admin\NetworkDiagramsController@participants')->name('network_diagrams.participants');
+    Route::get('/network_diagrams/publications', 'Admin\NetworkDiagramsController@publications')->name('network_diagrams.publications');
 
     Route::resource('activities', 'Admin\ActivitiesController');
     Route::post('activities_mass_destroy', ['uses' => 'Admin\ActivitiesController@massDestroy', 'as' => 'activities.mass_destroy']);
