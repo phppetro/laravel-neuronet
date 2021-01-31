@@ -26,7 +26,7 @@ class AddLongNameToProjectsTable extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->dropColumn('long_name');
+            $table->dropColumn('long_name')->after('name');
         });
     }
 }
