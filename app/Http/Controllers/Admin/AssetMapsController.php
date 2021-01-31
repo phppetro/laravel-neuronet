@@ -6,6 +6,7 @@ use App\AssetMap;
 use App\HighlightsMetric;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\HtmlString;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\StoreAssetMapsRequest;
 use App\Http\Requests\Admin\UpdateAssetMapsRequest;
@@ -70,7 +71,7 @@ class AssetMapsController extends Controller
                 return $row->title ? $row->title : '';
             });
             $table->editColumn('body', function ($row) {
-                return $row->body ? $row->body : '';
+                return $row->body ? new HtmlString($row->body) : "";
             });
             $table->editColumn('target', function ($row) {
                 return $row->target ? $row->target : '';
