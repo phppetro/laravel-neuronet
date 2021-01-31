@@ -19,7 +19,11 @@
                 <img src="/img/{{ $project->logo }}" alt="{{ $project->name }}">
               </div>
               <div class="product-info">
-                <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>
+                <div class="project-name">
+                    <a href="/admin/projects/{{ $project->id }}" class="product-title">{{ $project->name }}</a>
+                    <span> - {{ $project->long_name }}</span>
+                    <p class="project-title hidden">{{ $project->long_name }}</p>
+                </div>
                 <span class="product-description">
                       {{ $project->description }}
                 </span>
@@ -44,3 +48,13 @@
   </div>
   <!-- /.box-footer -->
 </div>
+
+@section('javascript')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".project-name").hover(function () {
+                $(this).find(".project-title").toggleClass('hidden');
+            })
+        });
+    </script>
+@stop

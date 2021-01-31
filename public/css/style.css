@@ -1915,6 +1915,17 @@ a:focus {
     z-index: 10000;
 }
 
+.project-title {
+    position: absolute;
+    margin-right: 5%;
+    margin-left: 3%;
+    padding: 2%;
+    border: 1px solid #ddd;
+    background: white;
+    overflow: hidden;
+    z-index: 10000;
+}
+
 .hidden {
     visibility: hidden;
 }
