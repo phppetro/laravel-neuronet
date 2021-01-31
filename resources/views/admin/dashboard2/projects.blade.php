@@ -48,13 +48,3 @@
   </div>
   <!-- /.box-footer -->
 </div>
-
-@section('javascript')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".project-name").hover(function () {
-                $(this).find(".project-title").toggleClass('hidden');
-            })
-        });
-    </script>
-@stop

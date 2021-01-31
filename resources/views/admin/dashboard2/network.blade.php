@@ -78,5 +78,9 @@
                 $('#selected-diagram')[0].innerHTML = $(elm)[0].innerHTML;
             }
         });
+
+        $(".project-name").hover(function () {
+            $(this).find(".project-title").toggleClass('hidden');
+        })
     </script>
 @stop
