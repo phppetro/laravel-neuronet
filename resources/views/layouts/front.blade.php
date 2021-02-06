@@ -50,10 +50,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/"> Home </a>
+              <a class="nav-link js-scroll-trigger" href="/admin"> Dashboard </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/admin"> Dashboard </a>
+              <a class="nav-link js-scroll-trigger" target="_blank" href="https://www.imi-neuronet.org/"> Neuronet website </a>
             </li>
               @guest
               @else
