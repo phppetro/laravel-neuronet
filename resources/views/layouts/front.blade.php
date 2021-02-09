@@ -53,7 +53,7 @@
               <a class="nav-link js-scroll-trigger" href="/admin"> Dashboard </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" target="_blank" href="https://www.imi-neuronet.org/"> Neuronet website </a>
+              <a class="nav-link js-scroll-trigger" target="_blank" href="https://www.imi-neuronet.org/"> Neuronet Project </a>
             </li>
               @guest
               @else
