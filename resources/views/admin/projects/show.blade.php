@@ -524,7 +524,7 @@
                             @foreach ($assets as $asset)
                                 <tr data-entry-id="{{ $asset->id }}">
                                     <td field-key='title'>{{ $asset->title }}</td>
-                                    <td field-key='body'>{{ $asset->body }}</td>
+                                    <td field-key='body'>{!! $asset->body !!}</td>
                                     <td field-key='target'>{{ $asset->target }}</td>
                                     <td field-key='project'>{{ $asset->project->name ?? '' }}</td>
                                     @if( request('show_deleted') == 1 )
