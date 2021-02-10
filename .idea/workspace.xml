@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab1970ca-8914-4797-93e9-aa780334f45c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/head.blade.php" afterDir="false" />
     </list>
     <list id="acd62b11-9a2e-44e1-8e64-e535d21de9bb" name="Open access to index and show methods for projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +18,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -213,6 +214,8 @@
       <workItem from="1611601406747" duration="9531000" />
       <workItem from="1611746712932" duration="3000" />
       <workItem from="1611853758978" duration="25365000" />
+      <workItem from="1612615943102" duration="9000" />
+      <workItem from="1612633012938" duration="10856000" />
     </task>
     <task id="LOCAL-00001" summary="Removed side menu and created the topbar-only menu">
       <created>1610276500909</created>
@@ -424,7 +427,91 @@
       <option name="project" value="LOCAL" />
       <updated>1612034605908</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Fixed html tags issue in asset map">
+      <created>1612130718854</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1612130718854</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Remove minimize and close button from most modules in dashboard">
+      <created>1612636963572</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1612636963572</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Make highlight metrics small fonts bigger">
+      <created>1612637836431</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1612637836431</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Remove home link and add Neuronet website from the homepage menu">
+      <created>1612638257130</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1612638257130</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Change Neuronet Website for Neuronet Project in main menu">
+      <created>1612896893167</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1612896893167</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Remove html tags in the assets tab in projects show CRUD">
+      <created>1612990981290</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1612990981290</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Integrate Twitter cards">
+      <created>1612995086539</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1612995086539</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Integrate Twitter cards">
+      <created>1612995829075</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1612995829075</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Integrate Twitter cards">
+      <created>1613325190737</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1613325190737</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Integrate Twitter cards">
+      <created>1613325594220</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1613325594220</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Integrate Twitter cards">
+      <created>1613325797528</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1613325797528</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Integrate Twitter cards">
+      <created>1613326043362</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1613326043362</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView">
@@ -471,16 +558,25 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <confirmRemoveEmptyChangelist value="2" />
-    <MESSAGE value="Make the show button visible in the index file for Projects, Assets, Calendars, Deliverables, Documents, Partners, Projects, Publications, Tools and Work Packages." />
-    <MESSAGE value="Removed the Key Areas for Projects module from the dashboard" />
-    <MESSAGE value="Change title and menu in Network Diagram module" />
-    <MESSAGE value="Change alignment of elements 5, 6 and 7 in the module Highlights Metrics in the dashboard" />
-    <MESSAGE value="Add a project filter to Assets" />
-    <MESSAGE value="Add a project filter to Publications" />
     <MESSAGE value="Add Assets and Publications links and remove Tools link in Projects module in the dashboard" />
     <MESSAGE value="Changes in menu name and title section of assets" />
     <MESSAGE value="Change link order in the project module in the dashboard" />
@@ -489,7 +585,6 @@
     <MESSAGE value="Removed bold on project name in publications module in the dashboard" />
     <MESSAGE value="Removed activity tab from the project show view" />
     <MESSAGE value="Changed KB details for Knowledge Base details in topbar-only menu" />
-    <MESSAGE value="Fixed html tags issue in asset map" />
     <MESSAGE value="Added team section to the homepage" />
     <MESSAGE value="Added Assets, removed events and tools and rearranged menu items in the projects show section" />
     <MESSAGE value="Automatically save projects, publications, assets and organisation count in Highlight metrics" />
@@ -500,6 +595,13 @@
     <MESSAGE value="Put schedule module in dashboard in two columns" />
     <MESSAGE value="Change font size of small text in metrics dashboard" />
     <MESSAGE value="Hide EBiSC from the schedule module in the dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hide EBiSC from the schedule module in the dashboard" />
+    <MESSAGE value="Fixed html tags issue in asset map" />
+    <MESSAGE value="Remove minimize and close button from most modules in dashboard" />
+    <MESSAGE value="Make highlight metrics small fonts bigger" />
+    <MESSAGE value="Remove home link and add Neuronet website from the homepage menu" />
+    <MESSAGE value="Change Neuronet Website for Neuronet Project in main menu" />
+    <MESSAGE value="Remove html tags in the assets tab in projects show CRUD" />
+    <MESSAGE value="Integrate Twitter cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate Twitter cards" />
   </component>
 </project>

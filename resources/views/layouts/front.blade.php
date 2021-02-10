@@ -8,6 +8,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@IMI2_NEURONET">
+    <meta name="twitter:site" content="@IMI2_NEURONET">
+    <meta name="twitter:title" content="Neuronet Knowledge Base" />
+    <meta name="twitter:description" content="This platform provides an overview of the Innovative Medicines Initiative’s neurodegeneration research programme." />
+    <meta name="twitter:image" content="https://neuronet.test/img/perfil_1.jpg" />
+    <meta name="twitter:image:alt" content="IMI - Neuronet">
+    <!-- /Twitter Card meta tags -->
+    <script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
+
     <title>NEURONET IMI NEURODEGENERATION KNOWLEDGE BASE (INKB)</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
