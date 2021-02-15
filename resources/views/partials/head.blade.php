@@ -11,7 +11,7 @@
       content="text/html; charset=utf-8">
 
 <!-- Twitter Card meta tags -->
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:creator" content="@IMI2_NEURONET">
 <meta name="twitter:site" content="@IMI2_NEURONET">
 <meta name="twitter:title" content="Neuronet Knowledge Base" />
