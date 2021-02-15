@@ -16,7 +16,7 @@
 <meta name="twitter:site" content="@IMI2_NEURONET">
 <meta name="twitter:title" content="Neuronet Knowledge Base" />
 <meta name="twitter:description" content="This platform provides an overview of the Innovative Medicines Initiative’s neurodegeneration research programme." />
-<meta name="twitter:image" content="/img/perfil_1.jpg" />
+<meta name="twitter:image" content="https://kb.imi-neuronet.org/img/perfil_1.jpg" />
 <meta name="twitter:image:alt" content="IMI - Neuronet">
 <!-- /Twitter Card meta tags -->
 <script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
