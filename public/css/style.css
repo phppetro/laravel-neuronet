@@ -1939,4 +1939,5 @@ a:focus {
 .box-header .box-title,
 .nav-tabs-custom>.nav-tabs>li.header {
     font-size: 25px;
+    font-weight: bold;
 }
