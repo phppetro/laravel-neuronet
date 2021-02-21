@@ -10,7 +10,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                  <div id="timeline" ></div>
+                  <div class="table-responsive" id="timeline" ></div>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -62,10 +62,11 @@
                 var options = {
                   //title: 'Rate the Day on a Scale of 1 to 10',
                   height: 764,
+                  width: 600,
                   hAxis: {
                     format: 'yyyy',
                     title: 'time',
-                    gridlines: {count: 4}
+                    gridlines: {count: -1}
                   },
                   timeline: {
                     showBarLabels: true,
