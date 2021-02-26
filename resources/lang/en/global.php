@@ -104,6 +104,7 @@ return [
 
 	'documents' => [
 		'title' => 'Documents',
+        'title2' => 'Template Documents & Guidelines',
 		'fields' => [
 			'title' => 'Title',
 			'source' => 'Source',

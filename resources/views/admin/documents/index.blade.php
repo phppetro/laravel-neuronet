@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.documents.title')
+    <h3 class="page-title">@lang('global.documents.title2')
     @can('document_create')
 
         <a href="{{ route('admin.documents.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
