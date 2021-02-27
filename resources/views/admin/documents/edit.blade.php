@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('global.documents.title')</h3>
+    <h3 class="page-title">@lang('global.documents.title2')</h3>
 
     {!! Form::model($document, ['method' => 'PUT', 'route' => ['admin.documents.update', $document->id], 'files' => true,]) !!}
 
